@@ -1,0 +1,59 @@
+io31325=>inputoutput: output:  返回True
+cond31218=>condition: 数组a为空
+cond31343=>condition: 数组左边界元素的值小于数组中点元素的值
+op31370=>operation: 右边界更新为中点减一
+op31356=>operation: 左边界更新为中点加一
+cond31362=>condition: 目标整数大于数组中点m处的值且该整数小于等于数组中最后一项的值
+op31315=>operation: 定义中点m等于左边界l与右边界r的和整除2
+io31225=>inputoutput: output:  返回False
+cond31250=>condition: 左边界小于等于右边界
+cond31318=>condition: 数组a中点元素的值等于目标整数
+e31223=>end: end function return
+io31214=>inputoutput: input: self, a, t
+op31336=>operation: 左边界加一
+io31241=>inputoutput: output:  若数组第一项元素等于目标整数t，则返回True，否则返回False
+op31352=>operation: 右边界更新为中点减一
+op31231=>operation: n为数组a的长度
+op31247=>operation: 定义l为左边界，初值为0；定义r为右边界，初值为数组的长度减一
+e31239=>end: end function return
+io31380=>inputoutput: output:  返回False
+op31338=>operation: 右边界减一
+op31366=>operation: 左边界更新为中点加一
+st31212=>start: start search
+cond31234=>condition: 数组的长度为1
+e31378=>end: end function return
+cond31348=>condition: 目标整数大于等于数组左边界l处的值且该整数小于数组中点m处的值
+e31323=>end: end function return
+cond31332=>condition: 数组中点元素的值等于左边界元素的值且该值等于右边界元素的值
+
+op31231->cond31234
+cond31343(yes)->cond31348
+cond31362(no)->op31370
+cond31343(no)->cond31362
+io31325->e31323
+cond31218(no)->op31231
+cond31332(yes)->op31336
+op31338->cond31250
+op31366->cond31250
+cond31250(no)->io31380
+io31380->e31378
+io31225->e31223
+io31241->e31239
+cond31362(yes)->op31366
+op31315->cond31318
+st31212->io31214
+cond31318(yes)->io31325
+cond31318(no)->cond31332
+op31247->cond31250
+op31356->cond31250
+op31336->op31338
+cond31250(yes)->op31315
+cond31348(no)->op31356
+cond31234(yes)->io31241
+op31352->cond31250
+cond31348(yes)->op31352
+cond31234(no)->op31247
+op31370->cond31250
+cond31218(yes)->io31225
+cond31332(no)->cond31343
+io31214->cond31218

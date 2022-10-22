@@ -1,0 +1,14 @@
+def getNoZeroIntegers(self, n: int) -> List[int]:
+    A, B = 0, 0
+    sgn = False
+    for i in range(1, n):
+        A = i
+        B = n - i
+        res = str(A) + str(B)
+        if '0' not in res:
+            sgn = True
+            break
+    if sgn:
+        return [A, B]
+    else:
+        return []

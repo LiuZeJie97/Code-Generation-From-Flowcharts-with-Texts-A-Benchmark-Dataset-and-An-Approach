@@ -1,0 +1,10 @@
+def mySqrt(self, x: int) -> int:
+    l, r, d = 0, x, -1
+    while l <= r:
+        m = (l + r) // 2
+        if m * m > x:
+            r = m - 1
+        else:
+            d = m
+            l = m + 1
+    return d

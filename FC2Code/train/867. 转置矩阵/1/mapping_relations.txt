@@ -1,0 +1,7 @@
+def transpose(self, matrix: List[List[int]]) -> List[List[int]]:    #io33356
+    m, n = len(matrix), len(matrix[0])    #op33359
+    transposed = [[0] * m for _ in range(n)]    #op33361
+    for i in range(m):    #cond33366
+        for j in range(n):    #cond33388
+            transposed[j][i] = matrix[i][j]    #op33395
+    return transposed    #io33404

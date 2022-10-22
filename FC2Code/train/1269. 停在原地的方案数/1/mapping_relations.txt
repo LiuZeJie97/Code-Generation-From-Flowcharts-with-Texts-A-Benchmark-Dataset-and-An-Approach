@@ -1,0 +1,13 @@
+def numWays(self, steps: int, arrLen: int) -> int:    #io9839
+    mod = 10**9 + 7    #op9842
+    maxColumn = min(arrLen - 1, steps)    #op9844
+    dp = [[0] * (maxColumn + 1) for _ in range(steps + 1)]    #op9846
+    dp[0][0] = 1    #op9848
+    for i in range(1, steps + 1):    #cond9853
+        for j in range(0, maxColumn + 1):    #cond9915
+            dp[i][j] = dp[i - 1][j]    #op9942
+            if j - 1 >= 0:    #cond9945
+                dp[i][j] = dp[i][j] + dp[i - 1][j - 1]    #op9949
+            if j + 1 <= maxColumn:    #cond9955
+                dp[i][j] = dp[i][j] + dp[i - 1][j + 1]    #op9959
+    return dp[steps][0] % mod    #io9971

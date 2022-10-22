@@ -1,0 +1,33 @@
+cond20869=>condition: 枚举因数d的平方小于因数和sum时
+io20923=>inputoutput: output:  若因数和等于给定整数，则给定整数是完美数，否则不是完美数
+io20847=>inputoutput: input: self, a
+cond20897=>condition: 给定整数能整除枚举因数
+e20921=>end: end function return
+op20866=>operation: 定义枚举因数d，初值为2
+cond20851=>condition: 给定整数a等于1
+op20908=>operation: 计算给定整数除以枚举因数，并将因数和加上该计算结果
+st20845=>start: start checkPerfectaber
+cond20904=>condition: 枚举因数的平方小于给定整数
+op20916=>operation: 枚举因数加一
+op20901=>operation: 将因数和加上枚举因数
+e20856=>end: end function return
+io20858=>inputoutput: output:  给定整数不是完美数
+op20864=>operation: 定义因数和sum，初值为1
+
+io20847->cond20851
+cond20904(no)->op20916
+cond20851(yes)->io20858
+cond20897(yes)->op20901
+io20858->e20856
+op20864->op20866
+op20916->cond20869
+cond20869(yes)->cond20897
+st20845->io20847
+op20866->cond20869
+io20923->e20921
+cond20897(no)->op20916
+op20908->op20916
+cond20904(yes)->op20908
+cond20869(no)->io20923
+cond20851(no)->op20864
+op20901->cond20904

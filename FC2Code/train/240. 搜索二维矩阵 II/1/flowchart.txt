@@ -1,0 +1,33 @@
+st18131=>start: start searchMatrix
+cond18143=>condition: 行下标小于矩阵的行数
+cond18211=>condition: element等于目标值target
+op1=>operation: 行下标等于行下标加一
+io18229=>inputoutput: output:  返回标志变量
+op18140=>operation: 定义行下标r等于0
+io18133=>inputoutput: input: self, matrix, target
+op18215=>operation: 标志变量等于True
+op18136=>operation: 定义标志变量sgn，初值为False
+op18138=>operation: row为矩阵matrix的行数，column为矩阵matrix的列数
+cond18189=>condition: 列下标小于矩阵的列数
+op2=>operation: 列下标等于列下标加一
+op18186=>operation: 定义列下标c等于0
+e18227=>end: end function return
+op18208=>operation: 定义变量element等于矩阵中当前行、列下标位置的元素
+
+op18186->cond18189
+op18140->cond18143
+cond18143(no)->io18229
+cond18143(yes)->op18186
+cond18189(yes)->op18208
+op18136->op18138
+cond18211(yes)->op18215
+op2->cond18189
+op18208->cond18211
+op1->cond18143
+st18131->io18133
+io18229->e18227
+cond18189(no)->op1
+op18138->op18140
+op18215->op1
+io18133->op18136
+cond18211(no)->op2

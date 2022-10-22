@@ -1,0 +1,11 @@
+def peakIndexInMountainArray(self, arr: List[int]) -> int:    #io33027
+    n = len(arr)    #op33030
+    left, right, ans = 1, n - 2, 0    #op33032
+    while left <= right:    #cond33035
+        mid = (left + right) // 2    #op33056
+        if arr[mid] > arr[mid + 1]:    #cond33059
+            ans = mid    #op33063
+            right = mid - 1    #op33065
+        else:    #None
+            left = mid + 1    #op33069
+    return ans    #io33077

@@ -1,0 +1,6 @@
+def arrayPairSum(self, numbers: List[int]) -> int:    #io22745
+    numbers.sort()    #op22748
+    result = 0    #op22750
+    for index in range(0,len(numbers),2):    #cond22755
+        result += numbers[index]    #op22762
+    return result    #io22769

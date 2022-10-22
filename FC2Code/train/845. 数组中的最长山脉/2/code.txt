@@ -1,0 +1,16 @@
+def longestMountain(self, a: List[int]) -> int:
+    n = len(a)
+    ans = lp = 0
+    while lp + 2 < n:
+        rp = lp + 1
+        if a[lp] < a[lp + 1]:
+            while rp + 1 < n and a[rp] < a[rp + 1]:
+                rp += 1
+            if rp < n - 1 and a[rp] > a[rp + 1]:
+                while rp + 1 < n and a[rp] > a[rp + 1]:
+                    rp += 1
+                ans = max(ans, rp - lp + 1)
+            else:
+                rp += 1
+        lp = rp
+    return ans

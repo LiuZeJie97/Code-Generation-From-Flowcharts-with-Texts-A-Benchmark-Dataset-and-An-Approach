@@ -1,0 +1,19 @@
+def kthSmallestPrimeFraction(self, arr: List[int], k: int) -> List[int]:    #io30390
+    n = len(arr)    #op30393
+    left, right = 0.0, 1.0    #op30395
+    while True:    #cond30398
+        mid = (left + right) / 2    #op30513
+        i, count = -1, 0    #op30515
+        x, y = 0, 1    #op30517
+        for j in range(1, n):    #cond30522
+            while arr[i + 1] / arr[j] < mid:    #cond30562
+                i += 1    #op30579
+                if arr[i] * y > arr[j] * x:    #cond30582
+                    x, y = arr[i], arr[j]    #op30586
+            count += i + 1    #op30593
+        if count == k:    #cond30598
+            return [x, y]    #io30605
+        elif count < k:    #cond30611
+            left = mid    #op30615
+        else:    #None
+            right = mid    #op30619

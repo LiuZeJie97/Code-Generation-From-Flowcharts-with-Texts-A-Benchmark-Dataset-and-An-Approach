@@ -1,0 +1,16 @@
+def sortString(self, s: str) -> str:
+    num = [0] * 26
+    oa = ord('a')
+    for i in range(len(s)):
+        num[ord(s[i]) - oa] += 1
+    ret = list()
+    while len(ret) < len(s):
+        for i in range(26):
+            if num[i]:
+                num[i] -= 1
+                ret.append(chr(i + oa))
+        for i in range(25, -1, -1):
+            if num[i]:
+                num[i] -= 1
+                ret.append(chr(i + oa))
+    return "".join(ret)

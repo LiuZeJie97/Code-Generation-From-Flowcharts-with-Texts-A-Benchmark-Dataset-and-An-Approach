@@ -1,0 +1,9 @@
+def arrangeCoins(self, n: int) -> int:    #io20229
+    left, right = 1, n    #op20232
+    while left < right:    #cond20235
+        mid = (left + right + 1) // 2    #op20254
+        if mid * (mid + 1) <= 2 * n:    #cond20257
+            left = mid    #op20261
+        else:    #None
+            right = mid - 1    #op20265
+    return left    #io20273

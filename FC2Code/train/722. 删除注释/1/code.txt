@@ -1,0 +1,22 @@
+def removeComments(self, source):
+    in_block = False
+    ans = []
+    for i in range(len(source)):
+        j = 0
+        if not in_block:
+            newline = []
+        while j < len(source[i]):
+            if source[i][j:j+2] == '/*' and not in_block:
+                in_block = True
+                j += 1
+            elif source[i][j:j+2] == '*/' and in_block:
+                in_block = False
+                j += 1
+            elif not in_block and source[i][j:j+2] == '//':
+                break
+            elif not in_block:
+                newline.append(source[i][j])
+            j += 1
+        if newline and not in_block:
+            ans.append("".join(newline))
+    return ans

@@ -1,0 +1,27 @@
+e35067=>end: end function return
+op35058=>operation: a、b分别等于数组中下标为j的元素、下标为j+1的元素
+op35044=>operation: 数组下标j等于0
+op35062=>operation: ms等于它与tmp之间的最小值
+st35033=>start: start smallestRangeII
+io35069=>inputoutput: output:  返回最小分数
+op1=>operation: 数组下标加一
+op35038=>operation: 对数组n排序
+io35035=>inputoutput: input: self, n, k
+cond35047=>condition: 数组下标小于数组n的长度减一
+op35060=>operation: 计算ma-k与a+k之间的最大值，mi+k与b-k之间的最小值，tmp等于它们的差值
+op35040=>operation: mi等于数组中第一项元素，ma等于数组中最后一项元素
+op35042=>operation: ms等于ma减mi，用于记录最小分数
+
+io35069->e35067
+op35038->op35040
+op35042->op35044
+op35044->cond35047
+op35058->op35060
+io35035->op35038
+op1->cond35047
+st35033->io35035
+op35060->op35062
+op35062->op1
+op35040->op35042
+cond35047(no)->io35069
+cond35047(yes)->op35058

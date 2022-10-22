@@ -1,0 +1,27 @@
+cond29598=>condition: 数组中当前下标位置的数大于m1
+cond29572=>condition: 数组下标小于数组nums的长度
+cond29607=>condition: 数组中当前下标位置的数大于m2
+op29569=>operation: idx为数组下标，初值为0
+e29620=>end: end function return
+st29562=>start: start dominantIndex
+io29622=>inputoutput: output:  如果m1大于等于m2的二倍，则返回idx，否则返回-1
+io29564=>inputoutput: input: self, nums
+op29611=>operation: 令m2等于这个数
+op29567=>operation: 定义变量m1等于-1，m2等于-1，idx等于0
+op1=>operation: 数组下标加一
+op29602=>operation: 令m1，m2，idx分别等于这个数，m1，当前下标
+
+cond29598(yes)->op29602
+cond29607(no)->op1
+st29562->io29564
+op29567->op29569
+op1->cond29572
+cond29572(yes)->cond29598
+op29611->op1
+cond29607(yes)->op29611
+cond29598(no)->cond29607
+op29569->cond29572
+io29564->op29567
+op29602->op1
+cond29572(no)->io29622
+io29622->e29620

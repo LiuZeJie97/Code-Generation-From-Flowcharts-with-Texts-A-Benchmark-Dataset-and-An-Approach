@@ -1,0 +1,19 @@
+op21526=>operation: i为数组下标，初值为0
+io21543=>inputoutput: output:  将t转化为字符串并返回
+e21541=>end: end function return
+op21524=>operation: 定义数组t，其初值等于序列化的字符串s
+op21536=>operation: 将数组t下标为i到下标为i+k的元素反转，并将反转结果赋给数组t下标为i到下标为i+k的元素
+cond21529=>condition: 数组下标小于数组t的长度
+op1=>operation: 令数组下标加上k的2倍
+st21519=>start: start reverseStr
+io21521=>inputoutput: input: self, s, k
+
+io21543->e21541
+cond21529(yes)->op21536
+op21524->op21526
+st21519->io21521
+op21526->cond21529
+io21521->op21524
+op1->cond21529
+op21536->op1
+cond21529(no)->io21543

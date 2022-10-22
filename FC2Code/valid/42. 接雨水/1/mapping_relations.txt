@@ -1,0 +1,14 @@
+def trap(self, height: List[int]) -> int:    #io20025
+    ans = 0    #op20028
+    left, right = 0, len(height) - 1    #op20030
+    leftMax = rightMax = 0    #op20032
+    while left < right:    #cond20035
+        leftMax = max(leftMax, height[left])    #op20060
+        rightMax = max(rightMax, height[right])    #op20062
+        if height[left] < height[right]:    #cond20065
+            ans += leftMax - height[left]    #op20069
+            left += 1    #op20071
+        else:    #None
+            ans += rightMax - height[right]    #op20075
+            right -= 1    #op20077
+    return ans    #io20085

@@ -1,0 +1,13 @@
+def isValid(self, s: str) -> bool:    #io3727
+    if len(s) % 2 == 1:    #cond3731
+        return False    #io3738
+    pairs={")":"(","}":"{","]":"["}    #op3744
+    stack = list()    #op3746
+    for ch in s:    #cond3751
+        if ch in pairs:    #cond3783
+            if not stack or stack[-1] != pairs[ch]:    #cond3788
+                return False    #io3795
+            stack.pop()    #op3801
+        else:    #None
+            stack.append(ch)    #op3805
+    return not stack    #io3813

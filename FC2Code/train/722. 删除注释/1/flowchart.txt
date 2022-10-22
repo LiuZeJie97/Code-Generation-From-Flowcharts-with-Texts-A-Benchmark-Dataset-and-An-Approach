@@ -1,0 +1,58 @@
+cond28091=>condition: 变量in_block为False
+cond28201=>condition: newline不为空且变量in_block为False
+op28188=>operation: 将第i行源码中下标为j的字符添加newline
+op28168=>operation: 变量in_block等于False
+cond28175=>condition: 变量in_block为False且上述子串内容为'//'
+cond28184=>condition: 变量in_block为False
+op28088=>operation: 定义变量j等于0
+io27951=>inputoutput: input: self, source
+op27956=>operation: 定义答案数组ans
+op28196=>operation: j加一
+st27949=>start: start removeComments
+cond27961=>condition: 数组下标小于源码数组source的长度
+op28159=>operation: j加一
+cond28101=>condition: j小于第i行源码的长度
+e28213=>end: end function return
+op28170=>operation: j加一
+cond28164=>condition: 上述子串内容为'*/'且变量in_block为True
+op1=>operation: 将数组下标右移1个单位
+op28095=>operation: 定义数组newline
+io28215=>inputoutput: output:  返回答案数组
+op28157=>operation: 变量in_block等于True
+cond28153=>condition: 第i行源码从位置j到位置j+2的子串内容为'/*'且变量in_block为False
+op28205=>operation: 将newline转化为字符串并添加进答案数组中
+op27958=>operation: i为数组下标
+op27954=>operation: 定义变量in_block等于False
+
+op27954->op27956
+cond28153(no)->cond28164
+cond28184(no)->op28196
+op28205->op1
+cond28153(yes)->op28157
+cond28184(yes)->op28188
+cond28091(no)->cond28101
+op28088->cond28091
+cond28101(yes)->cond28153
+st27949->io27951
+cond28201(yes)->op28205
+cond28101(no)->cond28201
+cond28175(yes)->cond28201
+cond28175(no)->cond28184
+op28159->op28196
+cond28164(yes)->op28168
+io28215->e28213
+op28170->op28196
+op27958->cond27961
+op1->cond27961
+op28196->cond28101
+cond28201(no)->op1
+op28168->op28170
+op28188->op28196
+op27956->op27958
+cond27961(no)->io28215
+io27951->op27954
+cond27961(yes)->op28088
+cond28164(no)->cond28175
+op28095->cond28101
+op28157->op28159
+cond28091(yes)->op28095

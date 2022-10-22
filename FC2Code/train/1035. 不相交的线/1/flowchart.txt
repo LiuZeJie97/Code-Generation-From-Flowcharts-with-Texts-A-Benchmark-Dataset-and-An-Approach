@@ -1,0 +1,33 @@
+op7827=>operation: 定义m+1行n+1列的二维数组dp，数组元素初值均为0，dp[i][j]表示nums1[0:i]与nums2[0:j]的最长公共子序列的长度
+op7825=>operation: m为数组nums1的长度，n为数组nums2的长度
+io7910=>inputoutput: output:  返回nums1与nums2的最长公共子序列的长度
+cond7892=>condition: 数组nums1中下标为i的元素等于数组nums2中下标为j的元素
+op2=>operation: 令该数组下标加一
+cond7832=>condition: 该数组下标小于数组nums1的长度
+op7871=>operation: 数组下标j等于0
+io7822=>inputoutput: input: self, nums1, nums2
+st7820=>start: start maxUncrossedLines
+op7900=>operation: nums1[0:i+1]与nums2[0:j+1]的最长公共子序列的长度等于nums1[0:i]与nums2[0:j+1]的最长公共子序列的长度与nums1[0:i+1]与nums2[0:j]的最长公共子序列的长度之间的最大值
+op7829=>operation: 数组下标i等于0
+op1=>operation: 令该数组下标加一
+cond7874=>condition: 该数组下标小于数组nums2的长度
+op7896=>operation: nums1[0:i+1]与nums2[0:j+1]的最长公共子序列的长度等于nums1[0:i]与nums2[0:j]的最长公共子序列的长度加一
+e7908=>end: end function return
+
+cond7874(yes)->cond7892
+io7910->e7908
+op2->cond7874
+cond7874(no)->op1
+st7820->io7822
+op7896->op2
+op7825->op7827
+op1->cond7832
+op7871->cond7874
+cond7832(yes)->op7871
+op7900->op2
+op7829->cond7832
+op7827->op7829
+cond7892(no)->op7900
+io7822->op7825
+cond7832(no)->io7910
+cond7892(yes)->op7896

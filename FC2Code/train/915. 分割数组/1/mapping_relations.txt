@@ -1,0 +1,18 @@
+def partitionDisjoint(self, nums: List[int]) -> int:    #io35080
+    n = len(nums)    #op35083
+    maxleft = [0] * n    #op35085
+    minright = [0] * n    #op35087
+    m = nums[0]    #op35089
+    for i in range(n):    #cond35094
+        m = max(m, nums[i])    #op35103
+        maxleft[i] = m    #op35105
+    m = nums[-1]    #op35109
+    for i in range(n-1, -1, -1):    #cond35114
+        m = min(m, nums[i])    #op35123
+        minright[i] = m    #op35125
+    index = -1    #op35129
+    for i in range(1, n):    #cond35134
+        if maxleft[i-1] <= minright[i]:    #cond35152
+            index = i    #op35156
+            break    #None
+    return index    #io35168

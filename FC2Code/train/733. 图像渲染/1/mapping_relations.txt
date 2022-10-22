@@ -1,0 +1,17 @@
+def floodFill(self, image: List[List[int]], sr: int, sc: int, newColor: int) -> List[List[int]]:    #io28915
+    currColor = image[sr][sc]    #op28918
+    if currColor == newColor:    #cond28921
+        return image    #io28928
+    n, m = len(image), len(image[0])    #op28934
+    que = collections.deque([(sr, sc)])    #op28936
+    image[sr][sc] = newColor    #op28938
+    while que:    #cond28941
+        x, y = que.popleft()    #op29006
+        for mx, my in [(x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1)]:    #cond29011
+            if mx < 0 or mx >= n or my < 0 or my >= m:    #cond29041
+                continue    #None
+            if image[mx][my] != currColor:    #cond29051
+                continue    #None
+            que.append((mx, my))    #op29060
+            image[mx][my] = newColor    #op29062
+    return image    #io29071

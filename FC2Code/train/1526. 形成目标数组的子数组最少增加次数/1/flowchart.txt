@@ -1,0 +1,21 @@
+io14274=>inputoutput: input: self, target
+st14272=>start: start minNumberOperations
+op14281=>operation: 定义数组索引i等于1
+op14277=>operation: 定义变量size等于数组target的长度
+op1=>operation: 数组索引等于其自身加一
+e14296=>end: end function return
+op14279=>operation: 定义变量ans等于数组target首项元素，用于记录最少操作次数
+op14291=>operation: 计算数组中当前索引处元素与当前索引减一处元素的差值，令最少操作次数加上该计算结果与0之间的最大值
+io14298=>inputoutput: output:  返回最少操作次数
+cond14284=>condition: 数组索引小于数组的长度
+
+op14279->op14281
+cond14284(yes)->op14291
+op14281->cond14284
+cond14284(no)->io14298
+st14272->io14274
+io14298->e14296
+op14277->op14279
+op14291->op1
+io14274->op14277
+op1->cond14284

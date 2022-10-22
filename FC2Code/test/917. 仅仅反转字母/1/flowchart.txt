@@ -1,0 +1,36 @@
+op35242=>operation: 左指针加一
+op35184=>operation: 定义左指针lp等于0
+op35270=>operation: 左指针加一
+io35279=>inputoutput: output:  返回数组对应的字符串形式
+op35182=>operation: 定义数组ans，并使用字符串seq初始化数组
+cond35235=>condition: 左指针小于右指针且数组左指针元素不是字母
+op35268=>operation: 交换数组中的左指针元素和右指针元素
+op35186=>operation: 定义右指针rp等于数组的长度减一
+cond35259=>condition: 左指针大于右指针
+op35254=>operation: 右指针减一
+op35272=>operation: 右指针减一
+cond35247=>condition: 右指针大于左指针且数组右指针元素不是字母
+io35179=>inputoutput: input: self, seq
+st35177=>start: start reverseOnlyLetters
+e35277=>end: end function return
+cond35189=>condition: 进入循环
+
+cond35189(yes)->cond35235
+cond35259(no)->op35268
+op35272->cond35189
+io35279->e35277
+io35179->op35182
+op35254->cond35247
+cond35235(yes)->op35242
+op35182->op35184
+cond35189(no)->io35279
+cond35247(yes)->op35254
+st35177->io35179
+op35268->op35270
+op35242->cond35235
+cond35235(no)->cond35247
+cond35247(no)->cond35259
+op35184->op35186
+op35186->cond35189
+op35270->op35272
+cond35259(yes)->io35279

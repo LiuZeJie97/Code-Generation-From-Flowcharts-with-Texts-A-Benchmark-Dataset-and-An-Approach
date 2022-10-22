@@ -1,0 +1,38 @@
+io5756=>inputoutput: output:  直接返回字符串s
+op5799=>operation: 如果之前是向下移动，则调整为向上移动。否则，调整为向下移动
+op5792=>operation: 第i行存放的字符等于其自身拼接上c
+cond5773=>condition: 字符串内还有字符没有被遍历
+cond5749=>condition: 给定行数numRows小于2
+op5804=>operation: 行数向上或向下移动一个单位，即行数等于其自身加上flag
+cond5795=>condition: 若行数i等于0或者行数等于最后一行
+e5809=>end: end function return
+op5762=>operation: 初始化res=["", ,""]，长度等于给定的行数，res[i]表示第i行存放的字符。
+op1=>operation: 更新当前字符为字符串中的下一个字符
+io5745=>inputoutput: input: self, s, numRows
+op5768=>operation: 初始行数i等于0
+st5743=>start: start convert
+op5764=>operation: n等于字符串的长度
+e5754=>end: end function return
+io5811=>inputoutput: output:  将各行存放的字符连接起来并返回。
+op5770=>operation: c为当前字符，初值等于字符串的第一个字符
+op5766=>operation: 初始化标志flag，flag等于-1表示向下移动，等于1表示向上移动，初值为-1
+
+op5768->op5770
+st5743->io5745
+cond5749(no)->op5762
+op5799->op5804
+op5804->op1
+op5762->op5764
+op5770->cond5773
+op5766->op5768
+op1->cond5773
+cond5773(no)->io5811
+cond5795(no)->op5804
+io5745->cond5749
+cond5749(yes)->io5756
+op5792->cond5795
+op5764->op5766
+io5756->e5754
+cond5773(yes)->op5792
+cond5795(yes)->op5799
+io5811->e5809

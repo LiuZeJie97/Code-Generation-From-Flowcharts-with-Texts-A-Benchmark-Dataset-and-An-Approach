@@ -1,0 +1,26 @@
+op11852=>operation: 令最小步骤数加一
+op11821=>operation: ans等于0，用于记录最小步骤数
+io11816=>inputoutput: input: self, source, target
+cond11826=>condition: 数组下标小于字符串target的长度
+op11819=>operation: s_cnt为字符串source的计数结果
+e11858=>end: end function return
+op1=>operation: 数组下标加一
+st11814=>start: start minSteps
+op11823=>operation: 数组下标idx等于0
+io11860=>inputoutput: output:  返回最小步骤数
+cond11844=>condition: 计数结果中下标为target[idx]的元素大于0
+op11848=>operation: 令该元素减一
+
+op11819->op11821
+op11852->op1
+op11848->op1
+op11821->op11823
+io11816->op11819
+st11814->io11816
+io11860->e11858
+cond11826(yes)->cond11844
+cond11826(no)->io11860
+op11823->cond11826
+cond11844(yes)->op11848
+cond11844(no)->op11852
+op1->cond11826

@@ -1,0 +1,59 @@
+op29364=>operation: 数组dist中下标为k-1的元素值为0
+e29477=>end: end function return
+op29362=>operation: 定义长度为n的数组dist，其初值均为float型的inf，dist[i]表示从点k出发到点i的最短路
+op3=>operation: 数组下标加一
+op29449=>operation: 将x的值更新为y
+cond29371=>condition: i小于n
+op2=>operation: 循环次数加一
+cond29429=>condition: y小于n
+st29341=>start: start networkDelayTime
+op1=>operation: 更新该数组中当前被遍历元素
+op29346=>operation: 定义n行n列的二维数组表示图，其初值均为float型的inf，g[i][j]表示从图中从点i到j的边值
+op29424=>operation: 定义变量x等于-1
+io29479=>inputoutput: output:  如果答案小于float型的inf，返回答案，否则返回-1
+op29468=>operation: 从点k出发到点y的最短路等于它和从点k出发到点x的最短路加图中从点x到y的边值之间的最小值
+io29343=>inputoutput: input: self, times, n, k
+op29456=>operation: 点x被访问过
+op29348=>operation: x为数组times中元素的第一项，y为数组中元素的第二项，time为数组中元素的第三项
+op29458=>operation: y为数组下标，time为图中从点x到y的边值
+op29426=>operation: y为数组下标
+op29358=>operation: 图中从点x-1到y-1的边值等于time
+op29366=>operation: 定义长度为n初值为False数组used用于记录点n是否访问过
+cond29461=>condition: 对数组g[x]进行遍历
+op29474=>operation: 定义答案ans等于数组dist中的最大值
+cond29445=>condition: 如果点y没有被访问过且满足如下条件：x等于-1或从点k出发到点y的最短路小于从点k出发到点x的最短路
+cond29351=>condition: 对该数组进行遍历
+op29368=>operation: i为循环次数
+op4=>operation: 更新数组下标，并更新对应的边值
+
+cond29461(yes)->op29468
+op3->cond29429
+op29456->op29458
+op29458->cond29461
+cond29429(no)->op29456
+cond29371(no)->op29474
+op29348->cond29351
+op1->cond29351
+op29424->op29426
+io29479->e29477
+op29362->op29364
+op29366->op29368
+op29358->op1
+op29468->op4
+io29343->op29346
+op29346->op29348
+cond29445(no)->op3
+op29364->op29366
+op2->cond29371
+cond29445(yes)->op29449
+op29368->cond29371
+cond29351(no)->op29362
+cond29429(yes)->cond29445
+op29426->cond29429
+op29449->op3
+op29474->io29479
+cond29351(yes)->op29358
+cond29461(no)->op2
+cond29371(yes)->op29424
+op4->cond29461
+st29341->io29343

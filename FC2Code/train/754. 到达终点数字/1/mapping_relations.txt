@@ -1,0 +1,7 @@
+def reachNumber(self, target):    #io29633
+    target = abs(target)    #op29636
+    k = 0    #op29638
+    while target > 0:    #cond29641
+        k += 1    #op29650
+        target -= k    #op29652
+    return k if target % 2 == 0 else k + 1 + k % 2    #io29659

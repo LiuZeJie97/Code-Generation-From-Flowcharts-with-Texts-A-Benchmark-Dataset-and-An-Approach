@@ -1,0 +1,20 @@
+def calculate(self, s: str) -> int:    #io17658
+    n = len(s)    #op17661
+    stack = list()    #op17663
+    preSign = '+'    #op17665
+    num = 0    #op17667
+    for i in range(n):    #cond17672
+        if s[i].isdigit():    #cond17732
+            num = num * 10 + ord(s[i]) - ord('0')    #op17736
+        if i == n - 1 or s[i] in '+-*/':    #cond17742
+            if preSign == '+':    #cond17747
+                stack.append(num)    #op17751
+            elif preSign == '-':    #cond17756
+                stack.append(-num)    #op17760
+            elif preSign == '*':    #cond17765
+                stack.append(stack.pop() * num)    #op17769
+            else:    #None
+                stack.append(int(stack.pop() / num))    #op17773
+            preSign = s[i]    #op17778
+            num = 0    #op17780
+    return sum(stack)    #io17790

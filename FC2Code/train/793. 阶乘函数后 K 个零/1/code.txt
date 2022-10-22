@@ -1,0 +1,16 @@
+def preimageSizeFZF(self, k: int) -> int:
+    low, high = k, 10 * k + 1
+    while low < high:
+        center = (low + high) // 2
+        num = center
+        count = 0
+        while num:
+            count += num // 5
+            num = num // 5
+        if count == k:
+            return 5
+        elif count < k:
+            low = center + 1
+        else:
+            high = center
+    return 0

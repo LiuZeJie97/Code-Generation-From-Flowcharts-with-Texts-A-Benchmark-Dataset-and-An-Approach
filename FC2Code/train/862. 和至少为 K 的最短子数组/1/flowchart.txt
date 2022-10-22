@@ -1,0 +1,44 @@
+op33260=>operation: 将0加入数组P
+op33258=>operation: 初始化数组P
+op33262=>operation: num为数组A中的元素
+cond33327=>condition: 当队列不为空且当前遍历元素与数组P中下标为队列最后一项的元素的差值大于等于k
+op33256=>operation: N为数组A的长度
+op33334=>operation: 计算y与队列中队头元素的差值，答案ans等于它与上述计算结果之间的最小值，将队头元素出队
+op1=>operation: 更新当前下标及其对应的当前遍历元素
+op33278=>operation: 初始化队列monoq
+io33253=>inputoutput: input: self, A, k
+st33251=>start: start shortestSubarray
+op33272=>operation: 计算数组P中最后一项元素与当前遍历元素的和，将计算结果加入数组P
+cond33283=>condition: 对数组进行遍历
+io33345=>inputoutput: output:  如果答案小于数组num的长度加一，则返回答案，否则返回-1
+op33276=>operation: 定义答案ans，初值为数组A的长度加一
+e33343=>end: end function return
+cond33315=>condition: 当队列不为空且当前遍历元素小于数组P中下标为队列最后一项的元素
+op33322=>operation: 移除队列中最后一项元素
+op33338=>operation: 将y加入队列
+cond33265=>condition: 对数组进行遍历
+op33280=>operation: y为数组下标，初值为0；Py为数组P中下标为y的元素
+
+cond33265(yes)->op33272
+op33262->cond33265
+cond33283(yes)->cond33315
+cond33327(no)->op33338
+op33322->cond33315
+cond33315(no)->cond33327
+op33280->cond33283
+cond33315(yes)->op33322
+cond33327(yes)->op33334
+op33260->op33262
+op33272->cond33265
+st33251->io33253
+cond33265(no)->op33276
+op33338->op1
+op33334->cond33327
+io33345->e33343
+io33253->op33256
+op1->cond33283
+cond33283(no)->io33345
+op33276->op33278
+op33256->op33258
+op33278->op33280
+op33258->op33260

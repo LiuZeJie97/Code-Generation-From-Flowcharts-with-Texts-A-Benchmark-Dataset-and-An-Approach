@@ -1,0 +1,19 @@
+def minRemoveToMakeValid(self, s: str) -> str:    #io9283
+    itr = set()    #op9286
+    stk = []    #op9288
+    for i in range(len(s)):    #cond9293
+        if s[i] != '(' and s[i] != ')':    #cond9331
+            continue    #None
+        if s[i] == '(':    #cond9341
+            stk.append(i)    #op9345
+        elif not stk:    #cond9350
+            itr.add(i)    #op9354
+        else:    #None
+            stk.pop()    #op9358
+    for i in range(len(stk)):    #cond9367
+        itr.add(stk[i])    #op9374
+    builder = []    #op9378
+    for i in range(len(s)):    #cond9383
+        if i not in itr:    #cond9399
+            builder.append(s[i])    #op9403
+    return "".join(builder)    #io9413

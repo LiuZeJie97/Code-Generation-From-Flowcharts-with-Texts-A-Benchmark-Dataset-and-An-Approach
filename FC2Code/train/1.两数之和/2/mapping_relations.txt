@@ -1,0 +1,7 @@
+def twoSum(self, nums: List[int], target: int) -> List[int]:    #io110
+    hashtable = {}    #op113
+    for i, num in enumerate(nums):    #cond118
+        if target - num in hashtable:    #cond140
+            return [hashtable[target - num], i]    #io147
+        hashtable[nums[i]] = i    #op153
+    return []    #io160

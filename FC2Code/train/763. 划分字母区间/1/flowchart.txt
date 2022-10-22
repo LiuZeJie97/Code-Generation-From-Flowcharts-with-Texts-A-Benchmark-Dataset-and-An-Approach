@@ -1,0 +1,39 @@
+op29691=>operation: 定义变量start和end，其初值均为0
+op29675=>operation: idx为字符串索引，初值为0；ch为字符串s中当前索引处的字符
+io29670=>inputoutput: input: self, s
+st29668=>start: start partitionLabels
+op29673=>operation: 定义长度为26的数组last，其初值均为0
+cond29696=>condition: 对字符串进行遍历
+op29685=>operation: 计算当前索引处的字符的Unicode值减去字符"a"的Unicode值，数组last中下标为该计算结果的元素等于idx
+io29734=>inputoutput: output:  返回数组partition
+op29693=>operation: i为字符串索引，初值为0；ch为字符串s中当前索引处的字符
+op29715=>operation: 变量end等于它与数组last中下标等于字符ch的Unicode值减去字符"a"的Unicode值的元素之间的最大值
+op29689=>operation: 初始化数组partition
+op1=>operation: 字符串索引加一，当前索引处的字符等于字符串中的下一个字符
+op2=>operation: 字符串索引加一，当前索引处的字符等于字符串中的下一个字符
+e29732=>end: end function return
+op29724=>operation: start的值更新为end加一
+cond29678=>condition: 对字符串进行遍历
+op29722=>operation: 计算end减去start再加一，向数组partition添加该计算结果
+cond29718=>condition: 当前索引等于end
+
+cond29678(no)->op29689
+op1->cond29678
+op29691->op29693
+op2->cond29696
+cond29678(yes)->op29685
+op29673->op29675
+cond29696(yes)->op29715
+st29668->io29670
+op29685->op1
+cond29696(no)->io29734
+io29670->op29673
+op29689->op29691
+op29722->op29724
+cond29718(no)->op2
+op29693->cond29696
+op29715->cond29718
+op29724->op2
+op29675->cond29678
+cond29718(yes)->op29722
+io29734->e29732

@@ -1,0 +1,21 @@
+op18635=>operation: 定义变量k等于0，用于遍历数组
+op18633=>operation: 定义集合s，并使用数组a初始化集合
+e18663=>end: end function return
+io18630=>inputoutput: input: self, a
+op1=>operation: 令当前变量等于k加一
+io18665=>inputoutput: output:  返回当前变量
+cond18658=>condition: 当前变量不在集合中
+st18628=>start: start missingNumber
+e18673=>end: end missingNumber
+cond18638=>condition: 上述变量小于数组的长度加一
+
+cond18658(no)->op1
+cond18638(yes)->cond18658
+cond18638(no)->e18673
+io18630->op18633
+op1->cond18638
+cond18658(yes)->io18665
+io18665->e18663
+st18628->io18630
+op18633->op18635
+op18635->cond18638

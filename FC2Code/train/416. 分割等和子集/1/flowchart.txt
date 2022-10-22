@@ -1,0 +1,70 @@
+op4774=>operation: dp[i][j]的值等于dp[i - 1][j] 或 dp[i - 1][j - num]。
+op4635=>operation: 定义n为数组nums的长度
+io4645=>inputoutput: output:  不可能将数组分割成元素和相等的两个子集
+cond4656=>condition: 判断元素和是否是奇数
+op4653=>operation: 计算nums的最大元素maxNum
+op4749=>operation: 定义j为db第二维的下标，初值为1
+op3=>operation: db第二维的下标向右移一个单位
+cond4706=>condition: db的第一维的下标小于数组nums的长度
+op4747=>operation: 定义当前数字num为nums第i个元素的值。
+op4687=>operation: 定义i为db的第一维的下标
+e4661=>end: end function return
+st4630=>start: start canPartition
+io4679=>inputoutput: output:  不可能将数组分割成元素和相等的两个子集
+cond4690=>condition: db的第一维的下标小于数组nums的长度
+op4701=>operation: 对于下标范围为[0,0]且正整数的和等于nums[0]的情况，一定存在方案，更新dp对应位置为true。
+e4677=>end: end function return
+cond4752=>condition: 判断第二维的下标是否小于目标值加1
+cond4770=>condition: 判断正整数的和j是否大于当前数字
+e4786=>end: end function return
+io4663=>inputoutput: output:  不可能将数组分割成元素和相等的两个子集
+op4778=>operation: dp[i][j] 的值等于dp[i - 1][j]
+op4651=>operation: 计算nums的元素和total
+io4788=>inputoutput: output:  返回dp第n1行第target列的值
+e4643=>end: end function return
+op4697=>operation: 对于正整数的和等于0的情况，一定存在方案，更新对应位置为true。
+cond4638=>condition: 判断nums长度是否小于2：
+op4685=>operation: 创建二维数组 dp，包含 n 行 target+1 列，dp 中的全部元素全部初始化为 false。其中 dp[i][j] 表示从数组的 [0,i] 下标范围内选取若干个正整数（可以是 0 个），是否存在一种选取方案使得被选取的正整数的和等于j。
+op1=>operation: db的第一维的下标向右移一个单位
+op2=>operation: db的第一维的下标向右移一个单位
+op4703=>operation: 定义i为db的第一维的下标，初值为1
+io4632=>inputoutput: input: self, nums
+cond4672=>condition: 判断数组中最大的元素是否大于目标值
+op4669=>operation: 令目标值target为整个数组元素和的一半
+
+op4774->op3
+cond4672(yes)->io4679
+io4632->op4635
+cond4752(yes)->cond4770
+op4778->op3
+io4645->e4643
+op4747->op4749
+op4669->cond4672
+op4703->cond4706
+op4697->op1
+cond4706(no)->io4788
+op4685->op4687
+cond4752(no)->op2
+op1->cond4690
+cond4690(yes)->op4697
+io4788->e4786
+cond4638(no)->op4651
+cond4706(yes)->op4747
+op2->cond4706
+io4663->e4661
+op4701->op4703
+io4679->e4677
+cond4656(no)->op4669
+cond4770(yes)->op4774
+cond4656(yes)->io4663
+op4749->cond4752
+cond4672(no)->op4685
+op4651->op4653
+op4687->cond4690
+cond4770(no)->op4778
+cond4690(no)->op4701
+op4635->cond4638
+op3->cond4752
+op4653->cond4656
+st4630->io4632
+cond4638(yes)->io4645

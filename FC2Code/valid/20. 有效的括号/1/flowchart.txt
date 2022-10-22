@@ -1,0 +1,38 @@
+cond3626=>condition: 下标小于字符串的长度
+op1=>operation: 下标i向右移动一个单位
+cond3677=>condition: 栈不为空
+io3693=>inputoutput: output:  返回False
+io3616=>inputoutput: input: self, s
+op3621=>operation: 定义“栈”left_stack，初始值为空向量，用于存放待匹配的左括号
+op3708=>operation: 遇到左括号，将其入栈
+cond3682=>condition: 若位于栈顶的左括号和该右括号匹配
+cond3672=>condition: 遇到右括号，即：下标所指的字符在词典中
+op3623=>operation: i等于0，为字符串s的下标
+io3716=>inputoutput: output:  如果栈为空，返回True，否则返回False
+op3686=>operation: 则将左括号退栈
+e3714=>end: end function return
+st3614=>start: start isValid
+io3702=>inputoutput: output:  返回False
+e3700=>end: end function return
+e3691=>end: end function return
+op3619=>operation: 初始化括号对应关系字典dict等于{")":"(","}":"{","]":"["}
+
+io3702->e3700
+cond3626(yes)->cond3672
+io3616->op3619
+cond3677(yes)->cond3682
+op3623->cond3626
+cond3672(no)->op3708
+io3693->e3691
+st3614->io3616
+op3619->op3621
+cond3677(no)->io3702
+op1->cond3626
+op3708->op1
+cond3626(no)->io3716
+io3716->e3714
+op3686->op1
+cond3672(yes)->cond3677
+op3621->op3623
+cond3682(no)->io3693
+cond3682(yes)->op3686

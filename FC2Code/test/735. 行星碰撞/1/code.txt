@@ -1,0 +1,13 @@
+def asteroidCollision(self, asteroids: List[int]) -> List[int]:
+    ans = []
+    for idx in range(len(asteroids)):
+        while ans and asteroids[idx] < 0 and ans[-1] > 0:
+            if ans[-1] + asteroids[idx] < 0:
+                ans.pop()
+                continue
+            elif ans[-1] + asteroids[idx] == 0:
+                ans.pop()
+            break
+        else:
+            ans.append(asteroids[idx])
+    return ans

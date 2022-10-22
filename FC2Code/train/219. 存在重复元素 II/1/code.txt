@@ -1,0 +1,11 @@
+def containsNearbyDuplicate(self, n: List[int], k: int) -> bool:
+    s = set()
+    f = False
+    for i in range(len(n)):
+        if i > k:
+            s.remove(n[i - k - 1])
+        if n[i] in s:
+            f = True
+            break
+        s.add(n[i])
+    return f

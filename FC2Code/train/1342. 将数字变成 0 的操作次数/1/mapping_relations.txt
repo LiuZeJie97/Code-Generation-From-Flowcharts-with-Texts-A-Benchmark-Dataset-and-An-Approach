@@ -1,0 +1,8 @@
+def numberOfSteps(self, num: int) -> int:    #io11390
+    cnt = 0    #op11393
+    while num:    #cond11396
+        cnt += num & 1    #op11415
+        if num > 1:    #cond11418
+            cnt += 1    #op11422
+        num >>= 1    #op11427
+    return cnt    #io11434

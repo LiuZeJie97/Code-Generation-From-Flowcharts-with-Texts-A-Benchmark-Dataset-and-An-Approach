@@ -1,0 +1,51 @@
+op2=>operation: 下标自增1
+op18009=>operation: 定义队列Q
+op18007=>operation: n为整数数组N的长度
+st18002=>start: start maxSlidingWindow
+cond18090=>condition: 队列不为空且数组N中当前下标对应的数大于等于下标等于队列中队尾元素的数
+op18045=>operation: 将i入队
+op18051=>operation: 将数组N中下标等于队头元素的数添加进数组ans中
+cond18014=>condition: 下标小于数组N的长度
+op18011=>operation: 定义下标i，初值为0
+op18041=>operation: 队尾元素出队
+e18120=>end: end function return
+op18053=>operation: 下标i等于k
+op1=>operation: 下标自增1
+cond18034=>condition: 队列不为空且整数数组N中当前下标对应的数大于等于下标等于队列中队尾元素的数
+cond18056=>condition: 下标小于数组N的长度
+io18004=>inputoutput: input: self, N, k
+cond18104=>condition: 队头元素小于等于i-k
+op18097=>operation: 队尾元素出队
+io18122=>inputoutput: output:  返回滑动窗口中的最大值
+op18115=>operation: 将数组N中下标等于队头元素的数添加进数组ans中
+op18101=>operation: 将i入队
+op18111=>operation: 队头元素出队
+op18049=>operation: 定义数组ans用于记录滑动窗口中的最大值
+
+op18045->op1
+op18101->cond18104
+op1->cond18014
+op18111->cond18104
+op18011->cond18014
+cond18104(yes)->op18111
+st18002->io18004
+op18007->op18009
+cond18104(no)->op18115
+op18049->op18051
+io18004->op18007
+io18122->e18120
+cond18034(yes)->op18041
+op18051->op18053
+cond18090(yes)->op18097
+cond18090(no)->op18101
+op18115->op2
+op18097->cond18090
+cond18014(yes)->cond18034
+op18041->cond18034
+cond18056(yes)->cond18090
+cond18014(no)->op18049
+op2->cond18056
+op18009->op18011
+op18053->cond18056
+cond18034(no)->op18045
+cond18056(no)->io18122

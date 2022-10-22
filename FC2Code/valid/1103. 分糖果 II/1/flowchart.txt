@@ -1,0 +1,23 @@
+op8292=>operation: 定义长度等于num_people的数组status用于记录糖果的分发情况，数组元素初值均为0，
+op8316=>operation: 令i加一
+op8312=>operation: 令数组status中下标为当前位置的元素等于i加一与糖果数量之间的最小值
+io8323=>inputoutput: output:  返回糖果的分发情况
+op8314=>operation: 令糖果数量减去该最小值
+st8287=>start: start distributeCandies
+cond8297=>condition: 糖果数量candies不为0
+op8294=>operation: 定义变量i等于0
+op8310=>operation: 定义变量pos等于i除以num_people的余数，表示当前位置
+e8321=>end: end function return
+io8289=>inputoutput: input: self, candies, num_people
+
+cond8297(no)->io8323
+op8292->op8294
+cond8297(yes)->op8310
+op8294->cond8297
+io8323->e8321
+op8310->op8312
+st8287->io8289
+op8312->op8314
+op8316->cond8297
+op8314->op8316
+io8289->op8292

@@ -1,0 +1,20 @@
+def longestSubarray(self, a: List[int], limit: int) -> int:    #io12558
+    n = len(a)    #op12561
+    queMax, queMin = deque(), deque()    #op12563
+    left = right = ret = 0    #op12565
+    while right < n:    #cond12568
+        while queMax and queMax[-1] < a[right]:    #cond12658
+            queMax.pop()    #op12665
+        while queMin and queMin[-1] > a[right]:    #cond12670
+            queMin.pop()    #op12677
+        queMax.append(a[right])    #op12681
+        queMin.append(a[right])    #op12683
+        while queMax and queMin and queMax[0] - queMin[0] > limit:    #cond12686
+            if a[left] == queMin[0]:    #cond12714
+                queMin.popleft()    #op12718
+            if a[left] == queMax[0]:    #cond12724
+                queMax.popleft()    #op12728
+            left += 1    #op12733
+        ret = max(ret, right - left + 1)    #op12737
+        right += 1    #op12739
+    return ret    #io12746

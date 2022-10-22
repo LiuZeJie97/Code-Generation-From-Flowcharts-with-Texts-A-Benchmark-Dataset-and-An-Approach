@@ -1,0 +1,6 @@
+def canMeasureWater(self, x: int, y: int, z: int) -> bool:    #io19687
+    if x + y < z:    #cond19691
+        return False    #io19698
+    if x == 0 or y == 0:    #cond19705
+        return z == 0 or x + y == z    #io19712
+    return z % math.gcd(x, y) == 0    #io19721

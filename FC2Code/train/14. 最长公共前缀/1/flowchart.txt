@@ -1,0 +1,37 @@
+op1=>operation: 下标i增加1
+op1433=>operation: 使用prefix记录最长公共前缀，初值为字符串数组的第一个字符串，使用count记录字符串数组的长度
+cond1476=>condition: 最长公共前缀的索引小于较小值 prefix中下标为索引的元素值等于字符串中下标为索引的元素值
+op1487=>operation: 更新最长公共前缀prefix等于最长公共前缀中从下标0开始到索引为止的子串
+io1416=>inputoutput: input: self, strs
+op1471=>operation: 定义较小值length，length等于最长公共前缀的长度和当前字符串的长度的较小值
+op1483=>operation: 索引自增1
+io1427=>inputoutput: output:  返回空的字符串
+cond1420=>condition: 如果字符串数组strs不存在
+st1414=>start: start longestCommonPrefix
+op1473=>operation: 索引index等于0
+e1425=>end: end function return
+e1502=>end: end function return
+cond1438=>condition: 字符串数组的下标小于字符串数组的长度
+io1504=>inputoutput: output:  返回最长公共前缀
+op1435=>operation: 定义i，i等于1，为字符串数组的下标，用于记录当前字符串
+cond1490=>condition: 最长公共前缀已经是空串
+
+st1414->io1416
+cond1476(yes)->op1483
+cond1490(no)->op1
+op1435->cond1438
+op1->cond1438
+cond1438(no)->io1504
+cond1420(no)->op1433
+cond1420(yes)->io1427
+io1416->cond1420
+op1433->op1435
+io1427->e1425
+op1473->cond1476
+cond1476(no)->op1487
+op1483->cond1476
+cond1438(yes)->op1471
+io1504->e1502
+op1487->cond1490
+op1471->op1473
+cond1490(yes)->io1504

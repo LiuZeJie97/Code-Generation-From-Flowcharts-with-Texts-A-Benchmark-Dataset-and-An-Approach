@@ -1,0 +1,25 @@
+e9613=>end: end function return
+op9604=>operation: y0、y1分别等于points[i]中第一项元素、最后一项元素
+io9615=>inputoutput: output:  返回最小时间
+io9583=>inputoutput: input: self, points
+cond9593=>condition: 数组索引小于数组points的长度
+op9608=>operation: 令x0、x1分别等于数组points[0]中第一项元素、最后一项元素
+op9588=>operation: 最小时间ans等于0
+op9606=>operation: 计算x0减去y0的绝对值，x1减去y1的绝对值，令最小时间加上它们之间的最大值
+st9581=>start: start minTimeToVisitAllPoints
+op9590=>operation: 数组索引i等于1
+op9586=>operation: x0、x1分别等于数组points[0]中第一项元素、最后一项元素
+op1=>operation: 数组索引加一
+
+io9615->e9613
+op1->cond9593
+st9581->io9583
+op9608->op1
+cond9593(yes)->op9604
+op9590->cond9593
+op9588->op9590
+cond9593(no)->io9615
+io9583->op9586
+op9604->op9606
+op9586->op9588
+op9606->op9608

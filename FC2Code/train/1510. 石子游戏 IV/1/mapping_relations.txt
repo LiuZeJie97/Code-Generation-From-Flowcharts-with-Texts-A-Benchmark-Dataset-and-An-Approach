@@ -1,0 +1,11 @@
+def winnerSquareGame(self, n: int) -> bool:    #io14001
+    f = [False] * (n + 1)    #op14004
+    for t in range(1, n + 1):    #cond14009
+        k = 1    #op14056
+        while k * k <= t:    #cond14059
+            num = t - k * k    #op14080
+            if not f[num]:    #cond14083
+                f[t] = True    #op14087
+                break    #None
+            k += 1    #op14094
+    return f[n]    #io14103

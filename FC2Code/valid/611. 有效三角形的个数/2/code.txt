@@ -1,0 +1,11 @@
+def triangleNumber(self, array: List[int]) -> int:
+    size = len(array)
+    array.sort()
+    answer = 0
+    for i in range(size):
+        k = i
+        for j in range(i + 1, size):
+            while k + 1 < size and array[k + 1] < array[i] + array[j]:
+                k += 1
+            answer += max(k - j, 0)
+    return answer

@@ -1,0 +1,33 @@
+cond24618=>condition: 数组下标小于数组f的长度加一
+op24663=>operation: 将打印出i个A的最少操作次数初始化为float型的inf
+op24692=>operation: 计算打印出j个A的最少操作次数加上i整除j的结果，令打印出i个A的最少操作次数等于它自身与上述计算结果之间的最小值
+op24665=>operation: 定义变量j，初值为1
+e24706=>end: end function return
+op24615=>operation: i为数组下标，其初值为2
+io24610=>inputoutput: input: self, n
+op1=>operation: 将当前数组下标的值更新为当前数组下标加一
+cond24688=>condition: i可以整除j
+io24708=>inputoutput: output:  返回打印出n个A的最少操作次数
+op24613=>operation: 初始化长度为n+1的一维数组f，其初值均为0，f[i]表示打印出i个A的最少操作次数
+st24608=>start: start minSteps
+op24699=>operation: j加上一
+op24694=>operation: 计算打印出i整除j个A的最少操作次数加上j的结果，令打印出i个A的最少操作次数等于它自身与上述计算结果之间的最小值
+cond24668=>condition: j的平方小于i时
+
+io24610->op24613
+op1->cond24618
+op24615->cond24618
+cond24668(yes)->cond24688
+cond24618(no)->io24708
+io24708->e24706
+cond24668(no)->op1
+cond24688(yes)->op24692
+op24613->op24615
+cond24688(no)->op24699
+op24663->op24665
+op24694->op24699
+op24692->op24694
+cond24618(yes)->op24663
+st24608->io24610
+op24665->cond24668
+op24699->cond24668

@@ -1,0 +1,57 @@
+op2=>operation: 令i加一
+op11086=>operation: 定义变量i等于0
+op11096=>operation: 将i添加进prev中
+e11199=>end: end function return
+op11122=>operation: 定义变量BIG等于2的30次方
+op11114=>operation: 若点i处的水龙头与ranges[i]的差值大于0，变量l等于该差值，否则l等于0
+cond11089=>condition: i小于花园长度n加一
+cond11185=>condition: 数组dp中下标为j的元素不等于BIG
+io11201=>inputoutput: output:  如果数组dp中下标为n的元素不等于BIG，则返回该元素，否则返回-1
+op3=>operation: 令i加一
+op11084=>operation: 初始化数组prev
+op11126=>operation: 数组dp中第一项元素等于0
+cond11103=>condition: i小于花园长度n加一
+op11100=>operation: 定义变量i等于0
+op11124=>operation: 初始化数组dp，其长度等于花园长度加一，数组元素初值均为BIG
+op11118=>operation: 数组prev中下标为r的元素等于它与l之间的最小值
+op11116=>operation: 若点r处的水龙头与ranges[i]的和值大于花园长度，变量r等于该和值，否则r等于0
+cond11169=>condition: j小于i
+op11189=>operation: 数组dp中下标为i的元素等于它与下标为j的元素加一之间的最小值
+op1=>operation: 令i加一
+op4=>operation: 令j加一
+cond11131=>condition: i小于花园长度加一
+op11166=>operation: 定义变量j等于数组prev中下标为i的元素
+op11128=>operation: 定义变量i等于0
+st11079=>start: start minTaps
+io11081=>inputoutput: input: self, n, ranges
+
+op11124->op11126
+op11116->op11118
+op11128->cond11131
+op4->cond11169
+cond11131(yes)->op11166
+op11084->op11086
+cond11103(no)->op11122
+op11189->op4
+cond11185(no)->op4
+op11126->op11128
+cond11089(yes)->op11096
+cond11169(no)->op3
+cond11169(yes)->cond11185
+op11122->op11124
+op1->cond11089
+io11081->op11084
+cond11089(no)->op11100
+st11079->io11081
+op11118->op2
+cond11103(yes)->op11114
+op11114->op11116
+op11166->cond11169
+op11086->cond11089
+op2->cond11103
+op3->cond11131
+op11096->op1
+cond11185(yes)->op11189
+cond11131(no)->io11201
+io11201->e11199
+op11100->cond11103

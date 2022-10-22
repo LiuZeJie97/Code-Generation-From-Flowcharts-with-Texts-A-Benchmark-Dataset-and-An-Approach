@@ -1,0 +1,28 @@
+cond34507=>condition: 如果数组people中下标为最轻体重的元素加上下标为最重体重的元素大于limit
+st34473=>start: start numRescueBoats
+io34475=>inputoutput: input: self, people, limit
+op34515=>operation: 最轻体重加一
+op34478=>operation: 定义变量number等于0，用于记录承载所有人所需的最小船数
+io34527=>inputoutput: output:  返回承载所有人所需的最小船数
+op34511=>operation: 最重体重减一
+op34482=>operation: 定义变量light记录最轻体重，初值为0；变量heavy记录最重体重，初值为数组people的长度减一
+op34517=>operation: 最重体重减一
+cond34485=>condition: 当最轻体重小于等于最重体重
+op34480=>operation: 对数组people排序
+e34525=>end: end function return
+op34520=>operation: 承载所有人所需的最小船数加一
+
+op34515->op34517
+op34517->op34520
+op34511->op34520
+cond34485(yes)->cond34507
+op34480->op34482
+op34478->op34480
+op34520->cond34485
+cond34507(no)->op34515
+op34482->cond34485
+st34473->io34475
+io34475->op34478
+io34527->e34525
+cond34485(no)->io34527
+cond34507(yes)->op34511

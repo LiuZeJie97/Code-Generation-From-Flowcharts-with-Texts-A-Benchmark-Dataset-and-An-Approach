@@ -1,0 +1,21 @@
+io22769=>inputoutput: output:  返回答案
+st22743=>start: start arrayPairSum
+op22750=>operation: 定义变量result用于记录答案，初值为0
+op22762=>operation: 答案加上数组numbers中下标为index的数
+op22752=>operation: index为数组下标，初值为0
+io22745=>inputoutput: input: self, numbers
+op22748=>operation: 对数组numbers排序
+op1=>operation: 数组下标增加2
+cond22755=>condition: 数组下标小于数组的长度时
+e22767=>end: end function return
+
+cond22755(yes)->op22762
+st22743->io22745
+io22769->e22767
+op22750->op22752
+io22745->op22748
+op22762->op1
+op1->cond22755
+cond22755(no)->io22769
+op22748->op22750
+op22752->cond22755

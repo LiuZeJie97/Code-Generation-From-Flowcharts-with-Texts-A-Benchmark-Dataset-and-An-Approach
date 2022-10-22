@@ -1,0 +1,30 @@
+def subArrayRanges(self, nums: List[int]) -> int:    #io15515
+    n = len(nums)    #op15518
+    minLeft, maxLeft = [0] * n, [0] * n    #op15520
+    minStack, maxStack = [], []    #op15522
+    for i, num in enumerate(nums):    #cond15527
+        while minStack and nums[minStack[-1]] > num:    #cond15565
+            minStack.pop()    #op15572
+        minLeft[i] = minStack[-1] if minStack else -1    #op15576
+        minStack.append(i)    #op15578
+        while maxStack and nums[maxStack[-1]] <= num:    #cond15581
+            maxStack.pop()    #op15588
+        maxLeft[i] = maxStack[-1] if maxStack else -1    #op15592
+        maxStack.append(i)    #op15594
+    minRight, maxRight = [0] * n, [0] * n    #op15598
+    minStack, maxStack = [], []    #op15600
+    for i in range(n - 1, -1, -1):    #cond15605
+        num = nums[i]    #op15644
+        while minStack and nums[minStack[-1]] >= num:    #cond15647
+            minStack.pop()    #op15654
+        minRight[i] = minStack[-1] if minStack else n    #op15658
+        minStack.append(i)    #op15660
+        while maxStack and nums[maxStack[-1]] < num:    #cond15663
+            maxStack.pop()    #op15670
+        maxRight[i] = maxStack[-1] if maxStack else n    #op15674
+        maxStack.append(i)    #op15676
+    sumMax, sumMin = 0, 0    #op15680
+    for i, num in enumerate(nums):    #cond15685
+        sumMax += (maxRight[i] - i) * (i - maxLeft[i]) * num    #op15694
+        sumMin += (minRight[i] - i) * (i - minLeft[i]) * num    #op15696
+    return sumMax - sumMin    #io15703

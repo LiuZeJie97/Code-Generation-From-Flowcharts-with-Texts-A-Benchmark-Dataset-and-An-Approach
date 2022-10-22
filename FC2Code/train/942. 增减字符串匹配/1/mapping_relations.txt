@@ -1,0 +1,12 @@
+def diStringMatch(self, S):    #io36115
+    lo, hi = 0, len(S)    #op36118
+    ret = []    #op36120
+    for i in range(len(S)):    #cond36125
+        if S[i] == 'I':    #cond36147
+            ret.append(lo)    #op36151
+            lo += 1    #op36153
+        else:    #None
+            ret.append(hi)    #op36157
+            hi -= 1    #op36159
+    ret.append(lo)    #op36164
+    return ret    #io36169

@@ -1,0 +1,50 @@
+op1761=>operation: 找出dp[i+1][j]和dp[i][j+1]中的较小者，将较小者减去dungeon[i][j]，如果结果大于1，则取该结果为最小生命值，否则，最小生命值为1。
+io1690=>inputoutput: input: self, dungeon
+io1770=>inputoutput: output:  返回到达地下城第0行第0列的房间所需的最小生命值
+op1729=>operation: 定义下标i，初始值为m-2
+op1=>operation: 第二维的下标向左移动1个单位
+cond1718=>condition: 判断下标是否越界
+op1699=>operation: 初始化dp[m-1][n-1]，若位于第m1行第n1列房间的数值小于0，则到达此房间的最小生命值为1减去该房间的数值，否则为1。
+op3=>operation: 下标i减去1
+op1693=>operation: m用于记录地下城dungeon的行数
+op2=>operation: 第一维的下标向左移动1个单位
+op1751=>operation: 定义下标j，初始值为n-2
+cond1704=>condition: 判断i是否大于-1
+op1695=>operation: n用于记录地下城的列数
+cond1732=>condition: 判断下标是否大于-1
+op4=>operation: 下标j减去1
+op1701=>operation: 定义i为dp第二维的下标，初始值为n-2
+cond1754=>condition: 判断下标是否大于-1
+op1725=>operation: 计算到达第i行第n-1列的房间的所需最小生命值，如果dp[i+1][-1]减去dungeon[i][-1]的计算结果大于1，则取计算结果为最小生命值，否则，最小生命值为1。
+e1768=>end: end function return
+op1697=>operation: 初始化dp，行数等于为dungeon的行数，列数等于地下城的列数，是个全零二维数组，dp[i][j]表示到达地下城第i行第j列的房间所需的最小生命值。
+op1715=>operation: 定义i为dp第一维的下标，初始值为n-2
+st1688=>start: start calculateMinimumHP
+op1711=>operation: 计算到达第m-1行第j列的房间的所需最小生命值，如果dp[i+1][-1]减去dungeon[i][-1]的计算结果大于1，则计算结果即为最小生命值，否则，最小生命值为1。
+
+op1715->cond1718
+op1697->op1699
+cond1704(no)->op1715
+op3->cond1732
+st1688->io1690
+op1711->op1
+op1695->op1697
+cond1754(yes)->op1761
+cond1754(no)->op3
+op1751->cond1754
+op1761->op4
+io1770->e1768
+cond1718(yes)->op1725
+op1701->cond1704
+op1->cond1704
+cond1718(no)->op1729
+cond1732(yes)->op1751
+op1725->op2
+op1699->op1701
+io1690->op1693
+op2->cond1718
+op1729->cond1732
+cond1704(yes)->op1711
+cond1732(no)->io1770
+op4->cond1754
+op1693->op1695

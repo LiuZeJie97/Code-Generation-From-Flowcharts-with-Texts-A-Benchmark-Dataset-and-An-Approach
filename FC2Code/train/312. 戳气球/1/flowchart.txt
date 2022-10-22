@@ -1,0 +1,50 @@
+op4=>operation: 令k自增1
+st19023=>start: start maxCoins
+op19048=>operation: i为数组下标，初值为数组nums的长度减一
+op19156=>operation: 计算戳破从i到k气球能得到的最大硬币数加上戳破从k到j气球能得到的最大硬币数，将total加上该计算结果
+op19028=>operation: n为数组nums的长度
+op19140=>operation: 定义变量k，初值为i+1
+cond19037=>condition: i小于数组nums的长度
+cond19113=>condition: j小于数组nums的长度加2
+io19025=>inputoutput: input: self, nums
+e19167=>end: end function return
+op19032=>operation: 定义长度为n+2的数组val，其初值均为1
+op19030=>operation: 定义n+2行n+2列的二维数组rec，其初值均为0，rec[i][j]表示戳破从i到j气球能得到的最大硬币数
+op19044=>operation: 数组val中下标为i+1的元素等于数组nums中下标为i的元素
+op19158=>operation: 戳破从i到j气球能得到的最大硬币数更新为它与total之间的最大值
+op2=>operation: i向左移动1单位长度
+op3=>operation: j向右移动1单位长度
+cond19143=>condition: 当k小于j
+op19154=>operation: total等于数组val中下标为i，下标为k，下标为j的元素的乘积
+op19110=>operation: j为数组下标，初值为i+2
+cond19051=>condition: i大于-1
+op1=>operation: i向右移动1单位长度
+op19034=>operation: i为数组下标
+io19169=>inputoutput: output:  返回戳破从0到n+1气球能得到的最大硬币数
+
+op19034->cond19037
+io19169->e19167
+cond19051(no)->io19169
+op4->cond19143
+cond19113(yes)->op19140
+op1->cond19037
+cond19143(yes)->op19154
+op19110->cond19113
+cond19051(yes)->op19110
+cond19037(yes)->op19044
+op19158->op4
+cond19113(no)->op2
+op19048->cond19051
+op19028->op19030
+op19030->op19032
+op19140->cond19143
+st19023->io19025
+op2->cond19051
+op3->cond19113
+cond19143(no)->op3
+op19156->op19158
+io19025->op19028
+op19044->op1
+cond19037(no)->op19048
+op19032->op19034
+op19154->op19156

@@ -1,0 +1,22 @@
+def removeComments(self, source):    #io27951
+    in_block = False    #op27954
+    ans = []    #op27956
+    for i in range(len(source)):    #cond27961
+        j = 0    #op28088
+        if not in_block:    #cond28091
+            newline = []    #op28095
+        while j < len(source[i]):    #cond28101
+            if source[i][j:j+2] == '/*' and not in_block:    #cond28153
+                in_block = True    #op28157
+                j += 1    #op28159
+            elif source[i][j:j+2] == '*/' and in_block:    #cond28164
+                in_block = False    #op28168
+                j += 1    #op28170
+            elif not in_block and source[i][j:j+2] == '//':    #cond28175
+                break    #None
+            elif not in_block:    #cond28184
+                newline.append(source[i][j])    #op28188
+            j += 1    #op28196
+        if newline and not in_block:    #cond28201
+            ans.append("".join(newline))    #op28205
+    return ans    #io28215

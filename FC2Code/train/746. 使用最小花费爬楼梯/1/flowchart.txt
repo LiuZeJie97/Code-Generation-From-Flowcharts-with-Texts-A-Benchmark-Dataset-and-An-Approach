@@ -1,0 +1,21 @@
+st29488=>start: start minCostClimbingStairs
+op29495=>operation: 定义数组dp，长度为数组cost的长度加一，初值均为0，dp[i]表示到达下标为i的台阶的最小花费
+op1=>operation: 当前台阶位置加一
+cond29500=>condition: 当前台阶位置小于数组cost的长度加一
+io29490=>inputoutput: input: self, cost
+op29493=>operation: n为数组cost的长度
+e29512=>end: end function return
+io29514=>inputoutput: output:  返回到达下标为n的台阶的最小花费
+op29507=>operation: 计算到达下标为x-1的台阶的最小花费加上从x-1个台阶向上爬的费用，到达下标为x-2的台阶的最小花费加上从x-2个台阶向上爬的费用，到达下标为i的台阶的最小花费等于它们之间的最小值
+op29497=>operation: x为当前台阶位置，初值为2
+
+op29495->op29497
+op29497->cond29500
+op29507->op1
+io29514->e29512
+cond29500(no)->io29514
+io29490->op29493
+op29493->op29495
+st29488->io29490
+cond29500(yes)->op29507
+op1->cond29500

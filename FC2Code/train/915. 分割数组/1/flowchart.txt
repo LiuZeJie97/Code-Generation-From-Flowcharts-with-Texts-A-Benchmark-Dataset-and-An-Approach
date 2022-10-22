@@ -1,0 +1,54 @@
+op35131=>operation: 定义变量i等于0
+cond35114=>condition: i大于-1
+op35111=>operation: 定义变量i等于数组nums的长度减一
+op35091=>operation: 定义变量i等于0
+op35105=>operation: 令数组maxleft中下标为i的元素等于m
+st35078=>start: start partitionDisjoint
+op35123=>operation: 令m等于它与数组nums中下标为i的元素之间的最小值
+op35129=>operation: 定义变量index等于-1
+op2=>operation: 令i等于i减一
+op35109=>operation: 令m等于数组nums中最后一项元素
+op35085=>operation: 定义长度为n的数组maxleft，数组元素初值均为0
+cond35094=>condition: i小于数组nums的长度
+op35125=>operation: 令数组minright中下标为i的元素等于m
+cond35134=>condition: i小于数组nums的长度
+io35080=>inputoutput: input: self, nums
+op35083=>operation: 定义n为数组nums的长度
+op3=>operation: 令i等于i加一
+op35103=>operation: 令m等于它与数组nums中下标为i的元素之间的最大值
+op1=>operation: 令i等于i加一
+e35166=>end: end function return
+io35168=>inputoutput: output:  返回index
+op35087=>operation: 定义长度为n的数组minright，数组元素初值均为0
+op35089=>operation: 定义变量m等于数组nums中第一项元素
+op35156=>operation: 令index等于i
+cond35152=>condition: 如果数组maxleft中下标为i-1的元素小于等于数组minright中下标为i的元素
+
+op35131->cond35134
+cond35094(yes)->op35103
+op35083->op35085
+op3->cond35134
+cond35152(no)->op3
+op35087->op35089
+op35105->op1
+st35078->io35080
+op35109->op35111
+op35156->io35168
+op35125->op2
+op35123->op35125
+op35103->op35105
+op2->cond35114
+cond35134(no)->io35168
+op35129->op35131
+op35091->cond35094
+cond35094(no)->op35109
+cond35134(yes)->cond35152
+cond35114(yes)->op35123
+cond35114(no)->op35129
+io35080->op35083
+op35089->op35091
+op1->cond35094
+op35111->cond35114
+io35168->e35166
+op35085->op35087
+cond35152(yes)->op35156

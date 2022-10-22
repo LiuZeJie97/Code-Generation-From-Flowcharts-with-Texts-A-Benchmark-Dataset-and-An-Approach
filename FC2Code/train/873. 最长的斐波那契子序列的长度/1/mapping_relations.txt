@@ -1,0 +1,12 @@
+def lenLongestFibSubseq(self, arr: List[int]) -> int:    #io33617
+    S = set(arr)    #op33620
+    ans = 0    #op33622
+    for i in range(len(arr)):    #cond33627
+        for j in range(i+1, len(arr)):    #cond33689
+            x, y = arr[j], arr[i] + arr[j]    #op33716
+            length = 2    #op33718
+            while y in S:    #cond33721
+                x, y = y, x + y    #op33730
+                length += 1    #op33732
+            ans = max(ans, length)    #op33736
+    return ans if ans >= 3 else 0    #io33745

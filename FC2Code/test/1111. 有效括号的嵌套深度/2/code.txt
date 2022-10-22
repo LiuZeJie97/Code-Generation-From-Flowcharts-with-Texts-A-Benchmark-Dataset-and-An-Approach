@@ -1,0 +1,9 @@
+def maxDepthAfterSplit(self, seq: str) -> List[int]:
+    res = list()
+    for i in range(len(seq)):
+        d = i % 2
+        if seq[i] == '(':
+            res.append(d)
+        else:
+            res.append(1 - d)
+    return res

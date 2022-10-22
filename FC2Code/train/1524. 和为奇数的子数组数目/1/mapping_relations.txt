@@ -1,0 +1,14 @@
+def numOfsub(self, array: List[int]) -> int:    #io14203
+    MODULO = 10**9 + 7    #op14206
+    odd, even = 0, 1    #op14208
+    sub = 0    #op14210
+    total = 0    #op14212
+    for index in range(len(array)):    #cond14217
+        total += array[index]    #op14240
+        if total % 2 == 0:    #cond14243
+            sub += odd    #op14247
+            even += 1    #op14249
+        else:    #None
+            sub += even    #op14253
+            odd += 1    #op14255
+    return sub % MODULO    #io14263

@@ -1,0 +1,11 @@
+def numSubarrayProductLessThanK(self, nums, k):    #io27562
+    if k <= 1: return 0    #op27565
+    prod = 1    #op27567
+    ans = left = 0    #op27569
+    for right, val in enumerate(nums):    #cond27574
+        prod *= val    #op27599
+        while prod >= k:    #cond27602
+            prod /= nums[left]    #op27611
+            left += 1    #op27613
+        ans += right - left + 1    #op27617
+    return ans    #io27624

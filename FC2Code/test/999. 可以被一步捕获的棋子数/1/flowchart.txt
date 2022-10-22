@@ -1,0 +1,57 @@
+io37436=>inputoutput: output:  返回可以被一步捕获的棋子数
+op37401=>operation: 定义目标横坐标等于白色车的横坐标加上步长与横坐标方向数组中下标为i的元素之间的乘积
+op37219=>operation: 定义横坐标方向数组dx，初值为0，1，0，-1，定义纵坐标方向数组dy，初值为1，0，-1，0
+op2=>operation: j等于j加一
+op37217=>operation: cnt用于记录可以被一步捕获的棋子数，nx用于记录白色车的横坐标，ny用于记录白色车的纵坐标，其初值均为0
+cond37294=>condition: i小于4
+cond37416=>condition: 目标位置的棋子为黑色的卒
+cond37278=>condition: 第i行j列的棋子为白色的车
+cond37262=>condition: j小于8
+op37221=>operation: 定义变量i等于0
+op37365=>operation: 定义步长step等于0
+op37420=>operation: 可以被一步捕获的棋子数加一
+op37403=>operation: 定义目标纵坐标等于白色车的纵坐标加上步长与纵坐标方向数组中下标为i的元素之间的乘积
+op1=>operation: i等于i加一
+op3=>operation: i等于i加一
+op37259=>operation: 定义变量j等于0
+cond37224=>condition: i小于8
+e37434=>end: end function return
+op37291=>operation: 定义变量i等于0
+cond37368=>condition: 进入循环
+io37214=>inputoutput: input: self, board
+op37427=>operation: 步长加一
+st37212=>start: start numRookCaptures
+op37282=>operation: 白色车的横坐标等于i，白色车的纵坐标等于j
+cond37406=>condition: 目标横坐标小于0或目标横坐标大于等于8或目标纵坐标小于0或目标纵坐标大于等于8或目标位置的棋子为白色的象
+
+cond37416(yes)->op37420
+cond37294(yes)->op37365
+op37403->cond37406
+op37401->op37403
+cond37224(no)->op37291
+op37259->cond37262
+io37436->e37434
+op37221->cond37224
+cond37278(no)->op2
+op37427->cond37368
+cond37406(no)->cond37416
+io37214->op37217
+cond37294(no)->io37436
+st37212->io37214
+cond37368(no)->op3
+op2->cond37262
+op37420->op3
+cond37262(no)->op1
+cond37416(no)->op37427
+cond37278(yes)->op37282
+op1->cond37224
+op37219->op37221
+op37365->cond37368
+op3->cond37294
+cond37368(yes)->op37401
+cond37406(yes)->op3
+op37217->op37219
+cond37262(yes)->cond37278
+op37291->cond37294
+cond37224(yes)->op37259
+op37282->op2

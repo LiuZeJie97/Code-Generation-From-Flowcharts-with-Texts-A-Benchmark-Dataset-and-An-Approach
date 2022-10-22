@@ -1,0 +1,14 @@
+def shortestToChar(self, s: str, c: str) -> List[int]:    #io31446
+    n = len(s)    #op31449
+    ans = [0] * n    #op31451
+    idx = -n    #op31453
+    for i, ch in enumerate(s):    #cond31458
+        if ch == c:    #cond31476
+            idx = i    #op31480
+        ans[i] = i - idx    #op31485
+    idx = 2 * n    #op31489
+    for i in range(n - 1, -1, -1):    #cond31494
+        if s[i] == c:    #cond31512
+            idx = i    #op31516
+        ans[i] = min(ans[i], idx - i)    #op31521
+    return ans    #io31528

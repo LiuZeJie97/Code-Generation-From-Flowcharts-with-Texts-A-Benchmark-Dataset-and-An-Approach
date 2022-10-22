@@ -1,0 +1,10 @@
+def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:    #io20644
+    m, n = len(nums1), len(nums2)    #op20647
+    res = [0] * m    #op20649
+    for i in range(m):    #cond20654
+        j = nums2.index(nums1[i])    #op20677
+        k = j + 1    #op20679
+        while k < n and nums2[k] < nums2[j]:    #cond20682
+            k += 1    #op20689
+        res[i] = nums2[k] if k < n else -1    #op20693
+    return res    #io20700

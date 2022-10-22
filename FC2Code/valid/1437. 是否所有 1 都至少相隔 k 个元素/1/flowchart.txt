@@ -1,0 +1,31 @@
+op12530=>operation: 将标志变量置为假
+op12484=>operation: 定义l为数组n的长度
+st12479=>start: start kLengthApart
+cond12526=>condition: p不等于-1且i-p-1小于k
+cond12521=>condition: 数组中第i个数等于1
+op12490=>operation: 定义初值为0的变量i，表示循环次数
+op12537=>operation: p 等于 i
+op1=>operation: 循环次数加一
+io12481=>inputoutput: input: self, n, k
+op12486=>operation: 定义初值为-1的变量p
+e12545=>end: end function return
+op12488=>operation: 定义初值为真的标志变量s
+io12547=>inputoutput: output:  返回标志变量
+cond12493=>condition: 循环次数小于数组n的长度
+
+op12488->op12490
+op1->cond12493
+op12490->cond12493
+io12481->op12484
+op12530->io12547
+st12479->io12481
+cond12493(yes)->cond12521
+cond12521(no)->op1
+cond12493(no)->io12547
+op12484->op12486
+cond12521(yes)->cond12526
+io12547->e12545
+op12486->op12488
+op12537->op1
+cond12526(no)->op12537
+cond12526(yes)->op12530

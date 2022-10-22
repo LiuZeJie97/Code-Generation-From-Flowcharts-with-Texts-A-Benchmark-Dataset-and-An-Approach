@@ -1,0 +1,13 @@
+def canVisitAllRooms(self, rooms: List[List[int]]) -> bool:    #io32304
+    length = len(rooms)    #op32307
+    num = 0    #op32309
+    vis = set()    #op32311
+    que = collections.deque([0])    #op32313
+    while que:    #cond32316
+        x = que.popleft()    #op32359
+        num += 1    #op32361
+        for it in rooms[x]:    #cond32366
+            if it not in vis:    #cond32384
+                vis.add(it)    #op32388
+                que.append(it)    #op32390
+    return num == length    #io32402

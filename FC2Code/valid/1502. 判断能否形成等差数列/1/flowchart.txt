@@ -1,0 +1,24 @@
+e13369=>end: end function return
+op13330=>operation: 对数组arr排序
+io13327=>inputoutput: input: self, arr
+op13334=>operation: 数组下标index等于1
+cond13355=>condition: 数组arr中第index个数的2倍不等于第index-1个数与第index+1个数之和
+st13325=>start: start canMakeArithmeticProgression
+cond13337=>condition: 数组下标小于数组arr的长度减一
+op13332=>operation: 标志变量sgn等于True,用于记录是否可以重新排列数组形成等差数列
+io13371=>inputoutput: output:  返回标志变量sgn
+op13359=>operation: 不可以重新排列数组形成等差数列
+op1=>operation: 数组下标加一
+
+op1->cond13337
+st13325->io13327
+cond13355(yes)->op13359
+io13327->op13330
+op13359->io13371
+op13330->op13332
+cond13337(yes)->cond13355
+io13371->e13369
+op13332->op13334
+cond13355(no)->op1
+op13334->cond13337
+cond13337(no)->io13371

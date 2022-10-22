@@ -1,0 +1,12 @@
+def imageSmoother(self, img: List[List[int]]) -> List[List[int]]:    #io24839
+    m, n = len(img), len(img[0])    #op24842
+    ans = [[0] * n for _ in range(m)]    #op24844
+    for i in range(m):    #cond24849
+        for j in range(n):    #cond24967
+            tot, num = 0, 0    #op25022
+            for x in range(max(i - 1, 0), min(i + 2, m)):    #cond25027
+                for y in range(max(j - 1, 0), min(j + 2, n)):    #cond25053
+                    tot += img[x][y]    #op25062
+                    num += 1    #op25064
+            ans[i][j] = tot // num    #op25070
+    return ans    #io25079

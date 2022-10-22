@@ -1,0 +1,18 @@
+def largestSumAfterKNegations(self, nums: List[int], k: int) -> int:
+    freq = Counter(nums)
+    tot = sum(nums)
+    for i in range(-100, 0):
+        if freq[i]:
+            ops = min(freq[i], k)
+            freq[i] -= ops
+            freq[-i] += ops
+            tot += -i * ops * 2
+            k -= ops
+            if k == 0:
+                break
+    if k > 0 and k % 2 != 0 and not freq[0]:
+        for i in range(1, 101):
+            if freq[i]:
+                tot -= i * 2
+                break
+    return tot

@@ -1,0 +1,37 @@
+io30697=>inputoutput: output:  如果最便宜的价格和float型的inf相等，则返回-1，否则返回最便宜的价格
+op30678=>operation: 定义变量ans，初值为float型的inf，用于记录最便宜的价格
+st30631=>start: start findCheapestPrice
+io30633=>inputoutput: input: self, n, flights, src, dst, k
+op30662=>operation: j为数组flights中元素的第一项，i为数组flights中元素的第二项，cost为数组flights中元素的第三项
+op30640=>operation: t为数组下标，初值为1
+op30636=>operation: 定义k+2行n列的二维数组f，其初值均为float型的inf，f[i][j]表示通过i次航班到达城市j的最小花费
+op30690=>operation: 将最便宜的价格更新为它与通过t次航班到达目的地dst的最小花费之间的最小值
+op2=>operation: t自增1
+op1=>operation: t自增1
+op30680=>operation: t为数组下标，初值为1
+op30638=>operation: 通过0次航班到达出发城市src的最小花费为0
+op30672=>operation: 计算通过t-1次航班到达城市j的最小花费与cost的和，通过t次航班到达城市i的最小花费等于它与上述计算结果之间的最小值
+cond30683=>condition: 当t小于k+2
+cond30643=>condition: 当t小于k+2
+e30695=>end: end function return
+cond30665=>condition: 对数组flights进行遍历
+
+cond30683(yes)->op30690
+cond30683(no)->io30697
+op30672->cond30665
+st30631->io30633
+op2->cond30683
+op1->cond30643
+cond30643(yes)->op30662
+op30678->op30680
+op30662->cond30665
+op30636->op30638
+io30633->op30636
+op30680->cond30683
+op30690->op2
+op30638->op30640
+io30697->e30695
+cond30665(no)->op1
+cond30643(no)->op30678
+cond30665(yes)->op30672
+op30640->cond30643

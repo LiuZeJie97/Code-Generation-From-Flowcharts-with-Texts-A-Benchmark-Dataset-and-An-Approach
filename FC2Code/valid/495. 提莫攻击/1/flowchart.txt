@@ -1,0 +1,26 @@
+io20633=>inputoutput: output:  返回艾希处于中毒状态的总时间
+st20585=>start: start findPoisonedDuration
+io20587=>inputoutput: input: self, timeSeries, duration
+cond20615=>condition: 第i次对艾希发起攻击的时间timeSeries[i]大于艾希恢复为未中毒的起始时间
+op20619=>operation: 令艾希处于中毒状态的总时间加上中毒状态持续时间duration
+op20590=>operation: ans用于记录艾希处于中毒状态的总时间，expired用于记录艾希恢复为未中毒的起始时间，初值均为0
+op1=>operation: 将提莫的攻击次数的值更新为上一次攻击次数加一
+op20592=>operation: 定义初值为0的变量i，表示提莫的攻击次数
+e20631=>end: end function return
+op20623=>operation: 令该总时间加上第i次发起攻击的时间，加上中毒状态持续时间，减去未中毒的起始时间
+op20626=>operation: 将未中毒的起始时间更新为第i次发起攻击的时间与中毒状态持续时间的和
+cond20595=>condition: 提莫的攻击次数小于数组timeSeries的长度
+
+st20585->io20587
+op20623->op20626
+cond20595(no)->io20633
+op20626->op1
+op20619->op20626
+io20633->e20631
+cond20615(yes)->op20619
+op20590->op20592
+op20592->cond20595
+cond20595(yes)->cond20615
+op1->cond20595
+cond20615(no)->op20623
+io20587->op20590

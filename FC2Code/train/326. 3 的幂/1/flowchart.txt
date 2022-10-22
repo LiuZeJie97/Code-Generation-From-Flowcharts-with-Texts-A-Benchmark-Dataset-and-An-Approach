@@ -1,0 +1,13 @@
+op4506=>operation: 不断地将该整数除以 3
+st4493=>start: start isPowerOfThree
+io4495=>inputoutput: input: self, n
+e4511=>end: end function return
+cond4499=>condition: 整数n不等于0且n是3的倍数
+io4513=>inputoutput: output:  返回n是否等于1
+
+cond4499(no)->io4513
+st4493->io4495
+io4495->cond4499
+op4506->cond4499
+io4513->e4511
+cond4499(yes)->op4506

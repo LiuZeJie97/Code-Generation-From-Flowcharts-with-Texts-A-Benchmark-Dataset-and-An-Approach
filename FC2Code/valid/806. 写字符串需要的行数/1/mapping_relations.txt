@@ -1,0 +1,10 @@
+def numberOfLines(self, widths: List[int], s: str) -> List[int]:    #io31151
+    MAX_WIDTH = 100    #op31154
+    lines, width = 1, 0    #op31156
+    for c in s:    #cond31161
+        need = widths[ord(c) - ord('a')]    #op31182
+        width += need    #op31184
+        if width > MAX_WIDTH:    #cond31187
+            lines += 1    #op31191
+            width = need    #op31193
+    return [lines, width]    #io31203

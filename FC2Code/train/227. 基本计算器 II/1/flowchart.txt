@@ -1,0 +1,52 @@
+st17656=>start: start calculate
+op17736=>operation: 令计算值等于计算值乘10加字符串中下标为i的字符的Unicode值减'0'的Unicode值
+cond17742=>condition: i等于字符串s的长度减一或字符串中下标为i的字符在'+-*/'中
+op17669=>operation: 定义i等于0，表示字符串下标
+op17667=>operation: 定义计算值num等于0
+op17760=>operation: 将负的计算值入栈
+op17780=>operation: 将计算值更新为0
+op17769=>operation: 计算栈顶元素与计算值的乘积，将栈顶元素出栈，并将计算结果入栈，
+op17663=>operation: 定义栈stack
+op1=>operation: 字符串下标自增1
+io17790=>inputoutput: output:  对栈中元素求和并返回
+cond17765=>condition: 符号等于'*'
+op17665=>operation: 定义符号preSign等于'+'
+cond17672=>condition: 字符串下标小于字符串s的长度
+cond17732=>condition: 字符串s中下标为i的字符为数字
+io17658=>inputoutput: input: self, s
+op17773=>operation: 计算栈顶元素与计算值的乘积，将栈顶元素出栈，并将int型的计算结果入栈，
+op17751=>operation: 将计算值入栈
+cond17747=>condition: 符号等于'+'
+cond17756=>condition: 符号等于'-'
+op17661=>operation: n为字符串s的长度
+e17788=>end: end function return
+op17778=>operation: 将符号更新为字符串中下标为i的字符
+
+op17769->op17778
+cond17756(yes)->op17760
+cond17765(no)->op17773
+cond17747(no)->cond17756
+op17773->op17778
+cond17732(yes)->op17736
+cond17732(no)->cond17742
+io17790->e17788
+op17778->op17780
+op17663->op17665
+op17736->cond17742
+io17658->op17661
+op17665->op17667
+cond17672(no)->io17790
+op17667->op17669
+op1->cond17672
+cond17747(yes)->op17751
+cond17742(no)->op1
+op17751->op17778
+cond17765(yes)->op17769
+op17669->cond17672
+cond17672(yes)->cond17732
+op17661->op17663
+op17780->op1
+st17656->io17658
+op17760->op17778
+cond17742(yes)->cond17747
+cond17756(no)->cond17765

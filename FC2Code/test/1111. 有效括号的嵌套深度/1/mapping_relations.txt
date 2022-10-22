@@ -1,0 +1,11 @@
+def maxDepthAfterSplit(self, seq: str) -> List[int]:    #io8405
+    res = []    #op8408
+    d = 0    #op8410
+    for ch in seq:    #cond8415
+        if ch == '(':    #cond8445
+            d += 1    #op8449
+            res.append(d % 2)    #op8451
+        elif ch == ')':    #cond8456
+            res.append(d % 2)    #op8460
+            d -= 1    #op8462
+    return res    #io8473

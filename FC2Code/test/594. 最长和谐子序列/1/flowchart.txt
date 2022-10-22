@@ -1,0 +1,29 @@
+io23816=>inputoutput: input: self, array
+cond23854=>condition: 如果数组中下标为end的数与下标为begin的数的差值大于1
+op23870=>operation: 如果end与begin的差加一大于res，则res等于该值
+op23821=>operation: 定义变量res和变量begin，其初值均为0
+cond23866=>condition: 如果数组中下标为end的数与下标为begin的数的差值等于1
+op23823=>operation: end为数组下标
+op23861=>operation: 变量begin加一
+op1=>operation: 数组下标加一
+e23878=>end: end function return
+io23880=>inputoutput: output:  返回res
+op23819=>operation: 对数组array进行排序
+cond23826=>condition: 数组下标小于数组arr的长度时
+st23814=>start: start findLHS
+
+cond23854(no)->cond23866
+op23870->op1
+op23819->op23821
+cond23866(no)->op1
+op1->cond23826
+io23880->e23878
+cond23826(yes)->cond23854
+cond23866(yes)->op23870
+op23861->cond23854
+cond23826(no)->io23880
+st23814->io23816
+io23816->op23819
+cond23854(yes)->op23861
+op23823->cond23826
+op23821->op23823

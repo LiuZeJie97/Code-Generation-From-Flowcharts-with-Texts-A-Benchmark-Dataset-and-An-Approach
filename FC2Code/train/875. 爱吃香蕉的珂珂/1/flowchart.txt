@@ -1,0 +1,33 @@
+e33830=>end: end function return
+io33832=>inputoutput: output:  返回下边界
+cond33762=>condition: 下边界小于上边界
+op33801=>operation: i为数组下标
+op33824=>operation: 上边界等于中值
+io33756=>inputoutput: input: self, piles, h
+op1=>operation: 令数组下标i加一
+op33759=>operation: 定义下边界low等于1，上边界high等于数组piles中的最大值，其中piles[i]表示第i堆香蕉的个数
+cond33804=>condition: 数组下标i小于数组piles的长度
+op33820=>operation: 下边界等于中值加一
+op33811=>operation: 计算第i堆香蕉的个数减1整除中值再加一的结果，令吃香蕉的时间加上该计算结果
+cond33816=>condition: 吃香蕉的时间大于警卫回来的时间h
+op33797=>operation: 定义中值mid等于下边界与右边界的和整除2
+op33799=>operation: 定义变量time等于0，用于记录吃香蕉的时间
+st33754=>start: start minEatingSpeed
+
+cond33816(no)->op33824
+cond33762(yes)->op33797
+op33801->cond33804
+cond33762(no)->io33832
+cond33804(no)->cond33816
+op1->cond33804
+op33824->cond33762
+op33811->op1
+op33759->cond33762
+io33832->e33830
+op33797->op33799
+op33799->op33801
+cond33816(yes)->op33820
+st33754->io33756
+cond33804(yes)->op33811
+io33756->op33759
+op33820->cond33762

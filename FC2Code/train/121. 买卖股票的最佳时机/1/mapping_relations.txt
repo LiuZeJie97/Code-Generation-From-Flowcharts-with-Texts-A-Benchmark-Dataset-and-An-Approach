@@ -1,0 +1,7 @@
+def maxProfit(self, prices: List[int]) -> int:    #io8640
+    inf = int(1e9)    #op8643
+    minprice, maxprofit = inf, 0    #op8645
+    for price in prices:    #cond8650
+        maxprofit = max(price - minprice, maxprofit)    #op8659
+        minprice = min(price, minprice)    #op8661
+    return maxprofit    #io8668

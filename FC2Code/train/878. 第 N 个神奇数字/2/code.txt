@@ -1,0 +1,14 @@
+def nthMagicalNumber(self, n: int, a: int, b: int) -> int:
+    MOD = 10**9 + 7
+    l = a // gcd(a, b) * b
+    m = l // a + l // b - 1
+    q, r = n // m, n % m
+    if r == 0:
+        return q * l % MOD
+    heads = [a, b]
+    for t in range(int(r - 1)):
+        if heads[0] <= heads[-1]:
+            heads[0] += a
+        else:
+            heads[-1] += b
+    return (q * l + min(heads)) % MOD

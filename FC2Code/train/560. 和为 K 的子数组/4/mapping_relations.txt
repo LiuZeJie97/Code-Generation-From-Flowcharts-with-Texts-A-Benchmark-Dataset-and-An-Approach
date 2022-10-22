@@ -1,0 +1,13 @@
+def subarraySum(self, nums: List[int], k: int) -> int:    #io5583
+    count = 0    #op5586
+    n = len(nums)    #op5588
+    preSum = [0]    #op5590
+    tmp = 0    #op5592
+    for i in range(n):    #cond5597
+        tmp += nums[i]    #op5606
+        preSum.append(tmp)    #op5608
+    for i in range(1, n+1):    #cond5615
+        for j in range(i, n+1):    #cond5653
+            if preSum[j] - preSum[i-1] == k:    #cond5669
+                count += 1    #op5673
+    return count    #io5685

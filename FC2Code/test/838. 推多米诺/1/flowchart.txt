@@ -1,0 +1,67 @@
+cond32252=>condition: ni大于等于0且字符串dominoes的长度大于0
+op32169=>operation: 将当前遍历下标加入队列
+cond32145=>condition: 对字符串进行遍历
+cond32183=>condition: 队列q不为空
+cond32272=>condition: 第ni张骨牌翻倒的时间等于t加一
+op32263=>operation: 将ni加入队列
+op32140=>operation: 定义长度为n的字符串数组forece，force[i]表示第i张骨牌的受力字符串
+op32180=>operation: 定义长度为n数组res，数组元素初值均为'.'
+op32245=>operation: 令数组res中下标为i的元素等于第i张骨牌的受力字符串中第一个字符
+op32265=>operation: 第ni张骨牌翻倒的时间等于t加一
+op1=>operation: 字符串下标加一，更新当前遍历下标对应的当前遍历字符
+op32171=>operation: 第i张骨牌翻倒的时间等于0
+op32173=>operation: 将当前遍历字符添加至第i张骨牌的受力字符串
+op32136=>operation: 初始化队列q
+op32138=>operation: 定义数组time，长度等于字符串dominoes的长度，数组元素初值均为-1，time[i]表示第i张骨牌翻倒的时间
+op32267=>operation: 将字符f添加至第ni张骨牌的受力字符串
+op32142=>operation: i为字符串下标，初值为0；f为字符串dominoes中下标为i的字符
+op32134=>operation: n为字符串dominoes的长度
+e32291=>end: end function return
+op32276=>operation: 将字符f添加至第ni张骨牌的受力字符串
+op32247=>operation: 定义字符f等于第i张骨牌的受力字符串中第一个字符
+op32256=>operation: 定义变量t等于第i张骨牌翻倒的时间
+io32293=>inputoutput: output:  将数组res转化为字符串并返回
+op32238=>operation: 定义i等于队头元素，将队头元素出队
+io32131=>inputoutput: input: self, dominoes
+cond32241=>condition: 第i张骨牌的受力字符串的长度等于1
+op32249=>operation: 定义变量ni，如果字符f为'L'，ni等于i减一，否则ni等于i加一
+cond32259=>condition: 第ni张骨牌翻倒的时间等于-1
+cond32165=>condition: 当前遍历字符不为'.'
+st32129=>start: start pushDominoes
+
+cond32165(yes)->op32169
+op32247->op32249
+op32265->op32267
+cond32165(no)->op1
+op32249->cond32252
+op32180->cond32183
+io32293->e32291
+cond32259(no)->cond32272
+cond32252(no)->cond32183
+st32129->io32131
+op32276->cond32183
+cond32272(yes)->op32276
+op32263->op32265
+cond32145(no)->op32180
+op32256->cond32259
+cond32252(yes)->op32256
+op32173->op1
+cond32241(yes)->op32245
+cond32183(yes)->op32238
+io32131->op32134
+cond32145(yes)->cond32165
+op32267->cond32183
+op32136->op32138
+op32138->op32140
+cond32241(no)->cond32183
+op32140->op32142
+cond32259(yes)->op32263
+op32142->cond32145
+cond32183(no)->io32293
+op1->cond32145
+op32238->cond32241
+op32134->op32136
+op32245->op32247
+op32169->op32171
+cond32272(no)->cond32183
+op32171->op32173

@@ -1,0 +1,29 @@
+op12360=>operation: 令s加上第i张卡牌的点数与第i-windowSize张卡牌的点数之差
+cond12351=>condition: 数组下标小于数组cardPoints的长度
+op12362=>operation: 将minSum的值更新为它与s之间的最小值
+op1=>operation: 令数组下标加一
+st12335=>start: start maxScore
+op12366=>operation: 最大点数ret等于全部卡牌点数之和与minSum之间的差值
+op12342=>operation: 滑动窗口大小windowSize等于数组的长度减去k
+op12346=>operation: minSum等于s
+op12340=>operation: n为数组cardPoints的长度，cardPoints[i]表示第i张卡牌的点数
+io12371=>inputoutput: output:  返回最大点数
+op12344=>operation: s等于对数组中第一个滑动窗口内元素求和的结果
+io12337=>inputoutput: input: self, cardPoints, k
+op12348=>operation: 数组下标i等于滑动窗口大小windowSize
+e12369=>end: end function return
+
+io12371->e12369
+op12340->op12342
+op12342->op12344
+op12366->io12371
+op12348->cond12351
+cond12351(yes)->op12360
+op1->cond12351
+st12335->io12337
+op12344->op12346
+op12360->op12362
+op12362->op1
+io12337->op12340
+cond12351(no)->op12366
+op12346->op12348

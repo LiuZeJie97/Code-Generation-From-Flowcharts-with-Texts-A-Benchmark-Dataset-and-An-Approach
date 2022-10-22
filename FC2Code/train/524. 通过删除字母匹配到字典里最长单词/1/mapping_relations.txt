@@ -1,0 +1,22 @@
+def findLongestWord(self, s: str, dictionary: List[str]) -> str:    #io21098
+    m = len(s)    #op21101
+    f = [[m] * 26 for _ in range(m + 1)]    #op21103
+    for i in range(m - 1, -1, -1):    #cond21108
+        for j in range(26):    #cond21150
+            if ord(s[i]) == j + 97:    #cond21168
+                f[i][j] = i    #op21172
+            else:    #None
+                f[i][j] = f[i + 1][j]    #op21176
+    res = ""    #op21183
+    for t in dictionary:    #cond21188
+        match = True    #op21253
+        j = 0    #op21255
+        for i in range(len(t)):    #cond21260
+            if f[j][ord(t[i]) - 97] == m:    #cond21280
+                match = False    #op21284
+                break    #None
+            j = f[j][ord(t[i]) - 97] + 1    #op21291
+        if match:    #cond21296
+            if len(t) > len(res) or (len(t) == len(res) and t < res):    #cond21301
+                res = t    #op21305
+    return res    #io21318

@@ -1,0 +1,44 @@
+op1=>operation: 遍历序号加一，num为数组中的下一个数
+e4810=>end: end function return
+op2=>operation: j减去1
+cond4863=>condition: j大于num减一
+io4879=>inputoutput: output:  返回dp最后一个元素
+op4818=>operation: total等于数组各个元素之和
+e4826=>end: end function return
+op4838=>operation: 定义i和num，i初值为0，num初值等于数组第一个元素
+cond4841=>condition: 使用i, num遍历数组nums，i为遍历序号，num为数组中的数
+st4797=>start: start canPartition
+op4802=>operation: n等于数组nums的长度
+io4812=>inputoutput: output:  不可以将数组分割成两个子集，使得两个子集的元素和相等
+op4834=>operation: 目标值等于数组各个元素之和的一半
+op4870=>operation: 如果存在一种选取方案使得被选取的正整数的和等于j减去nums，则必然存在一种选取方案使得被选取的正整数的和等于j，更新dp[j]
+io4828=>inputoutput: output:  不可以将数组分割成两个子集，使得两个子集的元素和相等
+op4836=>operation: 定义dp，第一个元素为True，其他元素为False，长度为目标值加一， dp[i] 表示是否存在一种选取方案使得被选取的正整数的和等于i
+io4799=>inputoutput: input: self, nums
+op4860=>operation: 定义j等于目标值
+e4877=>end: end function return
+cond4805=>condition: n小于2
+cond4821=>condition: 数组各个元素之和不为偶数
+
+io4828->e4826
+io4812->e4810
+op4860->cond4863
+io4799->op4802
+cond4841(no)->io4879
+cond4805(yes)->io4812
+cond4841(yes)->op4860
+cond4821(yes)->io4828
+op4836->op4838
+op1->cond4841
+op4802->cond4805
+cond4863(yes)->op4870
+op4818->cond4821
+op4834->op4836
+st4797->io4799
+op4870->op2
+cond4805(no)->op4818
+op2->cond4863
+op4838->cond4841
+cond4863(no)->op1
+io4879->e4877
+cond4821(no)->op4834

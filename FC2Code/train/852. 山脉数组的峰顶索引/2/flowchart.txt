@@ -1,0 +1,24 @@
+op33095=>operation: idx为数组下标，初值为1
+st33086=>start: start peakIndexInMountainArray
+op33091=>operation: n为数组arr的长度
+op33120=>operation: 令答案等于idx
+io33088=>inputoutput: input: self, arr
+cond33098=>condition: 数组下标小于数组arr的长度减一
+op33093=>operation: 定义变量ans，初值为-1，用于记录答案
+op1=>operation: 数组下标加一
+e33130=>end: end function return
+io33132=>inputoutput: output:  返回答案
+cond33116=>condition: 数组arr中下标为idx的元素大于下标为idx+1的元素
+
+op33091->op33093
+cond33116(no)->op1
+st33086->io33088
+op33095->cond33098
+io33132->e33130
+cond33098(yes)->cond33116
+cond33116(yes)->op33120
+cond33098(no)->io33132
+io33088->op33091
+op33120->io33132
+op1->cond33098
+op33093->op33095

@@ -1,0 +1,11 @@
+def countTriplets(self, arr: List[int]) -> int:    #io12944
+    n = len(arr)    #op12947
+    s = [0]    #op12949
+    for i in range(n):    #cond12954
+        s.append(s[-1] ^ arr[i])    #op12961
+    ans = 0    #op12965
+    for i in range(n):    #cond12970
+        for k in range(i + 1, n):    #cond13008
+            if s[i] == s[k + 1]:    #cond13024
+                ans += k - i    #op13028
+    return ans    #io13040

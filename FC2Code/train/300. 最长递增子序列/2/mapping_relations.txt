@@ -1,0 +1,21 @@
+def lengthOfLIS(self, nums: List[int]) -> int:    #io4114
+    if(not nums):    #cond4118
+        return 0    #io4125
+    n=len(nums)    #op4131
+    if(n<2):    #cond4134
+        return n    #io4141
+    tail=[nums[0]]    #op4147
+    for i in range(1,n):    #cond4152
+        if(nums[i]>tail[-1]):    #cond4212
+            tail.append(nums[i])    #op4216
+            continue    #None
+        l=0    #op4223
+        r=len(tail)-1    #op4225
+        while(l<=r):    #cond4228
+            mid=(l+r)//2    #op4247
+            if(tail[mid]>=nums[i]):    #cond4250
+                r=mid-1    #op4254
+            else:    #None
+                l=mid+1    #op4258
+        tail[l]=nums[i]    #op4263
+    return len(tail)    #io4270

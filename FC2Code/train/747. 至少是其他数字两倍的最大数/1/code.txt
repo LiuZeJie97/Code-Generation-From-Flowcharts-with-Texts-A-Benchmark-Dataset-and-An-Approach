@@ -1,0 +1,8 @@
+def dominantIndex(self, nums: List[int]) -> int:
+    m1, m2, idx = -1, -1, 0
+    for idx in range(len(nums)):
+        if nums[idx] > m1:
+            m1, m2, idx = nums[idx], m1, idx
+        elif nums[idx] > m2:
+            m2 = nums[idx]
+    return idx if m1 >= m2 * 2 else -1

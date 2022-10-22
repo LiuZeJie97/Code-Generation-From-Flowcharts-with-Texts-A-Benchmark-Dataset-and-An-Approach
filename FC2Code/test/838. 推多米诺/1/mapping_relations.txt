@@ -1,0 +1,26 @@
+def pushDominoes(self, dominoes: str) -> str:    #io32131
+    n = len(dominoes)    #op32134
+    q = collections.deque()    #op32136
+    time = [-1] * n    #op32138
+    force = [[] for _ in range(n)]    #op32140
+    for i, f in enumerate(dominoes):    #cond32145
+        if f != '.':    #cond32165
+            q.append(i)    #op32169
+            time[i] = 0    #op32171
+            force[i].append(f)    #op32173
+    res = ['.'] * n    #op32180
+    while q:    #cond32183
+        i = q.popleft()    #op32238
+        if len(force[i]) == 1:    #cond32241
+            res[i] = force[i][0]    #op32245
+            f = force[i][0]    #op32247
+            ni = i - 1 if f == 'L' else i + 1    #op32249
+            if ni >= 0 and n > 0:    #cond32252
+                t = time[i]    #op32256
+                if time[ni] == -1:    #cond32259
+                    q.append(ni)    #op32263
+                    time[ni] = t + 1    #op32265
+                    force[ni].append(f)    #op32267
+                elif time[ni] == t + 1:    #cond32272
+                    force[ni].append(f)    #op32276
+    return ''.join(res)    #io32293

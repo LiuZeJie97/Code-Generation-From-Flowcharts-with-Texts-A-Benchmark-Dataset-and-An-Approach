@@ -1,0 +1,80 @@
+op17953=>operation: cnt1加一
+cond17878=>condition: vote2大于0且该元素为第二个元素
+io17993=>inputoutput: output:  返回答案数组
+cond17887=>condition: vote1等于0
+op17918=>operation: 定义变量cnt1等于0，cnt2等于0
+st17799=>start: start majorityElement
+cond17898=>condition: vote2等于0
+op17902=>operation: 令第二个元素等于该元素
+e17991=>end: end function return
+op17808=>operation: 定义第一个元素element1等于0，第二个元素element2等于0
+op17882=>operation: vote2加一
+op17891=>operation: 令第一个元素等于该元素
+op17904=>operation: vote2加一
+io17801=>inputoutput: input: self, numbers
+cond17815=>condition: 当前数组下标小于数组numbers的长度
+op17812=>operation: 定义数组下标i等于0
+cond17971=>condition: vote1大于0且cnt1大于数组的长度除以3
+op17873=>operation: vote1加一
+cond17981=>condition: vote2大于0且cnt2大于数组的长度除以3
+op17920=>operation: 定义数组下标i等于0
+cond17949=>condition: vote1大于0且数组=中下标为i的元素为第一个元素
+op17910=>operation: vote2减一
+op1=>operation: 令当前数组下标自增1
+op2=>operation: 令当前数组下标自增1
+cond17959=>condition: vote2大于0且该元素为第一个元素
+op17908=>operation: vote1减一
+op17985=>operation: 将第二个元素添加进答案数组
+op17893=>operation: vote1加一
+op17963=>operation: cnt2加一
+cond17923=>condition: 当前数组下标小于数组numbers的长度
+op17975=>operation: 将第一个元素添加进答案数组
+op17806=>operation: n为数组numbers的长度
+op17810=>operation: 定义变量vote1等于0，vote2等于0
+cond17869=>condition: vote1大于0且数组中下标为i的元素为第一个元素
+op17804=>operation: 初始化答案数组
+
+cond17869(no)->cond17878
+cond17923(no)->cond17971
+cond17971(yes)->op17975
+op17918->op17920
+cond17869(yes)->op17873
+io17993->e17991
+op17985->io17993
+op17920->cond17923
+cond17923(yes)->cond17949
+cond17878(no)->cond17887
+cond17898(no)->op17908
+op17804->op17806
+cond17949(yes)->op17953
+st17799->io17801
+op1->cond17815
+cond17971(no)->cond17981
+op17806->op17808
+op17902->op17904
+op17810->op17812
+op17882->op1
+op17908->op17910
+cond17898(yes)->op17902
+cond17887(no)->cond17898
+op17812->cond17815
+op17963->op2
+cond17949(no)->cond17959
+op17891->op17893
+op17910->op1
+io17801->op17804
+cond17959(yes)->op17963
+op17893->op1
+cond17981(yes)->op17985
+op2->cond17923
+cond17981(no)->io17993
+op17808->op17810
+cond17815(no)->op17918
+cond17815(yes)->cond17869
+cond17887(yes)->op17891
+op17953->cond17959
+cond17959(no)->op2
+op17873->op1
+cond17878(yes)->op17882
+op17904->op1
+op17975->cond17981

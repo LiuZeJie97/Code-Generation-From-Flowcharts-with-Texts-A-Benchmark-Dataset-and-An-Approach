@@ -1,0 +1,33 @@
+cond1335=>condition: 开始索引小于字符串s的长度
+op1326=>operation: 字符串s的长度为n。
+op1=>operation: 开始索引右移1个单位
+cond1389=>condition: 若s的前i位可以用wordDict中的单词表示 且从开始索引到结束索引的子串在wordlist中：
+io1323=>inputoutput: input: self, s, wordDict
+op1328=>operation: 初始化dp=[False, ,False]，长度为字符串的长度加1。dp[i]表示字符串的前i位是否可以用wordDict中的单词表示。
+op1370=>operation: j为遍历结束索引，初值等于开始索引加1
+st1321=>start: start wordBreak
+io1405=>inputoutput: output:  返回dp最后一个元素
+e1403=>end: end function return
+cond1373=>condition: 结束索引小于字符串长度加1
+op1330=>operation: 空字符可以用wordDict中的单词表示。
+op1393=>operation: s的前j位可以用wordDict中的单词表示
+op2=>operation: 结束索引右移1个单位
+op1332=>operation: i等于0，为遍历开始索引
+
+cond1373(yes)->cond1389
+io1323->op1326
+op1->cond1335
+op1326->op1328
+cond1389(yes)->op1393
+op1332->cond1335
+cond1335(no)->io1405
+op1370->cond1373
+op1330->op1332
+op1393->op2
+cond1373(no)->op1
+st1321->io1323
+cond1335(yes)->op1370
+io1405->e1403
+op1328->op1330
+op2->cond1373
+cond1389(no)->op2

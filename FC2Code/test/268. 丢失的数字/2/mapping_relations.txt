@@ -1,0 +1,5 @@
+def missingNumber(self, a: List[int]) -> int:    #io18630
+    s = set(a)    #op18633
+    for k in range(len(a) + 1):    #cond18638
+        if k not in s:    #cond18658
+            return k    #io18665

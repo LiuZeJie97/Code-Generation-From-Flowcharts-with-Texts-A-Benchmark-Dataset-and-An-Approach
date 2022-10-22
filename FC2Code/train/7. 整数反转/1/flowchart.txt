@@ -1,0 +1,30 @@
+io27176=>inputoutput: input: self, x
+op27238=>operation: 将末尾数字减去10
+st27174=>start: start reverse
+io27225=>inputoutput: output:  返回0
+cond27234=>condition: 给定整数小于0且其末尾数字大于0
+e27250=>end: end function return
+op27231=>operation: 定义digit等于整数对10取模，用于记录给定整数的末尾数字
+op27179=>operation: 定义INT_MIN为下界，值为-2的31次方；定义INT_MAX为上界，值为2的31次方减一; rev用于记录数字反转后的结果，初值为0
+io27252=>inputoutput: output:  返回反转后的结果
+op27245=>operation: 将反转结果rev更新为反转结果的10倍与给定整数末尾数字的和
+e27223=>end: end function return
+cond27218=>condition: 反转后的结果小于下界整除10后再加一或大于上界整除10
+op27243=>operation: 先让给定整数x减去其末尾数字，再对该结果整除10，并将最终运算结果赋给给定整数
+cond27182=>condition: 给定整数x不为0
+
+io27225->e27223
+op27179->cond27182
+cond27182(yes)->cond27218
+cond27218(no)->op27231
+op27231->cond27234
+cond27234(no)->op27243
+st27174->io27176
+op27245->cond27182
+cond27234(yes)->op27238
+cond27182(no)->io27252
+op27243->op27245
+cond27218(yes)->io27225
+op27238->op27243
+io27176->op27179
+io27252->e27250

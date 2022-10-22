@@ -1,0 +1,6 @@
+def gcdOfStrings(self, str1: str, str2: str) -> str:    #io8117
+    candidate_len = math.gcd(len(str1), len(str2))    #op8120
+    candidate = str1[: candidate_len]    #op8122
+    if str1 + str2 == str2 + str1:    #cond8125
+        return candidate    #io8132
+    return ''    #io8141

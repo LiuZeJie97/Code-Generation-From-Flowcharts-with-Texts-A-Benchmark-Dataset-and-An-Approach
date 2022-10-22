@@ -1,0 +1,9 @@
+def smallestRangeII(self, n: List[int], k: int) -> int:
+    n.sort()
+    mi, ma = n[0], n[-1]
+    ms = ma - mi
+    for j in range(len(n) - 1):
+        a, b = n[j], n[j+1]
+        tmp = max(ma-k, a+k) - min(mi+k, b-k)
+        ms = min(ms, tmp)
+    return ms

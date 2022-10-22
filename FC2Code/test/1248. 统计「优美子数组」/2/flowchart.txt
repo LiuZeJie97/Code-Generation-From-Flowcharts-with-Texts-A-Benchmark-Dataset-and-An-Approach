@@ -1,0 +1,35 @@
+op9215=>operation: 定义数组下标index，初值为0
+st9202=>start: start numberOfSubarrays
+cond9246=>condition: 数组numbers中当前下标对应的数是奇数
+op9265=>operation: 数组cnt中下标为odd的元素加一
+op9209=>operation: 数组cnt中第一项元素等于1
+op9213=>operation: 定义变量ans等于0，用于记录优美子数组的数目
+op1=>operation: 令数组下标等于数组下标加一
+e9270=>end: end function return
+op9207=>operation: 定义数组cnt，其长度等于数组numbers的长度加一，数组元素初值均为0
+cond9256=>condition: 奇数数量大于k
+io9204=>inputoutput: input: self, numbers, k
+op9211=>operation: 定义奇数数量odd等于0
+io9272=>inputoutput: output:  返回优美子数组的数目
+op9250=>operation: 奇数数量odd加一
+op9260=>operation: 令ans加上数组cnt中下标为odd-k的元素
+cond9218=>condition: 数组下标小于数组numbers的长度
+
+cond9246(no)->cond9256
+op1->cond9218
+op9211->op9213
+cond9246(yes)->op9250
+op9213->op9215
+op9215->cond9218
+cond9256(yes)->op9260
+op9250->cond9256
+io9272->e9270
+op9260->op9265
+st9202->io9204
+cond9218(yes)->cond9246
+cond9218(no)->io9272
+cond9256(no)->op9265
+io9204->op9207
+op9265->op1
+op9209->op9211
+op9207->op9209

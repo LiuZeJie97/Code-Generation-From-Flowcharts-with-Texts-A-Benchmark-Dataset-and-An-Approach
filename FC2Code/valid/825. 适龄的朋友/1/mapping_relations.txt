@@ -1,0 +1,13 @@
+def numFriendRequests(self, ages: List[int]) -> int:    #io31660
+    alen = len(ages)    #op31663
+    ages.sort()    #op31665
+    al = ar = ans = 0    #op31667
+    for age in ages:    #cond31672
+        if age < 15:    #cond31714
+            continue    #None
+        while ages[al] <= 0.5 * age + 7:    #cond31724
+            al += 1    #op31731
+        while ar + 1 < alen and ages[ar + 1] <= age:    #cond31736
+            ar += 1    #op31743
+        ans += ar - al    #op31747
+    return ans    #io31754

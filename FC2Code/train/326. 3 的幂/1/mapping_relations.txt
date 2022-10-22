@@ -1,0 +1,4 @@
+def isPowerOfThree(self, n: int) -> bool:    #io4495
+    while n and n % 3 == 0:    #cond4499
+        n /= 3    #op4506
+    return n == 1    #io4513

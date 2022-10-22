@@ -1,0 +1,20 @@
+def strWithout3a3b(self, a: int, b: int) -> str:    #io36953
+    ans = []    #op36956
+    while a or b:    #cond36959
+        if len(ans) >= 2 and ans[-1] == ans[-2]:    #cond37013
+            if ans[-1] == 'b':    #cond37018
+                writeA = 1    #op37022
+            else:    #None
+                writeA = 0    #op37026
+        else:    #None
+            if a >= b:    #cond37032
+                writeA = 1    #op37036
+            else:    #None
+                writeA = 0    #op37040
+        if writeA:    #cond37045
+            a -= 1    #op37049
+            ans.append('a')    #op37051
+        else:    #None
+            b -= 1    #op37055
+            ans.append('b')    #op37057
+    return "".join(ans)    #io37065

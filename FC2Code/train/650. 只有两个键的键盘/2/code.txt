@@ -1,0 +1,11 @@
+def minSteps(self, n: int) -> int:
+    a = 0
+    i = 2
+    while i * i <= n:
+        while n % i == 0:
+            n //= i
+            a += i
+        i += 1
+    if n > 1:
+        a += n
+    return a

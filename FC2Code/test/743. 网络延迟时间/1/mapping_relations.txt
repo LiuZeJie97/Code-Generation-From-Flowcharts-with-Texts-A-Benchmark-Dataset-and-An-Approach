@@ -1,0 +1,17 @@
+def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:    #io29343
+    g = [[float('inf')] * n for _ in range(n)]    #op29346
+    for x, y, time in times:    #cond29351
+        g[x - 1][y - 1] = time    #op29358
+    dist = [float('inf')] * n    #op29362
+    dist[k - 1] = 0    #op29364
+    used = [False] * n    #op29366
+    for i in range(n):    #cond29371
+        x = -1    #op29424
+        for y in range(n):    #cond29429
+            if not used[y] and (x == -1 or dist[y] < dist[x]):    #cond29445
+                x = y    #op29449
+        used[x] = True    #op29456
+        for y, time in enumerate(g[x]):    #cond29461
+            dist[y] = min(dist[y], dist[x] + time)    #op29468
+    ans = max(dist)    #op29474
+    return ans if ans < float('inf') else -1    #io29479

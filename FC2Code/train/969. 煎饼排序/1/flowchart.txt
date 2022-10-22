@@ -1,0 +1,58 @@
+cond36678=>condition: i小于n整除2
+op36642=>operation: 令index等于i
+cond36650=>condition: index等于n减一
+op1=>operation: 变量n自减1
+op2=>operation: 变量i自增1
+op36675=>operation: 定义变量i等于0
+op36659=>operation: 定义变量m等于index
+e36696=>end: end function return
+op3=>operation: 变量i自增1
+op36533=>operation: 定义变量n等于数组arr的长度
+op4=>operation: 变量i自增1
+cond36622=>condition: i大于n
+op36689=>operation: 将index加一的和添加进答案数组
+cond36664=>condition: i小于m加一的和整除2
+op36661=>operation: 定义变量i等于0
+op36619=>operation: 定义变量i等于0
+st36526=>start: start pancakeSort
+op36691=>operation: 将n添加进答案数组
+io36528=>inputoutput: input: self, arr
+op36685=>operation: 交换数组中下标为i的元素和下标为n-1-i的元素
+io36698=>inputoutput: output:  返回答案数组
+cond36638=>condition: 数组中下标为i的元素大于下标为index的元素
+op36531=>operation: 初始化答案数组
+op36617=>operation: 定义变量index等于0
+op36671=>operation: 交换数组中下标为i的元素和下标为m-i的元素
+cond36536=>condition: n大于1
+
+cond36678(no)->op36689
+op36685->op4
+cond36622(yes)->cond36638
+io36698->e36696
+op36533->cond36536
+op36619->cond36622
+op3->cond36664
+op36531->op36533
+op36617->op36619
+cond36638(no)->op2
+op36661->cond36664
+cond36664(no)->op36675
+cond36650(no)->op36659
+io36528->op36531
+cond36664(yes)->op36671
+cond36536(no)->io36698
+cond36678(yes)->op36685
+cond36536(yes)->op36617
+op1->cond36536
+op36642->op2
+st36526->io36528
+cond36638(yes)->op36642
+op4->cond36678
+op36689->op36691
+op36659->op36661
+op2->cond36622
+op36691->op1
+cond36650(yes)->op1
+op36675->cond36678
+op36671->op3
+cond36622(no)->cond36650

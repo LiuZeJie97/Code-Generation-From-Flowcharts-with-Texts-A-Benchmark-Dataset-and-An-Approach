@@ -1,0 +1,31 @@
+op1=>operation: 数组下标增加一个单位长度
+cond35340=>condition: 平衡度等于-1
+io35290=>inputoutput: input: self, s
+e35354=>end: end function return
+cond35298=>condition: 数组下标小于字符串s的长度
+op35332=>operation: 平衡度加一
+op35336=>operation: 平衡度减一
+op35344=>operation: 添加数量加一
+op35346=>operation: 平衡度加一
+op35295=>operation: 定义数组下标i，初值为0
+st35288=>start: start minAddToMakeValid
+cond35328=>condition: 如果字符串s中下标为i的字符为'('
+io35356=>inputoutput: output:  返回添加数量与平衡度的和
+op35293=>operation: 定义变量ans用于记录添加数量，bal用于记录平衡度，其初值均为0
+
+op1->cond35298
+cond35328(no)->op35336
+op35346->op1
+cond35328(yes)->op35332
+io35356->e35354
+op35336->cond35340
+op35295->cond35298
+io35290->op35293
+op35332->cond35340
+st35288->io35290
+cond35340(yes)->op35344
+cond35298(no)->io35356
+cond35298(yes)->cond35328
+cond35340(no)->op1
+op35293->op35295
+op35344->op35346

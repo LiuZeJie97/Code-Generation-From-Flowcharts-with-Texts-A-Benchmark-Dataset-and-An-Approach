@@ -1,0 +1,12 @@
+def sortArrayByParity(self, numbers: List[int]) -> List[int]:    #io34844
+    n = len(numbers)    #op34847
+    res = [0] * n    #op34849
+    left, right = 0, n - 1    #op34851
+    for i in range(n):    #cond34856
+        if numbers[i] % 2 == 0:    #cond34878
+            res[left] = numbers[i]    #op34882
+            left += 1    #op34884
+        else:    #None
+            res[right] = numbers[i]    #op34888
+            right -= 1    #op34890
+    return res    #io34898

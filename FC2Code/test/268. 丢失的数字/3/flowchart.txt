@@ -1,0 +1,21 @@
+op18688=>operation: 定义数组下标k等于0
+op18698=>operation: 令xor等于xor异或当前数组下标再异或当前数组下标位置的数
+op1=>operation: 令数组下标自增1
+e18703=>end: end function return
+op18684=>operation: l为数组a的长度
+io18705=>inputoutput: output:  计算xor异或数组的长度，返回计算结果
+cond18691=>condition: 数组下标小于数组的长度
+op18686=>operation: 定义变量xor等于0
+io18681=>inputoutput: input: self, a
+st18679=>start: start missingNumber
+
+op18684->op18686
+io18705->e18703
+op18686->op18688
+cond18691(no)->io18705
+io18681->op18684
+cond18691(yes)->op18698
+op1->cond18691
+op18698->op1
+op18688->cond18691
+st18679->io18681

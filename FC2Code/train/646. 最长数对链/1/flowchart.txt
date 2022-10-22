@@ -1,0 +1,31 @@
+op24425=>operation: 对数对集合pairs排序
+io24422=>inputoutput: input: self, pairs
+op2=>operation: 该数组下标加一
+op24467=>operation: m为数组下标
+e24500=>end: end function return
+io24502=>inputoutput: output:  返回数组dis中的最大值
+op24429=>operation: n为数组下标
+cond24432=>condition: 该数组下标小于数对集合的长度
+cond24470=>condition: 该数组下标小于数组下标m
+op24427=>operation: 定义数组dis，其长度等于数对集合pairs的长度，初值均为1，其中dis[i]用于存储以下标为i的数对结尾的最长链的长度
+op1=>operation: 该数组下标加一
+cond24486=>condition: 下标为m的数对中的最后一个元素小于下标为n的数对中的第一个元素
+st24420=>start: start findLongestChain
+op24490=>operation: 将以下标为n的数对结尾的最长链的长度更新为它与以下标为m的数对结尾的最长链的长度值加一之间的最大值
+
+cond24486(no)->op2
+op24490->op2
+op24467->cond24470
+cond24432(yes)->op24467
+cond24432(no)->io24502
+op1->cond24432
+op24429->cond24432
+st24420->io24422
+io24502->e24500
+cond24486(yes)->op24490
+op2->cond24470
+cond24470(yes)->cond24486
+io24422->op24425
+op24425->op24427
+op24427->op24429
+cond24470(no)->op1

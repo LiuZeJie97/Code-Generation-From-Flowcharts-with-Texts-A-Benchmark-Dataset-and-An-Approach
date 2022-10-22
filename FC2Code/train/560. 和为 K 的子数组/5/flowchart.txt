@@ -1,0 +1,31 @@
+cond5712=>condition: 数组下标i小于nums长度
+op5699=>operation: 初始化子数组的个数count等于0
+op5709=>operation: 数组下标i等于0
+op5705=>operation: 和为0的子数组出现的次数为1
+io5696=>inputoutput: input: self, nums, k
+op5707=>operation: 当前前缀和等于0
+op5725=>operation: 查询累加和等于presum减去k出现的次数，presum减去k出现几次，就存在几种子序列使得和为k，据此更新count
+st5694=>start: start subarraySum
+io5734=>inputoutput: output:  返回子数组的个数
+op5703=>operation: 定义preSums等于collections.defaultdict(int)，preSums[i]表示前缀和为i的子数组出现的次数
+op5723=>operation: 更新当前前缀和等于其自身加上数组第i个元素
+op5727=>operation: 和为presum的子数组出现的次数加1
+op5701=>operation: n等于整数数组长度
+op1=>operation: 数组下标右移1个单位
+e5732=>end: end function return
+
+op5725->op5727
+op5699->op5701
+op5727->op1
+op5723->op5725
+op5701->op5703
+cond5712(no)->io5734
+op5703->op5705
+io5734->e5732
+st5694->io5696
+op5707->op5709
+op5705->op5707
+cond5712(yes)->op5723
+io5696->op5699
+op5709->cond5712
+op1->cond5712

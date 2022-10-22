@@ -1,0 +1,37 @@
+op24277=>operation: 定义变量answer等于0，用于记录答案
+op24329=>operation: j为数组下标，初值为i+1
+op24359=>operation: 将k加一
+st24268=>start: start triangleNumber
+e24370=>end: end function return
+op2=>operation: 上述数组下标加一
+op24279=>operation: i为数组下标
+io24270=>inputoutput: input: self, array
+cond24332=>condition: 如果上述数组下标小于数组的长度
+op24273=>operation: size为数组array的长度
+op24327=>operation: 定义变量k等于i
+cond24352=>condition: 如果k加一小于i且数组下标为k+1的元素小于数组下标为i的元素与下标为j的元素的和
+cond24282=>condition: 如果上述数组下标小于数组的长度
+op1=>operation: 上述数组下标加一
+op24363=>operation: 若k减去j大于0，则将答案更新为k减j
+io24372=>inputoutput: output:  返回答案
+op24275=>operation: 对数组进行排序
+
+cond24282(no)->io24372
+op24277->op24279
+cond24352(no)->op24363
+op24327->op24329
+cond24352(yes)->op24359
+op2->cond24332
+op24363->op2
+op24275->op24277
+cond24332(yes)->cond24352
+st24268->io24270
+op1->cond24282
+cond24282(yes)->op24327
+op24329->cond24332
+cond24332(no)->op1
+op24279->cond24282
+io24270->op24273
+op24359->cond24352
+op24273->op24275
+io24372->e24370

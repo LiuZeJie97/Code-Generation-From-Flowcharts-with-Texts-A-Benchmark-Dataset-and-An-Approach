@@ -1,0 +1,26 @@
+op25996=>operation: 定义变量C和x0，其初值均为float类型的x
+op26030=>operation: 将x0的值更新为xi
+io25979=>inputoutput: input: self, x
+cond26021=>condition: x0减xi的绝对值小于1e-7
+e26035=>end: end function return
+st25977=>start: start mySqrt
+op26018=>operation: 计算C除以x0再加上x0的结果，xi等于该结果乘以0.5
+io25990=>inputoutput: output:  返回0
+cond25999=>condition: 进入循环
+e25988=>end: end function return
+cond25983=>condition: 非负整数x等于0
+io26037=>inputoutput: output:  返回int类型的x0
+
+op26030->cond25999
+io25979->cond25983
+cond25999(yes)->op26018
+cond25983(yes)->io25990
+op26018->cond26021
+io26037->e26035
+io25990->e25988
+cond26021(yes)->io26037
+st25977->io25979
+op25996->cond25999
+cond26021(no)->op26030
+cond25999(no)->io26037
+cond25983(no)->op25996

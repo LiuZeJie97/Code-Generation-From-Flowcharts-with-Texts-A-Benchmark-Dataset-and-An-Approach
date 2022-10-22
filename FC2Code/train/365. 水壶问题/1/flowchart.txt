@@ -1,0 +1,20 @@
+io19687=>inputoutput: input: self, x, y, z
+io19698=>inputoutput: output:  返回False
+e19710=>end: end function return
+io19721=>inputoutput: output:  计算x与y的最大公约数，若目标值可以整除该最大公约数，则返回True，否则返回False
+e19719=>end: end function return
+io19712=>inputoutput: output:  若z等于0或x与y的和等于目标值，则返回True，否则返回False
+st19685=>start: start canMeasureWater
+cond19705=>condition: x或y等于0
+cond19691=>condition: x与y的和小于目标z值
+e19696=>end: end function return
+
+cond19705(yes)->io19712
+io19687->cond19691
+cond19691(no)->cond19705
+io19698->e19696
+cond19705(no)->io19721
+io19721->e19719
+st19685->io19687
+cond19691(yes)->io19698
+io19712->e19710

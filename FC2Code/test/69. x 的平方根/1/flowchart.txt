@@ -1,0 +1,24 @@
+cond25950=>condition: 中值的平方小于非负整数x
+io25920=>inputoutput: input: self, x
+op25923=>operation: 定义左边界l等于0，右边界r等于非负整数x，答案d等于-1
+cond25926=>condition: 左边界小于等于右边界
+op25947=>operation: 定义中值m等于左边界l与右边界r的和整除2
+op25958=>operation: 将答案d更新为中值m
+st25918=>start: start mySqrt
+e25966=>end: end function return
+op25954=>operation: 右边界等于中值减一
+io25968=>inputoutput: output:  返回答案
+op25960=>operation: 左边界等于中值加一
+
+st25918->io25920
+op25923->cond25926
+cond25926(yes)->op25947
+op25960->cond25926
+op25954->cond25926
+op25947->cond25950
+op25958->op25960
+io25920->op25923
+cond25950(yes)->op25954
+cond25950(no)->op25958
+cond25926(no)->io25968
+io25968->e25966

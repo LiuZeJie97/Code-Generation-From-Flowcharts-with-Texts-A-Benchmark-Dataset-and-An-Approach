@@ -1,0 +1,23 @@
+op8645=>operation: 股票的最低价格minprice等于inf，最大利润maxprofit等于0
+op8659=>operation: 若当前股票价格和最低价格之间的差值大于最大利润，则将最大利润更新为该差值
+io8668=>inputoutput: output:  返回最大利润
+io8640=>inputoutput: input: self, prices
+st8638=>start: start maxProfit
+op8647=>operation: price用于遍历股票价格数组prices，表示单支股票价格
+op8643=>operation: int型变量inf等于1e9
+op8661=>operation: 股票的最低价格等于它与当前股票价格之间的最小值
+cond8650=>condition: 对于每一支股票价格
+e8666=>end: end function return
+op1=>operation: 更新当前遍历的股票价格
+
+op8645->op8647
+op8643->op8645
+cond8650(no)->io8668
+op8647->cond8650
+cond8650(yes)->op8659
+io8640->op8643
+io8668->e8666
+op1->cond8650
+op8659->op8661
+st8638->io8640
+op8661->op1

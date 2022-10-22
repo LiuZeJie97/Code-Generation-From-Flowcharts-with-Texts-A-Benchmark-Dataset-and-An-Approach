@@ -1,0 +1,8 @@
+def removePalindromeSub(self, l: str) -> int:    #io11335
+    length = len(l)    #op11338
+    ans = 1    #op11340
+    for i in range(length):    #cond11345
+        if l[i] != l[length - i - 1]:    #cond11363
+            ans = 2    #op11367
+            break    #None
+    return ans    #io11379

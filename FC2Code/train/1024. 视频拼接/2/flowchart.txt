@@ -1,0 +1,57 @@
+op7787=>operation: pre等于last
+cond7769=>condition: i等于last
+op7688=>operation: 定义长度为time的数组maxn，数组元素初值均为0
+cond7695=>condition: 该变量小于二维数组clips的行数
+cond7781=>condition: i等于pre
+op7692=>operation: 定义变量i
+cond7735=>condition: 该变量小于time
+e7800=>end: end function return
+op2=>operation: 该变量加一
+op1=>operation: 该变量加一
+op7732=>operation: 定义变量i
+st7683=>start: start videoStitching
+op7773=>operation: 标志变量flag等于False
+op7730=>operation: 定义标志变量flag等于False
+io7810=>inputoutput: output:  返回-1
+cond7795=>condition: 标志变量为True
+e7808=>end: end function return
+op7716=>operation: 定义变量b等于数组clips第i行第1列的元素
+op7785=>operation: ret加一
+op7690=>operation: 定义变量last、ret、pre，其初值均为0
+cond7719=>condition: a小于time
+io7685=>inputoutput: input: self, clips, time
+op7714=>operation: 定义变量a等于数组clips第i行第0列的元素
+op7766=>operation: last等于它与数组maxn中下标为i的元素之间的最大值
+op7723=>operation: 数组maxn下标为a的元素等于它与b之间的最大值
+io7802=>inputoutput: output:  返回ret
+
+io7802->e7800
+op7690->op7692
+cond7781(yes)->op7785
+op2->cond7735
+cond7795(no)->io7810
+cond7769(no)->cond7781
+st7683->io7685
+op7692->cond7695
+op7714->op7716
+cond7695(no)->op7730
+cond7719(yes)->op7723
+io7810->e7808
+op7773->cond7795
+cond7781(no)->op2
+op7785->op7787
+op7688->op7690
+op7766->cond7769
+op7716->cond7719
+cond7719(no)->op1
+cond7735(yes)->op7766
+op7732->cond7735
+cond7735(no)->cond7795
+op7787->op2
+cond7695(yes)->op7714
+op7723->op1
+op1->cond7695
+cond7795(yes)->io7802
+op7730->op7732
+cond7769(yes)->op7773
+io7685->op7688

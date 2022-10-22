@@ -1,0 +1,24 @@
+def sortedSquares(self, number: List[int]) -> List[int]:    #io36806
+    n = len(number)    #op36809
+    negative = -1    #op36811
+    for i in range(n):    #cond36816
+        if number[i] < 0:    #cond36834
+            negative = i    #op36838
+        else:    #None
+            break    #None
+    ans = list()    #op36847
+    i, j = negative, negative + 1    #op36849
+    while i >= 0 or j < n:    #cond36852
+        if i < 0:    #cond36898
+            ans.append(number[j] ** 2)    #op36902
+            j += 1    #op36904
+        elif j == n:    #cond36909
+            ans.append(number[i] ** 2)    #op36913
+            i -= 1    #op36915
+        elif number[i] ** 2 < number[j] ** 2:    #cond36920
+            ans.append(number[i] ** 2)    #op36924
+            i -= 1    #op36926
+        else:    #None
+            ans.append(number[j] ** 2)    #op36930
+            j += 1    #op36932
+    return ans    #io36942

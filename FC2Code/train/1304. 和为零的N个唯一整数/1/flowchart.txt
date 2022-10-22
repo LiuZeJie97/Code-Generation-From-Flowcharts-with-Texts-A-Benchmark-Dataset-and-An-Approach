@@ -1,0 +1,19 @@
+op1=>operation: 令当前遍历数加2
+io10595=>inputoutput: output:  返回答案数组
+e10593=>end: end function return
+st10571=>start: start sumZero
+io10573=>inputoutput: input: self, n
+op10588=>operation: 将当前遍历数添加进答案数组中
+op10578=>operation: 遍历数x等于1减n
+op10576=>operation: 初始化答案数组a
+cond10581=>condition: 当前遍历数小于n
+
+io10595->e10593
+op10576->op10578
+io10573->op10576
+st10571->io10573
+cond10581(no)->io10595
+op10578->cond10581
+op10588->op1
+cond10581(yes)->op10588
+op1->cond10581

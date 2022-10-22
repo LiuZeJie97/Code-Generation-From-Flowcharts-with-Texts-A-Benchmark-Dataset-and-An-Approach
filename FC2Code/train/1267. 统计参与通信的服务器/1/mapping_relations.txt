@@ -1,0 +1,17 @@
+def countServers(self, grid: List[List[int]]) -> int:    #io9626
+    m, n = len(grid), len(grid[0])    #op9629
+    count_m = [0] * m    #op9631
+    count_n = [0] * n    #op9633
+    for i in range(m):    #cond9638
+        for j in range(n):    #cond9680
+            if grid[i][j] == 1:    #cond9698
+                count_m[i] += 1    #op9702
+                count_n[j] += 1    #op9704
+    ans = 0    #op9713
+    for i in range(m):    #cond9718
+        for j in range(n):    #cond9776
+            if count_m[i] <= 1 and count_n[j] <= 1:    #cond9802
+                continue    #None
+            if grid[i][j] == 1:    #cond9812
+                ans += 1    #op9816
+    return ans    #io9828

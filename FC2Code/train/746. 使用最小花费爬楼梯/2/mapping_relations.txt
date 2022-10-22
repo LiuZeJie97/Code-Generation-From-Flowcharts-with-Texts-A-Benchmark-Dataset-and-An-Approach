@@ -1,0 +1,7 @@
+def minCostClimbingStairs(self, cost: List[int]) -> int:    #io29525
+    n = len(cost)    #op29528
+    prev = curr = 0    #op29530
+    for x in range(2, n + 1):    #cond29535
+        nxt = min(curr + cost[x - 1], prev + cost[x - 2])    #op29544
+        prev, curr = curr, nxt    #op29546
+    return curr    #io29553

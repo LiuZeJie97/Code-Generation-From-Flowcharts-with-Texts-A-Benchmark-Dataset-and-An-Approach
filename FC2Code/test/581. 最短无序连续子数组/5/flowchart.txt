@@ -1,0 +1,41 @@
+io23677=>inputoutput: output:  最短子数组的长度为right减left加1的结果
+io23669=>inputoutput: output:  最短子数组的长度为0
+op23601=>operation: minn等于float型的inf，left等于-1
+cond23648=>condition: minn大于等于数组nums中下标为n-i-1的数
+st23592=>start: start findUnsortedSubarray
+op23656=>operation: 令left等于这个数对应的下标
+cond23636=>condition: maxn小于等于数组nums中下标为i的数
+cond23606=>condition: i小于n
+op1=>operation: 数组下标i右移1
+op23640=>operation: 令maxn等于这个数
+op23603=>operation: 定义i为数组下标
+e23675=>end: end function return
+io23594=>inputoutput: input: self, nums
+op23652=>operation: 令minn等于这个数
+cond23662=>condition: right等于-1
+e23667=>end: end function return
+op23599=>operation: maxn等于负的float型的inf，right等于-1
+op23644=>operation: 令right等于这个数对应的下标
+op23597=>operation: n为数组nums的长度
+
+op23597->op23599
+io23594->op23597
+op23640->cond23648
+op23652->op1
+cond23606(yes)->cond23636
+cond23636(yes)->op23640
+op23656->op1
+cond23636(no)->op23644
+cond23648(no)->op23656
+cond23662(no)->io23677
+op23599->op23601
+op23603->cond23606
+io23677->e23675
+cond23662(yes)->io23669
+op23644->cond23648
+cond23606(no)->cond23662
+st23592->io23594
+io23669->e23667
+cond23648(yes)->op23652
+op23601->op23603
+op1->cond23606

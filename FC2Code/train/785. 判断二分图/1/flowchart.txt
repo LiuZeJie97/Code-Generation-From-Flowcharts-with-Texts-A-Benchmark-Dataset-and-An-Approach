@@ -1,0 +1,55 @@
+io30360=>inputoutput: output:  图不是二分图
+op30305=>operation: 定义变量cNei，若颜色数组中下标为node的元素的值等于RED，则cNei等于GREEN，否则cNei等于RED
+e30358=>end: end function return
+st30051=>start: start isBipartite
+cond30223=>condition: 颜色数组中当前下标元素的值等于UNCOLORED
+op30056=>operation: n为数组graph的长度
+cond30232=>condition: 队列不为空
+io30053=>inputoutput: input: self, graph
+op30062=>operation: i为数组下标
+op30348=>operation: 颜色数组中当前遍历元素下标对应项的值等于cNei
+cond30310=>condition: 对数组graph[node]进行遍历
+cond30342=>condition: 颜色数组中当前遍历元素下标对应项的值等于UNCOLORED
+op30058=>operation: 定义初值为0的变量UNCOLORED，初值为1的变量RED，初值为2的变量GREEN
+op1=>operation: 数组下标加一
+op30227=>operation: 定义队列q，并将i加入队列
+op30303=>operation: node为队列队头元素，并让队头元素出队
+e30377=>end: end function return
+op30307=>operation: neighbor为数组graph[node]中的元素
+op30346=>operation: 将当前遍历元素加入队列
+cond30065=>condition: 数组下标小于n
+cond30353=>condition: 颜色数组中当前遍历元素下标对应项的值不等于cNei
+op2=>operation: 更新被遍历元素
+op30229=>operation: 将颜色数组中下标为i的元素的值更新为RED
+op30060=>operation: 定义颜色数组color，其长度等于数组graph的长度，初值均为UNCOLORED
+io30379=>inputoutput: output:  图是二分图
+
+cond30310(yes)->cond30342
+op30348->op2
+cond30065(yes)->cond30223
+op30062->cond30065
+cond30065(no)->io30379
+cond30232(yes)->op30303
+cond30223(yes)->op30227
+cond30232(no)->op1
+op30307->cond30310
+cond30353(no)->op2
+op30305->op30307
+cond30310(no)->cond30232
+op1->cond30065
+op30058->op30060
+op30303->op30305
+op30056->op30058
+op30227->op30229
+cond30353(yes)->io30360
+io30360->e30358
+op30346->op30348
+op30229->cond30232
+cond30342(no)->cond30353
+op30060->op30062
+st30051->io30053
+io30379->e30377
+io30053->op30056
+cond30223(no)->op1
+cond30342(yes)->op30346
+op2->cond30310

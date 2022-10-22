@@ -1,0 +1,8 @@
+def canMakeArithmeticProgression(self, arr: List[int]) -> bool:
+    arr.sort()
+    sgn = True
+    for index in range(1, len(arr) - 1):
+        if arr[index] * 2 != arr[index - 1] + arr[index + 1]:
+            sgn = False
+            break
+    return sgn

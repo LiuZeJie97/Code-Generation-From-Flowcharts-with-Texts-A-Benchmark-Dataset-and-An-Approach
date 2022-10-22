@@ -1,0 +1,13 @@
+def canPartition(self, nums: List[int]) -> bool:    #io4799
+    n = len(nums)    #op4802
+    if n < 2:    #cond4805
+        return False    #io4812
+    total = sum(nums)    #op4818
+    if total % 2 != 0:    #cond4821
+        return False    #io4828
+    target = total // 2    #op4834
+    dp = [True] + [False] * target    #op4836
+    for i, num in enumerate(nums):    #cond4841
+        for j in range(target, num - 1, -1):    #cond4863
+            dp[j] |= dp[j - num]    #op4870
+    return dp[target]    #io4879

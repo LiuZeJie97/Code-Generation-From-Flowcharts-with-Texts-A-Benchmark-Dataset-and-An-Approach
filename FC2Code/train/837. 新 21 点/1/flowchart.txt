@@ -1,0 +1,36 @@
+io32079=>inputoutput: output:  爱丽丝的分数不超过n的概率是1.0
+op32101=>operation: 计算n-k+1与maxPts之间的最小值，令float型的该最小值除以maxPts，从得分为k-1开始游戏且分数不超过n的概率等于该计算结果
+op32113=>operation: 计算从得分为i+maxPts+1开始游戏且分数不超过n的概率与从得分为i+1开始游戏且分数不超过n的概率的差值，令该差值除以maxPts，从得分为i开始游戏且分数不超过n的概率等于从得分为i+1开始游戏且分数不超过n的概率与该计算结果的差值
+op32087=>operation: i为数组下标，初值为k
+st32066=>start: start new21Game
+io32120=>inputoutput: output:  返回从得分为0开始游戏且分数不超过n的概率
+op32085=>operation: 定义长度等于k+maxPts，数组元素初值均为0的数组dp，dp[i]表示从得分为i开始游戏且分数不超过n的概率
+cond32072=>condition: 如果k等于0
+io32068=>inputoutput: input: self, n, k, maxPts
+op1=>operation: i等于i加一
+cond32106=>condition: 当i大于-1
+e32118=>end: end function return
+op32097=>operation: 从得分为i开始游戏且分数不超过n的概率等于1.0
+cond32090=>condition: 计算n与k+maxPts-1之间的最小值，当i小于该计算结果加一时
+op32103=>operation: i为数组下标，初值为k-2
+op2=>operation: i等于i减一
+e32077=>end: end function return
+
+op32101->op32103
+cond32090(no)->op32101
+op32103->cond32106
+op32097->op1
+io32120->e32118
+op32085->op32087
+cond32090(yes)->op32097
+io32079->e32077
+cond32072(yes)->io32079
+cond32106(yes)->op32113
+st32066->io32068
+cond32106(no)->io32120
+op32113->op2
+op2->cond32106
+io32068->cond32072
+op32087->cond32090
+op1->cond32090
+cond32072(no)->op32085

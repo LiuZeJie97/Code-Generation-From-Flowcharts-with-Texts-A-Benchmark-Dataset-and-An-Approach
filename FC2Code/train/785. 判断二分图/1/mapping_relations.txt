@@ -1,0 +1,18 @@
+def isBipartite(self, graph: List[List[int]]) -> bool:    #io30053
+    n = len(graph)    #op30056
+    UNCOLORED, RED, GREEN = 0, 1, 2    #op30058
+    color = [UNCOLORED] * n    #op30060
+    for i in range(n):    #cond30065
+        if color[i] == UNCOLORED:    #cond30223
+            q = collections.deque([i])    #op30227
+            color[i] = RED    #op30229
+            while q:    #cond30232
+                node = q.popleft()    #op30303
+                cNei = (GREEN if color[node] == RED else RED)    #op30305
+                for neighbor in graph[node]:    #cond30310
+                    if color[neighbor] == UNCOLORED:    #cond30342
+                        q.append(neighbor)    #op30346
+                        color[neighbor] = cNei    #op30348
+                    elif color[neighbor] != cNei:    #cond30353
+                        return False    #io30360
+    return True    #io30379

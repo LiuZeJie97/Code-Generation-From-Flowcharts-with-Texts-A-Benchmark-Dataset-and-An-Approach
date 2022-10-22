@@ -1,0 +1,54 @@
+cond12074=>condition: 数组num中下标为i的元素不为0
+op12019=>operation: 定义变量i等于0
+op11929=>operation: 定义变量i等于0
+op11943=>operation: 定义数组ret
+cond12040=>condition: 数组num中下标为i的元素不为0
+op11939=>operation: 计算字符串中下标为i的字符的ASCII码与oa之间的差值，令数组num中下标为该差值的元素加一
+cond12022=>condition: i小于字符串的长度
+op12080=>operation: 将ASCII码为i+oa的字符添加进数组ret中
+st11920=>start: start sortString
+op3=>operation: i等于i-1
+cond11932=>condition: i小于字符串s的长度
+op12044=>operation: 令该元素减一
+op11927=>operation: 定义变量oa等于字符a的ASCII码
+io12092=>inputoutput: output:  返回合法字符串ret
+e12090=>end: end function return
+op12046=>operation: 将ASCII码为i+oa的字符添加进数组ret中
+op1=>operation: i等于i+1
+op11925=>operation: 定义长度为26，初值均为0的数组num
+op12053=>operation: 定义变量i等于25
+op2=>operation: i等于i+1
+cond12056=>condition: i大于-1
+op12078=>operation: 令该元素减一
+cond11946=>condition: ret的长度小于s的长度
+io11922=>inputoutput: input: self, s
+
+cond12040(no)->op2
+op12078->op12080
+op3->cond12056
+cond11932(no)->op11943
+cond12022(no)->op12053
+cond12056(no)->cond11946
+io12092->e12090
+cond12074(no)->op3
+op11929->cond11932
+op12080->op3
+op11927->op11929
+op2->cond12022
+cond11946(no)->io12092
+op12046->op2
+op12053->cond12056
+io11922->op11925
+op11925->op11927
+op11939->op1
+op11943->cond11946
+op12019->cond12022
+op12044->op12046
+cond12040(yes)->op12044
+op1->cond11932
+cond11946(yes)->op12019
+cond11932(yes)->op11939
+st11920->io11922
+cond12056(yes)->cond12074
+cond12022(yes)->cond12040
+cond12074(yes)->op12078

@@ -1,0 +1,11 @@
+def numSubarrayBoundedMax(self, nums: List[int], left: int, right: int) -> int:
+    cntL = cntR = 0
+    cur = 0
+    for num in nums :
+        cur = cur + 1 if num <= left - 1 else 0
+        cntL += cur
+    cur = 0
+    for num in nums :
+        cur = cur + 1 if num <= right else 0
+        cntR += cur
+    return cntR - cntL

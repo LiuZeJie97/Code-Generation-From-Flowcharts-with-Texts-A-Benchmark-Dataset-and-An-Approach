@@ -1,0 +1,8 @@
+def minTimeToVisitAllPoints(self, points: List[List[int]]) -> int:    #io9583
+    x0, x1 = points[0][0], points[0][-1]    #op9586
+    ans = 0    #op9588
+    for i in range(1, len(points)):    #cond9593
+        y0, y1 = points[i][0], points[i][-1]    #op9604
+        ans += max(abs(x0 - y0), abs(x1 - y1))    #op9606
+        x0, x1 = points[i][0], points[i][-1]    #op9608
+    return ans    #io9615

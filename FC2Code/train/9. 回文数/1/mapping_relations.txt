@@ -1,0 +1,8 @@
+def isPalindrome(self, x: int) -> bool:    #io6412
+    if x < 0 or (x % 10 == 0 and x != 0) :    #cond6416
+        return False    #io6423
+    revertedNumber = 0    #op6429
+    while x > revertedNumber:    #cond6432
+        revertedNumber = revertedNumber * 10 + x % 10;    #op6441
+        x //= 10    #op6443
+    return x == revertedNumber or x == revertedNumber // 10    #io6450

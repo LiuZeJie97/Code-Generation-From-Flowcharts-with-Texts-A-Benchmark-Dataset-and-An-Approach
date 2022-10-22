@@ -1,0 +1,37 @@
+e9191=>end: end function return
+st9133=>start: start numberOfSubarrays
+op9142=>operation: 定义变量ans，初值为0，用于记录优美子数组的数目
+op9140=>operation: 定义数组odd，初值为-1
+op9174=>operation: 将数组numbers的长度添加进数组odd中
+cond9147=>condition: 数组下标小于数组numbers的长度
+op2=>operation: 令数组下标等于数组下标加一
+op9167=>operation: 将i添加进数组odd中
+io9193=>inputoutput: output:  返回优美子数组的数目
+op1=>operation: 令数组下标等于数组下标加一
+op9176=>operation: 定义数组下标index，初值为1
+op9186=>operation: 计算数组中下标为index的数与下标为index-1的数之间的差值，下标为index+k的数与下标为index+k-1的数之间的差值，令优美子数组的数目ans加上它们的乘积
+op9144=>operation: 定义数组下标index，初值为0
+op9138=>operation: n为数组numbers的长度
+io9135=>inputoutput: input: self, numbers, k
+cond9179=>condition: 数组下标小于数组odd的长度减k
+cond9163=>condition: 被遍历数组中当前遍历下标的数是奇数
+
+op1->cond9147
+cond9179(yes)->op9186
+cond9163(no)->op1
+cond9163(yes)->op9167
+op9138->op9140
+op9144->cond9147
+cond9147(yes)->cond9163
+cond9147(no)->op9174
+cond9179(no)->io9193
+op9167->op1
+op9186->op2
+op2->cond9179
+io9193->e9191
+op9140->op9142
+op9142->op9144
+st9133->io9135
+op9174->op9176
+op9176->cond9179
+io9135->op9138

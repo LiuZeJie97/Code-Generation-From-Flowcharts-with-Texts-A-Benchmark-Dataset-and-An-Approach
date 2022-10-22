@@ -1,0 +1,17 @@
+def checkRecord(self, s: str) -> bool:
+    absents = lates = 0
+    flag = True
+    for i, c in enumerate(s):
+        if c == "A":
+            absents += 1
+            if absents >= 2:
+                flag = False
+                break
+        elif c == "L":
+            lates += 1
+            if lates >= 3:
+                flag = False
+                break
+        else:
+            lates = 0
+    return flag

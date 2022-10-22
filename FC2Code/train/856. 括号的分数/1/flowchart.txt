@@ -1,0 +1,28 @@
+cond33173=>condition: 字符串中当前字符为'('
+op33148=>operation: 将0入栈
+op33146=>operation: 定义栈st
+op33177=>operation: 将0入栈
+e33189=>end: end function return
+op1=>operation: 字符串下标加一
+io33143=>inputoutput: input: self, S
+op33181=>operation: 定义v等于栈顶元素，并将栈顶元素出栈
+cond33153=>condition: 字符串下标小于字符串的长度
+st33141=>start: start scoreOfParentheses
+op33150=>operation: i为字符串s的下标，初值为0
+op33183=>operation: 令栈中最后一项加上2倍的v与1之间的最大值
+io33191=>inputoutput: output:  返回栈顶元素，并移除栈顶元素
+
+op33181->op33183
+op33146->op33148
+op33148->op33150
+op33150->cond33153
+op1->cond33153
+cond33173(yes)->op33177
+op33177->op1
+op33183->op1
+io33143->op33146
+cond33153(no)->io33191
+cond33153(yes)->cond33173
+cond33173(no)->op33181
+io33191->e33189
+st33141->io33143

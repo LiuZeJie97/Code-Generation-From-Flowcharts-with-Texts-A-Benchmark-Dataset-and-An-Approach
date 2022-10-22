@@ -1,0 +1,33 @@
+io15107=>inputoutput: input: self, array, m, k
+op15198=>operation: 偏移量加一
+st15105=>start: start containsPattern
+cond15189=>condition: 数组array中下标为l+offset的元素不等于下标为l+offset%m的元素
+op15112=>operation: 数组下标l等于0
+io15221=>inputoutput: output:  不存在指定模式
+io15210=>inputoutput: output:  存在指定模式
+op15110=>operation: n为数组array的长度
+e15208=>end: end function return
+op15168=>operation: 偏移量offset等于0
+cond15171=>condition: 偏移量小于m乘以k
+cond15115=>condition: 数组下标小于n-m*k+1
+op1=>operation: 数组下标加一
+e15219=>end: end function return
+cond15203=>condition: 若偏移量等于m乘以k
+
+io15221->e15219
+cond15115(yes)->op15168
+io15107->op15110
+op15198->cond15171
+cond15189(yes)->cond15203
+cond15189(no)->op15198
+op15112->cond15115
+cond15171(yes)->cond15189
+op15168->cond15171
+cond15115(no)->io15221
+op1->cond15115
+cond15203(no)->op1
+op15110->op15112
+cond15171(no)->cond15203
+io15210->e15208
+cond15203(yes)->io15210
+st15105->io15107

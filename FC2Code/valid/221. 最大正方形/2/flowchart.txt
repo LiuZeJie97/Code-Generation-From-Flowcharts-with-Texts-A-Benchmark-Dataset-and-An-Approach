@@ -1,0 +1,70 @@
+cond16226=>condition: j小于列数
+st15906=>start: start maximalSquare
+io15908=>inputoutput: input: self, matrix
+op16481=>operation: 更新标记为False
+e16514=>end: end function return
+op4=>operation: m自增1
+op16378=>operation: k等于1
+op15929=>operation: i等于0
+op16495=>operation: 如果最大边长小于k加1，则更新最大边长为k加1
+op16511=>operation: 最大正方形面积等于最大边长的平方
+e15917=>end: end function return
+cond15912=>condition: 矩形matrix行数或列数长度为0
+op1=>operation: i自增1
+op16374=>operation: 如果最大边长小于1，则更新为1
+io16516=>inputoutput: output:  返回最大正方形面积
+op16456=>operation: m等于0
+cond15932=>condition: i小于矩形行数
+op15927=>operation: 定义rows, columns分别记录矩形行数和列数
+cond16381=>condition: k小于可能的最大正方形边长
+op16444=>operation: 定义标记flag，初值为True
+op2=>operation: j自增1
+cond16459=>condition: m小于k
+op16223=>operation: j=0
+cond16477=>condition: 矩形第i加k行第j加m列的元素等于 '0' 或者 矩形第i加m行第j加k列的元素等于 '0'
+op15925=>operation: 定义maxSide记录最大边长，初值为0
+cond16491=>condition: 标记为True
+op16376=>operation: 定义可能的最大正方形边长currentMaxSide等于行数减去i和列数减去j中的较小值
+io15919=>inputoutput: output:  最大正方形面积为0
+cond16447=>condition: 矩形第i加k行第j加k列的元素等于 '0'
+cond16370=>condition: 矩形下标为i，j的元素为1
+op3=>operation: k自增1
+
+cond16447(yes)->op2
+cond16370(yes)->op16374
+cond16226(no)->op1
+io15919->e15917
+cond16447(no)->op16456
+op16456->cond16459
+cond15932(no)->op16511
+op16374->op16376
+op15925->op15927
+cond16459(yes)->cond16477
+op15929->cond15932
+op16481->cond16491
+op15927->op15929
+cond16226(yes)->cond16370
+op16376->op16378
+cond15912(no)->op15925
+op16495->op3
+io15908->cond15912
+op4->cond16459
+cond16491(yes)->op16495
+op16378->cond16381
+st15906->io15908
+cond16370(no)->op2
+cond16477(yes)->op16481
+cond15932(yes)->op16223
+cond16459(no)->cond16491
+cond16381(yes)->op16444
+cond15912(yes)->io15919
+cond16477(no)->op4
+op2->cond16226
+op16223->cond16226
+cond16491(no)->op2
+op3->cond16381
+io16516->e16514
+op1->cond15932
+cond16381(no)->op2
+op16444->cond16447
+op16511->io16516

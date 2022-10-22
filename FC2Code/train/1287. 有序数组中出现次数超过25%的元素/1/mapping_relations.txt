@@ -1,0 +1,16 @@
+def findSpecialInteger(self, arr: List[int]) -> int:    #io10126
+    n = len(arr)    #op10129
+    cur, cnt = arr[0], 0    #op10131
+    f = False    #op10133
+    for i in range(n):    #cond10138
+        if arr[i] == cur:    #cond10168
+            cnt += 1    #op10172
+            if cnt * 4 > n:    #cond10175
+                f = True    #op10179
+                break    #None
+        else:    #None
+            cur, cnt = arr[i], 1    #op10188
+    if f:    #cond10194
+        return cur    #io10201
+    else:    #None
+        return -1    #io10209

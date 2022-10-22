@@ -1,0 +1,9 @@
+def binaryGap(self, n: int) -> int:    #io33415
+    last = -1    #op33418
+    ans = 0    #op33420
+    for i in range(32):    #cond33425
+        if (n >> i) % 2 != 0:    #cond33451
+            if last != -1:    #cond33456
+                ans = max(ans, i - last)    #op33460
+            last = i    #op33465
+    return ans    #io33475

@@ -1,0 +1,10 @@
+def validMountainArray(self, arr: List[int]) -> bool:    #io36056
+    N = len(arr)    #op36059
+    i = 0    #op36061
+    while i + 1 < N and arr[i] < arr[i + 1]:    #cond36064
+        i += 1    #op36071
+    if i == 0 or i == N - 1:    #cond36076
+        return False    #io36083
+    while i + 1 < N and arr[i] > arr[i + 1]:    #cond36090
+        i += 1    #op36097
+    return i == N - 1    #io36104

@@ -1,0 +1,8 @@
+def countOrders(self, n: int) -> int:    #io11871
+    if n == 1:    #cond11875
+        return 1    #io11882
+    ans, mod = 1, 10**9+7    #op11888
+    for t in range(2, n + 1):    #cond11893
+        ans = ans * (t * 2 - 1) * t    #op11902
+        ans %= mod    #op11904
+    return ans    #io11911

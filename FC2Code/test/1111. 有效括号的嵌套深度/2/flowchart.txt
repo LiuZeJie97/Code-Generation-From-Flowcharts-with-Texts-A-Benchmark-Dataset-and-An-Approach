@@ -1,0 +1,26 @@
+op8522=>operation: 将1减去d的结果添加进结果数组中
+st8482=>start: start maxDepthAfterSplit
+io8484=>inputoutput: input: self, seq
+io8530=>inputoutput: output:  返回结果数组
+op8511=>operation: d等于当前下标除以2的余数
+op8489=>operation: 字符串下标i等于0
+cond8492=>condition: 字符串下标小于字符串seq的长度
+op8487=>operation: 初始化结果数组res
+e8528=>end: end function return
+cond8514=>condition: 字符串当前下标字符为'('
+op1=>operation: 令当前字符串下标加一
+op8518=>operation: 将d添加进结果数组中
+
+io8484->op8487
+cond8492(yes)->op8511
+op8522->op1
+op8489->cond8492
+op8487->op8489
+st8482->io8484
+cond8514(no)->op8522
+op8511->cond8514
+op8518->op1
+cond8492(no)->io8530
+op1->cond8492
+io8530->e8528
+cond8514(yes)->op8518

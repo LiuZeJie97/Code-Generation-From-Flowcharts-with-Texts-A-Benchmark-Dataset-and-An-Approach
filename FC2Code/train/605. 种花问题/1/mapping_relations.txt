@@ -1,0 +1,16 @@
+def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:    #io23928
+    count, m, prev = 0, len(flowerbed), -1    #op23931
+    for i in range(m):    #cond23936
+        if flowerbed[i] == 1:    #cond23978
+            if prev < 0:    #cond23983
+                count += i // 2    #op23987
+            else:    #None
+                count += (i - prev - 2) // 2    #op23991
+            if count >= n:    #cond23995
+                return True    #io24002
+            prev = i    #op24008
+    if prev < 0:    #cond24016
+        count += (m + 1) // 2    #op24020
+    else:    #None
+        count += (m - prev - 1) // 2    #op24024
+    return count >= n    #io24030

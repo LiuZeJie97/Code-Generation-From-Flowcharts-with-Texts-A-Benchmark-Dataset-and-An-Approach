@@ -1,0 +1,37 @@
+op21424=>operation: 字符串s的指针加一
+cond21337=>condition: 对字符串数组进行遍历
+op21394=>operation: 定义字符串t的指针i，字符串s的指针j，其初值均为0
+cond21429=>condition: 字符串t的指针等于字符串t的长度
+op1=>operation: 将当前遍历字符串的值更新为字符串数组中的下一个字符串
+io21329=>inputoutput: input: self, s, dictionary
+cond21397=>condition: 当字符串t的指针小于字符串t的长度且字符串s的指针小于字符串s的长度
+op21438=>operation: 令字符串res等于字符串t
+cond21415=>condition: 字符串t指针处的字符与字符串s指针处的字符相同
+op21334=>operation: t为字符串数组dictionary的字符串，初值为字符串数组中第一个字符串
+op21419=>operation: 字符串t的指针加一
+io21451=>inputoutput: output:  返回结果
+st21327=>start: start findLongestWord
+op21332=>operation: 定义空字符串res，用于保存结果
+cond21434=>condition: 字符串t的长度大于字符串res的长度或这两个长度相等且字符串t小于字符串res
+e21449=>end: end function return
+
+io21451->e21449
+io21329->op21332
+op21424->cond21397
+op21394->cond21397
+cond21337(no)->io21451
+cond21397(no)->cond21429
+op21334->cond21337
+cond21434(no)->op1
+op21438->op1
+cond21337(yes)->op21394
+st21327->io21329
+cond21434(yes)->op21438
+cond21415(yes)->op21419
+cond21429(yes)->cond21434
+op21332->op21334
+cond21415(no)->op21424
+op1->cond21337
+cond21397(yes)->cond21415
+op21419->op21424
+cond21429(no)->op1

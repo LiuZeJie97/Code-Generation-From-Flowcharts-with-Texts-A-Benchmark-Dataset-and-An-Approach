@@ -1,0 +1,13 @@
+def maxCoins(self, nums: List[int]) -> int:    #io19025
+    n = len(nums)    #op19028
+    rec = [[0] * (n + 2) for _ in range(n + 2)]    #op19030
+    val = [0] * (n + 2)    #op19032
+    for i in range(n):    #cond19037
+        val[i + 1] = nums[i]    #op19044
+    for i in range(n - 1, -1, -1):    #cond19051
+        for j in range(i + 2, n + 2):    #cond19113
+            for k in range(i + 1, j):    #cond19143
+                total = val[i] * val[k] * val[j]    #op19154
+                total += rec[i][k] + rec[k][j]    #op19156
+                rec[i][j] = max(rec[i][j], total)    #op19158
+    return rec[0][n + 1]    #io19169

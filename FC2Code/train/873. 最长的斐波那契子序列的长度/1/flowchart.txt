@@ -1,0 +1,39 @@
+cond33721=>condition: y在集合S中
+st33615=>start: start lenLongestFibSubseq
+op33716=>operation: 定义变量x，y分别等于数组中下标为j的元素，数组中下标为i的元素与下标为j的元素的和
+op33620=>operation: 定义集合S，并使用数组arr对集合S进行初始化
+op33624=>operation: i为数组下标
+op2=>operation: 上述数组下标加一
+op1=>operation: 上述数组下标加一
+cond33689=>condition: 上述数组下标小于数组arr的长度
+op33686=>operation: j为数组下标，初值为i+1
+op33622=>operation: 定义答案ans，初值为0
+op33730=>operation: 令x，y分别等于y，x+y
+cond33627=>condition: 上述数组下标小于数组arr的长度
+op33732=>operation: 子序列的长度加一
+op33736=>operation: 如果子序列的长度大于答案，则将答案更新为子序列的长度
+e33743=>end: end function return
+op33718=>operation: 定义变量length，初值为2，用于记录子序列的长度
+io33745=>inputoutput: output:  如果答案大于等于3则返回答案，否则返回0
+io33617=>inputoutput: input: self, arr
+
+io33617->op33620
+op33732->cond33721
+op33624->cond33627
+op33736->op2
+cond33627(no)->io33745
+cond33721(yes)->op33730
+op33718->cond33721
+op2->cond33689
+op33686->cond33689
+cond33721(no)->op33736
+op33620->op33622
+cond33689(yes)->op33716
+cond33627(yes)->op33686
+op33622->op33624
+op33730->op33732
+op33716->op33718
+st33615->io33617
+io33745->e33743
+op1->cond33627
+cond33689(no)->op1

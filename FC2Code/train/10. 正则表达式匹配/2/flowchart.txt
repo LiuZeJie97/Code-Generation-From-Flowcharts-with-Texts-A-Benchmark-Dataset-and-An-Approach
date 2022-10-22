@@ -1,0 +1,69 @@
+op640=>operation: 如果字符串的前m-1个字符与字符规律中的前n-1个字符能够匹配，则f[m][n]等于True，否则，f[m][n]保持不变
+cond489=>condition: 字符规律的下标小于字符规律的长度加1
+op1=>operation: 字符串的下标向右移动一个单位
+cond319=>condition: 字符串的下标小于字符串长度加1
+op627=>operation: 匹配标记等于True，表示字符串第[m]位和字符规律第[n]位匹配
+op316=>operation: m为字符串的下标，初值等于0
+io307=>inputoutput: input: self, s, p
+op597=>operation: 字符串第[m]位和字符规律[n-1]位是否匹配取决于字符串[m-1]位和字符规律[n-2]位是否相等
+cond589=>condition: 字符规律中的下标为n-2的字符等于'.'
+cond580=>condition: 字符串s的下标m等于0
+io653=>inputoutput: output:  返回字符串的前m个字符与字符规律中的前n个字符是否能够匹配
+st305=>start: start isMatch
+op618=>operation: 匹配标记等于Flase,表示字符串第[m]位和字符规律第[n]位不匹配
+cond614=>condition: 字符串的下标等于0
+op314=>operation: 字符串前0个字符与字符规律中的前0个字符一定能够匹配
+cond602=>condition: 匹配标记为True
+cond636=>condition: 匹配标记为True
+op310=>operation: len_s和len_n分别为字符串s和一个字符规律p的长度
+op312=>operation: 用 f[m][n] 表示字符串的前i个字符与字符规律中的前j个字符是否能够匹配，第一维长度为字符串长度加1.第二维长度等于字符规律的长度加1，初始时全部置为False
+cond573=>condition: 字符规律p的前一位等于'*'
+op593=>operation: 匹配标记等于True，表示字符串第[m]位和字符规律第[n - 1]位匹配
+op577=>operation: 只要字符串的前m个字符与字符规律中的前n个字符能够匹配，或者字符串的前m个字符与字符规律中的前n-2个字符能够匹配，f[m][n]就等于True
+op606=>operation: 如果字符串的前i-1个字符与 字符规律中的前j个字符能够匹配，则f[m][n]等于True，否则，f[m][n]保持不变
+op570=>operation: 定义匹配标记matches
+e651=>end: end function return
+op486=>operation: n为字符规律的下标，初值等于1
+cond623=>condition: 字符规律中的下标为j-1的字符等于'.'
+op584=>operation: 匹配标记等于Flase,表示字符串第[m]位和字符规律[n - 1]位不匹配
+op2=>operation: 字符规律的下标向右移动一个单位
+op631=>operation: 字符串[m]和字符规律第[n]位是否匹配取决于字符串第[m-1]位和字符规律第[n-1]位是否相等
+
+op577->cond580
+op312->op314
+io653->e651
+op606->op2
+op597->cond602
+op1->cond319
+op618->cond636
+op593->cond602
+op2->cond489
+cond589(yes)->op593
+op640->op2
+cond602(yes)->op606
+op314->op316
+cond489(yes)->op570
+cond614(no)->cond623
+cond573(yes)->op577
+op486->cond489
+cond319(yes)->op486
+cond623(yes)->op627
+cond319(no)->io653
+op310->op312
+op316->cond319
+cond623(no)->op631
+st305->io307
+cond580(yes)->op584
+op584->cond602
+io307->op310
+op627->cond636
+cond489(no)->op1
+cond573(no)->cond614
+cond580(no)->cond589
+op570->cond573
+cond614(yes)->op618
+cond602(no)->op2
+cond636(no)->op2
+cond636(yes)->op640
+op631->cond636
+cond589(no)->op597

@@ -1,0 +1,41 @@
+cond37045=>condition: writeA不为0
+op37055=>operation: b减一
+op37049=>operation: a减一
+cond37018=>condition: 答案数组中最后一项元素等于'b'
+cond37013=>condition: 答案数组的长度大于等于2且答案数组中最后一项元素等于倒数第二项元素
+op37051=>operation: 将'a'添加进答案数组中
+op37040=>operation: writeA等于0
+op37036=>operation: writeA等于1
+io37065=>inputoutput: output:  返回答案数组用""连接的结果
+io36953=>inputoutput: input: self, a, b
+cond36959=>condition: a不为0或b不为0
+cond37032=>condition: a大于等于b
+op37057=>operation: 将'b'添加进答案数组中
+e37063=>end: end function return
+st36951=>start: start strWithout3a3b
+op37022=>operation: writeA等于1
+op36956=>operation: 定义答案数组ans
+op37026=>operation: writeA等于0
+
+cond37032(yes)->op37036
+op36956->cond36959
+op37051->cond36959
+cond36959(yes)->cond37013
+io37065->e37063
+cond37018(no)->op37026
+op37055->op37057
+cond37018(yes)->op37022
+cond37045(no)->op37055
+cond37013(no)->cond37032
+cond37013(yes)->cond37018
+io36953->op36956
+op37036->cond37045
+op37040->cond37045
+op37049->op37051
+op37022->cond37045
+cond36959(no)->io37065
+op37057->cond36959
+cond37045(yes)->op37049
+cond37032(no)->op37040
+st36951->io36953
+op37026->cond37045

@@ -1,0 +1,30 @@
+st1588=>start: start maxProduct
+op1635=>operation: 如果当前最大乘积大于max_res，则更新max_res
+io1590=>inputoutput: input: self, nums
+op1593=>operation: n为数组nums的长度。
+op1597=>operation: i为数组n的下标
+cond1622=>condition: 当前位置为负数
+e1640=>end: end function return
+op1626=>operation: 交换最大乘积和最小乘积的值
+op1595=>operation: 初始化结果max_res等于MIN，初始化当前最大乘积max_num等于1，初始化当前最小乘积min_num等于1
+op1=>operation: 数组下标右移1位
+io1642=>inputoutput: output:  返回结果
+op1631=>operation: 更新当前位置的最大乘积等于max_num乘nums[i]和nums[i]的较大值
+op1633=>operation: 更新当前位置的最小乘积等于min_num乘nums[i]和nums[i]的较小值
+cond1600=>condition: i小于数组长度
+
+cond1622(yes)->op1626
+cond1622(no)->op1631
+io1590->op1593
+op1->cond1600
+io1642->e1640
+op1597->cond1600
+op1633->op1635
+op1635->op1
+cond1600(yes)->cond1622
+op1631->op1633
+st1588->io1590
+cond1600(no)->io1642
+op1593->op1595
+op1595->op1597
+op1626->op1631

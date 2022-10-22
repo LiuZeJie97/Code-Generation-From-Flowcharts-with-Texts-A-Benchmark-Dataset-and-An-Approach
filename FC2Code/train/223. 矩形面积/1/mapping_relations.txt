@@ -1,0 +1,11 @@
+def computeArea(self, ax1: int, ay1: int, ax2: int, ay2: int, bx1: int, by1: int, bx2: int, by2: int) -> int:    #io17418
+    area1 = (ax2 - ax1) * (ay2 - ay1)    #op17421
+    area2 = (bx2 - bx1) * (by2 - by1)    #op17423
+    overlapWidth = min(ax2, bx2) - max(ax1, bx1)    #op17425
+    overlapHeight = min(ay2, by2) - max(ay1, by1)    #op17427
+    if overlapWidth < 0:    #cond17430
+        overlapWidth = 0    #op17434
+    if overlapHeight < 0:    #cond17440
+        overlapHeight = 0    #op17444
+    overlapArea = overlapWidth * overlapHeight    #op17449
+    return area1 + area2 - overlapArea    #io17454

@@ -1,0 +1,30 @@
+def majorityElement(self, numbers: List[int]) -> List[int]:    #io17801
+    ans = []    #op17804
+    n = len(numbers)    #op17806
+    element1, element2 = 0, 0    #op17808
+    vote1, vote2 = 0, 0    #op17810
+    for i in range(n):    #cond17815
+        if vote1 > 0 and numbers[i] == element1:    #cond17869
+            vote1 += 1    #op17873
+        elif vote2 > 0 and numbers[i] == element2:    #cond17878
+            vote2 += 1    #op17882
+        elif vote1 == 0:    #cond17887
+            element1 = numbers[i]    #op17891
+            vote1 += 1    #op17893
+        elif vote2 == 0:    #cond17898
+            element2 = numbers[i]    #op17902
+            vote2 += 1    #op17904
+        else:    #None
+            vote1 -= 1    #op17908
+            vote2 -= 1    #op17910
+    cnt1, cnt2 = 0, 0    #op17918
+    for i in range(n):    #cond17923
+        if vote1 > 0 and numbers[i] == element1:    #cond17949
+            cnt1 += 1    #op17953
+        if vote2 > 0 and numbers[i] == element2:    #cond17959
+            cnt2 += 1    #op17963
+    if vote1 > 0 and cnt1 > n / 3:    #cond17971
+        ans.append(element1)    #op17975
+    if vote2 > 0 and cnt2 > n / 3:    #cond17981
+        ans.append(element2)    #op17985
+    return ans    #io17993

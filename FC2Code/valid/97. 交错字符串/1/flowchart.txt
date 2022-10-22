@@ -1,0 +1,54 @@
+cond6947=>condition: 行标小于字符串一s1的长度加1
+cond6969=>condition: 列标小于字符串二的长度加1
+op6944=>operation: x为dp的行标，初始值为1
+op4=>operation: 列标右移1
+op6896=>operation: 初始化字符串一s1,字符串二s2,字符串三s3的长度分别为len1,len2,len3
+op6926=>operation: 计算字符串一的前x位是否能构成字符串三的前x位。需要满足的条件为，字符串一前x1位可以构成字符串三的前x1位且字符串一的第x减一位等于字符串三的第x位减一位
+op2=>operation: 列标右移1
+op6912=>operation: 初始化dp为(字符串一的长度+1)(字符串二的长度+1)的全False数组。dp[i][j]表示s1的前i个字符和s2的前j个字符是否能构成s3的前i+j个字符
+op6966=>operation: y为dp的列标，初始值为1
+e6904=>end: end function return
+e6983=>end: end function return
+cond6919=>condition: 行标小于字符串一s1的长度加1
+st6891=>start: start isInterleave
+io6985=>inputoutput: output:  返回字符串三是否是由字符串一和字符串二交错组成的
+op3=>operation: 行标下移1
+cond6899=>condition: 若字符串一的长度加上字符串二的长度不等于字符串三的长度
+op6976=>operation: 如果以下两个条件中的任意一个为真，则dp[i][j]为真：符串一前i位和字符串二的前j-1位可以构成字符串三的前i+j-1位且字符串二[j-1]等于字符串三[i+j-1]；字符串一前i-1位和字符串二的前j位可以构成字符串三的前i+j-1位且字符串一[i-1]等于字符串三[i+j-1]
+op6914=>operation: 字符串一的前0个字符和字符串二的前0个字符能构成字符串三的前0个字符
+io6906=>inputoutput: output:  返回False
+op6930=>operation: y为dp的列标，初始值为1
+op6916=>operation: x为dp的行标，初始值为1
+io6893=>inputoutput: input: self, s1, s2, s3
+op6940=>operation: 计算字符串二的前y位是否能构成符串三的前y位。需要满足的条件为，符字串二前y1位可以构成字符串三的前y1位且字串二的第y位等于字符串三的第y位
+op1=>operation: 行标下移1
+cond6933=>condition: 列标小于字符串二s2的长度加1
+
+op6976->op4
+op3->cond6947
+io6906->e6904
+op6930->cond6933
+op6940->op2
+op6926->op1
+cond6969(yes)->op6976
+op6966->cond6969
+op6896->cond6899
+op1->cond6919
+op4->cond6969
+cond6899(no)->op6912
+cond6899(yes)->io6906
+op6944->cond6947
+cond6947(no)->io6985
+io6985->e6983
+st6891->io6893
+op6916->cond6919
+cond6933(no)->op6944
+io6893->op6896
+op6914->op6916
+op6912->op6914
+cond6933(yes)->op6940
+cond6919(yes)->op6926
+cond6969(no)->op3
+cond6947(yes)->op6966
+cond6919(no)->op6930
+op2->cond6933

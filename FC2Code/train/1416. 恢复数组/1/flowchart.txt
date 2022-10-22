@@ -1,0 +1,46 @@
+op12171=>operation: 定义n等于字符串s的长度
+io12166=>inputoutput: input: self, s, k
+op12173=>operation: 初始化数组f，其长度等于字符串s的长度加一，初值均为0，其中f[i]表示前i个数字进行恢复的方案数
+op12315=>operation: 令基数乘以10
+op12255=>operation: 定义变量j等于i减一
+cond12258=>condition: j大于等于0且i减j小于等于10
+op12317=>operation: 令j减一
+cond12180=>condition: i小于字符串s的长度加一
+st12164=>start: start numberOfArrays
+io12326=>inputoutput: output:  返回前n个数字进行恢复的方案数对模数取模的结果
+cond12306=>condition: 字符串s中下标为j的字符不为'0'
+cond12296=>condition: num大于k
+op1=>operation: 令i自增1
+op12169=>operation: 定义模数mod等于10的9次方加7
+op12291=>operation: 定义当前数位digit等于字符串s中下标为j的字符的ASCII码减去48
+op12253=>operation: 定义变量num等于0，基数base等于1
+op12293=>operation: 令num加上当前数位与基数的乘积
+op12177=>operation: 定义变量i等于1
+e12324=>end: end function return
+op12175=>operation: 数组f第一项元素等于1
+op12310=>operation: 令前i个数字进行恢复的方案数加上前j个数字进行恢复的方案数
+
+op12173->op12175
+op1->cond12180
+op12169->op12171
+cond12180(yes)->op12253
+op12315->op12317
+cond12258(no)->op1
+io12326->e12324
+op12255->cond12258
+io12166->op12169
+op12310->op12315
+op12253->op12255
+cond12180(no)->io12326
+cond12296(no)->cond12306
+cond12306(yes)->op12310
+op12291->op12293
+cond12296(yes)->op1
+op12171->op12173
+op12293->cond12296
+cond12258(yes)->op12291
+op12175->op12177
+cond12306(no)->op12315
+st12164->io12166
+op12317->cond12258
+op12177->cond12180

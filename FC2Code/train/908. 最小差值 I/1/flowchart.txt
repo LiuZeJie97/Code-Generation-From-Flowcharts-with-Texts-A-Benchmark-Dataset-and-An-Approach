@@ -1,0 +1,14 @@
+op35017=>operation: 令最低分数减去2倍的k
+io35024=>inputoutput: output:  返回最低分数
+st35010=>start: start smallestRangeI
+e35022=>end: end function return
+io35012=>inputoutput: input: self, n, k
+op35019=>operation: 令最低分数等于它与0之间的最大值
+op35015=>operation: 定义最低分数ms等于数组n中的最大值减去最小值
+
+st35010->io35012
+op35017->op35019
+io35024->e35022
+op35015->op35017
+op35019->io35024
+io35012->op35015

@@ -1,0 +1,10 @@
+def rob(self, nums: List[int]) -> int:    #io2602
+    if not nums:    #cond2606
+        return 0    #io2613
+    size = len(nums)    #op2619
+    if size == 1:    #cond2622
+        return nums[0]    #io2629
+    first, second = nums[0], max(nums[0], nums[1])    #op2635
+    for i in range(2, size):    #cond2640
+        first, second = second, max(first + nums[i], second)    #op2647
+    return second    #io2654

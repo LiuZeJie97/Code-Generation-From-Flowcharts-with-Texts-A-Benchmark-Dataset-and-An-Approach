@@ -1,0 +1,23 @@
+def numSubmat(self, mat: List[List[int]]) -> int:    #io13673
+    n, m = len(mat), len(mat[0])    #op13676
+    row = [[0] * m for _ in range(n)]    #op13678
+    for i in range(n):    #cond13683
+        for j in range(m):    #cond13725
+            if j == 0:    #cond13743
+                row[i][j] = mat[i][j]    #op13747
+            else:    #None
+                row[i][j] = 0 if mat[i][j] == 0 else row[i][j - 1] + 1    #op13751
+    ans = 0    #op13758
+    for j in range(m):    #cond13763
+        Q = list()    #op13838
+        total = 0    #op13840
+        for i in range(n):    #cond13845
+            height = 1    #op13878
+            while Q and Q[-1][0] > row[i][j]:    #cond13881
+                total -= Q[-1][1] * (Q[-1][0] - row[i][j])    #op13892
+                height += Q[-1][1]    #op13894
+                Q.pop()    #op13896
+            total += row[i][j]    #op13900
+            ans += total    #op13902
+            Q.append((row[i][j], height))    #op13904
+    return ans    #io13913

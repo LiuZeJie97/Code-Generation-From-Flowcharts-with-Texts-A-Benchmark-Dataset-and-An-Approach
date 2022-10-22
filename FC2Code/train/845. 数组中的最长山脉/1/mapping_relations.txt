@@ -1,0 +1,15 @@
+def longestMountain(self, a: List[int]) -> int:    #io32762
+    if not a:    #cond32766
+        return 0    #io32773
+    n = len(a)    #op32779
+    left = [0] * n    #op32781
+    for i in range(1, n):    #cond32786
+        left[i] = (left[i - 1] + 1 if a[i - 1] < a[i] else 0)    #op32793
+    right = [0] * n    #op32797
+    for i in range(n - 2, -1, -1):    #cond32802
+        right[i] = (right[i + 1] + 1 if a[i + 1] < a[i] else 0)    #op32809
+    ans = 0    #op32813
+    for i in range(n):    #cond32818
+        if left[i] > 0 and right[i] > 0:    #cond32834
+            ans = max(ans, left[i] + right[i] + 1)    #op32838
+    return ans    #io32848

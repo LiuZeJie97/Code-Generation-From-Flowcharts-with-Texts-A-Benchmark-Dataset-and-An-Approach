@@ -1,0 +1,44 @@
+op19408=>operation: 右边界r等于中点减一
+op19390=>operation: 右边界r等于中点m减一
+io19291=>inputoutput: input: self, n, target
+op19308=>operation: 定义左边界l等于0，右边界r等于数组的长度减一
+io19417=>inputoutput: output:  返回-1
+cond19295=>condition: 数组n为空
+e19372=>end: end function return
+cond19400=>condition: 目标值大于数组中点元素且小于等于数组最后一项元素
+cond19386=>condition: 目标值大于等于数组第一项元素且小于数组中点元素
+st19289=>start: start search
+cond19381=>condition: 数组中第一项元素小于等于数组中点元素
+cond19367=>condition: 数组n中点元素等于目标值target
+e19300=>end: end function return
+e19415=>end: end function return
+op19404=>operation: 左边界l等于中点m加一
+op19394=>operation: 左边界l等于中点加一
+io19374=>inputoutput: output:  返回中点
+op19364=>operation: 定义中点m等于左边界与右边界的和整除2
+io19302=>inputoutput: output:  返回-1
+cond19311=>condition: 左边界小于等于右边界
+
+cond19386(yes)->op19390
+op19408->cond19311
+cond19311(no)->io19417
+cond19400(yes)->op19404
+cond19367(no)->cond19381
+cond19386(no)->op19394
+op19394->cond19311
+op19364->cond19367
+cond19295(yes)->io19302
+cond19295(no)->op19308
+cond19381(yes)->cond19386
+io19291->cond19295
+io19302->e19300
+io19417->e19415
+op19390->cond19311
+cond19381(no)->cond19400
+op19404->cond19311
+cond19311(yes)->op19364
+st19289->io19291
+io19374->e19372
+cond19400(no)->op19408
+op19308->cond19311
+cond19367(yes)->io19374

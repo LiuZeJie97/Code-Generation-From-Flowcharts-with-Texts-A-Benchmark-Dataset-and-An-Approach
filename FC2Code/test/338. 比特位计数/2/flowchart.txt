@@ -1,0 +1,26 @@
+op4580=>operation: 定义列表bits，初值为[0]，bits[i] 表示i的「一比特数」
+io4577=>inputoutput: input: self, n
+e4619=>end: end function return
+io4621=>inputoutput: output:  返回列表bits
+st4575=>start: start countBits
+cond4587=>condition: i小于n加1
+op4614=>operation: i的「一比特数」等于i-highBit的「一比特数」加1
+op4582=>operation: 使用highBit表示当前的最高有效位
+op4609=>operation: 更新当前的最高有效位为i
+op1=>operation: i自增1
+op4584=>operation: i等于1
+cond4605=>condition: 如果i与i减去1等于0
+
+op1->cond4587
+io4621->e4619
+cond4587(yes)->cond4605
+op4614->op1
+io4577->op4580
+cond4605(yes)->op4609
+st4575->io4577
+cond4605(no)->op4614
+op4609->op4614
+op4582->op4584
+op4580->op4582
+op4584->cond4587
+cond4587(no)->io4621

@@ -1,0 +1,10 @@
+def scoreOfParentheses(self, S: str) -> int:    #io33143
+    st = []    #op33146
+    st.append(0)    #op33148
+    for i in range(len(S)):    #cond33153
+        if S[i] == '(':    #cond33173
+            st.append(0)    #op33177
+        else:    #None
+            v = st.pop()    #op33181
+            st[-1] += max(2 * v, 1)    #op33183
+    return st.pop()    #io33191

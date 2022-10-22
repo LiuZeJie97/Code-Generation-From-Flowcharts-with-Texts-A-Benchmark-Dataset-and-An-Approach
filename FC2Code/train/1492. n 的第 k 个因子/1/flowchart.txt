@@ -1,0 +1,51 @@
+cond13244=>condition: 当前因数的平方小于等于n
+cond13182=>condition: 当前因数的平方小于等于n
+op13290=>operation: 计数值加一
+op13237=>operation: 当前因数加一
+cond13214=>condition: n可以整除当前因数
+io13316=>inputoutput: output:  返回-1
+st13172=>start: start kthFactor
+cond13286=>condition: n可以整除当前因数
+op13179=>operation: 当前因数factor等于1
+io13228=>inputoutput: output:  返回当前因数
+e13298=>end: end function return
+cond13254=>condition: 当前因数大于0
+io13300=>inputoutput: output:  返回n整除当前因数的结果
+e13226=>end: end function return
+op13241=>operation: 当前因数减一
+e13314=>end: end function return
+op13218=>operation: 计数值加一
+op13309=>operation: 当前因数减一
+cond13221=>condition: 计数值等于k
+io13174=>inputoutput: input: self, n, k
+op13177=>operation: 计数值count等于0
+cond13293=>condition: 计数值等于k
+op13248=>operation: 当前因数减一
+
+cond13214(yes)->op13218
+io13174->op13177
+io13316->e13314
+cond13286(no)->op13309
+cond13221(no)->op13237
+op13309->cond13254
+cond13254(no)->io13316
+cond13286(yes)->op13290
+cond13214(no)->op13237
+op13241->cond13244
+cond13221(yes)->io13228
+cond13244(yes)->op13248
+st13172->io13174
+cond13244(no)->cond13254
+op13177->op13179
+cond13293(no)->op13309
+cond13254(yes)->cond13286
+op13290->cond13293
+io13300->e13298
+op13218->cond13221
+op13179->cond13182
+cond13182(yes)->cond13214
+cond13182(no)->op13241
+io13228->e13226
+cond13293(yes)->io13300
+op13248->cond13254
+op13237->cond13182

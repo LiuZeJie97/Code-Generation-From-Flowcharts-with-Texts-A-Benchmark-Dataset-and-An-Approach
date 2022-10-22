@@ -1,0 +1,39 @@
+op30880=>operation: 将左边界的值更新为中值加一
+io30781=>inputoutput: input: self, k
+op30840=>operation: 定义中值center等于左边界与右边界的和整除2
+io30893=>inputoutput: output:  非负整数的数量为0
+io30870=>inputoutput: output:  非负整数的数量为5
+cond30787=>condition: 左边界小于右边界时
+st30779=>start: start preimageSizeFZF
+cond30847=>condition: num不为0
+op30884=>operation: 将右边界的值更新为中值
+op30784=>operation: 定义左边界low等于k，右边界high等于10倍的k加一
+op30856=>operation: 末尾零的个数等于num整除5
+cond30863=>condition: 末尾零的个数等于k
+op30858=>operation: 将num的值更新为num整除5
+e30891=>end: end function return
+op30842=>operation: 定义变量num等于中值
+cond30876=>condition: 末尾零的个数小于k
+op30844=>operation: 定义变量count用于记录末尾零的个数，初值为0
+e30868=>end: end function return
+
+cond30787(no)->io30893
+st30779->io30781
+io30870->e30868
+cond30876(no)->op30884
+op30858->cond30847
+cond30847(yes)->op30856
+io30893->e30891
+op30840->op30842
+cond30787(yes)->op30840
+op30884->cond30787
+op30844->cond30847
+op30880->cond30787
+op30784->cond30787
+cond30863(yes)->io30870
+cond30847(no)->cond30863
+op30842->op30844
+cond30876(yes)->op30880
+cond30863(no)->cond30876
+io30781->op30784
+op30856->op30858

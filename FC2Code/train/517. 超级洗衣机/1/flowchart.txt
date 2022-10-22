@@ -1,0 +1,35 @@
+op21078=>operation: 计数变量加上当前洗衣机中的衣物数量
+op21062=>operation: num为洗衣机数组中的元素，即每台洗衣机中的衣物数量
+op21080=>operation: 计算答案变量，计数变量的绝对值，当前洗衣机中的衣物数量这三个数之间的最大值，并将该值赋给答案变量
+op21042=>operation: 定义变量n等于洗衣机数组的长度，即洗衣机数量
+op21058=>operation: 定义变量avg等于总衣物数量整除洗衣机数量的结果，即平均衣物数量
+op1=>operation: 更新当前洗衣机中的衣物数量
+op21076=>operation: 令当前洗衣机中的衣物数量减去平均衣物数量
+cond21065=>condition: 对洗衣机数组进行遍历
+e21085=>end: end function return
+cond21045=>condition: 总衣物数量不能整除洗衣机数量
+io21052=>inputoutput: output:  将-1作为答案返回
+op21040=>operation: 定义变量tot等于洗衣机数组machines全部元素之和，即总衣物数量
+io21087=>inputoutput: output:  返回答案变量
+e21050=>end: end function return
+io21037=>inputoutput: input: self, machines
+st21035=>start: start findMinMoves
+op21060=>operation: 定义答案变量ans和计数变量s，其初值均为0
+
+cond21065(no)->io21087
+op1->cond21065
+st21035->io21037
+cond21045(no)->op21058
+op21062->cond21065
+io21087->e21085
+op21060->op21062
+io21037->op21040
+cond21065(yes)->op21076
+op21040->op21042
+op21042->cond21045
+op21076->op21078
+op21080->op1
+op21078->op21080
+cond21045(yes)->io21052
+op21058->op21060
+io21052->e21050

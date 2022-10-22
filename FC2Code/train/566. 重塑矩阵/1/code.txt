@@ -1,0 +1,8 @@
+def matrixReshape(self, nums: List[List[int]], r: int, c: int) -> List[List[int]]:
+    row, col = len(nums), len(nums[0])
+    if row * col != r * c:
+        return nums
+    ans = [[0] * c for _ in range(r)]
+    for x in range(row * col):
+        ans[x // c][x % c] = nums[x // col][x % col]
+    return ans

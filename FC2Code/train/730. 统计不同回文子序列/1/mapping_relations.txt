@@ -1,0 +1,31 @@
+def countPalindromicSubsequences(self, S):    #io28226
+    n = len(S)    #op28229
+    mod = 10**9+7    #op28231
+    dp = [[[0 for _ in range(n)] for _ in range(n)] for _ in range(4)]    #op28233
+    for i in range(n-1, -1, -1):    #cond28238
+        for j in range(i, n):    #cond28564
+            for k in range(4):    #cond28726
+                c = chr(ord('a') + k)    #op28803
+                if j == i:    #cond28806
+                    if S[i] == c:    #cond28811
+                        dp[k][i][j] = 1    #op28815
+                    else:    #None
+                        dp[k][i][j] = 0    #op28819
+                else:    #None
+                    if S[i] != c:    #cond28825
+                        dp[k][i][j] = dp[k][i+1][j]    #op28829
+                    elif S[j] != c:    #cond28834
+                        dp[k][i][j] = dp[k][i][j-1]    #op28838
+                    else:    #None
+                        dp[k][i][j] = 2    #op28842
+                        if j == i + 1:    #cond28845
+                            continue    #None
+                        else:    #None
+                            for m in range(4):    #cond28856
+                                dp[k][i][j] += dp[m][i+1][j-1]    #op28865
+                                dp[k][i][j] %= mod    #op28867
+    ans = 0    #op28881
+    for k in range(4):    #cond28886
+        ans += dp[k][0][n-1]    #op28895
+        ans %= mod    #op28897
+    return ans    #io28904

@@ -1,0 +1,27 @@
+op6074=>operation: 初始化dp等于[0,...,0]，长度为台阶总数n加1，第i层台阶的方法数为dp[i]
+st6069=>start: start climbStairs
+cond6095=>condition: 当前台阶的层数 小于台阶总数加 1
+io6109=>inputoutput: output:  返回第n层台阶的方法数
+op6102=>operation: 当前层的方法数等于前一层台阶的方法数加上前两层台阶的方法数
+e6107=>end: end function return
+op1=>operation: 当前台阶的层数加1
+cond6077=>condition: 台阶总数小于2，
+op6090=>operation: dp[1]等于1，既第1层台阶的方法数为1,同理，第2层台阶的方法数为2
+io6084=>inputoutput: output:  返回1，方法数为1
+io6071=>inputoutput: input: self, n
+e6082=>end: end function return
+op6092=>operation: 定义 i 初值为 3，用于记录当前台阶的层数
+
+cond6077(yes)->io6084
+op6090->op6092
+io6084->e6082
+cond6095(yes)->op6102
+cond6095(no)->io6109
+io6071->op6074
+op6092->cond6095
+op6102->op1
+st6069->io6071
+op1->cond6095
+op6074->cond6077
+io6109->e6107
+cond6077(no)->op6090

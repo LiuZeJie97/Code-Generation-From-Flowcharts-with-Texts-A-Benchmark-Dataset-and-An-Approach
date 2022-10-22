@@ -1,0 +1,21 @@
+op23894=>operation: 定义变量mina初值为m，minb初值为n
+op23896=>operation: a为二维数组ops的第一维下标，b为二维数组ops的第二维下标
+op23908=>operation: mina等于它与当前ops第一维下标之间的最小值
+cond23899=>condition: 当第一维、第二维下标均为越界
+op23910=>operation: minb等于它与当前ops第二维下标之间的最小值
+st23889=>start: start maxCount
+io23891=>inputoutput: input: self, m, n, ops
+io23917=>inputoutput: output:  返回它们之间的乘积
+op1=>operation: 更新第一维、第二维下标
+e23915=>end: end function return
+
+cond23899(no)->io23917
+op1->cond23899
+io23917->e23915
+cond23899(yes)->op23908
+op23894->op23896
+op23910->op1
+io23891->op23894
+op23896->cond23899
+op23908->op23910
+st23889->io23891

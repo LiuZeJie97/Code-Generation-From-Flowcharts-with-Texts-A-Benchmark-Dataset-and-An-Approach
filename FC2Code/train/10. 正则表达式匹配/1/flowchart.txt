@@ -1,0 +1,22 @@
+e293=>end: end function return
+io287=>inputoutput: output:  若字符串和字符规律p[2:]匹配成功，返回True。或者首位匹配成功，且字符串s[1:]和字符规律匹配成功，返回True。以上条件均不满足，返回False
+cond264=>condition: 若字符规律p为空
+st258=>start: start isMatch
+e285=>end: end function return
+io295=>inputoutput: output:  若字符串和字符规律的第一位匹配成功，则递归调用自身，继续匹配剩余部分。如果字符串和字符规律的第一维和剩余部分均匹配成功，则返回True，否则，返回False
+op277=>operation: 定义first表示字符串和字符规律的第一位是否匹配成功。匹配条件：字符串不能为空且字符规律第一个元素等于字符串第一个元素或者等于"."。
+cond280=>condition: 若字符规律p的长度大于2且字符规律第二位是'*'字符
+e269=>end: end function return
+io271=>inputoutput: output:  若字符串s为空，返回True，否则返回False
+io260=>inputoutput: input: self, s, p
+
+cond264(yes)->io271
+io287->e285
+io260->cond264
+st258->io260
+op277->cond280
+cond264(no)->op277
+io271->e269
+cond280(yes)->io287
+io295->e293
+cond280(no)->io295

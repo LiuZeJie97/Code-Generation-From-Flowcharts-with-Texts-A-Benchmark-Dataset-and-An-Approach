@@ -1,0 +1,31 @@
+op1=>operation: 字符串下标右移1个单位
+e31922=>end: end function return
+io31924=>inputoutput: output:  返回结果数组
+cond31898=>condition: 当i等于字符串的长度减一或字符串中下标为i的字符与下标为i+1的字符不同
+op31907=>operation: 将i-num+1和i组成的数组加入结果数组中
+cond31903=>condition: 当num大于等于3
+op31916=>operation: num加一
+op31865=>operation: n为字符串seq的长度，定义变量num等于1
+op31867=>operation: i为字符串下标
+cond31870=>condition: 当字符串下标小于字符串的长度
+op31863=>operation: 初始化结果数组ret
+op31912=>operation: num等于1
+st31858=>start: start largeGroupPositions
+io31860=>inputoutput: input: self, seq
+
+op31863->op31865
+op31916->op1
+cond31898(yes)->cond31903
+cond31870(no)->io31924
+op1->cond31870
+io31924->e31922
+cond31903(yes)->op31907
+op31867->cond31870
+io31860->op31863
+op31907->op31912
+cond31870(yes)->cond31898
+op31865->op31867
+op31912->op1
+cond31898(no)->op31916
+st31858->io31860
+cond31903(no)->op31912

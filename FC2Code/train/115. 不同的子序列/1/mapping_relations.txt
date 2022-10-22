@@ -1,0 +1,11 @@
+def numDistinct(self, s: str, t: str) -> int:    #io725
+    len1=len(s)    #op728
+    len2=len(t)    #op728
+    dp=[[1]*(len1+1)]+[[0]*(len1+1) for _ in range(len2)]    #op730
+    for i in range(1,len2+1):    #cond735
+        for j in range(1,len1+1):    #cond777
+            if(t[i-1]==s[j-1]):    #cond795
+                dp[i][j]=dp[i-1][j-1]+dp[i][j-1]    #op799
+            else:    #None
+                dp[i][j]=dp[i][j-1]    #op803
+    return dp[-1][-1]    #io813

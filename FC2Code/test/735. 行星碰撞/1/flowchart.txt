@@ -1,0 +1,30 @@
+io29212=>inputoutput: output:  返回数组ans
+cond29090=>condition: 数组下标小于数组asteroids的长度
+cond29152=>condition: 下列条件均满足：数组ans不为空、数组asteroids中下标为idx的元素小于0、数组ans中最后一项元素大于0
+io29082=>inputoutput: input: self, asteroids
+st29080=>start: start asteroidCollision
+cond29182=>condition: 数组ans中最后一项元素与数组asteroids中下标为idx的元素之和小于0
+cond29193=>condition: 这两个元素之和等于0
+op29087=>operation: idx为数组下标，初值为0
+e29210=>end: end function return
+op29186=>operation: 移除数组ans中最后一项元素
+op29197=>operation: 移除数组ans中最后一项元素
+op29085=>operation: 定义数组ans
+op1=>operation: 数组下标自增1
+
+cond29182(yes)->op29186
+op29085->op29087
+cond29152(yes)->cond29182
+op1->cond29090
+op29186->cond29152
+cond29152(no)->op1
+io29212->e29210
+cond29090(no)->io29212
+st29080->io29082
+cond29090(yes)->cond29152
+cond29182(no)->cond29193
+op29197->op1
+op29087->cond29090
+cond29193(no)->op1
+cond29193(yes)->op29197
+io29082->op29085

@@ -1,0 +1,30 @@
+io31151=>inputoutput: input: self, widths, s
+op31156=>operation: 当前书写所需的行数lines等于1，当前行已经使用的宽度width等于0
+op1=>operation: 将当前遍历字符更新为字符串中下一个字符
+cond31187=>condition: 当前行已经使用的宽度大于最大宽度
+io31203=>inputoutput: output:  返回当前书写所需的行数与当前行已经使用的宽度组成的数组
+st31149=>start: start numberOfLines
+op31193=>operation: 当前行已经使用的宽度等于需要的宽度
+op31154=>operation: 最大宽度MAX_WIDTH等于100
+op31158=>operation: 当前遍历字符c为字符串s中的字符，初值为字符串首字符
+e31201=>end: end function return
+op31184=>operation: 当前行已经使用的宽度加上需要的宽度
+cond31161=>condition: 对字符串进行遍历
+op31191=>operation: 当前书写所需的行数加一
+op31182=>operation: 计算当前遍历字符的ASCII码减去字符'a'的ASCII码，定义变量need表示需要的宽度，其初值为数组widths中下标等于上述计算结果的元素
+
+op1->cond31161
+cond31161(yes)->op31182
+io31203->e31201
+op31156->op31158
+op31193->op1
+op31182->op31184
+cond31187(yes)->op31191
+op31158->cond31161
+cond31187(no)->op1
+st31149->io31151
+io31151->op31154
+op31154->op31156
+op31184->cond31187
+cond31161(no)->io31203
+op31191->op31193

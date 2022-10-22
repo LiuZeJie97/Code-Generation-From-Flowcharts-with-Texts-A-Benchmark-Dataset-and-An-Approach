@@ -1,0 +1,46 @@
+op23550=>operation: 对数组从小到大排序，并将排序结果保存在numsSorted中
+cond23505=>condition: i小于n
+cond23537=>condition: 数组有序
+io23495=>inputoutput: input: self, nums
+e23581=>end: end function return
+op23576=>operation: right自增1
+op23552=>operation: left为最短子数组左边界，初值为0
+op23562=>operation: left自增1
+io23544=>inputoutput: output:  最短子数组长度为0
+op23502=>operation: i等于1
+op1=>operation: i自增1
+cond23523=>condition: 数组下标为i减去1的元素大于该元素的后一个元素
+op23498=>operation: n为数组nums的长度。
+op23566=>operation: right为最短子数组右边界，初值为数组长度减一
+op23500=>operation: 定义isSorted，记录数组是否有序，初值为True
+io23583=>inputoutput: output:  返回左右边界之差加1，
+st23493=>start: start findUnsortedSubarray
+cond23569=>condition: 原数组下标为right的元素不等于排序后数组下标为right的元素
+op23527=>operation: 数组无序
+cond23555=>condition: 原数组下标为left的元素不等于排序后数组下标为left的元素
+e23542=>end: end function return
+
+io23495->op23498
+cond23537(no)->op23550
+op23500->op23502
+cond23555(no)->op23566
+io23544->e23542
+cond23569(no)->io23583
+cond23555(yes)->op23562
+io23583->e23581
+st23493->io23495
+op23498->op23500
+cond23505(no)->cond23537
+op1->cond23505
+op23527->cond23537
+op23552->cond23555
+cond23569(yes)->op23576
+op23562->cond23555
+cond23523(yes)->op23527
+op23502->cond23505
+op23576->cond23569
+cond23505(yes)->cond23523
+cond23523(no)->op1
+op23550->op23552
+cond23537(yes)->io23544
+op23566->cond23569

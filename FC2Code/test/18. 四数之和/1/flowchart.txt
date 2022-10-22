@@ -1,0 +1,85 @@
+cond2343=>condition: 数组下标为i的元素，下标为j的元素，和位于数组末尾的2个元素小于目标值
+op1=>operation: 下标i向右移动
+cond2323=>condition: j位于i+1的右侧，且数组中下标为j的元素等于数组中下标为j减去1的元素
+cond2161=>condition: 数组下标为i的元素和位于数组末尾的三个元素小于目标值
+e2471=>end: end function return
+op2456=>operation: 左指针右移1个单位
+io1781=>inputoutput: input: self, LIST, target
+e1792=>end: end function return
+cond2355=>condition: 左指针小于右指针
+op2352=>operation: 定义左指针left，右指针right，初值分别为j加1和数组长度减去1
+op2419=>operation: 找到满足全部条件且不重复的四元组
+cond2141=>condition: 下标i大于0且数组下标为i的元素等于数组下标为i减去1的元素
+cond2422=>condition: 左指针位于右指针左侧，且左指针指向的元素和其右侧的元素相等
+cond2333=>condition: 数组中下标为i的元素加上下标为j至j加2的元素的和大于目标值
+cond2415=>condition: 当前元素和等于目标值target
+op2429=>operation: 左指针右移1个单位
+io1794=>inputoutput: output:  返回空列表
+op2412=>operation: 定义当前元素和total，初值等于左指针和右指针指向的元素和下标为i和j的元素的加和
+op1800=>operation: 对数组从小到大排序
+op2447=>operation: 右指针左移1个单位
+op1784=>operation: quadruplets等于空列表，用于记录找到满足全部条件且不重复的四元组
+cond2173=>condition: 数组LIST的下标小于数组长度减去2
+st1779=>start: start fourSum
+op1804=>operation: 定义数组的下标i等于0
+op2460=>operation: 右指针左移1个单位
+cond1787=>condition: 数组 LIST 不存在或长度小于4
+op1802=>operation: 数组长度为length
+io2473=>inputoutput: output:  返回满足下述全部条件且不重复的四元组
+op2170=>operation: j为数组下标，初值等于i加1
+op2=>operation: 数组下标j向右移动一个单位
+op2433=>operation: 左指针右移1个单位
+op2443=>operation: 右指针左移1个单位
+cond1807=>condition: 数组LIST的下标小于数组长度减去3
+cond2436=>condition: 左指针位于右指针左侧，且右指针指向的元素和其左侧的元素相等
+cond2151=>condition: 数组下标为i至i加3的4个元素的和大于目标值target
+cond2452=>condition: 当前元素和小于目标值
+
+op1802->op1804
+cond1787(no)->op1800
+op2433->cond2436
+cond2161(yes)->op1
+cond2141(no)->cond2151
+cond2422(yes)->op2429
+op1804->cond1807
+cond2323(yes)->op2
+cond2415(yes)->op2419
+cond1787(yes)->io1794
+op2460->cond2355
+op2443->cond2436
+op1800->op1802
+op2429->cond2422
+op1->cond1807
+op2419->cond2422
+cond2422(no)->op2433
+cond2161(no)->op2170
+cond2355(no)->op2
+op1784->cond1787
+op2352->cond2355
+cond2333(yes)->op1
+io2473->e2471
+io1781->op1784
+cond2452(yes)->op2456
+cond1807(no)->io2473
+cond2173(no)->op1
+cond2151(yes)->io2473
+op2412->cond2415
+io1794->e1792
+cond2333(no)->cond2343
+op2170->cond2173
+op2447->cond2355
+op2->cond2173
+cond2436(no)->op2447
+cond2355(yes)->op2412
+cond2452(no)->op2460
+cond2343(no)->op2352
+cond2415(no)->cond2452
+cond2436(yes)->op2443
+cond2323(no)->cond2333
+cond2141(yes)->op1
+st1779->io1781
+cond2173(yes)->cond2323
+cond1807(yes)->cond2141
+cond2343(yes)->op2
+op2456->cond2355
+cond2151(no)->cond2161

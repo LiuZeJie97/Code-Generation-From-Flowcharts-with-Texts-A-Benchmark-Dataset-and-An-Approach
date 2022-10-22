@@ -1,0 +1,30 @@
+op34578=>operation: 答案数组等于x与鲍勃拥有的第index盒糖果中的糖果数量组成的数组
+e34588=>end: end function return
+io34538=>inputoutput: input: self, aliceSizes, bobSizes
+cond34552=>condition: 当数组下标小于数组bobSizes的长度
+op34541=>operation: 定义变量sumA，sumB分别等于对数组aliceSizes求和，对数组bobSizes求和
+op34547=>operation: 初始化答案数组res
+op34543=>operation: 定义变量delta等于sumA与sumB的差值整除2，用于记录爱丽丝和鲍勃糖果的平均值
+op34549=>operation: index为数组下标
+io34590=>inputoutput: output:  返回答案数组
+op1=>operation: 数组下标加一
+op34545=>operation: 定义集合rec，并使用数组aliceSizes初始化集合rec
+op34571=>operation: 定义x等于鲍勃拥有的第index盒糖果中的糖果数量加上爱丽丝和鲍勃糖果的平均值
+st34536=>start: start fairCandySwap
+cond34574=>condition: 如果x在集合rec中
+
+cond34552(yes)->op34571
+op34541->op34543
+io34538->op34541
+op1->cond34552
+cond34574(yes)->op34578
+st34536->io34538
+cond34552(no)->io34590
+cond34574(no)->op1
+op34545->op34547
+op34571->cond34574
+io34590->e34588
+op34543->op34545
+op34547->op34549
+op34549->cond34552
+op34578->io34590

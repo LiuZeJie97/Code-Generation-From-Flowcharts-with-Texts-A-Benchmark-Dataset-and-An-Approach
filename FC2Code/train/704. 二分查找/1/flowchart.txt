@@ -1,0 +1,30 @@
+e27314=>end: end function return
+st27261=>start: start search
+op27330=>operation: 左边界等于中点加1
+op27266=>operation: 定义左边界st等于0，右边界ed等于数组nums的长度减1
+cond27269=>condition: 左边界小于等于右边界
+cond27309=>condition: 中点元素等于目标值target
+io27316=>inputoutput: output:  返回中点
+io27339=>inputoutput: output:  返回-1
+op27304=>operation: 计算右边界与左边界的差值整除2，定义中点mi等于上述计算结果与左边界的和值
+op27326=>operation: 右边界等于中点减1
+io27263=>inputoutput: input: self, nums, target
+cond27322=>condition: 中点元素大于目标值
+e27337=>end: end function return
+op27306=>operation: 定义num等于数组nums中点元素
+
+st27261->io27263
+cond27309(yes)->io27316
+cond27269(yes)->op27304
+op27326->cond27269
+op27266->cond27269
+io27316->e27314
+io27339->e27337
+cond27269(no)->io27339
+op27306->cond27309
+cond27322(no)->op27330
+cond27322(yes)->op27326
+io27263->op27266
+op27304->op27306
+op27330->cond27269
+cond27309(no)->cond27322

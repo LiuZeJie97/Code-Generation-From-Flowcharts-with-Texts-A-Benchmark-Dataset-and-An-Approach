@@ -1,0 +1,26 @@
+e33230=>end: end function return
+cond33212=>condition: p和q均不为0
+io33219=>inputoutput: output:  返回1，即光线最先遇到的接收器的编号为1
+op33209=>operation: 计算q除以g再对2取余，将q的值更新为上述计算结果
+e33238=>end: end function return
+op33207=>operation: 计算p除以g再对2取余，将p的值更新为上述计算结果
+io33202=>inputoutput: input: self, p, q
+st33200=>start: start mirrorReflection
+e33217=>end: end function return
+io33240=>inputoutput: output:  光线最先遇到的接收器的编号为2
+op33205=>operation: g为p和q的最大公约数
+cond33225=>condition: p不为0
+io33232=>inputoutput: output:  光线最先遇到的接收器的编号为0
+
+io33202->op33205
+cond33212(yes)->io33219
+op33205->op33207
+cond33225(no)->io33240
+io33240->e33238
+cond33212(no)->cond33225
+io33219->e33217
+op33207->op33209
+cond33225(yes)->io33232
+io33232->e33230
+st33200->io33202
+op33209->cond33212

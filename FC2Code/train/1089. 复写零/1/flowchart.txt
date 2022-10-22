@@ -1,0 +1,52 @@
+op8223=>operation: length减一
+op8155=>operation: 复写零的数量dups等于0
+op8239=>operation: 数组下标l等于last
+cond8212=>condition: 数组a中下标为left的元素等于0
+cond8162=>condition: left小于length
+op8276=>operation: 数组中下标为i+dups的元素等于下标为i的元素
+io8152=>inputoutput: input: self, a
+op8237=>operation: last等于length减去复写零的数量dup再减一的结果
+op8159=>operation: left等于0
+cond8264=>condition: 数组a中当前下标对应的元素等于0
+op8272=>operation: 数组中下标为i+dups的元素等于0
+cond8242=>condition: 当前数组下标大于-1
+op8230=>operation: 复写零的数量加一
+op2=>operation: 当前数组下标自减1
+op8270=>operation: 复写零的数量减一
+op8268=>operation: 数组中下标为i+dups的元素等于0
+op8221=>operation: 数组中最后一项元素等于0
+cond8217=>condition: left等于length减去复写零的数量再减一的结果
+e8281=>end: end duplicateZeros
+st8150=>start: start duplicateZeros
+cond8202=>condition: left大于length减去复写零的数量dup再减一的结果
+op1=>operation: left自增1
+op8157=>operation: length等于数组a的长度
+
+op8268->op8270
+op8272->op2
+cond8162(yes)->cond8202
+cond8217(no)->op8230
+op8159->cond8162
+op8221->op8223
+cond8212(no)->op1
+op2->cond8242
+op8237->op8239
+op8230->op1
+cond8202(no)->cond8212
+cond8202(yes)->op8237
+cond8242(yes)->cond8264
+cond8264(no)->op8276
+op1->cond8162
+io8152->op8155
+cond8217(yes)->op8221
+cond8212(yes)->cond8217
+cond8242(no)->e8281
+op8223->op8237
+op8157->op8159
+op8276->op2
+op8155->op8157
+cond8264(yes)->op8268
+cond8162(no)->op8237
+st8150->io8152
+op8270->op8272
+op8239->cond8242

@@ -1,0 +1,68 @@
+op32685=>operation: 字符串T的指针减一
+cond32587=>condition: 字符串S的指针大于等于0
+op32623=>operation: 字符串S中待删除字符的数量加一
+io32735=>inputoutput: output:  字符串S和字符串T不相等
+st32411=>start: start backspaceCompare
+op32418=>operation: 定义变量skipS表示字符串S中待删除字符的数量，变量skipT表示字符串T中待删除字符的数量，其初值均为0
+io32751=>inputoutput: output:  字符串S和字符串T相等
+cond32690=>condition: 字符串T中待删除字符的数量大于0
+cond32712=>condition: 字符串S指针处的字符与字符串T指针处的字符不同
+io32719=>inputoutput: output:  字符串S和字符串T不相等
+io32413=>inputoutput: input: self, S, T
+e32717=>end: end function return
+op32696=>operation: 字符串T的指针减一
+op32636=>operation: 字符串S的指针减一
+cond32421=>condition: 字符串S的指针大于等于0或字符串T的指针大于等于0
+cond32647=>condition: 字符串T的指针大于等于0
+op32694=>operation: 令该数量减一
+cond32707=>condition: 字符串S的指针和字符串T的指针均大于等于0
+op32742=>operation: 字符串S的指针减一
+e32749=>end: end function return
+op32625=>operation: 字符串S的指针减一
+op32744=>operation: 字符串T的指针减一
+cond32630=>condition: 字符串S中待删除字符的数量大于0
+op32683=>operation: 字符串T中待删除字符的数量加一
+e32733=>end: end function return
+cond32679=>condition: 字符串T指针处的字符为"#"
+cond32728=>condition: 字符串S的指针大于等于0或字符串T的指针大于等于0
+cond32619=>condition: 字符串S指针处的字符为"#"
+op32416=>operation: 定义字符串S的指针i等于字符串S的长度减一，字符串T的指针j等于字符串T的长度减一
+op32634=>operation: 令该数量减一
+
+op32683->op32685
+cond32421(no)->io32751
+cond32630(no)->cond32647
+st32411->io32413
+io32413->op32416
+cond32707(no)->cond32728
+cond32679(yes)->op32683
+io32751->e32749
+op32418->cond32421
+op32744->cond32421
+cond32728(yes)->io32735
+op32634->op32636
+op32636->cond32587
+cond32647(yes)->cond32679
+cond32679(no)->cond32690
+cond32690(no)->cond32707
+op32685->cond32647
+cond32619(yes)->op32623
+op32742->op32744
+op32694->op32696
+cond32712(no)->op32742
+cond32728(no)->op32742
+op32416->op32418
+cond32587(no)->cond32647
+cond32421(yes)->cond32587
+op32623->op32625
+cond32587(yes)->cond32619
+io32719->e32717
+op32696->cond32647
+cond32630(yes)->op32634
+cond32707(yes)->cond32712
+cond32647(no)->cond32707
+cond32712(yes)->io32719
+op32625->cond32587
+io32735->e32733
+cond32690(yes)->op32694
+cond32619(no)->cond32630

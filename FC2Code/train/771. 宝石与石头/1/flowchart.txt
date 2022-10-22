@@ -1,0 +1,29 @@
+cond29866=>condition: 当前石头和当前宝石完全一致
+op2=>operation: 更新当前宝石
+io29798=>inputoutput: input: self, jewels, stones
+op1=>operation: 更新当前石头
+io29884=>inputoutput: output:  返回宝石的数量
+cond29806=>condition: 石头字符串中还有石头未被遍历
+cond29848=>condition: 宝石字符串中还有宝石未被遍历
+op29803=>operation: stone为石头字符串stones中的字符，表示当前石头
+st29796=>start: start numJewelsInStones
+op29801=>operation: 定义初值为0的变量count，用于记录宝石的数量
+e29882=>end: end function return
+op29870=>operation: 宝石的数量加一
+op29845=>operation: jewel为宝石字符串jewels中的字符，表示当前宝石
+
+io29884->e29882
+op29801->op29803
+cond29806(no)->io29884
+op29845->cond29848
+op29870->op1
+op2->cond29848
+cond29848(yes)->cond29866
+io29798->op29801
+op1->cond29806
+cond29866(no)->op2
+cond29866(yes)->op29870
+cond29806(yes)->op29845
+op29803->cond29806
+st29796->io29798
+cond29848(no)->op1

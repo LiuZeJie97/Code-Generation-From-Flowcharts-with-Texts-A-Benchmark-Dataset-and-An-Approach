@@ -1,0 +1,19 @@
+st6858=>start: start numTrees
+e6880=>end: end function return
+op6865=>operation: Nnode为当前节点数，初值为0
+cond6868=>condition: 当前节点数小于总结点数N
+io6882=>inputoutput: output:  对卡塔兰数取整并返回
+op6875=>operation: 卡塔兰数C等于其自身乘2乘(2乘当前节点数加1)除以(当前节点数加2)
+op1=>operation: 当前节点数自增1
+io6860=>inputoutput: input: self, N
+op6863=>operation: 卡塔兰数C初值为1
+
+cond6868(no)->io6882
+io6860->op6863
+op6865->cond6868
+io6882->e6880
+op6863->op6865
+op6875->op1
+cond6868(yes)->op6875
+st6858->io6860
+op1->cond6868

@@ -1,0 +1,29 @@
+cond14955=>condition: 对字符串进行遍历
+op15001=>operation: 将当前字符添加至答案列表中
+cond14983=>condition: 答案列表ret不为空
+st14945=>start: start makeGood
+cond14988=>condition: 答案列表中最后一项元素与当前字符不相同且它们的小写字符相同
+op1=>operation: 将当前字符更新为字符串中下一个字符
+io14947=>inputoutput: input: self, s
+op14996=>operation: 将当前字符添加至答案列表中
+io15009=>inputoutput: output:  返回答案列表的合法字符串形式
+op14950=>operation: 初始化答案列表ret
+e15007=>end: end function return
+op14952=>operation: 当前字符ch为字符串s中的字符，初值为字符串中首字符
+op14992=>operation: 将答案列表中最后一项元素移除
+
+cond14988(no)->op14996
+io14947->op14950
+cond14955(no)->io15009
+op14996->op1
+cond14955(yes)->cond14983
+cond14988(yes)->op14992
+st14945->io14947
+io15009->e15007
+cond14983(no)->op15001
+op14952->cond14955
+op14950->op14952
+cond14983(yes)->cond14988
+op14992->op1
+op15001->op1
+op1->cond14955

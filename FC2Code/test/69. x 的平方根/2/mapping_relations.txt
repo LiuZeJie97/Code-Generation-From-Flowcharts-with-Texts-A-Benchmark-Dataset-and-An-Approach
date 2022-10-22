@@ -1,0 +1,10 @@
+def mySqrt(self, x: int) -> int:    #io25979
+    if x == 0:    #cond25983
+        return 0    #io25990
+    C, x0 = float(x), float(x)    #op25996
+    while True:    #cond25999
+        xi = 0.5 * (x0 + C / x0)    #op26018
+        if abs(x0 - xi) < 1e-7:    #cond26021
+            break    #None
+        x0 = xi    #op26030
+    return int(x0)    #io26037

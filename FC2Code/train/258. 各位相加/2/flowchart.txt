@@ -1,0 +1,8 @@
+st18382=>start: start addDigits
+io18390=>inputoutput: output:  如果给定整数num不为0，则返回它减去一的差值除以9的余数加一，否则返回0
+e18388=>end: end function return
+io18384=>inputoutput: input: self, num
+
+io18390->e18388
+io18384->io18390
+st18382->io18384

@@ -1,0 +1,23 @@
+op10541=>operation: 定义长度和数组arr的长度相同，数组元素均为0的答案数组answer
+op10543=>operation: 答案数组最后一项元素等于-1
+st10534=>start: start replaceElements
+io10562=>inputoutput: output:  返回答案数组
+op10539=>operation: 定义arr_size为数组arr的长度
+op1=>operation: 数组下标减一
+op10555=>operation: 答案数组中下标为idx的元素等于答案数组中下标为idx+1的元素与数组中下标为idx+1的元素之间的最大值
+io10536=>inputoutput: input: self, arr
+cond10548=>condition: 数组下标大于-1
+e10560=>end: end function return
+op10545=>operation: 定义数组下标idx等于数组的长度减2
+
+op10539->op10541
+op10545->cond10548
+io10562->e10560
+io10536->op10539
+op1->cond10548
+op10543->op10545
+op10541->op10543
+cond10548(yes)->op10555
+st10534->io10536
+cond10548(no)->io10562
+op10555->op1

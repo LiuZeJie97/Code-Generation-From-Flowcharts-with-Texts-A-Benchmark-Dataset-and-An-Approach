@@ -1,0 +1,19 @@
+op13111=>operation: 定义length等于数组number的长度
+cond13116=>condition: 数组下标小于数组的长度
+e13128=>end: end function return
+op13113=>operation: 定义数组下标index，初值为1
+op13123=>operation: 令数组number中下标为index的数加上下标为index-1的数
+io13130=>inputoutput: output:  返回数组
+io13108=>inputoutput: input: self, number
+st13106=>start: start runningSum
+op1=>operation: 数组下标右移1个单位长度
+
+op13111->op13113
+st13106->io13108
+op13113->cond13116
+io13130->e13128
+io13108->op13111
+cond13116(yes)->op13123
+cond13116(no)->io13130
+op13123->op1
+op1->cond13116

@@ -1,0 +1,42 @@
+op3=>operation: 令k自增1
+op12949=>operation: 定义数组s，初值为0
+io13040=>inputoutput: output:  返回三元组的数目
+cond12954=>condition: i小于数组arr的长度
+op13028=>operation: 三元组的数目加上k与i的差值
+st12942=>start: start countTriplets
+op2=>operation: 令i自增1
+op13005=>operation: k等于i+1
+op12965=>operation: ans用于记录三元组的数目，初值为0
+op12961=>operation: 计算数组s中最后一项元素异或数组arr中下标为i的数的结果，并将结果添加进数组s中
+op1=>operation: 令i自增1
+op12951=>operation: 数组下标i等于0
+op12947=>operation: 定义n为数组arr的长度
+cond13008=>condition: k小于数组arr的长度
+e13038=>end: end function return
+cond12970=>condition: i小于数组arr的长度
+io12944=>inputoutput: input: self, arr
+op12967=>operation: i等于0
+cond13024=>condition: 数组s中下标为i的数等于下标为k加一的数
+
+op13005->cond13008
+op12967->cond12970
+op12947->op12949
+io13040->e13038
+cond13024(no)->op3
+op13028->op3
+cond13008(no)->op2
+cond12970(yes)->op13005
+io12944->op12947
+cond12970(no)->io13040
+op3->cond13008
+op12965->op12967
+op12951->cond12954
+cond12954(no)->op12965
+op2->cond12970
+st12942->io12944
+cond13024(yes)->op13028
+op1->cond12954
+cond12954(yes)->op12961
+cond13008(yes)->cond13024
+op12949->op12951
+op12961->op1

@@ -1,0 +1,13 @@
+def intToRoman(self, num: int) -> str:    #io951
+    num_dict={1:'I',4:'IV',5:'V',9:'IX',10:'X',40:'XL',50:'L',90:'XC',100:'C',400:'CD',500:'D',900:'CM',1000:'M' }    #op954
+    res=""    #op956
+    sorted_keys = sorted(num_dict.keys())[::-1]    #op958
+    for key in sorted_keys:    #cond963
+        if(num==0):    #cond995
+            break    #None
+        tmp=num//key    #op1004
+        if(tmp==0):    #cond1007
+            continue    #None
+        res+=num_dict[key]*(tmp)    #op1016
+        num-=key*(tmp)    #op1018
+    return res    #io1025

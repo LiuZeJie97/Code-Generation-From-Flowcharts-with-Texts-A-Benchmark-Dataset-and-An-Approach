@@ -1,0 +1,29 @@
+cond14122=>condition: 数组下标x小于数组nums的长度
+op2=>operation: 该数组下标右移1
+e14190=>end: end function return
+st14112=>start: start numIdenticalPairs
+op14180=>operation: 好数对的数目加一
+cond14176=>condition: 数组中下标为x的数和下标为y的数相等
+io14192=>inputoutput: output:  返回好数对的数目
+op14157=>operation: 数组下标y等于x加1
+cond14160=>condition: 数组下标y小于数组nums的长度
+op14117=>operation: 定义变量result等于0，用以保存好数对的数目
+op1=>operation: 该数组下标右移1
+io14114=>inputoutput: input: self, nums
+op14119=>operation: 数组下标x等于0
+
+cond14160(no)->op1
+cond14176(no)->op2
+st14112->io14114
+io14192->e14190
+op2->cond14160
+op14117->op14119
+cond14122(no)->io14192
+op14157->cond14160
+io14114->op14117
+op14119->cond14122
+cond14176(yes)->op14180
+cond14122(yes)->op14157
+cond14160(yes)->cond14176
+op14180->op2
+op1->cond14122

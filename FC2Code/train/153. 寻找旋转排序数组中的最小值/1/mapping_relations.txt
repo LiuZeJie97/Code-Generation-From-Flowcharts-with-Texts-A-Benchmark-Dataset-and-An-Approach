@@ -1,0 +1,9 @@
+def findMin(self, nums: List[int]) -> int:    #io14309
+    low, high = 0, len(nums) - 1    #op14312
+    while low < high:    #cond14315
+        pivot = low + (high - low) // 2    #op14334
+        if nums[pivot] < nums[high]:    #cond14337
+            high = pivot    #op14341
+        else:    #None
+            low = pivot + 1    #op14345
+    return nums[low]    #io14353

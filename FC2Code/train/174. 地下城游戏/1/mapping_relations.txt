@@ -1,0 +1,13 @@
+def calculateMinimumHP(self, dungeon: List[List[int]]) -> int:    #io1690
+    m=len(dungeon)    #op1693
+    n=len(dungeon[0])    #op1695
+    dp=[[0]*n for _ in range(m)]    #op1697
+    dp[-1][-1]=max(1,1-dungeon[-1][-1])    #op1699
+    for i in range(n-2,-1,-1):    #cond1704
+        dp[-1][i]=max(1,dp[-1][i+1]-dungeon[-1][i])    #op1711
+    for i in range(m-2,-1,-1):    #cond1718
+        dp[i][-1]=max(1,dp[i+1][-1]-dungeon[i][-1])    #op1725
+    for i in range(m-2,-1,-1):    #cond1732
+        for j in range(n-2,-1,-1):    #cond1754
+            dp[i][j]=max(min(dp[i+1][j],dp[i][j+1])-dungeon[i][j],1)    #op1761
+    return dp[0][0]    #io1770

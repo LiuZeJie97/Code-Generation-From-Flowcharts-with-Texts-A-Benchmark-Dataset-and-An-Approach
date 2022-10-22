@@ -1,0 +1,32 @@
+op1=>operation: 令数组下标自增1
+cond27360=>condition: 数组下标小于绝对路径名称数组的长度
+op27357=>operation: 定义数组下标idx
+e27424=>end: end function return
+io27350=>inputoutput: input: self, path
+op27355=>operation: 初始化空栈stack
+cond27394=>condition: 绝对路径名称数组中第idx个名称为".."
+st27348=>start: start simplifyPath
+op27403=>operation: 移除栈顶元素
+op27415=>operation: 令该名称进栈
+cond27411=>condition: 该名称不为空且不为"."
+io27426=>inputoutput: output:  将栈中的元素用"/"连接，返回"/"与它的和
+cond27399=>condition: 如果栈不为空
+op27353=>operation: 将绝对路径用"/"分割，定义绝对路径名称数组names等于分割后的值
+
+cond27394(no)->cond27411
+op27415->op1
+st27348->io27350
+op1->cond27360
+io27426->e27424
+cond27399(yes)->op27403
+cond27411(yes)->op27415
+op27355->op27357
+op27403->op1
+io27350->op27353
+op27357->cond27360
+op27353->op27355
+cond27360(no)->io27426
+cond27411(no)->op1
+cond27360(yes)->cond27394
+cond27394(yes)->cond27399
+cond27399(no)->op1

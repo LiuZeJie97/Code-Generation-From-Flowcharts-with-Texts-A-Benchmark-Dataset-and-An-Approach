@@ -1,0 +1,35 @@
+op10316=>operation: 对最终结果排序
+op10224=>operation: 初始化最终结果ans
+op1=>operation: 令该变量加一
+io10321=>inputoutput: output:  返回最终结果
+op10310=>operation: 将num添加进最终结果数组中
+cond10229=>condition: 上述变量小于10
+op2=>operation: 令该变量加一
+cond10279=>condition: 上述变量小于10
+io10221=>inputoutput: input: self, low, high
+e10319=>end: end function return
+op10298=>operation: 令num等于num乘10再加j
+st10219=>start: start sequentialDigits
+cond10301=>condition: num小于low或大于high
+op10274=>operation: num初值为1
+op10276=>operation: 变量j初值为i加一
+op10226=>operation: 变量i初值为1
+
+op10316->io10321
+op10276->cond10279
+op10226->cond10229
+st10219->io10221
+cond10279(yes)->op10298
+cond10229(no)->op10316
+cond10301(no)->op10310
+op10310->op2
+io10321->e10319
+op1->cond10229
+op10224->op10226
+cond10301(yes)->op2
+cond10279(no)->op1
+op10274->op10276
+io10221->op10224
+cond10229(yes)->op10274
+op10298->cond10301
+op2->cond10279

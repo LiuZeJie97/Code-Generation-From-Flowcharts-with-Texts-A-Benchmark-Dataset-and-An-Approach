@@ -1,0 +1,22 @@
+io20229=>inputoutput: input: self, n
+op20261=>operation: 左边界等于中值
+cond20235=>condition: 当左边界小于右边界
+op20232=>operation: 定义左边界left等于1，右边界right等于n
+op20265=>operation: 右边界等于中值减一
+op20254=>operation: 定义中值mid等于左边界与右边界的和加一再整除2
+e20271=>end: end function return
+io20273=>inputoutput: output:  返回左边界
+st20227=>start: start arrangeCoins
+cond20257=>condition: 中值与中值加一的和小于等于n的2倍
+
+op20265->cond20235
+op20254->cond20257
+st20227->io20229
+cond20257(yes)->op20261
+io20229->op20232
+io20273->e20271
+cond20235(no)->io20273
+op20232->cond20235
+cond20257(no)->op20265
+cond20235(yes)->op20254
+op20261->cond20235

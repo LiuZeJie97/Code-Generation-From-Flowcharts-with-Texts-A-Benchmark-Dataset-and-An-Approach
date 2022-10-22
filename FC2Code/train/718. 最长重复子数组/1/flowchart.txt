@@ -1,0 +1,32 @@
+op27790=>operation: 若数组A中下标为a的元素等于数组B中下标为b的元素，则dp[a][b]等于dp[a+1][b+1]加一，否则dp[a][b]等于0
+op27752=>operation: a为数组A的下标，初值为数组A的长度减一
+op2=>operation: 数组B的下标减1
+st27741=>start: start findLength
+op27746=>operation: n为数组A的长度，m为数组B的长度
+op27778=>operation: b为数组B的下标，初值为数组B的长度减一
+e27799=>end: end function return
+op27748=>operation: 初始化m + 1行n + 1列的二维数组dp，其初值均为0
+io27743=>inputoutput: input: self, A, B
+op27750=>operation: ans等于0，用于记录答案
+cond27781=>condition: 数组B的下标大于-1
+op27792=>operation: 若答案更新为答案与dp[a][b]之间的最大值
+io27801=>inputoutput: output:  返回答案
+cond27755=>condition: 数组A的数组下标大于1
+op1=>operation: 数组A的数组下标减1
+
+op27746->op27748
+op27750->op27752
+op27748->op27750
+cond27781(yes)->op27790
+op2->cond27781
+op27792->op2
+cond27781(no)->op1
+io27743->op27746
+cond27755(yes)->op27778
+st27741->io27743
+op27778->cond27781
+io27801->e27799
+op27752->cond27755
+op1->cond27755
+op27790->op27792
+cond27755(no)->io27801

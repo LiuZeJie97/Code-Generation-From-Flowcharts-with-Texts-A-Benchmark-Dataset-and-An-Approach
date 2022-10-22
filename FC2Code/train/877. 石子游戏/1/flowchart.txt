@@ -1,0 +1,37 @@
+op33846=>operation: length为数组piles的长度
+op33850=>operation: i为数组下标，pile为数组piles中下标为i的元素
+op33896=>operation: 计算第i堆石子减去剩下下标从i+1到j的石子堆时Alice与Bob石子数量差值，第j堆石子减去剩下下标从i到j-1的石子堆时Alice与Bob石子数量差值，剩下下标从i到j的石子堆时Alice与Bob石子数量差值等于上述计算结果之间的最大值
+cond33853=>condition: 对该数组遍历
+op33860=>operation: 剩下下标从i到i的石子堆时Alice与Bob石子数量差值等于当前遍历元素
+op33886=>operation: j为数组下标，初值为i+1
+op3=>operation: j自增1
+cond33867=>condition: i大于-1
+cond33889=>condition: 当j小于数组piles的长度时
+st33841=>start: start stoneGame
+op33864=>operation: i为数组下标，初值为数组piles的长度减2
+io33843=>inputoutput: input: self, piles
+op2=>operation: i自减1
+op33848=>operation: 定义length行length列的二维数组dp，数组元素初值均为0，其中dp[i][j]表示剩下下标从i到j的石子堆时Alice与Bob石子数量差值
+op1=>operation: 当前数组下标加一，当前遍历子元素移动至数组中下一个元素
+e33903=>end: end function return
+io33905=>inputoutput: output:  如果Alice与Bob石子数量差值大于0，则返回True，否则返回False
+
+cond33867(no)->io33905
+op2->cond33867
+op33860->op1
+cond33853(yes)->op33860
+op33896->op3
+op33864->cond33867
+op33848->op33850
+op33846->op33848
+cond33889(no)->op2
+cond33853(no)->op33864
+io33843->op33846
+op3->cond33889
+op33886->cond33889
+cond33867(yes)->op33886
+cond33889(yes)->op33896
+op33850->cond33853
+op1->cond33853
+io33905->e33903
+st33841->io33843

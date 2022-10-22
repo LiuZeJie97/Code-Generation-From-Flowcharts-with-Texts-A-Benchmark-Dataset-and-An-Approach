@@ -1,0 +1,21 @@
+io1679=>inputoutput: output:  返回reverse_nums和nums中最大的值
+op1670=>operation: 若i减1越界，则将nums[i]自乘上nums[i - 1]，否则nums[i]保持不变
+e1677=>end: end function return
+cond1661=>condition: i小于数组长度
+op1656=>operation: 颠倒数组nums的元素顺序并赋值给reverse_nums
+io1653=>inputoutput: input: self, nums
+op1658=>operation: i等于1
+op1672=>operation: 若i减1越界，则将reverse_nums[i]自乘上reverse_nums[i - 1]，否则reverse_nums[i]保持不变
+st1651=>start: start maxProduct
+op1=>operation: i自增1
+
+io1653->op1656
+st1651->io1653
+io1679->e1677
+op1672->op1
+cond1661(yes)->op1670
+op1658->cond1661
+op1670->op1672
+cond1661(no)->io1679
+op1656->op1658
+op1->cond1661

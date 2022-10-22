@@ -1,0 +1,29 @@
+st18238=>start: start searchMatrix
+cond18280=>condition: 矩阵中x行y列的元素等于目标值target
+op18247=>operation: x等于0，y等于矩阵的列数减一
+op18284=>operation: 标志变量等于True
+cond18250=>condition: x小于矩阵的行数且y大于等于0
+io18308=>inputoutput: output:  返回标志变量
+io18240=>inputoutput: input: self, matrix, target
+op18296=>operation: y减一
+op18243=>operation: 定义标志变量sgn，初值为False
+op18245=>operation: m为矩阵matrix的行数，n为矩阵matrix的列数
+e18306=>end: end function return
+cond18292=>condition: 该元素大于目标值
+op18300=>operation: x加一
+
+op18296->cond18250
+io18308->e18306
+op18300->cond18250
+st18238->io18240
+op18247->cond18250
+cond18280(no)->cond18292
+io18240->op18243
+cond18292(yes)->op18296
+op18245->op18247
+cond18292(no)->op18300
+cond18250(no)->io18308
+op18243->op18245
+cond18280(yes)->op18284
+op18284->io18308
+cond18250(yes)->cond18280

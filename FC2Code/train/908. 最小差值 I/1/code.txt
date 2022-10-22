@@ -1,0 +1,5 @@
+def smallestRangeI(self, n: List[int], k: int) -> int:
+    ms = max(n) - min(n)
+    ms -= 2 * k
+    ms = max(ms, 0)
+    return ms

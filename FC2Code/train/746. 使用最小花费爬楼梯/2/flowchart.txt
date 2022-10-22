@@ -1,0 +1,23 @@
+op1=>operation: 当前台阶位置加一
+op29544=>operation: 计算当前费用与从从x-1个台阶向上爬的费用之和，上一阶费用与从x-2个台阶向上爬的费用之和，定义变量nxt等于它们之间的最小值，表示下一阶费用
+io29553=>inputoutput: output:  返回当前费用
+e29551=>end: end function return
+op29530=>operation: 定义变量prev表示上一阶费用，curr表示当前费用，其初值均为0
+op29532=>operation: x为当前台阶位置，初值为2
+st29523=>start: start minCostClimbingStairs
+cond29535=>condition: 当前台阶位置小于数组cost的长度加一
+io29525=>inputoutput: input: self, cost
+op29546=>operation: 令上一阶费用和当前费用分别等于当前费用和下一阶费用
+op29528=>operation: n为数组cost的长度
+
+st29523->io29525
+op29530->op29532
+op29532->cond29535
+op29546->op1
+op29528->op29530
+io29553->e29551
+op29544->op29546
+io29525->op29528
+op1->cond29535
+cond29535(no)->io29553
+cond29535(yes)->op29544

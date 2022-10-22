@@ -1,0 +1,9 @@
+def distributeCandies(self, candies: int, num_people: int) -> List[int]:    #io8289
+    status = [0] * num_people    #op8292
+    i = 0    #op8294
+    while candies != 0:    #cond8297
+        pos = i % num_people    #op8310
+        status[pos] += min(i + 1, candies)    #op8312
+        candies -= min(i + 1, candies)    #op8314
+        i += 1    #op8316
+    return status    #io8323

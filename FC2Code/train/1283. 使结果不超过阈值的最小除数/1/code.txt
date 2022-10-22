@@ -1,0 +1,15 @@
+def smallestDivisor(self, numbers: List[int], threshold: int) -> int:
+    low, high = 1, max(numbers) + 1
+    ans = -1
+    while low <= high:
+        middle = (low + high) // 2
+        total = 0
+        for k in range(len(numbers)):
+            tmp = (numbers[k] - 1) // middle
+            total += tmp + 1
+        if total <= threshold:
+            high = middle - 1
+            ans = middle
+        else:
+            low = middle + 1
+    return ans

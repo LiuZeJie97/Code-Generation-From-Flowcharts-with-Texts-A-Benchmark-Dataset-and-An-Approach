@@ -1,0 +1,14 @@
+def nthUglyNumber(self, n: int) -> int:    #io18474
+    dp = [0] * (n + 1)    #op18477
+    dp[1] = 1    #op18479
+    p2 = p3 = p5 = 1    #op18481
+    for i in range(2, n + 1):    #cond18486
+        num2, num3, num5 = dp[p2] * 2, dp[p3] * 3, dp[p5] * 5    #op18525
+        dp[i] = min(num2, num3, num5)    #op18527
+        if dp[i] == num2:    #cond18530
+            p2 += 1    #op18534
+        if dp[i] == num3:    #cond18540
+            p3 += 1    #op18544
+        if dp[i] == num5:    #cond18550
+            p5 += 1    #op18554
+    return dp[n]    #io18564

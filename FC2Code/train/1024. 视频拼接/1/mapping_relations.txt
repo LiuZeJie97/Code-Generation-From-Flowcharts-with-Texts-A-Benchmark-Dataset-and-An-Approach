@@ -1,0 +1,8 @@
+def videoStitching(self, clips: List[List[int]], time: int) -> int:    #io7594
+    dp = [float("inf")] * (time + 1)    #op7597
+    dp[0] = 0    #op7599
+    for a in range(1, time + 1):    #cond7604
+        for b in range(len(clips)):    #cond7642
+            if clips[b][0] < a and clips[b][1] >= a:    #cond7658
+                dp[a] = min(dp[a], dp[clips[b][0]] + 1)    #op7662
+    return -1 if dp[time] == float("inf") else dp[time]    #io7674

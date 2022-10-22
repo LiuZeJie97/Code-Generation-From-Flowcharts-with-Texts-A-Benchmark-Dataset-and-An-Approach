@@ -1,0 +1,24 @@
+def maximalSquare(self, matrix: List[List[str]]) -> int:    #io15908
+    if len(matrix) == 0 or len(matrix[0]) == 0:    #cond15912
+        return 0    #io15919
+    maxSide = 0    #op15925
+    rows, columns = len(matrix), len(matrix[0])    #op15927
+    for i in range(rows):    #cond15932
+        for j in range(columns):    #cond16226
+            if matrix[i][j] == '1':    #cond16370
+                maxSide = max(maxSide, 1)    #op16374
+                currentMaxSide = min(rows - i, columns - j)    #op16376
+                for k in range(1, currentMaxSide):    #cond16381
+                    flag = True    #op16444
+                    if matrix[i + k][j + k] == '0':    #cond16447
+                        break    #None
+                    for m in range(k):    #cond16459
+                        if matrix[i + k][j + m] == '0' or matrix[i + m][j + k] == '0':    #cond16477
+                            flag = False    #op16481
+                            break    #None
+                    if flag:    #cond16491
+                        maxSide = max(maxSide, k + 1)    #op16495
+                    else:    #None
+                        break    #None
+    maxSquare = maxSide * maxSide    #op16511
+    return maxSquare    #io16516

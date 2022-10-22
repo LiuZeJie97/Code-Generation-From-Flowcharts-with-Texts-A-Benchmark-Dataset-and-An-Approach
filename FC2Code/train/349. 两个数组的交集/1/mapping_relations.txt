@@ -1,0 +1,19 @@
+def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:    #io19489
+    nums1.sort()    #op19492
+    nums2.sort()    #op19494
+    length1, length2 = len(nums1), len(nums2)    #op19496
+    intersection = list()    #op19498
+    index1 = index2 = 0    #op19500
+    while index1 < length1 and index2 < length2:    #cond19503
+        num1 = nums1[index1]    #op19546
+        num2 = nums2[index2]    #op19548
+        if num1 == num2:    #cond19551
+            if not intersection or num1 != intersection[-1]:    #cond19556
+                intersection.append(num1)    #op19560
+            index1 += 1    #op19565
+            index2 += 1    #op19567
+        elif num1 < num2:    #cond19572
+            index1 += 1    #op19576
+        else:    #None
+            index2 += 1    #op19580
+    return intersection    #io19589

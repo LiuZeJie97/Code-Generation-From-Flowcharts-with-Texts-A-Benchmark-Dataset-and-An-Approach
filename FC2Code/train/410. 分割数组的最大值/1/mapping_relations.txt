@@ -1,0 +1,13 @@
+def splitArray(self, array: List[int], m: int) -> int:    #io19884
+    n = len(array)    #op19887
+    f = [[10**18] * (m + 1) for _ in range(n + 1)]    #op19889
+    sub = [0]    #op19891
+    for elem in array:    #cond19896
+        sub.append(sub[-1] + elem)    #op19903
+    f[0][0] = 0    #op19907
+    for i in range(1, n + 1):    #cond19912
+        for j in range(1, min(i, m) + 1):    #cond19966
+            for k in range(i):    #cond19992
+                tmp = max(f[k][j - 1], sub[i] - sub[k])    #op20001
+                f[i][j] = min(f[i][j], tmp)    #op20003
+    return f[n][m]    #io20014

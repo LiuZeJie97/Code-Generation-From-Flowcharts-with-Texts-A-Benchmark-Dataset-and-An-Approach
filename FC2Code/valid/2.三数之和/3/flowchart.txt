@@ -1,0 +1,68 @@
+op1=>operation: 数组下标自增1
+op3560=>operation: 右下标向左移动一个元素
+cond3231=>condition: 数组下标没有越界
+op3226=>operation: 定义res、k分别等于空向量和0，其中，res用于保存和为0的三元组，k为数组的下标
+op3566=>operation: 找到和为0且不重复的三元组
+st3219=>start: start threeSum
+op3529=>operation: 左下标向右移动一个元素
+op3522=>operation: 定义当前三数字之和s等于数组中下标为k、i、j的三个元素之和
+op3568=>operation: 左下标向右移动一个元素
+op3592=>operation: 右下标向左移动一个元素
+cond3441=>condition: 左下标位于右下标左侧
+cond3429=>condition: 如果下标大于0且下标指向的数和数前一个数相等
+op3570=>operation: 右下标向左移动一个元素
+op3228=>operation: 数组下标的初值为0
+cond3546=>condition: 元素之和大于0
+io3221=>inputoutput: input: self, nums
+cond3532=>condition: 左下标位于右下标左侧且左下标所指的元素和该元素左侧元素相等
+op3539=>operation: 左下标向右移动一个元素
+op3224=>operation: 对数组nums从小到大排序
+cond3585=>condition: 左下标i位于右下标j左侧且右下标所指的元素和该元素右侧元素相等
+op3438=>operation: 定义i和j分别等于下标k加1和数组长度减一，其中，i为左下标，j为右下标
+op3550=>operation: 右下标向左移动一个元素
+op3580=>operation: 左下标向右移动一个元素
+cond3573=>condition: 左下标i位于右下标j左侧且左下标所指的元素和该元素左侧元素相等
+cond3553=>condition: 左下标位于右下标左侧且右下标所指的元素和该元素右侧元素相等
+e3603=>end: end function return
+cond3525=>condition: 元素之和小于0
+cond3419=>condition: 如果数组中下标指向的元素大于0
+io3605=>inputoutput: output:  返回所有和为0的三元组
+
+op3592->cond3585
+cond3441(yes)->op3522
+cond3525(no)->cond3546
+cond3573(no)->cond3585
+op3539->cond3532
+op3226->op3228
+cond3546(no)->op3566
+cond3441(no)->op1
+cond3585(no)->cond3441
+op3566->op3568
+cond3231(yes)->cond3419
+st3219->io3221
+cond3419(no)->cond3429
+cond3585(yes)->op3592
+op3570->cond3573
+cond3429(no)->op3438
+cond3553(yes)->op3560
+cond3525(yes)->op3529
+op3438->cond3441
+op3560->cond3553
+cond3546(yes)->op3550
+op3568->op3570
+cond3231(no)->io3605
+op3580->cond3573
+cond3573(yes)->op3580
+cond3532(no)->cond3441
+io3221->op3224
+op3224->op3226
+cond3419(yes)->io3605
+cond3429(yes)->op1
+cond3553(no)->cond3441
+op3550->cond3553
+op1->cond3231
+op3228->cond3231
+op3529->cond3532
+op3522->cond3525
+cond3532(yes)->op3539
+io3605->e3603

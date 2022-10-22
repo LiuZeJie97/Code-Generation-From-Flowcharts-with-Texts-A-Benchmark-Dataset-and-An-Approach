@@ -1,0 +1,24 @@
+cond4532=>condition: i小于整数加1
+cond4550=>condition: i是奇数
+op4527=>operation: 定义dp，长度等于整数num加一，初始化为0，用于记录每个数的二进制中1的个数。
+io4566=>inputoutput: output:  返回每个数的二进制中1的个数
+op1=>operation: i自增1
+e4564=>end: end function return
+op4554=>operation: 其二进制中1的个数等于它上一位偶数的二进制中1的个数加1
+op4529=>operation: i等于1
+st4522=>start: start countBits
+op4558=>operation: 其二进制1的个数等于这个偶数除以2后的数包含的1的个数
+io4524=>inputoutput: input: self, num
+
+op4529->cond4532
+op1->cond4532
+st4522->io4524
+io4566->e4564
+op4527->op4529
+io4524->op4527
+cond4532(yes)->cond4550
+cond4550(no)->op4558
+cond4532(no)->io4566
+op4554->op1
+op4558->op1
+cond4550(yes)->op4554

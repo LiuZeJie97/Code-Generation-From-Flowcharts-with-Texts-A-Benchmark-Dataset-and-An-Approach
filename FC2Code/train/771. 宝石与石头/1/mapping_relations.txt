@@ -1,0 +1,8 @@
+def numJewelsInStones(self, jewels: str, stones: str) -> int:    #io29798
+    count = 0    #op29801
+    for stone in stones:    #cond29806
+        for jewel in jewels:    #cond29848
+            if stone == jewel:    #cond29866
+                count += 1    #op29870
+                break    #None
+    return count    #io29884

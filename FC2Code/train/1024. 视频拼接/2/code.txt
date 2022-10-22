@@ -1,0 +1,21 @@
+def videoStitching(self, clips: List[List[int]], time: int) -> int:
+    maxn = [0] * time
+    last = ret = pre = 0
+    for i in range(len(clips)):
+        a = clips[i][0]
+        b = clips[i][1]
+        if a < time:
+            maxn[a] = max(maxn[a], b)
+    flag = True
+    for i in range(time):
+        last = max(last, maxn[i])
+        if i == last:
+            flag = False
+            break
+        if i == pre:
+            ret += 1
+            pre = last
+    if flag:
+        return ret
+    else:
+        return -1

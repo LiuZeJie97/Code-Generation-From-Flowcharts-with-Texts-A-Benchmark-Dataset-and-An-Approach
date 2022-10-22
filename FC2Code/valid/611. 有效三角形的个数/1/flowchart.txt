@@ -1,0 +1,46 @@
+op24048=>operation: 定义用于记录答案的变量result，初值为0
+op24046=>operation: 对该数组进行排序
+cond24053=>condition: 该循环变量小于数组array的长度
+e24257=>end: end function return
+op24156=>operation: n为循环变量，初值为m加1
+op24232=>operation: 定义中点middle等于左边界与右边界的和整除2
+op24241=>operation: 左边界等于中点加一
+st24039=>start: start triangleNumber
+op24050=>operation: m为循环变量
+cond24159=>condition: 该循环变量小于数组的长度
+op24208=>operation: 定义左边界start等于n加一，右边界end等于数组的长度减一，变量k等于n
+op24044=>operation: length等于数组array的长度
+op24250=>operation: 答案加上k与n的差值
+op2=>operation: 该循环变量右移1个单位
+cond24235=>condition: 当数组中点元素小于数组中下标为m的元素与下标为n的元素的和
+cond24211=>condition: 当左边界小于等于右边界
+op1=>operation: 该循环变量右移1个单位
+op24245=>operation: 右边界等于中点减1
+io24041=>inputoutput: input: self, array
+io24259=>inputoutput: output:  返回答案
+op24239=>operation: k的值更新为中点值
+
+op24050->cond24053
+op2->cond24159
+op24208->cond24211
+cond24235(no)->op24245
+op24044->op24046
+cond24235(yes)->op24239
+io24259->e24257
+cond24159(yes)->op24208
+op24156->cond24159
+cond24053(yes)->op24156
+op24250->op2
+op1->cond24053
+op24048->op24050
+op24241->cond24211
+cond24211(no)->op24250
+op24239->op24241
+op24245->cond24211
+cond24053(no)->io24259
+op24046->op24048
+op24232->cond24235
+cond24211(yes)->op24232
+st24039->io24041
+io24041->op24044
+cond24159(no)->op1

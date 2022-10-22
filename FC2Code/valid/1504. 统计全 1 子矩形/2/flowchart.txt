@@ -1,0 +1,70 @@
+op13680=>operation: 数组下标i等于0
+op13896=>operation: 将数组最后一项元素移除
+cond13845=>condition: i小于矩阵的行数
+cond13881=>condition: 数组Q非空且Q[-1][0]大于数组row第i行第j列的元素
+op13892=>operation: 令计算值减去它们的差值与Q[-1][1]的成绩
+op13758=>operation: 最终答案ans等于0
+cond13683=>condition: i小于矩阵mat的行数
+op13842=>operation: i等于0
+op13902=>operation: 令最终答案加上计算值
+op3=>operation: j等于j加一
+op13751=>operation: 若矩阵第i行第j列的元素等于0，则数组row第i行第j列的元素等于0，否则等于数组row第i行第j-1列的元素加一
+op13900=>operation: 令计算值total加上数组row第i行第j列的元素
+op13747=>operation: 数组row第i行第j列的元素等于矩阵第i行第j列的元素
+op1=>operation: i等于i加一
+op13760=>operation: j等于0
+op13894=>operation: 令高度变量加上Q[-1][1]
+op13878=>operation: 高度变量height等于1
+cond13725=>condition: j小于矩阵的列数
+op13840=>operation: 计算值total等于0
+cond13763=>condition: j小于矩阵mat的列数
+op13678=>operation: 定义n行m列初值均为0的二维数组row
+op13904=>operation: 将数组row第i行第j列的元素和高度变量组成的元组加入数组Q
+op4=>operation: i等于i加一
+e13911=>end: end function return
+cond13743=>condition: j等于0
+op13676=>operation: n为矩阵mat的行数，m为矩阵mat的列数
+op2=>operation: j等于j加一
+io13913=>inputoutput: output:  返回最终答案
+io13673=>inputoutput: input: self, mat
+op13838=>operation: 初始化数组Q
+op13722=>operation: 数组下标j等于0
+st13671=>start: start numSubmat
+
+op13892->op13894
+cond13763(yes)->op13838
+op13838->op13840
+io13673->op13676
+cond13763(no)->io13913
+op2->cond13725
+cond13881(yes)->op13892
+st13671->io13673
+op13896->cond13881
+io13913->e13911
+cond13743(yes)->op13747
+op13758->op13760
+cond13743(no)->op13751
+op4->cond13845
+op13680->cond13683
+op13751->op2
+cond13881(no)->op13900
+op3->cond13763
+op13900->op13902
+op13676->op13678
+op13760->cond13763
+op13878->cond13881
+op13722->cond13725
+op13678->op13680
+op13840->op13842
+op1->cond13683
+cond13683(no)->op13758
+cond13725(no)->op1
+op13894->op13896
+op13842->cond13845
+op13904->op4
+op13902->op13904
+cond13683(yes)->op13722
+cond13845(yes)->op13878
+cond13845(no)->op3
+cond13725(yes)->cond13743
+op13747->op2

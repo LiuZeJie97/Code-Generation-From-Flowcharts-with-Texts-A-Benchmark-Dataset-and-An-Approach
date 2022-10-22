@@ -1,0 +1,11 @@
+def kLengthApart(self, n: List[int], k: int) -> bool:    #io12481
+    l = len(n)    #op12484
+    p = -1    #op12486
+    s = True    #op12488
+    for i in range(l):    #cond12493
+        if n[i] == 1:    #cond12521
+            if p != -1 and i - p - 1 < k:    #cond12526
+                s = False    #op12530
+                break    #None
+            p = i    #op12537
+    return s    #io12547

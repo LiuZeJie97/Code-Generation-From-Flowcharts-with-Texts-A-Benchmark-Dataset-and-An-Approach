@@ -1,0 +1,26 @@
+op13056=>operation: 数组下标k等于1
+e13095=>end: end function return
+st13049=>start: start maxPower
+op1=>operation: 数组下标向右移动1个单位长度
+io13051=>inputoutput: input: self, st
+op13054=>operation: ans等于1，用于记录字符串的能量；cnt等于1，用于记录相同字符的长度
+op13089=>operation: 将相同字符的长度置为1
+cond13059=>condition: 数组下标小于字符串st的长度
+cond13079=>condition: 字符串中下标为k的字符和下标为k-1的字符相同
+io13097=>inputoutput: output:  返回字符串的能量
+op13085=>operation: 若相同字符的长度大于字符串的能量，则更新字符串的能量
+op13083=>operation: 相同字符的长度加一
+
+op13085->op1
+op13083->op13085
+st13049->io13051
+op13089->op1
+io13097->e13095
+cond13059(no)->io13097
+op13056->cond13059
+op13054->op13056
+cond13079(no)->op13089
+cond13079(yes)->op13083
+io13051->op13054
+cond13059(yes)->cond13079
+op1->cond13059

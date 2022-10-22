@@ -1,0 +1,13 @@
+def minIncrementForUnique(self, a: List[int]) -> int:
+    count = [0] * 200000
+    for x in a:
+        count[x] += 1
+    c = taken = 0
+    for x in range(200000):
+        if count[x] >= 2:
+            taken += count[x] - 1
+            c -= x * (count[x] - 1)
+        elif taken > 0 and count[x] == 0:
+            taken -= 1
+            c += x
+    return c

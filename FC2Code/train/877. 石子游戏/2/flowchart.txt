@@ -1,0 +1,37 @@
+op33937=>operation: i为数组下标，初值为数组piles的长度减2
+st33914=>start: start stoneGame
+op33919=>operation: length为数组piles的长度
+cond33926=>condition: 对该数组遍历
+io33916=>inputoutput: input: self, piles
+cond33962=>condition: 数组下标j小于数组piles的长度
+op33959=>operation: j为数组下标，初值为i+1
+op33921=>operation: 定义数组dp，长度等于数组piles的长度，数组元素初值均为0
+op1=>operation: 当前数组下标加一并更新该数组下标对应的石子数
+op33933=>operation: 数组dp中下标为i的元素等于第i堆石子数
+io33978=>inputoutput: output:  如果数组dp最后一项元素大于0，则返回True，否则返回False
+op33923=>operation: i为数组下标，pile为数组piles中第i堆石子数
+e33976=>end: end function return
+op33969=>operation: 计算第i堆石子数与数组dp中下标为j的元素的差值，第j堆石子数与数组dp中下标为j-1的元素的差值，数组dp中下标为j的元素等于上述计算结果之间的最大值
+cond33940=>condition: 数组下标i大于-1
+op3=>operation: 该数组下标自增1
+op2=>operation: 该数组下标自减1
+
+op33919->op33921
+op2->cond33940
+cond33926(yes)->op33933
+io33978->e33976
+cond33926(no)->op33937
+op3->cond33962
+op33921->op33923
+op33937->cond33940
+op33959->cond33962
+cond33940(yes)->op33959
+op33923->cond33926
+cond33962(yes)->op33969
+op33969->op3
+op33933->op1
+st33914->io33916
+io33916->op33919
+op1->cond33926
+cond33962(no)->op2
+cond33940(no)->io33978

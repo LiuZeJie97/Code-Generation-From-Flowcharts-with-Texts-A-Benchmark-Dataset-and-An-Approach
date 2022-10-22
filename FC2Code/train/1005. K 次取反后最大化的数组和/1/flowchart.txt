@@ -1,0 +1,50 @@
+st7067=>start: start largestSumAfterKNegations
+op7121=>operation: 令计数结果中下标为-i的元素加上操作次数
+op1=>operation: i等于i加一
+cond7143=>condition: 下列条件均满足：k大于0、k不能整除2、计数结果freq中第一项元素不为0
+op7119=>operation: 令上述元素减去操作次数
+io7069=>inputoutput: input: self, nums, k
+op7125=>operation: 令k减去操作次数
+op7074=>operation: 定义tot等于对上述数组求和的结果，用于记录数组nums可能的最大和
+cond7168=>condition: 计数结果中下标为i的元素不为0
+op7117=>operation: 定义操作次数ops等于上述元素与k之间的最小值
+cond7128=>condition: k等于0
+e7185=>end: end function return
+op7076=>operation: 定义变量i等于-100
+op7172=>operation: 令最大和tot减去i乘以2的结果
+op7147=>operation: 定义变量i等于1
+cond7150=>condition: 上述变量小于101
+cond7113=>condition: 计数结果freq中下标为i的元素不为0
+op7123=>operation: 令最大和tot加上-i乘以操作次数再乘以2的结果
+op2=>operation: i等于i加一
+cond7079=>condition: 上述变量小于0
+op7072=>operation: 定义freq等于对数组nums的计数结果
+io7187=>inputoutput: output:  返回数组可能的最大和
+
+op7119->op7121
+op1->cond7079
+io7187->e7185
+op7121->op7123
+st7067->io7069
+op7123->op7125
+op7147->cond7150
+op7076->cond7079
+op7172->io7187
+cond7113(no)->op1
+cond7079(no)->cond7143
+cond7128(yes)->cond7143
+io7069->op7072
+op2->cond7150
+op7074->op7076
+cond7113(yes)->op7117
+op7072->op7074
+op7117->op7119
+op7125->cond7128
+cond7128(no)->op1
+cond7168(yes)->op7172
+cond7168(no)->op2
+cond7150(yes)->cond7168
+cond7143(no)->io7187
+cond7143(yes)->op7147
+cond7150(no)->io7187
+cond7079(yes)->cond7113

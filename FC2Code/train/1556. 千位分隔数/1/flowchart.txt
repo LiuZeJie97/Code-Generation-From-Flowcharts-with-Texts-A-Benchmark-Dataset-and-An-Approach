@@ -1,0 +1,33 @@
+op15091=>operation: 将结果数组ans倒置
+op15023=>operation: 定义变量count等于0，用于统计分隔数量
+op15063=>operation: 令给定整数整除10
+op15065=>operation: 将末位数转化为字符串并添加进结果数组ans中
+op15025=>operation: 定义结果数组ans
+op15074=>operation: 将"."添加进结果数组中
+cond15080=>condition: 给定整数等于0
+cond15028=>condition: 进入循环
+st15018=>start: start thousandSeparator
+op15061=>operation: 末位数cur等于给定整数n除以10的余数
+op15067=>operation: 令分隔数量count加一
+io15096=>inputoutput: output:  将结果数组转化为字符串并返回
+cond15070=>condition: 分割数量可以整除3且给定整数大于0
+e15094=>end: end function return
+io15020=>inputoutput: input: self, n
+
+cond15070(no)->cond15080
+op15074->cond15080
+op15025->cond15028
+op15063->op15065
+op15065->op15067
+op15061->op15063
+io15096->e15094
+io15020->op15023
+st15018->io15020
+op15091->io15096
+op15023->op15025
+cond15070(yes)->op15074
+cond15080(yes)->op15091
+cond15080(no)->cond15028
+cond15028(no)->op15091
+op15067->cond15070
+cond15028(yes)->op15061

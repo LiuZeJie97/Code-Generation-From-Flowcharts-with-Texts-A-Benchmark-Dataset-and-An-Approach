@@ -1,0 +1,15 @@
+def hIndex(self, citations: List[int]) -> int:    #io18716
+    n = len(citations); tot = 0    #op18719
+    counter = [0] * (n+1)    #op18721
+    for c in citations:    #cond18726
+        if c >= n:    #cond18744
+            counter[n] += 1    #op18748
+        else:    #None
+            counter[c] += 1    #op18752
+    h = 0    #op18757
+    for i in range(n, -1, -1):    #cond18762
+        tot += counter[i]    #op18781
+        if tot >= i:    #cond18784
+            h = i    #op18788
+            break    #None
+    return h    #io18800

@@ -1,0 +1,35 @@
+st5478=>start: start subarraySum
+cond5536=>condition: 数组结束位置的下标小于数组长度
+op5560=>operation: 数组的个数加1
+e5570=>end: end function return
+cond5490=>condition: 数组起始位置的下标小于数组长度
+op1=>operation: 数组起始位置的下标等于其自身加一
+op5531=>operation: 使用sum保存当前子数组各个个元素之和
+op5485=>operation: n等于整数数组长度
+op5553=>operation: 更新子数组各个个元素之和等于自身加上数组下标为j的元素
+op5487=>operation: i等于0，记录子数组起始位置的下标
+io5480=>inputoutput: input: self, nums, k
+io5572=>inputoutput: output:  返回数组的个数
+op2=>operation: 数组结束位置的下标等于其自身加一
+op5533=>operation: j等于i，记录子数组结束位置的下标
+op5483=>operation: 初始化子数组的个数count等于0
+cond5556=>condition: 子数组各个个元素之和等于整数 k
+
+op5533->cond5536
+io5572->e5570
+cond5536(no)->op1
+cond5556(no)->op2
+cond5490(yes)->op5531
+op5531->op5533
+op2->cond5536
+cond5536(yes)->op5553
+st5478->io5480
+op5487->cond5490
+op5483->op5485
+op5560->op2
+cond5490(no)->io5572
+op5553->cond5556
+op1->cond5490
+io5480->op5483
+cond5556(yes)->op5560
+op5485->op5487

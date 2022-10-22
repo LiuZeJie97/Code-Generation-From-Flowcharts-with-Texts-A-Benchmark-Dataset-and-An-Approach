@@ -1,0 +1,15 @@
+def trap(self, height: List[int]) -> int:
+    ans = 0
+    ms = list()
+    hlen = len(height)
+    for i in range(hlen):
+        while ms and height[i] > height[ms[-1]]:
+            top = ms.pop()
+            if not ms:
+                break
+            left = ms[-1]
+            currWidth = i - left - 1
+            currHeight = min(height[left], height[i]) - height[top]
+            ans += currWidth * currHeight
+        ms.append(i)
+    return ans

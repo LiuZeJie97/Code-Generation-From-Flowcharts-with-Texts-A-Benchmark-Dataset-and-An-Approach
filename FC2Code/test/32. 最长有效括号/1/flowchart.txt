@@ -1,0 +1,49 @@
+op4340=>operation: 将匹配索引数组排序。
+cond4347=>condition: 下标小于匹配索引数组的长度减一
+e4391=>end: end function return
+op1=>operation: 括号索引自增1
+op4286=>operation: 初始化索引index的值为0，为字符串s的下标
+cond4329=>condition: 若索引在字符串中指向的元素等于左括号
+op4323=>operation: 将匹配的右括号索引加入匹配索引数组
+cond4289=>condition: 括号索引没有越界
+op4370=>operation: 令tmp等于下标，用于保存最长连续子序列的左界
+op4344=>operation: index等于0，记录匹配索引数组的下标
+cond4373=>condition: index小于匹配索引数组的长度减一 且 该数组下一位和当前位差等于1：
+io4281=>inputoutput: input: self, s
+op4333=>operation: 将索引加入栈
+op4386=>operation: 下标右移一位
+st4279=>start: start longestValidParentheses
+op4380=>operation: 下标右移一位
+op4321=>operation: 将匹配的左括号的索引出栈，并加入匹配索引数组
+op4384=>operation: 如果索引index减tmp加1大于当前最长连续子序列的长度，则更新
+op4284=>operation: 初始化匹配索引数组res=[]和栈stack=[]
+io4393=>inputoutput: output:  返回最长连续子序列的长度
+cond4317=>condition: 若栈不为空且字符串中下标为i的元素等于右括号
+op4342=>operation: 初始化max_len等于0，用于记录匹配索引数组的最长连续子序列的长度
+
+op4342->op4344
+st4279->io4281
+cond4373(yes)->op4380
+op4340->op4342
+op4333->op1
+op1->cond4289
+op4386->cond4347
+op4384->op4386
+cond4329(yes)->op4333
+op4323->cond4329
+op4380->cond4373
+cond4289(yes)->cond4317
+io4393->e4391
+cond4347(yes)->op4370
+op4370->cond4373
+op4344->cond4347
+op4286->cond4289
+io4281->op4284
+cond4289(no)->op4340
+cond4329(no)->op1
+cond4373(no)->op4384
+cond4317(no)->cond4329
+cond4347(no)->io4393
+cond4317(yes)->op4321
+op4321->op4323
+op4284->op4286

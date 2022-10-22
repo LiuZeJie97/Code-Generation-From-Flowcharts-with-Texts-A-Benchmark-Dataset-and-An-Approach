@@ -1,0 +1,40 @@
+op18479=>operation: 第1个丑数等于1
+e18562=>end: end function return
+cond18530=>condition: 第i个丑数等于num2
+io18564=>inputoutput: output:  返回第n个丑数
+op18483=>operation: i为数组下标，初值为2
+op18477=>operation: 定义长度为n+1的数组dp，其初值均为0，dp[i]表示第i个丑数
+cond18486=>condition: 数组下标小于n+1
+op18527=>operation: 将第i个丑数更新为num2，num3与num5之间的最小值
+op18554=>operation: 变量p5加一
+cond18550=>condition: 第i个丑数等于num5
+op18481=>operation: 定义变量p2,p3,p5,其初值均为1
+cond18540=>condition: 第i个丑数等于num3
+op18525=>operation: num2等于第p2个丑数的值乘以2，num3等于第p3个丑数的值乘以3，num5等于第p5个丑数的值乘以5，
+op1=>operation: 数组下标加一
+st18472=>start: start nthUglyNumber
+io18474=>inputoutput: input: self, n
+op18544=>operation: 变量p3加一
+op18534=>operation: 变量p2加一
+
+cond18540(yes)->op18544
+op18481->op18483
+op18483->cond18486
+st18472->io18474
+cond18540(no)->cond18550
+cond18550(yes)->op18554
+op1->cond18486
+op18554->op1
+op18544->cond18550
+op18534->cond18540
+op18479->op18481
+cond18530(no)->cond18540
+cond18530(yes)->op18534
+cond18550(no)->op1
+op18525->op18527
+io18474->op18477
+io18564->e18562
+op18527->cond18530
+cond18486(no)->io18564
+cond18486(yes)->op18525
+op18477->op18479

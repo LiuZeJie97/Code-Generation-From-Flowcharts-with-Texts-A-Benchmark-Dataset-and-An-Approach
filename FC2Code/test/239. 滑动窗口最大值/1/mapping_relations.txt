@@ -1,0 +1,17 @@
+def maxSlidingWindow(self, N: List[int], k: int) -> List[int]:    #io18004
+    n = len(N)    #op18007
+    Q = collections.deque()    #op18009
+    for i in range(k):    #cond18014
+        while Q and N[i] >= N[Q[-1]]:    #cond18034
+            Q.pop()    #op18041
+        Q.append(i)    #op18045
+    ans = []    #op18049
+    ans.append(N[Q[0]])    #op18051
+    for i in range(k, n):    #cond18056
+        while Q and N[i] >= N[Q[-1]]:    #cond18090
+            Q.pop()    #op18097
+        Q.append(i)    #op18101
+        while Q[0] <= i - k:    #cond18104
+            Q.popleft()    #op18111
+        ans.append(N[Q[0]])    #op18115
+    return ans    #io18122

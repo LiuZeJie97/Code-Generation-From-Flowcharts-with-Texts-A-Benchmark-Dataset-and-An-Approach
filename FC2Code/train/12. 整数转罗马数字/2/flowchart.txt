@@ -1,0 +1,29 @@
+op1087=>operation: 给定数值减去该数值
+io1036=>inputoutput: input: self, num
+op1=>operation: 处理下一个元组
+cond1046=>condition: 对于向量中的每一个元组
+cond1078=>condition: 给定数值num大于元组中的数值
+e1106=>end: end function return
+cond1094=>condition: 给定数值等于0
+op1039=>operation: 初始化向量VALUE_SYMBOLS，该向量由若干元组组成，每个元组是个(数值,罗马数字)对，向量中的元组按数值大小由高到低排序。
+op1089=>operation: 记录元组中的罗马数字
+io1108=>inputoutput: output:  对罗马数字拼接并返回
+op1041=>operation: roman是一个列表，用于记录转换后的各个罗马数字
+op1043=>operation: value, symbol是VALUE_SYMBOLS中的一个元组
+st1034=>start: start intToRoman
+
+cond1046(no)->io1108
+op1087->op1089
+cond1078(no)->cond1094
+op1041->op1043
+cond1094(no)->op1
+cond1046(yes)->cond1078
+op1043->cond1046
+cond1094(yes)->io1108
+op1089->cond1078
+cond1078(yes)->op1087
+op1039->op1041
+io1108->e1106
+io1036->op1039
+st1034->io1036
+op1->cond1046

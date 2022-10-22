@@ -1,0 +1,12 @@
+def minSwap(self, nums1: List[int], nums2: List[int]) -> int:    #io31066
+    n1, s1 = 0, 1    #op31069
+    for i in range(1, len(nums1)):    #cond31074
+        n2 = s2 = float("inf")    #op31107
+        if nums1[i-1] < nums1[i] and nums2[i-1] < nums2[i]:    #cond31110
+            n2 = min(n2, n1)    #op31114
+            s2 = min(s2, s1 + 1)    #op31116
+        if nums1[i-1] < nums2[i] and nums2[i-1] < nums1[i]:    #cond31122
+            n2 = min(n2, s1)    #op31126
+            s2 = min(s2, n1 + 1)    #op31128
+        n1, s1 = n2, s2    #op31133
+    return min(n1, s1)    #io31140

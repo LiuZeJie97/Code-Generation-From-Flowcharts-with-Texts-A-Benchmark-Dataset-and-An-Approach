@@ -1,0 +1,8 @@
+def peakIndexInMountainArray(self, arr: List[int]) -> int:
+    n = len(arr)
+    ans = -1
+    for idx in range(1, n - 1):
+        if arr[idx] > arr[idx + 1]:
+            ans = idx
+            break
+    return ans

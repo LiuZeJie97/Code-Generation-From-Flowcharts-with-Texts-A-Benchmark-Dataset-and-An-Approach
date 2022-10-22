@@ -1,0 +1,13 @@
+def minCost(self, colors: str, neededTime: List[int]) -> int:    #io15355
+    i = 0    #op15358
+    length = len(colors)    #op15360
+    ret = 0    #op15362
+    while i < length:    #cond15365
+        ch = colors[i]    #op15396
+        maxValue, total = 0, 0    #op15398
+        while i < length and colors[i] == ch:    #cond15401
+            maxValue = max(maxValue, neededTime[i])    #op15412
+            total += neededTime[i]    #op15414
+            i += 1    #op15416
+        ret += total - maxValue    #op15420
+    return ret    #io15427

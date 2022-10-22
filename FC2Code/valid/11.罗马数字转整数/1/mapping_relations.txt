@@ -1,0 +1,11 @@
+def romanToInt(self, s: str) -> int:    #io664
+    SYMBOL_VALUES = {'I': 1,'V': 5,'X': 10,'L': 50,'C': 100,'D': 500,'M': 1000}    #op667
+    n = len(s)    #op669
+    ans = 0    #op671
+    for i, ch in enumerate(s):    #cond676
+        value = SYMBOL_VALUES[ch]    #op695
+        if i < n - 1 and value < SYMBOL_VALUES[s[i + 1]]:    #cond698
+            ans -= value    #op702
+        else:    #None
+            ans += value    #op706
+    return ans    #io714

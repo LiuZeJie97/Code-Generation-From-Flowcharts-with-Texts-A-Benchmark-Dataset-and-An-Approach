@@ -1,0 +1,36 @@
+cond14243=>condition: 总和可以整除2
+op14240=>operation: 令总和total加上数组arr中当前数组下标处的数
+op14255=>operation: 奇数数量加一
+op14206=>operation: 模数MODULO等于10的9次方加7
+io14203=>inputoutput: input: self, array
+e14261=>end: end function return
+op14253=>operation: 令子数组数量加上偶数数量
+cond14217=>condition: 数组下标小于数组array的长度
+st14201=>start: start numOfsub
+io14263=>inputoutput: output:  返回子数组数量对模数取模的结果
+op1=>operation: 数组下标加一
+op14249=>operation: 偶数数量even加一
+op14247=>operation: 令子数组数量sub加上奇数数量odd
+op14212=>operation: 总和total等于0
+op14210=>operation: 子数组数量sub等于0
+op14208=>operation: 奇数数量odd等于0，偶数数量even等于1
+op14214=>operation: 数组下标index等于0
+
+cond14217(no)->io14263
+op14210->op14212
+op14206->op14208
+st14201->io14203
+op14249->op1
+io14203->op14206
+cond14243(no)->op14253
+op14247->op14249
+op14208->op14210
+cond14217(yes)->op14240
+op14255->op1
+cond14243(yes)->op14247
+op1->cond14217
+op14240->cond14243
+op14214->cond14217
+op14253->op14255
+op14212->op14214
+io14263->e14261

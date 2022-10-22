@@ -1,0 +1,8 @@
+def addDigits(self, num: int) -> int:    #io18319
+    while num >= 10:    #cond18323
+        sum = 0    #op18348
+        while num:    #cond18351
+            sum += num % 10    #op18360
+            num //= 10    #op18362
+        num = sum    #op18366
+    return num    #io18373

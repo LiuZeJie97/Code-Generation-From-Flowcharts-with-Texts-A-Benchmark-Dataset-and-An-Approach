@@ -1,0 +1,43 @@
+cond6532=>condition: 前一个字符等于"1"或等于"2"
+op6558=>operation: 当前位置的解码方法等于上一位的解码方法
+e6565=>end: end function return
+io6567=>inputoutput: output:  返回第n位的解码方法
+cond6485=>condition: 字符串下标小于字符串长度
+io6461=>inputoutput: input: self, s
+op6554=>operation: 则当前位既可以单独解码也可以和上一位结合，当前位置的解码方法等于上一位和上上位方法之和
+st6459=>start: start numDecodings
+op6464=>operation: n为字符串s的长度
+cond6550=>condition: 若字符串的i-1位等于"1"，或者上一位s[i]=="2"。则此时，若"1"<=s[i]<="6"也是可以的。
+cond6467=>condition: 字符串为空或者字符串的第一个元素等于"0"
+io6474=>inputoutput: output:  返回0
+op6536=>operation: 此时，到i+1位置的解码方法和i-1位置的相同
+io6543=>inputoutput: output:  返回0
+e6541=>end: end function return
+cond6527=>condition: 若字符串下标为i的字符等于"0"
+op6480=>operation: 初始化dp=[0,...,0]，长度为字符串长度加1，dp[0]等于1,dp[1]等于1，dp[1]等于1表示第一位的解码方法
+op1=>operation: 字符串下标右移
+e6472=>end: end function return
+op6482=>operation: i等于1，为字符串下标
+
+op6554->op1
+op6480->op6482
+cond6527(no)->cond6550
+cond6532(no)->io6543
+cond6527(yes)->cond6532
+cond6550(yes)->op6554
+op6482->cond6485
+cond6485(yes)->cond6527
+cond6467(no)->op6480
+cond6532(yes)->op6536
+cond6550(no)->op6558
+op1->cond6485
+op6558->op1
+cond6467(yes)->io6474
+io6474->e6472
+io6461->op6464
+st6459->io6461
+io6543->e6541
+io6567->e6565
+op6536->op1
+cond6485(no)->io6567
+op6464->cond6467

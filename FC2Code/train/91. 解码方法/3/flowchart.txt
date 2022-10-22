@@ -1,0 +1,33 @@
+io6649=>inputoutput: input: self, s
+cond6691=>condition: 字符串下标为i-1的字符不等于"0"
+op6654=>operation: 令a，b，c表示字符串的前i-2，i-1和i个字符的解码方法数，初值为0，1，0
+op6656=>operation: i等于1，为字符串下标
+op6695=>operation: 前i个字符的解码方法数等于其自身加上前i-1个字符的解码方法数
+cond6659=>condition: 为字符串下标小于字符串的长度加1
+op6705=>operation: 前i个字符的解码方法数等于其自身加上前i-2个字符的解码方法数
+e6715=>end: end function return
+cond6701=>condition: 当前下标大于1，且s[i-2]不等于"0"，且s[i-2:i]小于或等于数字26
+st6647=>start: start numDecodings
+op6688=>operation: 前i个字符的解码方法数等于0
+op6710=>operation: 令a，b等于b，c
+op6652=>operation: n为字符串s的长度
+op1=>operation: 下标右移
+io6717=>inputoutput: output:  返回前i个字符的解码方法数
+
+op6652->op6654
+op6688->cond6691
+cond6701(no)->op6710
+cond6659(no)->io6717
+op6710->op1
+cond6659(yes)->op6688
+op6695->cond6701
+op1->cond6659
+cond6701(yes)->op6705
+cond6691(yes)->op6695
+io6717->e6715
+io6649->op6652
+op6705->op6710
+st6647->io6649
+op6654->op6656
+op6656->cond6659
+cond6691(no)->cond6701

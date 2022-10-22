@@ -1,0 +1,22 @@
+def minRemoveToMakeValid(self, s: str) -> str:
+    fpc = []
+    bal = 0
+    op = 0
+    for i in range(len(s)):
+        if s[i] == '(':
+            bal += 1
+            op += 1
+        if s[i] == ')':
+            if bal == 0:
+                continue
+            bal -= 1
+        fpc.append(s[i])
+    res = []
+    otk = op - bal
+    for i in range(len(fpc)):
+        if fpc[i] == '(':
+            otk -= 1
+            if otk < 0:
+                continue
+        res.append(fpc[i])
+    return "".join(res)

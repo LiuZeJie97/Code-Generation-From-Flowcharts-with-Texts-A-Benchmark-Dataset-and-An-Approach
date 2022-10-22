@@ -1,0 +1,10 @@
+def findUnsortedSubarray(self, nums: List[int]) -> int:    #io23355
+    nums_copy=nums[:]    #op23358
+    nums_copy.sort()    #op23360
+    left=float("inf")    #op23362
+    right=0    #op23364
+    for i in range(len(nums)):    #cond23369
+        if(nums_copy[i]!=nums[i]):    #cond23387
+            left=min(left,i)    #op23391
+            right=max(right,i)    #op23393
+    return right-left+1 if(right-left+1 > 0) else 0    #io23403

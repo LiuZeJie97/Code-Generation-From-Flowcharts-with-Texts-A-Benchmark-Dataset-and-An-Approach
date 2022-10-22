@@ -1,0 +1,32 @@
+def threeSumMulti(self, arr: List[int], target: int) -> int:
+    MOD = 10**9 + 7
+    ans = 0
+    arr.sort()
+    for i in range(len(arr)):
+        T = target - arr[i]
+        j = i + 1
+        k = len(arr) - 1
+        while j < k:
+            if arr[j] + arr[k] < T:
+                j += 1
+            elif arr[j] + arr[k] > T:
+                k -= 1
+            elif arr[j] + arr[k] == T and arr[j] != arr[k]:
+                left = 1
+                right = 1
+                while j + 1 < k and arr[j] == arr[j+1]:
+                    left += 1
+                    j += 1
+                while k - 1 > j and arr[k] == arr[k-1]:
+                    right += 1
+                    k -= 1
+                ans += left * right
+                ans %= MOD
+                j += 1
+                k -= 1
+            else:
+                tmp = (k - j + 1) * (k - j) / 2
+                ans += tmp
+                ans %= MOD
+                break
+    return ans

@@ -1,0 +1,27 @@
+def maxLength(self, array: List[str]) -> int:    #io8770
+    mlen = 0    #op8773
+    masks = []    #op8775
+    masks.append(0)    #op8777
+    for s in array:    #cond8782
+        mask = 0    #op8953
+        for i in range(len(s)):    #cond8958
+            idx = ord(s[i]) - ord("a")    #op8979
+            if (mask >> idx) % 2 == 1:    #cond8982
+                mask = 0    #op8986
+                break    #None
+            mask = mask | (1 << idx)    #op8993
+        if mask == 0:    #cond8998
+            continue    #None
+        n = len(masks)    #op9007
+        for i in range(n):    #cond9012
+            m = masks[i]    #op9067
+            if (m & mask) == 0:    #cond9070
+                masks.append(m | mask)    #op9074
+                k = m | mask    #op9076
+                cnt = 0    #op9078
+                while k:    #cond9081
+                    if k % 2 == 1:    #cond9099
+                        cnt += 1    #op9103
+                    k //= 2    #op9108
+                mlen = max(mlen, cnt)    #op9112
+    return mlen    #io9124

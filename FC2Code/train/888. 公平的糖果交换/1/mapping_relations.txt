@@ -1,0 +1,11 @@
+def fairCandySwap(self, aliceSizes: List[int], bobSizes: List[int]) -> List[int]:    #io34538
+    sumA, sumB = sum(aliceSizes), sum(bobSizes)    #op34541
+    delta = (sumA - sumB) // 2    #op34543
+    rec = set(aliceSizes)    #op34545
+    res = []    #op34547
+    for index in range(len(bobSizes)):    #cond34552
+        x = bobSizes[index] + delta    #op34571
+        if x in rec:    #cond34574
+            res = [x, bobSizes[index]]    #op34578
+            break    #None
+    return res    #io34590

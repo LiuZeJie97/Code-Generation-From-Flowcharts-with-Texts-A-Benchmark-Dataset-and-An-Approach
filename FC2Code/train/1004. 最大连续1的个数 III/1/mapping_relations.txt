@@ -1,0 +1,11 @@
+def longestOnes(self, n: List[int], k: int) -> int:    #io6996
+    l = len(n)    #op6999
+    left = lsum = rsum = 0    #op7001
+    ans = 0    #op7003
+    for right in range(l):    #cond7008
+        rsum += 1 - n[right]    #op7033
+        while lsum < rsum - k:    #cond7036
+            lsum += 1 - n[left]    #op7045
+            left += 1    #op7047
+        ans = max(ans, right - left + 1)    #op7051
+    return ans    #io7058

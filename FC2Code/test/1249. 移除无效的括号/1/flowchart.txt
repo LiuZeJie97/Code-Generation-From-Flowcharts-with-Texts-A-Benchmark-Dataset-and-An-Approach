@@ -1,0 +1,57 @@
+io9283=>inputoutput: input: self, s
+op9358=>operation: 将栈顶元素出栈
+e9411=>end: end function return
+op9288=>operation: 初始化栈stk
+cond9350=>condition: 栈为空
+cond9367=>condition: 数组下标小于栈的高度
+op9345=>operation: 将i进栈
+st9281=>start: start minRemoveToMakeValid
+op9364=>operation: 数组下标i等于0
+op9354=>operation: 将i添加进集合中
+op9286=>operation: 初始化集合itr
+io9413=>inputoutput: output:  将字符数组转化为合法字符串并返回
+op9403=>operation: 将字符串s中当前下标字符添加进字符数组builder中
+op1=>operation: 字符串下标自增1
+op2=>operation: 数组下标自增1
+cond9383=>condition: 字符串下标小于字符串s的长度
+cond9293=>condition: 字符串下标小于字符串s的长度
+cond9399=>condition: 当前下标不在集合中
+op9378=>operation: 初始化字符数组builder
+cond9331=>condition: 字符串中当前下标字符不为'('且不为')'
+op9374=>operation: 将stk中当前下标元素添加进集合中
+op9290=>operation: 字符串下标i等于0
+op9380=>operation: 字符串下标i等于0
+op3=>operation: 字符串下标自增1
+cond9341=>condition: 该字符为'('
+
+op9286->op9288
+cond9367(no)->op9378
+op9378->op9380
+op9364->cond9367
+cond9293(no)->op9364
+cond9367(yes)->op9374
+op1->cond9293
+op9380->cond9383
+op9403->op3
+cond9331(no)->cond9341
+cond9383(yes)->cond9399
+cond9331(yes)->op1
+op9374->op2
+op9345->op1
+op3->cond9383
+st9281->io9283
+cond9399(no)->op3
+cond9350(no)->op9358
+cond9293(yes)->cond9331
+op9354->op1
+io9413->e9411
+cond9341(yes)->op9345
+op9358->op1
+cond9350(yes)->op9354
+cond9383(no)->io9413
+op9288->op9290
+cond9399(yes)->op9403
+op2->cond9367
+cond9341(no)->cond9350
+op9290->cond9293
+io9283->op9286

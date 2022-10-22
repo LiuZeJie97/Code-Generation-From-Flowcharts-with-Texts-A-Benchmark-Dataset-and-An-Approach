@@ -1,0 +1,15 @@
+def consecutiveNumbersSum(self, n: int) -> int:    #io31765
+    while n % 2 == 0:    #cond31769
+        n = n // 2    #op31776
+    ans = 1    #op31780
+    d = 3    #op31782
+    while d * d <= n:    #cond31785
+        e = 0    #op31812
+        while n % d == 0:    #cond31815
+            n = n // d    #op31824
+            e += 1    #op31826
+        ans *= e + 1    #op31830
+        d += 2    #op31832
+    if n > 1:    #cond31837
+        ans *= 2    #op31841
+    return ans    #io31849

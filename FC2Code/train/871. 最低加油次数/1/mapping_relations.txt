@@ -1,0 +1,14 @@
+def minRefuelStops(self, target: int, startFuel: int, stations: List[List[int]]) -> int:    #io33486
+    dp = [0] * (len(stations) + 1)    #op33489
+    dp[0] = startFuel    #op33491
+    for i, station in enumerate(stations):    #cond33496
+        location, capacity = station[0], station[-1]    #op33533
+        for t in range(i, -1, -1):    #cond33538
+            if dp[t] >= location:    #cond33554
+                dp[t+1] = max(dp[t+1], dp[t] + capacity)    #op33558
+    ans = -1    #op33567
+    for i in range(len(dp)):    #cond33572
+        if dp[i] >= target:    #cond33590
+            ans = i    #op33594
+            break    #None
+    return ans    #io33606

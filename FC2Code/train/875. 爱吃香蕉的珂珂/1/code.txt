@@ -1,0 +1,12 @@
+def minEatingSpeed(self, piles: List[int], h: int) -> int:
+    low, high = 1, max(piles)
+    while low < high:
+        mid = (low + high) // 2
+        time = 0
+        for i in range(len(piles)) :
+            time += (piles[i] - 1) // mid + 1
+        if time > h:
+            low = mid + 1
+        else:
+            high = mid
+    return low

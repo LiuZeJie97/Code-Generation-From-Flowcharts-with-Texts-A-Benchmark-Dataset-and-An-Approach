@@ -1,0 +1,6 @@
+def missingNumber(self, a: List[int]) -> int:    #io18681
+    l = len(a)    #op18684
+    xor = 0    #op18686
+    for k in range(l):    #cond18691
+        xor = xor ^ k ^ a[k]    #op18698
+    return xor ^ l    #io18705

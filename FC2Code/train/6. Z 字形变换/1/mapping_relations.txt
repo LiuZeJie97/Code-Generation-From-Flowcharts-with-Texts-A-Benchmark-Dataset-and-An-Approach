@@ -1,0 +1,13 @@
+def convert(self, s: str, numRows: int) -> str:    #io5745
+    if(numRows<2):    #cond5749
+        return s    #io5756
+    res=[""]*numRows    #op5762
+    n=len(s)    #op5764
+    flag=-1    #op5766
+    i=0    #op5768
+    for c in s:    #cond5773
+        res[i]+=c    #op5792
+        if(i==0 or i==numRows-1):    #cond5795
+            flag=-flag    #op5799
+        i+=flag    #op5804
+    return "".join(res)    #io5811

@@ -1,0 +1,5 @@
+def numTrees(self, N):    #io6860
+    C = 1    #op6863
+    for Nnode in range(0, N):    #cond6868
+        C = C * 2*(2*Nnode+1)/(Nnode+2)    #op6875
+    return int(C)    #io6882

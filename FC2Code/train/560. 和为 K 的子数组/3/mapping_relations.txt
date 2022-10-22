@@ -1,0 +1,10 @@
+def subarraySum(self, nums: List[int], k: int) -> int:    #io5480
+    count = 0    #op5483
+    n = len(nums)    #op5485
+    for i in range(n):    #cond5490
+        sum = 0    #op5531
+        for j in range(i, n):    #cond5536
+            sum += nums[j]    #op5553
+            if sum == k:    #cond5556
+                count += 1    #op5560
+    return count    #io5572

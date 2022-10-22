@@ -1,0 +1,47 @@
+io22283=>inputoutput: output:  返回省份的数量
+cond22097=>condition: 当前省份小于数组isConnected的长度
+op22264=>operation: 将k添加进队列
+cond22260=>condition: 如果数组isConnected第一维下标为j第二维下标为k的元素等于1且k不在集合中
+op22094=>operation: 定义初值为0的变量i，表示当前省份
+cond22244=>condition: 数组下标小于数组isConnected的长度
+cond22191=>condition: 当前省份不在集合中
+cond22198=>condition: 当队列不为空
+op22273=>operation: 省份的数量加一
+op22239=>operation: 将j加入集合中
+e22281=>end: end function return
+st22083=>start: start findCircleNum
+op22241=>operation: k为数组下标
+op22090=>operation: 定义集合visited
+op1=>operation: 当前省份加一
+op22092=>operation: 定义变量provinces，初值为0，用于记录省份的数量
+op22195=>operation: 定义双边队列Q，并将i加入进队列中
+io22085=>inputoutput: input: self, isConnected
+op2=>operation: 数组下标等于其自身加一
+op22088=>operation: cities为数组isConnected的长度
+op22237=>operation: j为队列队头元素，并移除队头元素
+
+cond22198(yes)->op22237
+st22083->io22085
+cond22244(no)->cond22198
+op22088->op22090
+op2->cond22244
+op22264->op2
+op1->cond22097
+op22092->op22094
+cond22244(yes)->cond22260
+op22195->cond22198
+op22094->cond22097
+cond22198(no)->op22273
+cond22191(no)->op1
+op22237->op22239
+cond22260(yes)->op22264
+cond22260(no)->op2
+op22273->op1
+op22239->op22241
+io22085->op22088
+op22241->cond22244
+op22090->op22092
+cond22097(no)->io22283
+cond22097(yes)->cond22191
+cond22191(yes)->op22195
+io22283->e22281

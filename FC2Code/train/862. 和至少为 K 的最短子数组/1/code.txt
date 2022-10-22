@@ -1,0 +1,15 @@
+def shortestSubarray(self, A: List[int], k: int) -> int:
+    N = len(A)
+    P = list()
+    P.append(0)
+    for num in A:
+        P.append(P[-1] + num)
+    ans = N + 1
+    monoq = collections.deque()
+    for y, Py in enumerate(P):
+        while monoq and Py <= P[monoq[-1]]:
+            monoq.pop()
+        while monoq and Py - P[monoq[0]] >= k:
+            ans = min(ans, y - monoq.popleft())
+        monoq.append(y)
+    return ans if ans < N+1 else -1

@@ -1,0 +1,59 @@
+op9702=>operation: 令数组count_m中下标为i的元素加一
+cond9638=>condition: 该数组下标小于二维数组grid的行数
+op9715=>operation: 定义数组下标i等于0
+op9633=>operation: 定义数组count_n，其长度等于二维数组的列数，数组元素均为0
+op9677=>operation: 定义数组下标j等于0
+cond9776=>condition: 该数组下标小于二维数组的列数
+cond9812=>condition: 二维数组中i行j列的元素等于1
+op1=>operation: 令当前数组下标加一
+io9626=>inputoutput: input: self, grid
+op9635=>operation: 定义数组下标i等于0
+op4=>operation: 令当前数组下标加一
+st9624=>start: start countServers
+op2=>operation: 令当前数组下标加一
+op9631=>operation: 定义数组count_m，其长度等于二维数组的行数，数组元素均为0
+op9629=>operation: m、n分别为二维数组grid的行数，列数
+op9713=>operation: 定义变量ans等于0，用于记录能够与至少一台其他服务器进行通信的服务器的数量
+cond9718=>condition: 该数组下标小于二维数组grid的行数
+io9828=>inputoutput: output:  返回能够与至少一台其他服务器进行通信的服务器的数量
+cond9698=>condition: 二维数组中i行j列的元素等于1
+cond9802=>condition: 数组count_m中下标为i的元素小于等于1且数组count_n中下标为j的元素小于等于1
+op3=>operation: 令当前数组下标加一
+op9816=>operation: 能够与至少一台其他服务器进行通信的服务器的数量加一
+op9704=>operation: 令数组count_n中下标为j的元素加一
+e9826=>end: end function return
+cond9680=>condition: 该数组下标小于二维数组的列数
+op9773=>operation: 定义数组下标j等于0
+
+op9633->op9635
+cond9638(no)->op9713
+cond9638(yes)->op9677
+cond9776(yes)->cond9802
+io9626->op9629
+op2->cond9680
+op9773->cond9776
+cond9776(no)->op3
+io9828->e9826
+op9702->op9704
+op1->cond9638
+op4->cond9776
+op9715->cond9718
+op9635->cond9638
+cond9680(yes)->cond9698
+cond9802(yes)->op4
+cond9698(yes)->op9702
+cond9812(no)->op4
+st9624->io9626
+op9704->op2
+op9713->op9715
+op3->cond9718
+cond9718(yes)->op9773
+op9631->op9633
+op9629->op9631
+op9677->cond9680
+cond9680(no)->op1
+cond9698(no)->op2
+cond9718(no)->io9828
+op9816->op4
+cond9812(yes)->op9816
+cond9802(no)->cond9812

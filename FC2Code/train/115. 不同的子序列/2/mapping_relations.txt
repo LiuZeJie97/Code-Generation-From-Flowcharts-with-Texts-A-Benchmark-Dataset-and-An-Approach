@@ -1,0 +1,14 @@
+def numDistinct(self, s: str, t: str) -> int:    #io824
+    m, n = len(s), len(t)    #op827
+    if m < n:    #cond830
+        return 0    #io837
+    dp = [[0] * (n + 1) for _ in range(m + 1)]    #op843
+    for i in range(m + 1):    #cond848
+        dp[i][n] = 1    #op855
+    for i in range(m - 1, -1, -1):    #cond862
+        for j in range(n - 1, -1, -1):    #cond904
+            if s[i] == t[j]:    #cond922
+                dp[i][j] = dp[i + 1][j + 1] + dp[i + 1][j]    #op926
+            else:    #None
+                dp[i][j] = dp[i + 1][j]    #op930
+    return dp[0][0]    #io940

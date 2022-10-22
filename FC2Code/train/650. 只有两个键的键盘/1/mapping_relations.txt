@@ -1,0 +1,11 @@
+def minSteps(self, n: int) -> int:    #io24610
+    f = [0] * (n + 1)    #op24613
+    for i in range(2, n + 1):    #cond24618
+        f[i] = float("inf")    #op24663
+        j = 1    #op24665
+        while j * j <= i:    #cond24668
+            if i % j == 0:    #cond24688
+                f[i] = min(f[i], f[j] + i // j)    #op24692
+                f[i] = min(f[i], f[i // j] + j)    #op24694
+            j += 1    #op24699
+    return f[n]    #io24708

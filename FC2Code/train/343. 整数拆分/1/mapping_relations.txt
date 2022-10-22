@@ -1,0 +1,10 @@
+def integerBreak(self, n: int) -> int:    #io19428
+    if n <= 3:    #cond19432
+        return n - 1    #io19439
+    quotient, remainder = n // 3, n % 3    #op19445
+    if remainder == 0:    #cond19448
+        return 3 ** quotient    #io19455
+    elif remainder == 1:    #cond19461
+        return 3 ** (quotient - 1) * 4    #io19468
+    else:    #None
+        return 3 ** quotient * 2    #io19476

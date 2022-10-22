@@ -1,0 +1,68 @@
+e21316=>end: end function return
+op21103=>operation: 定义m+1行26列的二维数组f，其初值均为字符串s的长度，f[i][j]表示字符串s中下标i之后字符j第一次出现的位置
+io21318=>inputoutput: output:  返回字符串res
+op2=>operation: 当前数组下标等于其自身加一
+cond21260=>condition: 当数组下标小于字符串t的长度
+op1=>operation: 当前数组下标等于其自身减一
+cond21301=>condition: 字符串t的长度大于字符串res的长度或这两个长度相等且字符串t小于字符串res
+op21253=>operation: 定义变量match用于记录字符串之间是否匹配，初值为True，表示匹配
+op21172=>operation: 字符串s中下标i之后字符j第一次出现的位置等于i
+op21291=>operation: 求字符串t中下标为i的字符的Unicode数值减去97对应的值，将j的值更新为字符串s中下标j之后上述计算结果对应的字符第一次出现的位置加一
+op21147=>operation: j为数组下标，初值为0
+op21255=>operation: 定义变量j等于0
+cond21168=>condition: 若字符串s中下标为i的字符的ASCII码等于j加97
+op21305=>operation: 令字符串res等于字符串t
+cond21188=>condition: 对该字符串数组进行遍历
+op21176=>operation: 字符串s中下标i之后字符j第一次出现的位置等于下标i+1之后字符j第一次出现的位置
+op21101=>operation: m为字符串s的长度
+st21096=>start: start findLongestWord
+cond21150=>condition: 数组下标小于26
+op4=>operation: 数组下标加一
+cond21296=>condition: 如果字符串之间匹配
+op21257=>operation: i为数组下标
+op21105=>operation: i为数组下标，初值为字符串s的长度减一
+op21183=>operation: 定义空字符串res
+io21098=>inputoutput: input: self, s, dictionary
+op3=>operation: 当前遍历字符串等于字符串数组中的下一个字符串
+cond21108=>condition: 数组下标大于-1
+op21284=>operation: 字符串之间不匹配
+cond21280=>condition: 求字符串t中下标为i的字符的ASCII码减去97的值，如果字符串s中下标j之后上述计算结果对应的字符第一次出现的位置等于字符串s的长度
+op21185=>operation: t是字符串数组dictionary中的字符串
+
+op21257->cond21260
+cond21150(yes)->cond21168
+cond21108(yes)->op21147
+cond21301(no)->op3
+op1->cond21108
+op21105->cond21108
+cond21280(yes)->op21284
+op3->cond21188
+op4->cond21260
+cond21188(no)->io21318
+cond21188(yes)->op21253
+cond21108(no)->op21183
+op21183->op21185
+cond21260(yes)->cond21280
+cond21296(no)->op3
+st21096->io21098
+io21098->op21101
+op2->cond21150
+cond21260(no)->cond21296
+op21255->op21257
+op21253->op21255
+op21305->op3
+op21103->op21105
+op21101->op21103
+cond21168(no)->op21176
+cond21150(no)->op1
+op21172->op2
+io21318->e21316
+op21147->cond21150
+op21291->op4
+op21176->op2
+op21185->cond21188
+op21284->cond21296
+cond21168(yes)->op21172
+cond21301(yes)->op21305
+cond21280(no)->op21291
+cond21296(yes)->cond21301

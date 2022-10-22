@@ -1,0 +1,9 @@
+def findLHS(self, array: List[int]) -> int:    #io23816
+    array.sort()    #op23819
+    res, begin = 0, 0    #op23821
+    for end in range(len(array)):    #cond23826
+        while array[end] - array[begin] > 1:    #cond23854
+            begin += 1    #op23861
+        if array[end] - array[begin] == 1:    #cond23866
+            res = max(res, end - begin + 1)    #op23870
+    return res    #io23880

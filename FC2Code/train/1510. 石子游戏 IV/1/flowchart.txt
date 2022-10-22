@@ -1,0 +1,31 @@
+io14001=>inputoutput: input: self, n
+op14087=>operation: t颗石子时Alice能赢得比赛
+io14103=>inputoutput: output:  返回n颗石子时Alice是否能赢得比赛
+cond14083=>condition: num颗石子时Alice不能赢得比赛
+cond14009=>condition: 当前石子数量小于数组f的长度
+op14056=>operation: k等于1
+op14080=>operation: num等于t减去k的平方
+op14094=>operation: k等于k加一
+op14006=>operation: 定义变量t等于1，表示当前石子数量
+cond14059=>condition: k的平方小于等于当前石子数量
+st13999=>start: start winnerSquareGame
+op1=>operation: 令当前石子数量加一
+op14004=>operation: 定义长度为n+1，初值均为False的数组f，f[i]表示i颗石子时Alice是否能赢得比赛
+e14101=>end: end function return
+
+io14103->e14101
+op14056->cond14059
+op14080->cond14083
+io14001->op14004
+st13999->io14001
+cond14083(no)->op14094
+op14087->op1
+cond14009(no)->io14103
+cond14083(yes)->op14087
+op14006->cond14009
+cond14059(yes)->op14080
+op1->cond14009
+op14094->cond14059
+op14004->op14006
+cond14059(no)->op1
+cond14009(yes)->op14056

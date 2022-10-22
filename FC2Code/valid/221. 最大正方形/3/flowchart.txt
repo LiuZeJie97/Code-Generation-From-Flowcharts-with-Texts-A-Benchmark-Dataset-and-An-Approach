@@ -1,0 +1,41 @@
+io16538=>inputoutput: output:  返回0。
+op16546=>operation: 初始化最大边长res等于0。
+op16544=>operation: 初始化m、n，用于记录矩阵的行数、列数，
+io16631=>inputoutput: output:  依据最大边长计算正方形的面积并返回
+e16629=>end: end function return
+op16617=>operation: 以第i+1行、第j+1列处为右下角的最大正方形的边长等于dp[i-1][j-1]、dp[i-1][j]、dp[i][j-1]中的较小值加一
+e16536=>end: end function return
+op16550=>operation: i等于1
+op1=>operation: i自增1
+op16548=>operation: 初始化dp=[[0, ,0], ,[0, ,0]]，维度为(m+1)(n+1)，dp[i][j]表示以第i行、第j列处为右下角的最大正方形的边长
+cond16553=>condition: i小于矩阵的行数加1
+op16592=>operation: j等于1
+cond16595=>condition: j小于矩阵的列数加1
+st16525=>start: start maximalSquare
+op16619=>operation: 并更新最大边长等于其自身和dp[i][j]中的较大值
+op2=>operation: j自增1
+cond16531=>condition: 矩阵matrix为空
+io16527=>inputoutput: input: self, matrix
+cond16613=>condition: 若以矩阵第i行、第j列等于"1"
+
+io16527->cond16531
+cond16553(yes)->op16592
+cond16595(yes)->cond16613
+op16546->op16548
+op16548->op16550
+cond16595(no)->op1
+io16538->e16536
+op16619->op2
+op16592->cond16595
+op16617->op16619
+op2->cond16595
+cond16613(yes)->op16617
+cond16531(yes)->io16538
+cond16553(no)->io16631
+cond16613(no)->op2
+cond16531(no)->op16544
+io16631->e16629
+op16544->op16546
+st16525->io16527
+op16550->cond16553
+op1->cond16553

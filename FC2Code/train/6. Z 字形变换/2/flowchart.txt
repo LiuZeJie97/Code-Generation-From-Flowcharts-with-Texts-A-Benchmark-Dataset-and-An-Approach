@@ -1,0 +1,40 @@
+op1=>operation: 字符下标右移，同时更新ch
+st5820=>start: start convert
+op5849=>operation: i为当前字符下标，初值等于0，ch为字符串中的一个字符
+op5882=>operation: 当前填写的位置向右上移动
+op5878=>operation: 当前填写的位置向下移动
+io5822=>inputoutput: input: self, s, numRows
+op5847=>operation: 设当前填写的位置为(x,y)，即二维矩阵mat的x行y列。初始(x,y)等于(0,0)
+op5841=>operation: 周期t等于行数乘2减2
+cond5874=>condition: 若当前字符下标满足i对t取模 小于r减去1
+e5888=>end: end function return
+e5833=>end: end function return
+op5871=>operation: 在当前位置上填写该字符
+io5835=>inputoutput: output:  直接返回字符串本身
+op5843=>operation: 矩阵的列数c等于(字符串的长度加周期减去1)整除(周期乘(行数减1))
+io5890=>inputoutput: output:  填写完成后，逐行扫描矩阵中的非空字符，组成答案
+cond5852=>condition: 遍历字符串每一个字符
+cond5828=>condition: 给定一行或给定的行数大于字符串的长度
+op5845=>operation: 定义二维矩阵mat，初值为''，第一维长度为行数r，第二维长度为列数
+op5825=>operation: 定义n和r，其中，n等于字符串s的长度，r等于给定的行数numRows
+
+op5825->cond5828
+op5843->op5845
+op5878->op1
+cond5874(yes)->op5878
+io5835->e5833
+op5849->cond5852
+op5882->op1
+op5871->cond5874
+op5845->op5847
+io5890->e5888
+cond5828(yes)->io5835
+cond5852(no)->io5890
+op1->cond5852
+cond5874(no)->op5882
+op5841->op5843
+cond5852(yes)->op5871
+op5847->op5849
+st5820->io5822
+cond5828(no)->op5841
+io5822->op5825

@@ -1,0 +1,33 @@
+op1=>operation: 前元素的下标右移一个单位
+e246=>end: end function return
+cond214=>condition: 如果当前元素在数组中只出现了一次，且目标值减去该元素还等于该元素
+op176=>operation: j初值等于-1
+io171=>inputoutput: input: self, nums, target
+op174=>operation: 定义lens为整数数组的长度
+io248=>inputoutput: output:  返回空向量
+op178=>operation: i等于0，为数组中当前元素的下标
+cond181=>condition: 前元素的下标小于整数数组长度
+cond233=>condition: j有效
+e238=>end: end function return
+cond209=>condition: 目标值target减去当前元素在整数数组中
+st169=>start: start twoSum
+op222=>operation: 从下标i+1开始搜索整数数组，找到数组中等于目标值减去当前元素的数，将下标保存在j中
+io240=>inputoutput: output:  返回由i和j构成的向量
+
+cond233(no)->io248
+st169->io171
+cond181(yes)->cond209
+cond209(yes)->cond214
+op176->op178
+cond214(yes)->op1
+op174->op176
+io240->e238
+io248->e246
+op222->cond233
+op1->cond181
+cond233(yes)->io240
+cond209(no)->op1
+op178->cond181
+cond181(no)->cond233
+cond214(no)->op222
+io171->op174

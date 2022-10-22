@@ -1,0 +1,13 @@
+def bagOfTokensScore(self, tokens: List[int], power: int) -> int:    #io36340
+    tokens.sort()    #op36343
+    deque = collections.deque(tokens)    #op36345
+    ans = bns = 0    #op36347
+    while deque and (power >= deque[0] or bns):    #cond36350
+        while deque and power >= deque[0]:    #cond36386
+            power -= deque.popleft()    #op36395
+            bns += 1    #op36397
+        ans = max(ans, bns)    #op36401
+        if deque and bns:    #cond36404
+            power += deque.pop()    #op36408
+            bns -= 1    #op36410
+    return ans    #io36420

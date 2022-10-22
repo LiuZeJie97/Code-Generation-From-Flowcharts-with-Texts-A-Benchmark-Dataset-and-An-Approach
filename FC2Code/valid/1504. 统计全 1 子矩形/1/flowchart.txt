@@ -1,0 +1,65 @@
+cond13570=>condition: j小于矩阵的列数
+op13467=>operation: 答案ans等于0
+op5=>operation: k等于k减一
+io13382=>inputoutput: input: self, mat
+op13469=>operation: 数组下标i等于0
+e13660=>end: end function return
+cond13620=>condition: k大于-1
+op13431=>operation: 数组下标j等于0
+cond13392=>condition: i小于矩阵mat的行数
+cond13472=>condition: i小于矩阵mat的行数
+cond13642=>condition: 当前行最小值等于0
+st13380=>start: start numSubmat
+op13385=>operation: n为矩阵mat的行数，m为矩阵mat的列数
+op3=>operation: i等于i加一
+op13617=>operation: k等于i
+op13389=>operation: 数组下标i等于0
+op13456=>operation: 数组row第i行第j列的元素等于矩阵第i行第j列的元素
+op1=>operation: i等于i加一
+op4=>operation: j等于j加一
+cond13434=>condition: j小于矩阵的列数
+op13651=>operation: 令答案加上当前行最小值
+op13615=>operation: 当前行最小值col等于数组row第i行第j列的元素
+op13460=>operation: 若矩阵第i行第j列的元素等于0，则数组row第i行第j列的元素等于0，否则等于数组row第i行第j-1列的元素加一
+io13662=>inputoutput: output:  返回答案
+op13567=>operation: 数组下标j等于0
+cond13452=>condition: j等于0
+op13639=>operation: 若数组row第k行第j列的元素小于当前行最小值，则更新当前行最小值
+op13387=>operation: 定义n行m列初值均为0的二维数组row
+op2=>operation: j等于j加一
+
+st13380->io13382
+cond13452(yes)->op13456
+cond13620(no)->op4
+cond13434(yes)->cond13452
+op13639->cond13642
+cond13570(no)->op3
+cond13392(yes)->op13431
+op2->cond13434
+cond13392(no)->op13467
+cond13570(yes)->op13615
+op13460->op2
+op13385->op13387
+io13662->e13660
+cond13642(yes)->op4
+op13617->cond13620
+cond13472(yes)->op13567
+op13431->cond13434
+op13615->op13617
+op1->cond13392
+op13456->op2
+op5->cond13620
+op13567->cond13570
+cond13620(yes)->op13639
+cond13642(no)->op13651
+op3->cond13472
+op13467->op13469
+op13389->cond13392
+cond13434(no)->op1
+op13469->cond13472
+op13651->op5
+cond13452(no)->op13460
+io13382->op13385
+cond13472(no)->io13662
+op4->cond13570
+op13387->op13389

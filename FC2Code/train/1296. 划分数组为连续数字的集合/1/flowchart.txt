@@ -1,0 +1,45 @@
+cond10481=>condition: x小于该元素加k
+cond10503=>condition: cnt中下标为x的元素等于0
+e10523=>end: end function return
+op1=>operation: i自增1
+op2=>operation: x自增1
+op10388=>operation: n为数组number的长度
+st10383=>start: start isPossibleDivide
+e10396=>end: end function return
+op10406=>operation: cnt为对数组number的计数结果
+io10510=>inputoutput: output:  返回False
+op10408=>operation: i等于0
+cond10411=>condition: i小于n
+op10516=>operation: cnt中下标为x的元素减一
+cond10391=>condition: 数组number的长度不能整除k
+op10478=>operation: x等于数组number中下标为i的元素
+op10404=>operation: 对数组number排序
+e10508=>end: end function return
+io10525=>inputoutput: output:  返回True
+io10385=>inputoutput: input: self, number, k
+cond10469=>condition: cnt中下标为number[i]的元素等于0
+io10398=>inputoutput: output:  返回False
+
+op10478->cond10481
+cond10481(yes)->cond10503
+cond10391(no)->op10404
+cond10391(yes)->io10398
+cond10469(yes)->op1
+op2->cond10481
+io10510->e10508
+op10408->cond10411
+st10383->io10385
+cond10503(no)->op10516
+op10406->op10408
+io10525->e10523
+cond10411(yes)->cond10469
+io10385->op10388
+op1->cond10411
+cond10469(no)->op10478
+cond10503(yes)->io10510
+op10516->op2
+op10404->op10406
+cond10411(no)->io10525
+io10398->e10396
+cond10481(no)->op1
+op10388->cond10391

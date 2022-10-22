@@ -1,0 +1,13 @@
+def find132pattern(self, array: List[int]) -> bool:    #io20359
+    n = len(array)    #op20362
+    candidate_k = [array[-1]]    #op20364
+    max_k = -float("inf")    #op20366
+    for i in range(n - 2, -1, -1):    #cond20371
+        if array[i] < max_k:    #cond20417
+            return True    #io20424
+        while candidate_k and array[i] > candidate_k[-1]:    #cond20431
+            max_k = candidate_k[-1]    #op20440
+            candidate_k.pop()    #op20442
+        if array[i] > max_k:    #cond20447
+            candidate_k.append(array[i])    #op20451
+    return False    #io20461

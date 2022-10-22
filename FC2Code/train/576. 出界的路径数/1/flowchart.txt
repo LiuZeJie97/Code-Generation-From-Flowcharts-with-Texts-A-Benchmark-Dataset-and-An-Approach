@@ -1,0 +1,52 @@
+cond23224=>condition: j1大于等于0小于m且k1大于等于0小于n
+op22840=>operation: i为数组下标
+op22838=>operation: 球移动0次后位于(startRow,startColumn)的路径数量为1
+e23247=>end: end function return
+op23228=>operation: 球移动i+1次后位于(j1,k1)的路径数量等于该数量与球移动i次后位于(j,k)的路径数量的和对MOD取余
+op22834=>operation: 定义初值为0的变量outCounts，用于记录球移出边界的路径数量
+cond23049=>condition: j小于m
+cond22843=>condition: i小于maxMove
+cond23199=>condition: 球移动i次后位于(j,k)的路径数量大于0
+op22836=>operation: 定义三维分别是maxMove+1，m，n的三维数组dp，其初值均为0，dp[i][j][k]表示球移动i次后位于(j,k)的路径数量
+cond23206=>condition: 当(j1,k1)分别为位置(j,k)的左方向1格，右方向1格，上方向1格，下方向1格时
+op23203=>operation: j1为横坐标，k1为纵坐标，(j1,k1)表示位置
+op3=>operation: 令k加一
+st22827=>start: start findPaths
+op23046=>operation: j为数组下标
+op22832=>operation: MOD等于10的9次方加7
+op2=>operation: 令j加一
+op23148=>operation: k为数组下标
+op23232=>operation: 球移出边界的路径数量等于该数量与与球移动i次后位于(j,k)的路径数量的和对MOD取余
+cond23151=>condition: k小于n
+io22829=>inputoutput: input: self, m, n, maxMove, startRow, startColumn
+op1=>operation: 令i加一
+io23249=>inputoutput: output:  返回球移出边界的路径数量
+
+cond22843(yes)->op23046
+cond23224(yes)->op23228
+op23148->cond23151
+op3->cond23151
+cond23224(no)->op23232
+op23228->cond23206
+cond23206(yes)->cond23224
+io23249->e23247
+op22840->cond22843
+cond22843(no)->io23249
+op22834->op22836
+op1->cond22843
+cond23151(yes)->cond23199
+cond23199(yes)->op23203
+io22829->op22832
+op23046->cond23049
+op2->cond23049
+op23232->cond23206
+cond23049(no)->op1
+op22836->op22838
+cond23151(no)->op2
+cond23206(no)->op3
+cond23199(no)->op3
+op22832->op22834
+st22827->io22829
+op23203->cond23206
+cond23049(yes)->op23148
+op22838->op22840

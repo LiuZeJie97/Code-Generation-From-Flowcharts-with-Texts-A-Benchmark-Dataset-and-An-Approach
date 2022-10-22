@@ -1,0 +1,12 @@
+def modifyString(self, s: str) -> str:
+    res = list(s)
+    length = len(res)
+    for index in range(length):
+        if res[index] == '?':
+            for b in "abc":
+                if index > 0 and res[index - 1] == b or index < length - 1 and res[index + 1] == b:
+                    continue
+                else:
+                    res[index] = b
+                    break
+    return ''.join(res)

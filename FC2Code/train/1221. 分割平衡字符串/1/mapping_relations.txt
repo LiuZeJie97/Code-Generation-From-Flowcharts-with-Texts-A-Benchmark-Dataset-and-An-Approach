@@ -1,0 +1,11 @@
+def balancedStringSplit(self, s: str) -> int:    #io8679
+    cnt = 0    #op8682
+    d = 0    #op8684
+    for a in s:    #cond8689
+        if a == 'L':    #cond8725
+            d += 1    #op8729
+        elif a == 'R':    #cond8734
+            d -= 1    #op8738
+        if d == 0:    #cond8745
+            cnt += 1    #op8749
+    return cnt    #io8759

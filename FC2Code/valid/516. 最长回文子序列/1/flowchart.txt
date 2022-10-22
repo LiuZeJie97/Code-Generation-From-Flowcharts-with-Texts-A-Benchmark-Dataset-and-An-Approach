@@ -1,0 +1,35 @@
+op21012=>operation: 令字符串下标范围[m,n]内的最长回文子序列的长度等于下标范围[m+1,n-1]内的最长回文子序列的长度加2
+op20985=>operation: 令字符串下标范围[m,m]内的最长回文子序列的长度为1
+io21026=>inputoutput: output:  返回字符串下标范围[0,n-1]内的最长回文子序列的长度
+cond20990=>condition: 当前数组下标小于字符串sequence的长度
+st20932=>start: start longestPalindromeSubseq
+e21024=>end: end function return
+op20941=>operation: m为数组下标，初值为字符串sequence的长度减一
+io20934=>inputoutput: input: self, sequence
+op20987=>operation: n为数组下标，初值为m+1
+op20939=>operation: 定义n行n列初值均为0的二维数组dp，其中dp[i][j]表示字符串sequence下标范围[i,j]内的最长回文子序列的长度
+cond20944=>condition: 当前数组下标大于-1
+op2=>operation: 将当前数组下标的值更新为上一个数组下标加一
+op21016=>operation: 求下标范围[m+1,n]内的最长回文子序列的长度与下标范围[m,n-1]内的最长回文子序列的长度之间的最大值，令字符串下标范围[m,n]内的最长回文子序列的长度等于该最大值
+op20937=>operation: length为字符串sequence的长度
+cond21008=>condition: 字符串中下标为m的字符和下标为n的字符相同
+op1=>operation: 将当前数组下标的值更新为上一个数组下标减一
+
+op21012->op2
+st20932->io20934
+op20941->cond20944
+op20987->cond20990
+cond21008(no)->op21016
+cond20944(yes)->op20985
+cond20944(no)->io21026
+cond20990(no)->op1
+cond20990(yes)->cond21008
+op20985->op20987
+io21026->e21024
+op1->cond20944
+op2->cond20990
+io20934->op20937
+cond21008(yes)->op21012
+op21016->op2
+op20939->op20941
+op20937->op20939

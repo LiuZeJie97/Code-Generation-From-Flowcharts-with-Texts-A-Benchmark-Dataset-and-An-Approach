@@ -1,0 +1,63 @@
+e6272=>end: end function return
+cond6158=>condition: 第二维的下标小于第二个单词的长度加一
+cond6126=>condition: 第一个单词的长度或第二个单词的长度为0
+op6223=>operation: 列号j等于1
+cond6172=>condition: 行号小于第一个单词的长度加1
+e6131=>end: end function return
+op6155=>operation: 初始化dp第一行，j为dp第二维的下标
+op2=>operation: 第二维的下标向右移动一个单位
+cond6256=>condition: 若第一个单词中下标为i减去1的字符等于第二个单词中下标为j减去1的字符
+op6139=>operation: 初始化全零矩阵D，第一维长度等于第一个单词的长度加1，第二维长度等于第二个单词的长度加一，D[i][j]表示第一个单词的前i个字母和第二个单词的前j个字母之间的编辑距离
+op6165=>operation: 当第一个单词为空字符时，需要执行j次插入操作才能得到第二个单词的前j个字母
+op6251=>operation: down等于D当前位置下方元素加一
+op6169=>operation: 行号i等于1
+io6274=>inputoutput: output:  返回word1到word2的编辑距离
+op1=>operation: dp第一维的下标向右移动一个单位
+op6260=>operation: left_down等于其自身加1
+op4=>operation: 列号自增1
+st6118=>start: start minDistance
+op3=>operation: 行号自增1
+op6123=>operation: n为第一个单词word1的长度，m为第二个单词word2的长度
+op6249=>operation: left等于D当前位置左侧元素加一
+op6141=>operation: 初始化dp第一列，i为dp第一维的下标
+op6253=>operation: left_down等于D当前位置左下方元素
+cond6226=>condition: 列号小于第二个单词的长度加1
+io6120=>inputoutput: input: self, word1, word2
+op6265=>operation: 第一个单词的前i个字母和第二个单词的前j个字母之间的编辑距离等于left,down和left_down中的最小值加一
+io6133=>inputoutput: output:  返回第一个单词的长度加第二个单词的长度
+cond6144=>condition: i小于第一个单词的长度加一
+op6151=>operation: 第一个单词的前i个字母需要执行i次删除操作才能得到空字符
+
+op6123->cond6126
+op6155->cond6158
+op4->cond6226
+op6151->op1
+op6253->cond6256
+io6133->e6131
+op6169->cond6172
+op1->cond6144
+cond6126(no)->op6139
+op6249->op6251
+cond6144(yes)->op6151
+cond6126(yes)->io6133
+op6265->op4
+cond6172(yes)->op6223
+cond6226(no)->op3
+op6165->op2
+op6141->cond6144
+cond6256(yes)->op6260
+op6251->op6253
+op6139->op6141
+cond6256(no)->op6265
+cond6158(no)->op6169
+cond6172(no)->io6274
+op6223->cond6226
+cond6158(yes)->op6165
+op3->cond6172
+op2->cond6158
+op6260->op6265
+cond6226(yes)->op6249
+io6120->op6123
+io6274->e6272
+st6118->io6120
+cond6144(no)->op6155

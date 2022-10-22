@@ -1,0 +1,32 @@
+def updateMatrix(self, matrix: List[List[int]]) -> List[List[int]]:    #io21554
+    m, n = len(matrix), len(matrix[0])    #op21557
+    dist = [[10**9] * n for _ in range(m)]    #op21559
+    for i in range(m):    #cond21564
+        for j in range(n):    #cond21602
+            if matrix[i][j] == 0:    #cond21618
+                dist[i][j] = 0    #op21622
+    for i in range(m):    #cond21634
+        for j in range(n):    #cond21692
+            if i - 1 >= 0:    #cond21718
+                dist[i][j] = min(dist[i][j], dist[i - 1][j] + 1)    #op21722
+            if j - 1 >= 0:    #cond21728
+                dist[i][j] = min(dist[i][j], dist[i][j - 1] + 1)    #op21732
+    for i in range(m - 1, -1, -1):    #cond21744
+        for j in range(n):    #cond21802
+            if i + 1 < m:    #cond21828
+                dist[i][j] = min(dist[i][j], dist[i + 1][j] + 1)    #op21832
+            if j - 1 >= 0:    #cond21838
+                dist[i][j] = min(dist[i][j], dist[i][j - 1] + 1)    #op21842
+    for i in range(m):    #cond21854
+        for j in range(n - 1, -1, -1):    #cond21912
+            if i - 1 >= 0:    #cond21938
+                dist[i][j] = min(dist[i][j], dist[i - 1][j] + 1)    #op21942
+            if j + 1 < n:    #cond21948
+                dist[i][j] = min(dist[i][j], dist[i][j + 1] + 1)    #op21952
+    for i in range(m - 1, -1, -1):    #cond21964
+        for j in range(n - 1, -1, -1):    #cond22022
+            if i + 1 < m:    #cond22048
+                dist[i][j] = min(dist[i][j], dist[i + 1][j] + 1)    #op22052
+            if j + 1 < n:    #cond22058
+                dist[i][j] = min(dist[i][j], dist[i][j + 1] + 1)    #op22062
+    return dist    #io22074

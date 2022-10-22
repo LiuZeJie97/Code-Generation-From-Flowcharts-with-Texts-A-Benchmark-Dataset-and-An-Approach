@@ -1,0 +1,9 @@
+def subArrayRanges(self, numbers: List[int]) -> int:
+    answer, length = 0, len(numbers)
+    for i in range(length):
+        minVal, maxVal = inf, -inf
+        for j in range(i, n):
+            minVal = min(minVal, numbers[j])
+            maxVal = max(maxVal, numbers[j])
+            answer += maxVal - minVal
+    return answer

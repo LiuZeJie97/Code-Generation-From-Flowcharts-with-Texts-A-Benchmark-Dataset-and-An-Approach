@@ -1,0 +1,33 @@
+op1=>operation: 更新当前的数值
+op1018=>operation: 更新整数num等于其自身减去当前数值所乘上需要使用该字符的次数
+st949=>start: start intToRoman
+op958=>operation: 对于词典中的key，我们使用贪心策略，将key从大到小排序，将排序结果保存在词典中
+cond1007=>condition: 使用0次
+op960=>operation: 初始化数值key，初值为词典中最大的key
+cond995=>condition: 整数num等于0
+op956=>operation: res记录转换后的罗马数字，初值为空字符串
+io1025=>inputoutput: output:  返回转换后的罗马数字
+op1004=>operation: 定义tmp等于整数整除当前的数值，表示需要使用当前数值对应字符的次数
+cond963=>condition: 对于排序结果中的每一个数值
+op1016=>operation: 记录转换后的罗马数字等于其自身拼接上 当前数值key所对应的字符乘上需要使用该字符的次数
+io951=>inputoutput: input: self, num
+op954=>operation: 初始化词典numtochar={1:'I',4:'IV',5:'V',9:'IX',10:'X',40:'XL',50:'L',90:'XC',100:'C',400:'CD',500:'D',900:'CM',1000:'M' }，key为数值，value为数值对应的字符。
+e1023=>end: end function return
+
+op1018->op1
+op1004->cond1007
+op1016->op1018
+op954->op956
+io951->op954
+cond963(yes)->cond995
+op956->op958
+op960->cond963
+st949->io951
+op958->op960
+cond1007(no)->op1016
+cond995(yes)->io1025
+cond963(no)->io1025
+cond1007(yes)->op1
+cond995(no)->op1004
+io1025->e1023
+op1->cond963

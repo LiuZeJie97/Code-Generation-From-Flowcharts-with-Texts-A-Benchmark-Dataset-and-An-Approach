@@ -1,0 +1,59 @@
+op25097=>operation: 定义初值均为0的长度为n的数组cnt，cnt[i]表示以数组a中以第i个数结尾最长上升子序列的个数
+op25257=>operation: 数组中以第i个数结尾最长上升子序列的个数等于以第j个数结尾最长上升子序列的个数
+op25099=>operation: i初值为0，为数组下标，x为初值为数组a第一项元素，表示数组中当前下标对应的元素
+op1=>operation: 更新数组下标及其对应的元素
+op25293=>operation: 最长递增子序列的个数加上数组中以第i个数结尾最长上升子序列的个数
+cond25102=>condition: 对该数组进行遍历
+cond25246=>condition: 数组a中当前元素大于下标为j的元素
+op25266=>operation: 数组中以第i个数结尾最长上升子序列的个数加上以第j个数结尾最长上升子序列的个数
+e25302=>end: end function return
+op25203=>operation: 数组a中以第i个数结尾最长上升子序列的长度为1
+op25255=>operation: 数组中以第i个数结尾最长上升子序列的长度等于以第j个数结尾最长上升子序列的长度加一
+io25304=>inputoutput: output:  返回最长递增子序列的个数
+op25095=>operation: 定义初值均为0的长度为n的数组dp，dp[i]表示以数组a中以第i个数结尾最长上升子序列的长度
+cond25210=>condition: 数组下标小于i
+op25284=>operation: 将最长递增子序列的个数更新为数组中以第i个数结尾最长上升子序列的个数
+op25093=>operation: n为数组a的长度，变量max_len用于记录最大长度，变量ans用于记录最长递增子序列的个数，其初值均为0
+cond25262=>condition: 数组a中以第j个数结尾最长上升子序列的长度加一等于以第i个数结尾最长上升子序列的长度
+cond25251=>condition: 数组a中以第j个数结尾最长上升子序列的长度加一大于以第i个数结尾最长上升子序列的长度
+st25088=>start: start findNumberOfLIS
+op25205=>operation: 上述数组中以第i个数结尾最长上升子序列的个数为1
+op2=>operation: 数组下标加一
+cond25289=>condition: 这两个长度相等
+op25282=>operation: 最大长度等于该长度
+op25207=>operation: j为数组下标
+cond25278=>condition: 数组a中以第i个数结尾最长上升子序列的长度大于最大长度
+io25090=>inputoutput: input: self, a
+
+op25099->cond25102
+op25257->op2
+cond25278(yes)->op25282
+op25095->op25097
+cond25102(no)->io25304
+op2->cond25210
+st25088->io25090
+cond25210(yes)->cond25246
+cond25102(yes)->op25203
+cond25289(no)->op1
+cond25246(yes)->cond25251
+op25284->op1
+op25293->op1
+op25207->cond25210
+cond25262(no)->op2
+cond25251(no)->cond25262
+cond25289(yes)->op25293
+op25255->op25257
+op25093->op25095
+op25205->op25207
+cond25246(no)->op2
+cond25278(no)->cond25289
+op25266->op2
+cond25262(yes)->op25266
+op25097->op25099
+cond25251(yes)->op25255
+io25304->e25302
+op25282->op25284
+op1->cond25102
+io25090->op25093
+cond25210(no)->cond25278
+op25203->op25205

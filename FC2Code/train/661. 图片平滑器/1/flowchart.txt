@@ -1,0 +1,48 @@
+op24842=>operation: m为二维数组img的行数，n为二维数组img的列数
+op25024=>operation: x为横坐标，初值为i-1与0之间的最大值
+op25022=>operation: 定义初值为0的变量tot和nm
+st24837=>start: start imageSmoother
+op25064=>operation: num加一
+op2=>operation: j等于j加一
+cond25053=>condition: 计算j+2与数组img的列数之间最大值，当纵坐标小于该值时
+op4=>operation: 令纵坐标加一
+op24964=>operation: j为数组下标
+io25079=>inputoutput: output:  返回平滑处理后的图像
+op25070=>operation: 数组ans中位于i行j列的元素等于tot整除num
+op24844=>operation: 定义m行n列初值均为0的二维数组ans，表示平滑处理后的图像
+io24839=>inputoutput: input: self, img
+op25062=>operation: tot加上数组img中位于x行y列的元素
+op1=>operation: i等于i加一
+cond24849=>condition: i小于数组img的行数
+op3=>operation: 令横坐标加一
+e25077=>end: end function return
+cond24967=>condition: j小于数组img的列数
+op25050=>operation: y为纵坐标，初值为j-1与0之间的最大值
+cond25027=>condition: 计算i+2与数组img的行数之间最大值，当横坐标小于该值时
+op24846=>operation: i为数组下标
+
+op4->cond25053
+op25050->cond25053
+cond25053(no)->op3
+op1->cond24849
+op25024->cond25027
+io25079->e25077
+op24846->cond24849
+io24839->op24842
+cond25027(no)->op25070
+cond24967(no)->op1
+cond24849(no)->io25079
+cond24967(yes)->op25022
+op25064->op4
+op24842->op24844
+cond24849(yes)->op24964
+op2->cond24967
+st24837->io24839
+op3->cond25027
+op25022->op25024
+cond25053(yes)->op25062
+op24844->op24846
+cond25027(yes)->op25050
+op25062->op25064
+op25070->op2
+op24964->cond24967

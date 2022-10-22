@@ -1,0 +1,41 @@
+op22435=>operation: 出勤次数加一
+cond22459=>condition: 判断迟到次数是否大于等于3
+st22367=>start: start checkRecord
+op22374=>operation: 定义变量flag用于记录是否可以获得奖励，True表示可以获得，False表示不可以获得
+op22456=>operation: 迟到次数加一
+cond22379=>condition: 对字符串进行遍历
+op22442=>operation: 不可以获得奖励
+io22369=>inputoutput: input: self, s
+cond22431=>condition: 当前字符为"A"
+cond22438=>condition: 判断出勤次数是否大于等于2
+op1=>operation: 当前遍历位置加一，将当前字符更新为新的当前遍历位置处的字符
+op22463=>operation: 不可以获得奖励
+op22372=>operation: 定义变量absents用于记录出勤次数，定义变量lates用于记录迟到次数，其初值均为0
+e22479=>end: end function return
+io22481=>inputoutput: output:  返回用于记录是否可以获得奖励的变量flag
+op22472=>operation: 令迟到次数等于0
+op22376=>operation: i用于记录字符串s中当前遍历位置，当前字符c为字符串当前遍历位置处的字符
+cond22452=>condition: 当前字符为"L"
+
+cond22431(yes)->op22435
+cond22379(no)->io22481
+cond22459(yes)->op22463
+cond22431(no)->cond22452
+op22435->cond22438
+op22463->io22481
+op22442->io22481
+op22376->cond22379
+cond22452(yes)->op22456
+io22369->op22372
+io22481->e22479
+st22367->io22369
+op22456->cond22459
+cond22438(no)->op1
+op22374->op22376
+cond22379(yes)->cond22431
+op22372->op22374
+cond22452(no)->op22472
+cond22438(yes)->op22442
+cond22459(no)->op1
+op22472->op1
+op1->cond22379

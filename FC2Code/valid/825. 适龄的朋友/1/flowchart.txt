@@ -1,0 +1,36 @@
+op31669=>operation: age为用户年龄数组ages中的元素，表示每个用户的年龄
+op31747=>operation: 计算右指针与左指针的差值，将答案加上该差值
+op31667=>operation: 定义左指针al，右指针ar，答案ans，其初值均为0
+cond31672=>condition: 对数组ages进行遍历
+st31658=>start: start numFriendRequests
+cond31714=>condition: 如果当前用户的年龄小于15
+io31754=>inputoutput: output:  返回答案
+cond31724=>condition: 当第al个用户的年龄小于当前用户的年龄乘0.5再加上7
+op31663=>operation: alen为数组ages的长度
+op31743=>operation: 右指针加一
+cond31736=>condition: 当右指针加一小于数组ages的长度且第ar + 1加一给用户的年龄小于等于当前用户的年龄
+io31660=>inputoutput: input: self, ages
+op31731=>operation: 左指针加一
+e31752=>end: end function return
+op1=>operation: 更新当前用户的年龄
+op31665=>operation: 对数组ages进行排序
+
+op1->cond31672
+st31658->io31660
+cond31724(no)->cond31736
+cond31714(no)->cond31724
+op31665->op31667
+cond31724(yes)->op31731
+op31747->op1
+io31660->op31663
+op31669->cond31672
+op31743->cond31736
+cond31672(no)->io31754
+cond31714(yes)->op1
+op31667->op31669
+cond31736(yes)->op31743
+cond31672(yes)->cond31714
+op31731->cond31724
+op31663->op31665
+io31754->e31752
+cond31736(no)->op31747

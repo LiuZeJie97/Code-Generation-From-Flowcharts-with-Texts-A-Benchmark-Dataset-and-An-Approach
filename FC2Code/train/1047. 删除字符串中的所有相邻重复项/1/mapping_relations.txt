@@ -1,0 +1,9 @@
+def removeDuplicates(self, seq: str) -> str:    #io7921
+    stk = list()    #op7924
+    for i in range(len(seq)):    #cond7929
+        ch = seq[i]    #op7948
+        if stk and stk[-1] == ch:    #cond7951
+            stk.pop()    #op7955
+        else:    #None
+            stk.append(ch)    #op7959
+    return "".join(stk)    #io7967

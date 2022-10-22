@@ -1,0 +1,35 @@
+op18941=>operation: size为字符串s的长度
+cond18992=>condition: 右指针rk加一位置未越界且字符串中该位置的字符没有出现在集合occ中
+op18986=>operation: 将字符串s中左指针减一位置的字符从集合中移除
+st18934=>start: start lengthOfLongestSubstring
+op18939=>operation: 初始化集合occ，用于记录每个字符是否出现过
+cond18948=>condition: 左指针未越界
+op18943=>operation: 定义初值为-1的变量rk作为右指针，定义初值为0的变量ans用于记录最长子串的长度
+io18936=>inputoutput: input: self, s
+op19001=>operation: 将该字符添加进集合
+op19003=>operation: 令右指针右移1个单位
+op1=>operation: 令左指针右移1个单位
+op18945=>operation: 定义lk为左指针
+cond18982=>condition: 左指针lk不为空
+e19012=>end: end function return
+op19007=>operation: 若左、右指针之间的距离大于当前最长子串的长度，则将最长子串的长度更新为该距离
+io19014=>inputoutput: output:  返回最长子串的长度
+
+st18934->io18936
+cond18948(no)->io19014
+cond18982(yes)->op18986
+op18986->cond18992
+cond18992(yes)->op19001
+op18943->op18945
+op18941->op18943
+op19003->cond18992
+op1->cond18948
+cond18948(yes)->cond18982
+op18939->op18941
+op19001->op19003
+op18945->cond18948
+cond18982(no)->cond18992
+io19014->e19012
+cond18992(no)->op19007
+op19007->op1
+io18936->op18939

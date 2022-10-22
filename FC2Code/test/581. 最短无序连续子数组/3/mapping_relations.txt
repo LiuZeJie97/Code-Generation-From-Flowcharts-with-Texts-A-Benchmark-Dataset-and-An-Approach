@@ -1,0 +1,16 @@
+def findUnsortedSubarray(self, nums: List[int]) -> int:    #io23414
+    n = len(nums)    #op23417
+    maxn  = float("-inf")    #op23419
+    right =  -1    #op23419
+    minn = float("inf")    #op23421
+    left = -1    #op23421
+    for i in range(n):    #cond23426
+        if maxn > nums[i]:    #cond23456
+            right = i    #op23460
+        else:    #None
+            maxn = nums[i]    #op23464
+        if minn < nums[n - i - 1]:    #cond23468
+            left = n - i - 1    #op23472
+        else:    #None
+            minn = nums[n - i - 1]    #op23476
+    return 0 if right == -1 else right - left + 1    #io23484

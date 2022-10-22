@@ -1,0 +1,10 @@
+def mirrorReflection(self, p: int, q: int) -> int:    #io33202
+    g = gcd(p, q)    #op33205
+    p = (p / g) % 2    #op33207
+    q = (q / g) % 2    #op33209
+    if p and q:    #cond33212
+        return 1    #io33219
+    elif p:    #cond33225
+        return 0    #io33232
+    else:    #None
+        return 2    #io33240

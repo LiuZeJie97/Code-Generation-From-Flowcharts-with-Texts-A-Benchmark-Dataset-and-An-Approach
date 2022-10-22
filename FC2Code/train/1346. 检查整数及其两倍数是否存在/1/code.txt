@@ -1,0 +1,11 @@
+def checkIfExist(self, array: List[int]) -> bool:
+    n = len(array)
+    flag = False
+    for x in range(n):
+        for y in range(n):
+            if x == y:
+                continue
+            if array[x] * 2 == array[y]:
+                flag = True
+                break
+    return flag

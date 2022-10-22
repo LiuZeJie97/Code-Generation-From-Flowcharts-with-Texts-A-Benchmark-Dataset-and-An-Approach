@@ -1,0 +1,30 @@
+cond36007=>condition: 对字符串进行遍历
+op36033=>operation: 令数组dp中最后一项元素减去数组dp中下标为last[x]的元素
+st35993=>start: start distinctSubseqII
+e36043=>end: end function return
+op36026=>operation: 计算数组dp中最后一项元素乘2，将计算结果添加进数组dp中
+cond36029=>condition: 当前遍历字符在字典中
+op36002=>operation: 初始化字典last
+op1=>operation: 当前下标加一，更新当前遍历字符
+op35998=>operation: 定义模数mod等于10的9次方加7
+io35995=>inputoutput: input: self, S
+op36038=>operation: 字典中下标为当前遍历字符的元素等于当前遍历下标
+io36045=>inputoutput: output:  计算数组dp中最后一项元素减一并对模数取模的结果，返回该计算结果
+op36004=>operation: i等于0，表示字符串下标，当前遍历字符x为字符串S中当前下标处的字符
+op36000=>operation: 初始化数组dp，其长度为1，数组元素初值为1，
+
+io36045->e36043
+op36038->op1
+op35998->op36000
+io35995->op35998
+op36000->op36002
+op36002->op36004
+cond36029(no)->op36038
+op36026->cond36029
+op36033->op36038
+op36004->cond36007
+op1->cond36007
+st35993->io35995
+cond36029(yes)->op36033
+cond36007(no)->io36045
+cond36007(yes)->op36026

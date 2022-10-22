@@ -1,0 +1,11 @@
+def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:    #io30708
+    f = [float("inf")] * n    #op30711
+    f[src] = 0    #op30713
+    ans = float("inf")    #op30715
+    for t in range(1, k + 2):    #cond30720
+        g = [float("inf")] * n    #op30745
+        for j, i, cost in flights:    #cond30750
+            g[i] = min(g[i], f[j] + cost)    #op30757
+        f = g    #op30761
+        ans = min(ans, f[dst])    #op30763
+    return -1 if ans == float("inf") else ans    #io30770

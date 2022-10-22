@@ -1,0 +1,12 @@
+def maxProduct(self, nums: List[int]) -> int:    #io1590
+    n=len(nums)    #op1593
+    max_res=-float("inf")    #op1595
+    max_num=1    #op1595
+    min_num=1    #op1595
+    for i in range(n):    #cond1600
+        if(nums[i]<0):    #cond1622
+            max_num,min_num=min_num,max_num    #op1626
+        max_num=max(max_num*nums[i],nums[i])    #op1631
+        min_num=min(min_num*nums[i],nums[i])    #op1633
+        max_res=max(max_num,max_res)    #op1635
+    return max_res    #io1642

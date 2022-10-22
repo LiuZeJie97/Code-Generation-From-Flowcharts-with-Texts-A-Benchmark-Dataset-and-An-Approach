@@ -1,0 +1,38 @@
+op32038=>operation: 右指针加一
+cond32043=>condition: 如果左指针与右指针相等
+cond31943=>condition: 如果数组下标小于数组的行数
+op32000=>operation: 左指针p等于0，右指针q等于数组的行数减一
+op32047=>operation: 数组中i行p列的元素等于它异或1
+cond32025=>condition: 如果数组image中i行p列的元素等于i行q列的元素
+op31938=>operation: row为二维数组image的行数
+op32031=>operation: 数组中i行q列的元素等于它异或1
+op32036=>operation: 左指针加一
+op32029=>operation: 数组中i行p列的元素等于它异或1
+cond32003=>condition: 如果左指针小于右指针
+io32057=>inputoutput: output:  返回二维数组
+op1=>operation: 数组下标加一
+st31933=>start: start flipAndInvertImage
+io31935=>inputoutput: input: self, image
+op31940=>operation: i为数组下标
+e32055=>end: end function return
+
+io32057->e32055
+op31940->cond31943
+cond32003(yes)->cond32025
+op1->cond31943
+op32031->op32036
+cond31943(yes)->op32000
+cond32043(no)->op1
+cond32025(yes)->op32029
+cond32025(no)->op32036
+op31938->op31940
+op32036->op32038
+op32038->cond32003
+op32029->op32031
+cond31943(no)->io32057
+cond32003(no)->cond32043
+io31935->op31938
+op32047->op1
+st31933->io31935
+op32000->cond32003
+cond32043(yes)->op32047

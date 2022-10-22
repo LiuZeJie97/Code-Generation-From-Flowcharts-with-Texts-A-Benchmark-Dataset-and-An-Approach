@@ -1,0 +1,38 @@
+op3833=>operation: i为答案数组answer的下标
+op3829=>operation: 初始化答案数组answer=[0,0,...,0]为1*n的数组
+io3824=>inputoutput: input: self, nums
+cond3856=>condition: i是正数
+op3851=>operation: 重置k等于右乘积，初值为1
+op3831=>operation: 初始化当前的左乘积k等于1
+st3822=>start: start productExceptSelf
+e3872=>end: end function return
+op3847=>operation: 更新当前左乘积k等于其自身乘上nums[i]
+cond3836=>condition: i小于答案数组的长度
+op3853=>operation: i等于数组最后一个元素的下标
+op3827=>operation: 初始化数组长度n
+op2=>operation: 下标i向左移动一个单位
+op1=>operation: 答案数组下标下标右移一位
+op3865=>operation: 更新答案数组第i位answer[i]等于其自身乘上当前右乘积
+io3874=>inputoutput: output:  返回答案数组
+op3845=>operation: 更新答案数组第i位等于其自身乘上当前的左乘积
+op3867=>operation: 更新当前右乘积等于其自身乘上nums[i]
+
+op3847->op1
+cond3836(no)->op3851
+op3867->op2
+op3831->op3833
+cond3856(no)->io3874
+cond3836(yes)->op3845
+st3822->io3824
+op3853->cond3856
+op2->cond3856
+op3833->cond3836
+op3827->op3829
+op3851->op3853
+op3845->op3847
+io3874->e3872
+io3824->op3827
+op3829->op3831
+op3865->op3867
+op1->cond3836
+cond3856(yes)->op3865

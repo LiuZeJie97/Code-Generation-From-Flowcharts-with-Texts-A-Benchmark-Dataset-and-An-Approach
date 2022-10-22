@@ -1,0 +1,26 @@
+st33025=>start: start peakIndexInMountainArray
+op33056=>operation: 中点mid等于左边界与右边界的和整除2
+e33075=>end: end function return
+op33063=>operation: 令答案等于中点
+op33030=>operation: n为数组arr的长度
+io33027=>inputoutput: input: self, arr
+io33077=>inputoutput: output:  返回答案
+op33032=>operation: 定义左边界left，初值为1，右边界right，初值为数组arr的长度减2，答案ans，初值为0
+op33069=>operation: 左边界等于中点加一
+cond33059=>condition: 数组arr中点元素大于中点加一处的元素
+op33065=>operation: 右边界等于中点减一
+cond33035=>condition: 当左边界小于等于右边界
+
+op33069->cond33035
+cond33059(no)->op33069
+op33030->op33032
+op33032->cond33035
+cond33035(yes)->op33056
+op33063->op33065
+op33056->cond33059
+io33077->e33075
+io33027->op33030
+st33025->io33027
+op33065->cond33035
+cond33059(yes)->op33063
+cond33035(no)->io33077

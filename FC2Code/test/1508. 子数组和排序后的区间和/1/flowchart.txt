@@ -1,0 +1,38 @@
+e13988=>end: end function return
+io13990=>inputoutput: output:  返回答案
+op1=>operation: 循环次数加一
+io13924=>inputoutput: input: self, nums, n, left, right
+op13961=>operation: 数组下标j等于当前循环次数
+op13985=>operation: 令答案对模数取模
+op13931=>operation: 循环次数i等于0
+op13981=>operation: 对后缀和数组sums排序
+op13983=>operation: 定义答案answer等于后缀和数组中下标从left-1到right的数之和
+op13929=>operation: 初始化后缀和数组sums
+op13927=>operation: 定义模数MODULO等于10的9次方加7
+op13973=>operation: 令后缀和加上数组nums中当前下标位置的数
+cond13964=>condition: 数组下标小于n
+cond13934=>condition: 循环次数小于n
+op13975=>operation: 将后缀和结果添加至后缀和数组尾部
+st13922=>start: start rangeSum
+op2=>operation: 数组下标加一
+op13959=>operation: 后缀和total等于0
+
+io13990->e13988
+op2->cond13964
+io13924->op13927
+cond13934(yes)->op13959
+cond13964(no)->op1
+op13961->cond13964
+op13927->op13929
+op13973->op13975
+op13983->op13985
+op1->cond13934
+op13959->op13961
+op13985->io13990
+st13922->io13924
+op13929->op13931
+op13931->cond13934
+cond13934(no)->op13981
+cond13964(yes)->op13973
+op13981->op13983
+op13975->op2

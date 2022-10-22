@@ -1,0 +1,28 @@
+op7575=>operation: 向答案数组中添加False
+io7535=>inputoutput: input: self, numbers
+op7542=>operation: 定义数组下标index等于0
+op7571=>operation: 向答案数组ans中添加True
+e7581=>end: end function return
+op7540=>operation: 定义前缀prefix等于0
+op1=>operation: 令数组下标自增一
+st7533=>start: start prefixesDivBy5
+op7538=>operation: 定义答案数组ans
+io7583=>inputoutput: output:  返回答案数组
+cond7567=>condition: 前缀可以整除5
+op7564=>operation: 令前缀prefix等于前缀左移1位的运算结果与数组中当前下标位置的数之和
+cond7545=>condition: 数组下标小于数组numbers的长度
+
+op7540->op7542
+cond7567(yes)->op7571
+cond7545(yes)->op7564
+op7564->cond7567
+op7538->op7540
+st7533->io7535
+op1->cond7545
+cond7567(no)->op7575
+op7575->op1
+op7571->op1
+io7583->e7581
+cond7545(no)->io7583
+io7535->op7538
+op7542->cond7545

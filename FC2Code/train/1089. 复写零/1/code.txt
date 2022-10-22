@@ -1,0 +1,20 @@
+def duplicateZeros(self, a: List[int]) -> None:
+    dups = 0
+    length = len(a)
+    for left in range(length):
+        if left > length - dups - 1:
+            break
+        if a[left] == 0:
+            if left == length - dups - 1:
+                a[-1] = 0
+                length -= 1
+                break
+            dups += 1
+    last = length - dups -1
+    for i in range(last, -1, -1):
+        if a[i] == 0:
+            a[i + dups] = 0
+            dups -= 1
+            a[i + dups] = 0
+        else:
+            a[i + dups] = a[i]

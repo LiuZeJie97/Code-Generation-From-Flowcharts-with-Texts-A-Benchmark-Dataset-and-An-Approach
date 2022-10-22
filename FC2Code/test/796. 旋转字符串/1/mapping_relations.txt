@@ -1,0 +1,11 @@
+def rotateString(self, s: str, goal: str) -> bool:    #io30963
+    m, n = len(s), len(goal)    #op30966
+    if m != n:    #cond30969
+        return False    #io30976
+    for p in range(n):    #cond30985
+        for j in range(n):    #cond31023
+            if s[(p + q) % n] != goal[q]:    #cond31039
+                break    #None
+        else:    #None
+            return True    #None
+    return False    #io31055

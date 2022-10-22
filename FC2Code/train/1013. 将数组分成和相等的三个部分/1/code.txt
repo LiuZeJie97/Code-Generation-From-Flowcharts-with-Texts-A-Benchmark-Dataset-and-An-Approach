@@ -1,0 +1,22 @@
+def canThreePartsEqualSum(self, arr: List[int]) -> bool:
+    s = sum(arr)
+    if s % 3 != 0:
+        return False
+    target = s // 3
+    n = len(arr)
+    cur = 0
+    i = 0
+    while i < n:
+        cur += arr[i]
+        if cur == target:
+            break
+        i += 1
+    if cur != target:
+        return False
+    j = i + 1
+    while j + 1 < n:
+        cur += arr[j]
+        if cur == target * 2:
+            return True
+        j += 1
+    return False

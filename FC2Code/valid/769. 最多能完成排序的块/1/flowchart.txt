@@ -1,0 +1,24 @@
+op29750=>operation: 定义i为数组索引
+cond29753=>condition: 数组索引小于数组arr的长度
+st29743=>start: start maxChunksToSorted
+cond29773=>condition: 最大值等于当前索引
+op1=>operation: 数组索引向右移动1
+io29787=>inputoutput: output:  返回最多块数量
+e29785=>end: end function return
+op29748=>operation: 定义变量res用于记录最多块数量，定义变量ma用于记录最大值，其初值均为0
+op29777=>operation: 最多块数量加一
+op29770=>operation: 当前索引指向的数大于最大值ma，则更新最大值
+io29745=>inputoutput: input: self, arr
+
+op29777->op1
+cond29753(no)->io29787
+op29750->cond29753
+cond29773(yes)->op29777
+io29787->e29785
+op29770->cond29773
+cond29753(yes)->op29770
+io29745->op29748
+st29743->io29745
+op29748->op29750
+cond29773(no)->op1
+op1->cond29753

@@ -1,0 +1,15 @@
+cond27718=>condition: 变量i小于数组的长度减一
+op27725=>operation: 计算数组中下标为i的字符加一，将计算结果赋给i
+op27715=>operation: 定义变量i初值为0，bsize为数组bits的长度
+io27712=>inputoutput: input: self, bits
+st27710=>start: start isOneBitCharacter
+io27732=>inputoutput: output:  如果i等于数组的长度减一，返回True，否则返回False
+e27730=>end: end function return
+
+op27715->cond27718
+cond27718(no)->io27732
+io27712->op27715
+op27725->cond27718
+cond27718(yes)->op27725
+st27710->io27712
+io27732->e27730

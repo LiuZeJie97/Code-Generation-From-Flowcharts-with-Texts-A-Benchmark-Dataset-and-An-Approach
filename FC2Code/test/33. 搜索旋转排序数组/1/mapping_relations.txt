@@ -1,0 +1,19 @@
+def search(self, n: List[int], target: int) -> int:    #io19291
+    if not n:    #cond19295
+        return -1    #io19302
+    l, r = 0, len(n) - 1    #op19308
+    while l <= r:    #cond19311
+        m = (l + r) // 2    #op19364
+        if n[m] == target:    #cond19367
+            return m    #io19374
+        if n[0] <= n[m]:    #cond19381
+            if n[0] <= target < n[m]:    #cond19386
+                r = m - 1    #op19390
+            else:    #None
+                l = m + 1    #op19394
+        else:    #None
+            if n[m] < target <= n[-1]:    #cond19400
+                l = m + 1    #op19404
+            else:    #None
+                r = m - 1    #op19408
+    return -1    #io19417

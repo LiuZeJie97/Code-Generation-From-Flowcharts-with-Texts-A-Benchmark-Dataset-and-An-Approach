@@ -1,0 +1,13 @@
+def flipAndInvertImage(self, image: List[List[int]]) -> List[List[int]]:
+    row = len(image)
+    for i in range(row):
+        p, q = 0, n - 1
+        while p < q:
+            if image[i][p] == image[i][q]:
+                image[i][p] = image[i][p]^1
+                image[i][q] = image[i][q]^1
+            p += 1
+            q -= 1
+        if p == q:
+            image[i][p] = image[i][p]^1
+    return image

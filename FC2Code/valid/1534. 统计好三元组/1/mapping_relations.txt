@@ -1,0 +1,14 @@
+def countGoodTriplets(self, arr: List[int], a: int, b: int, c: int) -> int:    #io14364
+    an = len(arr)    #op14367
+    cnt = 0    #op14369
+    for i in range(an):    #cond14374
+        for j in range(i + 1, n):    #cond14540
+            for k in range(j + 1, n):    #cond14622
+                if abs(arr[i] - arr[j]) > a:    #cond14660
+                    continue    #None
+                if abs(arr[j] - arr[k]) > b:    #cond14670
+                    continue    #None
+                if abs(arr[i] - arr[k]) > c:    #cond14680
+                    continue    #None
+                cnt += 1    #op14689
+    return cnt    #io14700

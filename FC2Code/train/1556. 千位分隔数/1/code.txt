@@ -1,0 +1,14 @@
+def thousandSeparator(self, n: int) -> str:
+    count = 0
+    ans = list()
+    while True:
+        cur = n % 10
+        n //= 10
+        ans.append(str(cur))
+        count += 1
+        if count % 3 == 0 and n > 0:
+            ans.append(".")
+        if n == 0:
+            break
+    ans.reverse()
+    return "".join(ans)

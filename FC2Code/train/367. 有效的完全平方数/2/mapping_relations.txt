@@ -1,0 +1,9 @@
+def isPerfectSquare(self, num: int) -> bool:    #io19819
+    x = 1    #op19822
+    square = 1    #op19824
+    while square <= num:    #cond19827
+        if square == num:    #cond19851
+            return True    #io19858
+        x += 1    #op19864
+        square = x * x    #op19866
+    return False    #io19873

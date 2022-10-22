@@ -1,0 +1,30 @@
+io19732=>inputoutput: input: self, num
+cond19778=>condition: square小于给定正整数
+st19730=>start: start isPerfectSquare
+op19773=>operation: 定义中值center等于左边界与右边界的和整除2
+io19798=>inputoutput: output:  给定正整数是完全平方数
+op19782=>operation: 左边界等于中值加一
+op19775=>operation: 定义变量square等于中值的平方
+op19735=>operation: 定义左边界start，初值为0；定义右边界end，初值为给定正整数num
+op19791=>operation: 右边界等于中值减一
+cond19787=>condition: square大于给定正整数
+cond19738=>condition: 左边界小于等于右边界
+e19796=>end: end function return
+io19808=>inputoutput: output:  给定正整数不是完全平方数
+e19806=>end: end function return
+
+cond19787(no)->io19798
+cond19778(no)->cond19787
+op19775->cond19778
+cond19787(yes)->op19791
+op19782->cond19738
+st19730->io19732
+io19808->e19806
+op19791->cond19738
+cond19738(no)->io19808
+io19732->op19735
+io19798->e19796
+op19773->op19775
+cond19778(yes)->op19782
+op19735->cond19738
+cond19738(yes)->op19773

@@ -1,0 +1,54 @@
+op26544=>operation: 将现在的横坐标、纵坐标组成的位置坐标入队
+op26530=>operation: di为横坐标方向向量，dj为纵坐标方向向量，(di,dj)表示方向向量
+io26113=>inputoutput: input: self, grid
+op26528=>operation: 数组grid中cur_i行cur_j列处的元素等于0
+cond26517=>condition: 如果数组grid中cur_i行cur_j列处的元素不为1
+op26526=>operation: 现在的岛屿面积加一
+op26450=>operation: 定义变量cur记录现在的岛屿面积，初值为0
+st26111=>start: start maxAreaOfIsland
+cond26455=>condition: 当队列不为空
+io26559=>inputoutput: output:  返回最大岛屿面积
+cond26343=>condition: 对该数组进行遍历
+op26452=>operation: 定义队列q，将位置坐标(i,j)入队
+op26118=>operation: i为横坐标，l为二维数组grid中当前横坐标对应的数组
+op26550=>operation: 最大岛屿面积等于它与现在的岛屿面积之间的最大值
+op1=>operation: 更新横坐标及其对应的数组
+cond26507=>condition: 如果现在的横坐标小于0或现在的纵坐标小于0或现在的横坐标等于数组grid的行数或现在的纵坐标等于数组grid的列数
+op26504=>operation: 定义cur_i等于队头元素的横坐标，表示现在的横坐标，定义cur_j等于队头元素的纵坐标，表示现在的纵坐标，并将队头元素出队
+cond26533=>condition: (di,dj)的取值分别为(0,1),(0,-1),(1,0),(-1,0)
+op26340=>operation: j为纵坐标，n为数组l中当前纵坐标对应的元素
+op26116=>operation: 定义变量ans等于0，用于记录最大岛屿面积
+op2=>operation: 更新纵坐标及其对应的元素
+op26542=>operation: 定义下一步横坐标next_i等于现在的横坐标加当前横坐标方向向量，下一步纵坐标next_j等于现在的纵坐标加当前纵坐标方向向量
+e26557=>end: end function return
+cond26121=>condition: 对该二维数组进行遍历
+
+op26544->cond26533
+op26530->cond26533
+cond26517(no)->op26526
+cond26507(yes)->cond26455
+cond26533(no)->cond26455
+cond26517(yes)->cond26455
+op26450->op26452
+cond26533(yes)->op26542
+op26504->cond26507
+op26550->op2
+op26340->cond26343
+cond26507(no)->cond26517
+op26452->cond26455
+io26113->op26116
+op26526->op26528
+io26559->e26557
+op26542->op26544
+op26118->cond26121
+cond26343(no)->op1
+op1->cond26121
+cond26455(yes)->op26504
+cond26121(yes)->op26340
+cond26455(no)->op26550
+op26528->op26530
+op26116->op26118
+op2->cond26343
+cond26343(yes)->op26450
+st26111->io26113
+cond26121(no)->io26559

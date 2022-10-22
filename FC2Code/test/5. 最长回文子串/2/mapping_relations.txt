@@ -1,0 +1,25 @@
+def longestPalindrome(self, s: str) -> str:    #io5043
+    n = len(s)    #op5046
+    if n < 2:    #cond5049
+        return s    #io5056
+    max_len = 1    #op5062
+    begin = 0    #op5064
+    dp = [[False] * n for _ in range(n)]    #op5066
+    for i in range(n):    #cond5071
+        dp[i][i] = True    #op5078
+    for L in range(2, n + 1):    #cond5085
+        for i in range(n):    #cond5195
+            j = L + i - 1    #op5246
+            if j >= n:    #cond5249
+                break    #None
+            if s[i] != s[j]:    #cond5259
+                dp[i][j] = False    #op5263
+            else:    #None
+                if j - i < 3:    #cond5268
+                    dp[i][j] = True    #op5272
+                else:    #None
+                    dp[i][j] = dp[i + 1][j - 1]    #op5276
+            if dp[i][j] and j - i + 1 > max_len:    #cond5281
+                max_len = j - i + 1    #op5285
+                begin = i    #op5287
+    return s[begin:begin + max_len]    #io5299

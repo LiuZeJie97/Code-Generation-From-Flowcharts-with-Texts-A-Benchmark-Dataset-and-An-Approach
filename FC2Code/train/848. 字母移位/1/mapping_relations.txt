@@ -1,0 +1,8 @@
+def shiftingLetters(self, seq: str, shifts: List[int]) -> str:    #io32984
+    ans = []    #op32987
+    X = sum(shifts) % 26    #op32989
+    for i, c in enumerate(seq):    #cond32994
+        index = ord(c) - ord('a')    #op33005
+        ans.append(chr(ord('a') + (index + X) % 26))    #op33007
+        X = (X - shifts[i]) % 26    #op33009
+    return "".join(ans)    #io33016

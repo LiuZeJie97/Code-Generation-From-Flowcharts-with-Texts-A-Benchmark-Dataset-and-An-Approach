@@ -1,0 +1,30 @@
+def backspaceCompare(self, S: str, T: str) -> bool:    #io32413
+    i, j = len(S) - 1, len(T) - 1    #op32416
+    skipS = skipT = 0    #op32418
+    while i >= 0 or j >= 0:    #cond32421
+        while i >= 0:    #cond32587
+            if S[i] == "#":    #cond32619
+                skipS += 1    #op32623
+                i -= 1    #op32625
+            elif skipS > 0:    #cond32630
+                skipS -= 1    #op32634
+                i -= 1    #op32636
+            else:    #None
+                break    #None
+        while j >= 0:    #cond32647
+            if T[j] == "#":    #cond32679
+                skipT += 1    #op32683
+                j -= 1    #op32685
+            elif skipT > 0:    #cond32690
+                skipT -= 1    #op32694
+                j -= 1    #op32696
+            else:    #None
+                break    #None
+        if i >= 0 and j >= 0:    #cond32707
+            if S[i] != T[j]:    #cond32712
+                return False    #io32719
+        elif i >= 0 or j >= 0:    #cond32728
+            return False    #io32735
+        i -= 1    #op32742
+        j -= 1    #op32744
+    return True    #io32751

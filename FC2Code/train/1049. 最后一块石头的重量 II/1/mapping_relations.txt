@@ -1,0 +1,17 @@
+def lastStoneWeightII(self, stones: List[int]) -> int:    #io7978
+    total = sum(stones)    #op7981
+    n, m = len(stones), total // 2    #op7983
+    dp = [[False] * (m + 1) for _ in range(n + 1)]    #op7985
+    dp[0][0] = True    #op7987
+    for a in range(n):    #cond7992
+        for b in range(m + 1):    #cond8034
+            if b < stones[a]:    #cond8052
+                dp[a + 1][b] = dp[a][b]    #op8056
+            else:    #None
+                dp[a + 1][b] = dp[a][b] or dp[a][b - stones[a]]    #op8060
+    ans = 0    #op8067
+    for c in range(m, -1, -1):    #cond8072
+        if dp[n][c]:    #cond8090
+            ans = total - 2 * c    #op8094
+            break    #None
+    return ans    #io8106

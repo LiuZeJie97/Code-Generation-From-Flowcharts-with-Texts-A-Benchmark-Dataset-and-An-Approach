@@ -1,0 +1,9 @@
+def minSteps(self, source: str, target: str) -> int:
+    s_cnt = Counter(source)
+    ans = 0
+    for idx in range(len(target)):
+        if s_cnt[target[idx]] > 0:
+            s_cnt[target[idx]] -= 1
+        else:
+            ans += 1
+    return ans

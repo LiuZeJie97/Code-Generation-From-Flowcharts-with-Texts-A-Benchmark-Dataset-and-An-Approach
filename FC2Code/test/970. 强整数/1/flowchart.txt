@@ -1,0 +1,31 @@
+op36776=>operation: v等于x的i次方加上y的j次方
+op2=>operation: 第二个数加1
+op1=>operation: 第一个数加1
+op36712=>operation: 初始化集合ans
+cond36759=>condition: 第二个数小于18
+op36756=>operation: 第二个数j等于0
+e36793=>end: end function return
+st36707=>start: start powerfulIntegers
+cond36779=>condition: 如果v小于等于bound
+io36709=>inputoutput: input: self, x, y, bound
+io36795=>inputoutput: output:  将集合转化为数组并返回
+cond36717=>condition: 第一个数小于18
+op36714=>operation: 第一个数i初值为0
+op36783=>operation: 将它加入集合中
+
+cond36779(yes)->op36783
+io36709->op36712
+op36756->cond36759
+io36795->e36793
+op36712->op36714
+op2->cond36759
+op36783->op2
+cond36717(no)->io36795
+cond36779(no)->op2
+st36707->io36709
+op1->cond36717
+op36714->cond36717
+op36776->cond36779
+cond36759(yes)->op36776
+cond36717(yes)->op36756
+cond36759(no)->op1

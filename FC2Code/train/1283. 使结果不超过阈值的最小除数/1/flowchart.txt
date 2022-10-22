@@ -1,0 +1,39 @@
+st10023=>start: start smallestDivisor
+io10025=>inputoutput: input: self, numbers, threshold
+op10092=>operation: 令total加上tmp再加一
+cond10097=>condition: total小于等于threshold
+op10103=>operation: 答案ans等于中值
+op10030=>operation: 答案ans等于-1
+op10090=>operation: 计算数组中当前下标位置的数减去1，tmp等于该计算结果整除中值
+op10101=>operation: 右边界等于中值middle减一
+op10076=>operation: total等于0
+op10028=>operation: 左边界low等于1，右边界high等于数组numbers中的最大值加一
+op1=>operation: 数组下标加一
+cond10033=>condition: 左边界小于等于右边界
+op10074=>operation: 中值middle等于左边界low与右边界right的和整除2
+op10107=>operation: 左边界等于中值加一
+e10113=>end: end function return
+op10078=>operation: 数组下标k等于0
+io10115=>inputoutput: output:  返回答案
+cond10081=>condition: 数组下标小于数组numbers的长度
+
+op10092->op1
+op10103->cond10033
+op10030->cond10033
+op10028->op10030
+op10090->op10092
+op10107->cond10033
+io10025->op10028
+cond10033(yes)->op10074
+cond10081(no)->cond10097
+cond10081(yes)->op10090
+io10115->e10113
+cond10097(yes)->op10101
+op10101->op10103
+cond10033(no)->io10115
+st10023->io10025
+op10078->cond10081
+op1->cond10081
+op10076->op10078
+cond10097(no)->op10107
+op10074->op10076

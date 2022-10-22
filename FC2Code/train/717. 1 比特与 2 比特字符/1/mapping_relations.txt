@@ -1,0 +1,5 @@
+def isOneBitCharacter(self, bits: List[int]) -> bool:    #io27712
+    i, bsize = 0, len(bits)    #op27715
+    while i < bsize - 1:    #cond27718
+        i += bits[i] + 1    #op27725
+    return i == bsize - 1    #io27732

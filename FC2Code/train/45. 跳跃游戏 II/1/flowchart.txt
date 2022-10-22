@@ -1,0 +1,31 @@
+op20335=>operation: 跳跃次数step加一
+cond20322=>condition: 最远能到达的位置maxPos大于等于当前位置i
+e20346=>end: end function return
+op1=>operation: 当前位置加一
+op20326=>operation: 若当前位置加上其对应的可以跳跃的最大长度大于最远能到达的位置，则将最远能到达的位置更新为它们的和
+op20333=>operation: 将边界位置更新为最远能到达的位置
+cond20329=>condition: 当前位置等于边界位置end
+cond20294=>condition: 当前位置小于数组的长度减一
+op20287=>operation: 定义length为数组array的长度，数组array用于记录每个数组下标处可以跳跃的最大长度
+op20289=>operation: 定义变量maxPos用于记录最远能到达的位置，定义变量end用于记录边界位置，定义变量step用于记录跳跃次数，上述变量的初值均为0
+op20291=>operation: 定义i表示当前位置
+io20284=>inputoutput: input: self, array
+st20282=>start: start jump
+io20348=>inputoutput: output:  返回跳跃次数
+
+op20291->cond20294
+op20335->op1
+cond20294(no)->io20348
+cond20329(no)->op1
+op1->cond20294
+io20348->e20346
+io20284->op20287
+cond20294(yes)->cond20322
+cond20322(yes)->op20326
+op20333->op20335
+st20282->io20284
+op20289->op20291
+op20287->op20289
+cond20329(yes)->op20333
+cond20322(no)->op1
+op20326->cond20329

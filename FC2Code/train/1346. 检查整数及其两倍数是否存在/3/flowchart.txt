@@ -1,0 +1,29 @@
+op11734=>operation: counter是数组arr的计数结果
+cond11773=>condition: 当前遍历数不等于0且计数结果中下标为当前遍历数2倍的元素大于等于1
+io11780=>inputoutput: output:  存在
+st11729=>start: start checkIfExist
+cond11787=>condition: 当前遍历数等于0且计数结果中下标为当前遍历数2倍的元素大于等于2
+io11805=>inputoutput: output:  不存在
+io11794=>inputoutput: output:  存在
+cond11739=>condition: 对数组进行遍历
+e11792=>end: end function return
+io11731=>inputoutput: input: self, arr
+e11803=>end: end function return
+e11778=>end: end function return
+op1=>operation: 当前遍历数等于数组中下一个数
+op11736=>operation: n为数组arr中的数，初值为数组中第一个数
+
+io11805->e11803
+st11729->io11731
+op11736->cond11739
+io11794->e11792
+cond11739(yes)->cond11773
+op1->cond11739
+io11731->op11734
+cond11773(no)->cond11787
+op11734->op11736
+cond11773(yes)->io11780
+cond11787(yes)->io11794
+cond11739(no)->io11805
+io11780->e11778
+cond11787(no)->op1

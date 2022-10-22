@@ -1,0 +1,48 @@
+cond10610=>condition: 判断数组起始下标start处的值是否为0
+e10806=>end: end function return
+cond10724=>condition: 数组下标的取值范围为u加上数组arr中u处的值或u减去数组中u处的值
+op10625=>operation: 定义字典used，并将起始下标start加入字典used
+op10721=>operation: v为数组下标
+op1=>operation: 更新数组下标
+io10788=>inputoutput: output:  返回true
+op10794=>operation: 将数组下标v加入队列
+op10623=>operation: n为数组arr的长度
+e10786=>end: end function return
+e10615=>end: end function return
+io10606=>inputoutput: input: self, arr, start
+op10719=>operation: u为队列队头元素，并移除队头元素
+io10617=>inputoutput: output:  返回True
+op10796=>operation: 将数组下标加入字典
+cond10781=>condition: 判断数组中当前下标处的值是否为0
+io10808=>inputoutput: output:  返回False
+st10604=>start: start canReach
+cond10630=>condition: 当队列长度大于0时
+cond10766=>condition: 当前数组下标在字典中
+op10627=>operation: 定义双边队列q，并将起始下标加入队列q
+cond10776=>condition: 当前数组下标大于等于0小于n
+
+op10625->op10627
+op10796->op1
+st10604->io10606
+cond10766(no)->cond10776
+op1->cond10724
+cond10766(yes)->op1
+cond10610(no)->op10623
+cond10781(no)->op10794
+cond10776(yes)->cond10781
+op10627->cond10630
+cond10724(no)->cond10630
+cond10781(yes)->io10788
+io10606->cond10610
+cond10724(yes)->cond10766
+io10617->e10615
+op10794->op10796
+op10719->op10721
+op10623->op10625
+cond10630(no)->io10808
+cond10630(yes)->op10719
+cond10776(no)->op1
+op10721->cond10724
+cond10610(yes)->io10617
+io10788->e10786
+io10808->e10806

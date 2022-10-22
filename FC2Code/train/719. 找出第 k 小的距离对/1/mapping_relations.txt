@@ -1,0 +1,16 @@
+def smallestDistancePair(self, d, k):    #io27812
+    d.sort()    #op27815
+    low = 0    #op27817
+    high = d[-1] - d[0]    #op27819
+    while low < high:    #cond27822
+        mid = (low + high) // 2    #op27881
+        count = left = 0    #op27883
+        for right in range(len(d)):    #cond27888
+            while d[right]- d[left] > mid:    #cond27908
+                left += 1    #op27915
+            count += right - left    #op27919
+        if count >= k:    #cond27924
+            high = mid    #op27928
+        else:    #None
+            low = mid + 1    #op27932
+    return low    #io27940

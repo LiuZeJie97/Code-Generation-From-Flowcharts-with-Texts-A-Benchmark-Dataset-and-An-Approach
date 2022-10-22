@@ -1,0 +1,33 @@
+cond27675=>condition: 第i天的股票价格与交易股票的手续费用fee之和小于最低买入价格
+op27679=>operation: 将最低买入价格更新为它们的和
+op1=>operation: 将当前天数加一
+cond27647=>condition: 当前天数小于股票价格数组的长度
+op27638=>operation: n为数组prices的长度，其中price[i]为第i天的股票价格
+cond27684=>condition: 第i天的股票价格大于最低买入价格
+op27644=>operation: i为天数，初值为1
+op27642=>operation: 定义变量profit等于0，表示利润
+io27701=>inputoutput: output:  返回利润
+st27633=>start: start maxProfit
+op27640=>operation: 定义变量buy等于第0天股票价格加上交易股票的手续费用，表示最低买入价格
+op27688=>operation: 令利润加上它们的差值
+e27699=>end: end function return
+op27690=>operation: 将最低买入价格更新为第i天的股票价格
+io27635=>inputoutput: input: self, prices, fee
+
+op27640->op27642
+cond27684(yes)->op27688
+op27642->op27644
+cond27675(yes)->op27679
+op27679->op1
+cond27684(no)->op1
+cond27647(no)->io27701
+op27690->op1
+op27638->op27640
+cond27647(yes)->cond27675
+op27688->op27690
+st27633->io27635
+io27701->e27699
+io27635->op27638
+cond27675(no)->cond27684
+op27644->cond27647
+op1->cond27647

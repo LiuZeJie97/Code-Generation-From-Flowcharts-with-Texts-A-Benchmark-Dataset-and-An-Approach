@@ -1,0 +1,11 @@
+def makeGood(self, s: str) -> str:    #io14947
+    ret = list()    #op14950
+    for ch in s:    #cond14955
+        if ret:    #cond14983
+            if ret[-1] != ch and ret[-1].lower() == ch.lower():    #cond14988
+                ret.pop()    #op14992
+            else:    #None
+                ret.append(ch)    #op14996
+        else:    #None
+            ret.append(ch)    #op15001
+    return "".join(ret)    #io15009

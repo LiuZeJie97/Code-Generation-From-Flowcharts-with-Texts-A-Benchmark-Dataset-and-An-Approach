@@ -1,0 +1,10 @@
+def intToRoman(self, num: int) -> str:    #io1119
+    hashmap = {1000:'M', 900:'CM', 500:'D', 400:'CD', 100:'C', 90:'XC', 50:'L', 40:'XL', 10:'X', 9:'IX', 5:'V', 4:'IV', 1:'I'}    #op1122
+    res = ''    #op1124
+    for key in hashmap:    #cond1129
+        if num // key == 0:    #cond1151
+            continue    #None
+        count = num// key    #op1160
+        res += hashmap[key] * count    #op1162
+        num %= key    #op1164
+    return res    #io1171

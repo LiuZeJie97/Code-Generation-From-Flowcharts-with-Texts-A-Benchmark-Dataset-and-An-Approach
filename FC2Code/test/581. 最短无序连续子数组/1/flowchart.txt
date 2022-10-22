@@ -1,0 +1,46 @@
+op23294=>operation: 更新当前位置为止的最大值等于数组下标为i的元素
+op23336=>operation: 更新左界等于i
+io23344=>inputoutput: output:  如果左右界之差加1大于0，返回左右界之差加1，否则，返回0
+op23267=>operation: 使用max_num，保存到当前位置为止的最大值，初值为数组第一个元素
+cond23272=>condition: i小于数组长度
+op1=>operation: i自增1
+cond23310=>condition: i小于数组长度
+op23263=>operation: n为数组nums的长度。
+op23305=>operation: 初始化min_num，保存到当前位置为止的最小值，初值为数组最后一个元素
+op23265=>operation: 初始化右界right等于0，
+st23258=>start: start findUnsortedSubarray
+e23342=>end: end function return
+io23260=>inputoutput: input: self, nums
+cond23328=>condition: 若数组下标为i的元素小于等于当前位置为止的最小值
+op23307=>operation: i等于数组长度减一
+op2=>operation: i自减1
+cond23290=>condition: 若数组下标为i的元素大于等于当前位置为止的最大值
+op23303=>operation: 初始化左界left数组长度
+op23332=>operation: 更新当前位置为止的最小值等于数组下标为i的元素
+op23298=>operation: 更新右界等于i
+op23269=>operation: i等于0
+
+cond23328(no)->op23336
+io23260->op23263
+op23263->op23265
+op1->cond23272
+op23265->op23267
+io23344->e23342
+op23332->op2
+op23305->op23307
+op23267->op23269
+st23258->io23260
+op23294->op1
+cond23290(yes)->op23294
+op23307->cond23310
+op23303->op23305
+cond23310(yes)->cond23328
+op23336->op2
+op23298->op1
+op2->cond23310
+op23269->cond23272
+cond23328(yes)->op23332
+cond23290(no)->op23298
+cond23272(no)->op23303
+cond23310(no)->io23344
+cond23272(yes)->cond23290

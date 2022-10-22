@@ -1,0 +1,10 @@
+def singleNonDuplicate(self, nums: List[int]) -> int:    #io21462
+    low, high = 0, len(nums) - 1    #op21465
+    while low < high:    #cond21468
+        pivot = (low + high) // 2    #op21489
+        pivot -= pivot % 2    #op21491
+        if nums[pivot] == nums[pivot + 1]:    #cond21494
+            low = pivot + 2    #op21498
+        else:    #None
+            high = pivot    #op21502
+    return nums[low]    #io21510

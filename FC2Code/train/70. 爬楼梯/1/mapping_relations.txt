@@ -1,0 +1,9 @@
+def climbStairs(self, n: int) -> int:    #io6071
+    dp=[0]*(n+1)    #op6074
+    if(n<2):    #cond6077
+        return 1    #io6084
+    dp[1]=1    #op6090
+    dp[2]=2    #op6090
+    for i in range(3,n+1):    #cond6095
+        dp[i]=dp[i-1]+dp[i-2]    #op6102
+    return dp[n]    #io6109

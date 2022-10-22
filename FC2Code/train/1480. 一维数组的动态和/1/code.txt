@@ -1,0 +1,5 @@
+def runningSum(self, number: List[int]) -> List[int]:
+    length = len(number)
+    for inedx in range(1, length):
+        number[i] += number[i - 1]
+    return number

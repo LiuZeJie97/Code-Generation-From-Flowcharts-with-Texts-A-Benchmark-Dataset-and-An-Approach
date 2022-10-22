@@ -1,0 +1,24 @@
+op37189=>operation: 令目标值除以2
+op37198=>operation: 最小操作数加上初始值与目标值的差值
+op37160=>operation: 定义变量ans等于0，用于记录最小操作数
+cond37185=>condition: 目标值可以整除2
+io37203=>inputoutput: output:  返回最小操作数
+st37155=>start: start brokenCalc
+cond37163=>condition: 目标值target大于初始值startValue
+e37201=>end: end function return
+io37157=>inputoutput: input: self, startValue, target
+op37193=>operation: 令目标值加一
+op37182=>operation: 令最小操作数加一
+
+op37189->cond37163
+io37203->e37201
+st37155->io37157
+op37193->cond37163
+cond37185(yes)->op37189
+cond37163(yes)->op37182
+op37182->cond37185
+cond37163(no)->op37198
+op37160->cond37163
+op37198->io37203
+cond37185(no)->op37193
+io37157->op37160

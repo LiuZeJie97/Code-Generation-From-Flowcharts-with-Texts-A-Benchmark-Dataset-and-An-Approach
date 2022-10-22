@@ -1,0 +1,35 @@
+op8337=>operation: 定义长度为n的数组nums，数组元素均等于0
+op8363=>operation: 令数组nums中下标为起始航班编号减一的元素加上座位数
+op8361=>operation: 定义起始航班编号left、终点航班编号right、座位数inc分别等于航班预定表中第i条预定记录下标为0、1、2的元素
+op8377=>operation: 数组下标i等于1
+op2=>operation: 数组下标加一
+io8394=>inputoutput: output:  返回上述数组
+io8334=>inputoutput: input: self, bookings, n
+e8392=>end: end function return
+op8370=>operation: 令上述数组中下标为终点航班编号的元素减去座位数
+st8332=>start: start corpFlightBookings
+cond8366=>condition: 终点航班编号小于上述数组的长度
+op8339=>operation: 预定记录索引i等于0
+op8387=>operation: 令数组中当前下标位置的元素加上当前下标左边位置的元素
+cond8380=>condition: 数组下标小于数组nums的长度
+cond8342=>condition: 预定记录索引小于航班预定表bookings的长度
+op1=>operation: 预定记录索引加一
+
+cond8366(yes)->op8370
+cond8366(no)->op1
+op2->cond8380
+st8332->io8334
+op8370->op1
+op8337->op8339
+cond8380(yes)->op8387
+op1->cond8342
+cond8342(no)->op8377
+cond8380(no)->io8394
+op8377->cond8380
+op8361->op8363
+io8334->op8337
+cond8342(yes)->op8361
+op8339->cond8342
+op8363->cond8366
+op8387->op2
+io8394->e8392

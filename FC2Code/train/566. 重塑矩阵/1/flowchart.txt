@@ -1,0 +1,27 @@
+e22816=>end: end function return
+e22791=>end: end function return
+op22801=>operation: x为数组下标
+op1=>operation: 数组下标增加1
+op22799=>operation: 定义二维数组ans，其行数为重构矩阵列数，列数为重构矩阵行数，初值均为0，用于记录重塑矩阵结果
+cond22786=>condition: 数组nums的行数与列数的乘积不等于重构矩阵行数r与列数c的乘积
+io22793=>inputoutput: output:  返回数组nums
+op22811=>operation: 数组ans中x//c行x%c列处的元素等于数组nums中x//col行x%col列处的元素
+cond22804=>condition: 数组下标小于数组nums的行数与列数的乘积
+io22818=>inputoutput: output:  返回重塑矩阵结果
+st22778=>start: start matrixReshape
+op22783=>operation: row为二维数组nums的行数，col为二维数组nums的列数
+io22780=>inputoutput: input: self, nums, r, c
+
+cond22786(no)->op22799
+io22780->op22783
+op22799->op22801
+cond22804(no)->io22818
+cond22786(yes)->io22793
+op1->cond22804
+op22811->op1
+op22783->cond22786
+op22801->cond22804
+st22778->io22780
+io22793->e22791
+cond22804(yes)->op22811
+io22818->e22816

@@ -1,0 +1,27 @@
+st11869=>start: start countOrders
+op11888=>operation: 定义结果变量ans等于1，模数mod等于10的9次方加7
+op1=>operation: 令上述变量加一
+op11902=>operation: 将结果变量ans的值更新为它自身、2倍的当前循环变量减一、当前循环变量这三者的乘积
+e11909=>end: end function return
+cond11893=>condition: 上述变量小于订单数加一
+op11904=>operation: 令结果变量等于它除以mod的余数
+e11880=>end: end function return
+cond11875=>condition: 订单数n等于1
+op11890=>operation: 定义变量t等于2
+io11911=>inputoutput: output:  返回结果变量
+io11882=>inputoutput: output:  返回1
+io11871=>inputoutput: input: self, n
+
+cond11893(yes)->op11902
+op11902->op11904
+op11888->op11890
+io11871->cond11875
+op11904->op1
+op11890->cond11893
+cond11893(no)->io11911
+io11882->e11880
+cond11875(no)->op11888
+io11911->e11909
+cond11875(yes)->io11882
+op1->cond11893
+st11869->io11871

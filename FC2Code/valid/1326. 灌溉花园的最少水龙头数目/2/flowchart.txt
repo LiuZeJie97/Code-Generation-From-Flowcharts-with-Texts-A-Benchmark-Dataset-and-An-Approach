@@ -1,0 +1,59 @@
+op11293=>operation: fur等于它与数组prev中下标为i的元素之间的最小值
+op11253=>operation: 定义变量bp等于花园长度，fur等于2的30次方
+op2=>operation: 令i等于i加一
+op3=>operation: 令i等于i加一
+op11314=>operation: 最少水龙头数目加一
+op11227=>operation: 将i添加进prev中
+st11210=>start: start minTaps
+op1=>operation: 令i等于i加一
+op11247=>operation: 若点r处的水龙头与ranges[i]的和值大于花园长度，变量r等于该和值，否则r等于0
+op11231=>operation: 定义变量i等于0
+cond11220=>condition: i小于花园长度n加一
+op11305=>operation: 将标志变量置为假
+op11217=>operation: 定义变量i等于0
+e11322=>end: end function return
+io11324=>inputoutput: output:  若标志变量为真，则返回最少水龙头数目，否则返回-1
+cond11301=>condition: fur大于等于i
+op11249=>operation: 数组prev中下标为r的元素等于它与l之间的最小值
+op11259=>operation: 定义变量i等于花园长度
+cond11234=>condition: i小于花园长度n加一
+op11312=>operation: bp等于fur
+cond11262=>condition: i大于0
+op11255=>operation: 定义标志变量f为真
+io11212=>inputoutput: input: self, n, ranges
+op11215=>operation: 初始化数组prev
+op11257=>operation: 定义变量ans等于0，用于记录最少水龙头数目
+op11245=>operation: 若点i处的水龙头与ranges[i]的差值大于0，变量l等于该差值，否则l等于0
+cond11296=>condition: i等于bp
+
+cond11262(yes)->op11293
+cond11301(yes)->op11305
+op3->cond11262
+cond11262(no)->io11324
+op11215->op11217
+op1->cond11220
+op11253->op11255
+op11247->op11249
+op11259->cond11262
+op11217->cond11220
+op11305->io11324
+op11257->op11259
+st11210->io11212
+cond11234(yes)->op11245
+cond11296(no)->op3
+op11293->cond11296
+cond11220(yes)->op11227
+op11249->op2
+cond11301(no)->op11312
+op11255->op11257
+cond11234(no)->op11253
+cond11296(yes)->cond11301
+op11231->cond11234
+io11324->e11322
+io11212->op11215
+cond11220(no)->op11231
+op11227->op1
+op11314->op3
+op11312->op11314
+op11245->op11247
+op2->cond11234

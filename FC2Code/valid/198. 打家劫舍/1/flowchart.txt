@@ -1,0 +1,29 @@
+io2495=>inputoutput: output:  返回0
+e2522=>end: end function return
+op2507=>operation: 定义数组nums的下标i等于2
+cond2488=>condition: 数组nums为空：
+cond2510=>condition: 数组下标小于n+1
+e2493=>end: end function return
+st2482=>start: start rob
+op1=>operation: 数组下标自增1
+op2505=>operation: 初始化第1个房屋的最高偷窃金额等于第1个房屋存放金额
+io2524=>inputoutput: output:  返回第n个房屋偷窃的最高金额
+op2501=>operation: n为数组的长度，其中nums[i]表示第i个房屋中存放的金额
+io2484=>inputoutput: input: self, nums
+op2503=>operation: 初始化dp=[0, ,0]为n+1的全零数组。dp[i]表示到第i个房屋的偷窃最高金额。
+op2517=>operation: 计算dp[i2]加nums[i1]的结果，比较该结果和dp[i1]的大小，并取较大值作为第i个房屋的偷窃最高金额
+
+op2505->op2507
+cond2510(no)->io2524
+op2507->cond2510
+io2524->e2522
+cond2488(yes)->io2495
+io2484->cond2488
+op2501->op2503
+st2482->io2484
+op2517->op1
+op1->cond2510
+cond2488(no)->op2501
+io2495->e2493
+cond2510(yes)->op2517
+op2503->op2505

@@ -1,0 +1,6 @@
+def maxCount(self, m: int, n: int, ops: List[List[int]]) -> int:    #io23891
+    mina, minb = m, n    #op23894
+    for a, b in ops:    #cond23899
+        mina = min(mina, a)    #op23908
+        minb = min(minb, b)    #op23910
+    return mina * minb    #io23917

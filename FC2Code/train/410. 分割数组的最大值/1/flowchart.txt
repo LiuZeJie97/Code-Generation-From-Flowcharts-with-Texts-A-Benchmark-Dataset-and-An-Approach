@@ -1,0 +1,48 @@
+op1=>operation: 令数组下标i自增1
+cond19966=>condition: 计算i与m之间的最小值再加一，判断j是否小于该值
+op2=>operation: 令数组下标j自增1
+op19891=>operation: 定义数组sub，数组中第一项为0
+cond19896=>condition: 对数组array进行遍历
+io20014=>inputoutput: output:  返回数组array的前n个数分割为m段最少能得到的值
+op19887=>operation: n为数组array的长度
+op19989=>operation: k为数组下标
+e20012=>end: end function return
+io19884=>inputoutput: input: self, array, m
+st19882=>start: start splitArray
+op19889=>operation: 初始化m+1行n+1列的二维数组f，其初值均为10的18次方，f[i][j]表示将数组array的前i个数分割为j段最少能得到的值
+op19893=>operation: elem为数组array中的元素
+cond19992=>condition: k小于i
+op19903=>operation: 计算数组sub中最后一项与当前元素的和，并将它添加进数组sub中
+op3=>operation: 令数组下标k自增1
+op19909=>operation: i为数组下标，初值为1
+op20001=>operation: 计算数组sub中下标为i的元素与下标为k的元素之间的差值，定义变量tmp等于该差值与数组array前k个数分割为j-1段最少能得到的值之间的最大值
+op20003=>operation: 若变量tmp大于数组array前i个数分割为j段最少能得到的值，则将该值更新为tmp
+cond19912=>condition: i小于数组array的长度加一
+op19963=>operation: j为数组下标，初值为1
+op19907=>operation: 将数组array的前0个数分割为0段最少能得到的值为0
+
+op20003->op3
+op19893->cond19896
+cond19992(no)->op2
+op19989->cond19992
+op20001->op20003
+io20014->e20012
+op1->cond19912
+op2->cond19966
+st19882->io19884
+cond19966(no)->op1
+cond19896(yes)->op19903
+cond19912(yes)->op19963
+op19891->op19893
+op19907->op19909
+cond19992(yes)->op20001
+cond19912(no)->io20014
+cond19966(yes)->op19989
+cond19896(no)->op19907
+op3->cond19992
+op19887->op19889
+op19909->cond19912
+op19903->cond19896
+op19963->cond19966
+io19884->op19887
+op19889->op19891

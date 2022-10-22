@@ -1,0 +1,14 @@
+def isPossibleDivide(self, number: List[int], k: int) -> bool:    #io10385
+    n = len(number)    #op10388
+    if n % k != 0:    #cond10391
+        return False    #io10398
+    number.sort()    #op10404
+    cnt = Counter(number)    #op10406
+    for i in range(n):    #cond10411
+        if cnt[number[i]] == 0:    #cond10469
+            continue    #None
+        for x in range(number[i], number[i] + k):    #cond10481
+            if cnt[x] == 0:    #cond10503
+                return False    #io10510
+            cnt[x] -= 1    #op10516
+    return True    #io10525

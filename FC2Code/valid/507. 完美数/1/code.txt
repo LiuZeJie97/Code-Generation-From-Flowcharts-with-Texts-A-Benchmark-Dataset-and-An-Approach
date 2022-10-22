@@ -1,0 +1,12 @@
+def checkPerfectaber(self, a: int) -> bool:
+    if a == 1:
+        return False
+    sum = 1
+    d = 2
+    while d * d <= a:
+        if a % d == 0:
+            sum += d
+            if d * d < a:
+                sum += a / d
+        d += 1
+    return sum == a

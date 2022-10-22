@@ -1,0 +1,28 @@
+e36102=>end: end function return
+io36056=>inputoutput: input: self, arr
+op36097=>operation: i加一
+cond36064=>condition: i加1小于数组的长度且该数组中下标为i的元素小于下标为i加1的元素
+op36059=>operation: 定义N为数组arr的长度
+e36081=>end: end function return
+cond36076=>condition: i等于0或数组的长度减一
+cond36090=>condition: i加1小于数组的长度且该数组中下标为i的元素大于下标为i加1的元素
+io36104=>inputoutput: output:  如果i等于数组的长度减一，则该数组是有效的山脉数组，否则它不是有效的山脉数组
+io36083=>inputoutput: output:  该数组不是有效的山脉数组
+st36054=>start: start validMountainArray
+op36061=>operation: 定义变量i等于0
+op36071=>operation: i加一
+
+st36054->io36056
+io36056->op36059
+op36097->cond36090
+op36059->op36061
+io36104->e36102
+op36071->cond36064
+cond36064(no)->cond36076
+cond36076(no)->cond36090
+cond36076(yes)->io36083
+op36061->cond36064
+io36083->e36081
+cond36090(yes)->op36097
+cond36090(no)->io36104
+cond36064(yes)->op36071

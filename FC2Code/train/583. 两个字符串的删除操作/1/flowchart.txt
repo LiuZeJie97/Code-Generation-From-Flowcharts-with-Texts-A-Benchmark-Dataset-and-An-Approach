@@ -1,0 +1,51 @@
+op23696=>operation: i为数组下标，初值为1
+e23803=>end: end function return
+op23795=>operation: 计算使字符串word1[0:i-1]和字符串word2[0:j]相同所需的最小步数与使字符串word1[0:i]和字符串word2[0:j-1]相同所需的最小步数之间的最小值，使字符串word1[0:i]和字符串word2[0:j]相同所需的最小步数等于该最小值加一
+cond23787=>condition: 字符串word1中下标为i-1的字符与字符串word2中下标为j-1的字符相同
+op2=>operation: 数组下标j增加1
+op23766=>operation: j为数组下标，初值为1
+op23724=>operation: i为数组下标，初值为1
+op3=>operation: 数组下标i增加1
+op23694=>operation: 定义二维分别是m+1,n+1的二维数组dp，其初值均为0，dp[i][j]表示使字符串word1[0:i]和字符串word2[0:j]相同所需的最小步数
+st23687=>start: start minDistance
+op23720=>operation: 使空字符串和字符串word2[0:j]相同所需的最小步数等于j
+cond23699=>condition: i小于字符串word1的长度加一
+io23805=>inputoutput: output:  返回使得字符串word1与字符串word2相同所需的最小步数
+io23689=>inputoutput: input: self, word1, word2
+op23710=>operation: j为数组下标，初值为1
+cond23713=>condition: j小于字符串word2的长度加一
+cond23769=>condition: j小于字符串word2的长度加一
+op1=>operation: 数组下标i增加1
+op23791=>operation: 使字符串word1[0:i]和字符串word2[0:j]相同所需的最小步数等于使字符串word1[0:i-1]和字符串word2[0:j-1]相同所需的最小步数
+op23692=>operation: m为字符串word1的长度，n为字符串word2的长度
+op4=>operation: 数组下标j增加1
+cond23727=>condition: i小于字符串word1的长度加一
+op23706=>operation: 使字符串word1[0:i]和空字符串相同所需的最小步数等于i
+
+op3->cond23727
+cond23727(yes)->op23766
+op2->cond23713
+cond23787(no)->op23795
+op23706->op1
+op23710->cond23713
+op23766->cond23769
+op23694->op23696
+cond23699(no)->op23710
+cond23787(yes)->op23791
+op23720->op2
+cond23699(yes)->op23706
+op23724->cond23727
+op23791->op4
+cond23713(no)->op23724
+cond23727(no)->io23805
+io23689->op23692
+cond23713(yes)->op23720
+op4->cond23769
+cond23769(no)->op3
+op1->cond23699
+io23805->e23803
+st23687->io23689
+op23696->cond23699
+op23692->op23694
+cond23769(yes)->cond23787
+op23795->op4

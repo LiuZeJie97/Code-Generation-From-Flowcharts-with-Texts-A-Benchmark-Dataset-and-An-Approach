@@ -1,0 +1,42 @@
+cond9915=>condition: 上述索引小于最大列数加一
+op1=>operation: 步数加一
+op9912=>operation: 索引j等于0
+io9971=>inputoutput: output:  返回steps次操作后指针指向索引0处的方案数对模数取模的结果
+io9839=>inputoutput: input: self, steps, arrLen
+cond9853=>condition: 上述步数小于steps+1
+op9959=>operation: i步操作后指针指向索引j的方案数等于它与i-1步操作后指针指向索引j+1的方案数的和
+op9949=>operation: i步操作后指针指向索引j的方案数等于它与i-1步操作后指针指向索引j-1的方案数的和
+st9837=>start: start numWays
+op2=>operation: 索引加一
+op9846=>operation: 定义steps+1行maxColumn+1列的二维数组dp，数组元素均为0，dp[i][j]表示i步操作后指针指向索引j的方案数
+op9842=>operation: 模数mod等于10的9次方加7
+op9942=>operation: i步操作后指针指向索引j的方案数等于i-1步操作后指针指向索引j的方案数
+cond9955=>condition: 当前索引加一小于等于最大列数
+e9969=>end: end function return
+op9850=>operation: 步数i等于1
+op9844=>operation: 最大列数maxColumn等于arrLen-1和steps之间的最小值
+op9848=>operation: i步操作后指针指向索引j的方案数等于1
+cond9945=>condition: 当前索引减一大于等于0
+
+op9942->cond9945
+cond9915(no)->op1
+op9959->op2
+op9844->op9846
+cond9853(no)->io9971
+op9848->op9850
+cond9955(no)->op2
+op1->cond9853
+io9839->op9842
+op2->cond9915
+st9837->io9839
+cond9955(yes)->op9959
+cond9915(yes)->op9942
+cond9853(yes)->op9912
+op9842->op9844
+op9949->cond9955
+cond9945(no)->cond9955
+op9850->cond9853
+op9846->op9848
+op9912->cond9915
+io9971->e9969
+cond9945(yes)->op9949

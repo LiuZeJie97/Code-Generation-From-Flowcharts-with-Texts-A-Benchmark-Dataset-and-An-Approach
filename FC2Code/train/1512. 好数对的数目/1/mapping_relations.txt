@@ -1,0 +1,7 @@
+def numIdenticalPairs(self, nums: List[int]) -> int:    #io14114
+    result = 0    #op14117
+    for x in range(len(nums)):    #cond14122
+        for y in range(x + 1, len(nums)):    #cond14160
+            if nums[x] == nums[y]:    #cond14176
+                result += 1    #op14180
+    return result    #io14192

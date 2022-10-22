@@ -1,0 +1,7 @@
+def maxChunksToSorted(self, arr: List[int]) -> int:    #io29745
+    res = ma = 0    #op29748
+    for i in range(len(arr)):    #cond29753
+        ma = max(ma, arr[i])    #op29770
+        if ma == i:    #cond29773
+            res += 1    #op29777
+    return res    #io29787

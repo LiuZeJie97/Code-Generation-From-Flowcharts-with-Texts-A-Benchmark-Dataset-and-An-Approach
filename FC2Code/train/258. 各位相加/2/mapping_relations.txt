@@ -1,0 +1,2 @@
+def addDigits(self, num: int) -> int:    #io18384
+    return (num - 1) % 9 + 1 if num else 0    #io18390

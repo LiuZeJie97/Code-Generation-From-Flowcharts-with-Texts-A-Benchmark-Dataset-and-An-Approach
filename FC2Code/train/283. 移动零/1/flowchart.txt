@@ -1,0 +1,22 @@
+st18866=>start: start moveZeroes
+e18911=>end: end moveZeroes
+cond18896=>condition: 数组A右指针R处元素不为0
+op18873=>operation: 定义左指针L，右指针R，其初值均为0
+cond18876=>condition: 右指针小于数组的长度
+op18900=>operation: 交换数组左指针L处元素和右指针处元素
+op18871=>operation: 定义N为数组A的长度
+op18907=>operation: 右指针加一
+op18902=>operation: 左指针加一
+io18868=>inputoutput: input: self, A
+
+cond18876(yes)->cond18896
+st18866->io18868
+cond18876(no)->e18911
+op18902->op18907
+cond18896(yes)->op18900
+op18907->cond18876
+op18900->op18902
+op18871->op18873
+io18868->op18871
+cond18896(no)->op18907
+op18873->cond18876

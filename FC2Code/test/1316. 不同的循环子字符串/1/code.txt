@@ -1,0 +1,14 @@
+def distinctEchoSubstrings(self, text: str) -> int:
+    n = len(text)
+    seen = set()
+    ans = 0
+    for a in range(n):
+        for b in range(a + 1, n):
+            if b * 2 - a <= n:
+                if text[a:b] in seen:
+                    continue
+                if text[a:b] != text[b:b * 2 - a]:
+                    continue
+                ans += 1
+                seen.add(text[a:b])
+    return ans

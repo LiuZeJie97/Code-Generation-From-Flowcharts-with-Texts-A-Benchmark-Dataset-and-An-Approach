@@ -1,0 +1,8 @@
+def powerfulIntegers(self, x: int, y: int, bound: int) -> List[int]:    #io36709
+    ans = set()    #op36712
+    for i in range(18):    #cond36717
+        for j in range(18):    #cond36759
+            v = x**i + y**j    #op36776
+            if v <= bound:    #cond36779
+                ans.add(v)    #op36783
+    return list(ans)    #io36795

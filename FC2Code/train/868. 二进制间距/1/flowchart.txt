@@ -1,0 +1,29 @@
+cond33451=>condition: 计算n右移i位的结果，如果该结果无法整除2
+op1=>operation: 数字位数加一
+io33475=>inputoutput: output:  返回答案
+op33460=>operation: 答案等于它与i-last之间的最大值
+op33465=>operation: 令上一个1的位置等于i
+io33415=>inputoutput: input: self, n
+op33422=>operation: i为数字位数
+cond33425=>condition: 当数字位数小于32
+cond33456=>condition: 如果上一个1的位置不等于1
+e33473=>end: end function return
+st33413=>start: start binaryGap
+op33420=>operation: 定义变量ans，初值为0，用于记录答案
+op33418=>operation: 定义变量last，初值为-1，用于记录上一个1的位置
+
+op1->cond33425
+cond33425(yes)->cond33451
+op33465->op1
+st33413->io33415
+io33415->op33418
+op33418->op33420
+cond33425(no)->io33475
+cond33456(no)->op33465
+cond33456(yes)->op33460
+op33422->cond33425
+cond33451(no)->op1
+io33475->e33473
+cond33451(yes)->cond33456
+op33460->op33465
+op33420->op33422

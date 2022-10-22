@@ -1,0 +1,28 @@
+op36306=>operation: 令当前元素进栈
+op36280=>operation: x为数组pushed中的元素
+op1=>operation: 当前元素下标加一
+op36276=>operation: 定义初值为0的变量j
+io36273=>inputoutput: input: self, pushed, popped
+op36320=>operation: j加一
+cond36283=>condition: 对于数组中每一个元素
+op36278=>operation: 定义栈stack
+cond36309=>condition: 下列条件均满足：栈不为空、j小于数组popped的长度、栈中最后一项小于数组popped中下标为j的项
+io36329=>inputoutput: output:  如果j等于数组popped的长度,返回True;否则返回False
+st36271=>start: start validateStackSequences
+op36318=>operation: 移除栈顶元素
+e36327=>end: end function return
+
+op36318->op36320
+op36278->op36280
+op36280->cond36283
+op1->cond36283
+st36271->io36273
+io36329->e36327
+op36320->cond36309
+cond36283(no)->io36329
+cond36309(yes)->op36318
+cond36283(yes)->op36306
+cond36309(no)->op1
+io36273->op36276
+op36306->cond36309
+op36276->op36278

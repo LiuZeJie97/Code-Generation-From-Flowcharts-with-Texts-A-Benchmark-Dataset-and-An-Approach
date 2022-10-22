@@ -1,0 +1,12 @@
+def findMinMoves(self, machines: List[int]) -> int:    #io21037
+    tot = sum(machines)    #op21040
+    n = len(machines)    #op21042
+    if tot % n:    #cond21045
+        return -1    #io21052
+    avg = tot // n    #op21058
+    ans, s = 0, 0    #op21060
+    for num in machines:    #cond21065
+        num -= avg    #op21076
+        s += num    #op21078
+        ans = max(ans, abs(s), num)    #op21080
+    return ans    #io21087

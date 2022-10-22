@@ -1,0 +1,29 @@
+io22358=>inputoutput: output:  返回标志变量
+st22292=>start: start canJump
+io22294=>inputoutput: input: self, array
+cond22332=>condition: 数组下标i小于等于最远可以到达的位置rightmost
+e22356=>end: end function return
+op22336=>operation: 若数组下标与数组中该下标对应的数之和大于最远可以到达的位置，则将最远可以到达的位置更新为它们的和
+op22299=>operation: 定义初值为False的标志变量arrive，用于记录是否可以到达数组中最后一个下标
+op22301=>operation: 定义i为数组array的下标
+cond22304=>condition: 数组下标小于数组的长度
+cond22339=>condition: 最远可以到达的位置大于等于数组长度减一
+op22297=>operation: length为数组array的长度；rightmost用于记录最远可以到达的位置，初值为0
+op1=>operation: 数组下标加一
+op22343=>operation: 可以到达最后一个下标
+
+st22292->io22294
+io22294->op22297
+cond22304(no)->io22358
+cond22332(yes)->op22336
+op22336->cond22339
+cond22339(no)->op1
+io22358->e22356
+cond22339(yes)->op22343
+op22299->op22301
+op22343->io22358
+cond22304(yes)->cond22332
+op22297->op22299
+op22301->cond22304
+cond22332(no)->op1
+op1->cond22304

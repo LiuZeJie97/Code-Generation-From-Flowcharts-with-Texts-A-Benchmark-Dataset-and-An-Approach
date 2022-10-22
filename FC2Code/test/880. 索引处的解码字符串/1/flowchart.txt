@@ -1,0 +1,46 @@
+op34365=>operation: 当前遍历字符c为字符串s中的字符
+e34445=>end: end function return
+op34394=>operation: 令size加一
+op1=>operation: 更新当前遍历字符
+io34447=>inputoutput: output:  返回当前遍历字符
+op34458=>operation: 将size更新为它整除int型的当前遍历字符的结果
+op34437=>operation: 令k等于它除以size的余数
+e34467=>end: end decodeAtIndex
+op34363=>operation: 定义变量size，初值为0
+op34462=>operation: 令size减一
+cond34404=>condition: 对字符串遍历
+op34401=>operation: 当前遍历字符c为字符串s中的字符
+op34390=>operation: 将size更新为它乘上int型的当前遍历字符的结果
+op2=>operation: 更新当前遍历字符
+cond34386=>condition: 如果当前遍历字符是数字
+cond34440=>condition: 如果k等于0并且当前遍历字符为字母
+cond34368=>condition: 对字符串遍历
+io34360=>inputoutput: input: self, s, k
+op34399=>operation: 字符串等于它翻转后的结果
+st34358=>start: start decodeAtIndex
+cond34454=>condition: 如果当前遍历字符是数字
+
+op34394->op1
+cond34368(no)->op34399
+cond34440(yes)->io34447
+op34399->op34401
+cond34454(yes)->op34458
+io34447->e34445
+op1->cond34368
+op34365->cond34368
+cond34454(no)->op34462
+cond34404(no)->e34467
+op34437->cond34440
+op34363->op34365
+op34458->op2
+cond34404(yes)->op34437
+op34462->op2
+op2->cond34404
+cond34386(no)->op34394
+cond34386(yes)->op34390
+op34390->op1
+io34360->op34363
+cond34368(yes)->cond34386
+op34401->cond34404
+cond34440(no)->cond34454
+st34358->io34360

@@ -1,0 +1,40 @@
+io36180=>inputoutput: input: self, a
+op36249=>operation: taken减一
+io36262=>inputoutput: output:  返回最少操作次数
+e36260=>end: end function return
+op36183=>operation: 定义计数数组count，其长度为200000，数组元素均为0
+cond36188=>condition: 对数组a进行遍历
+op36240=>operation: 令最少操作次数减去x乘以该元素减一的差值
+cond36204=>condition: 当x小于200000
+op36199=>operation: 定义初值为0的变量c，用于记录最少操作次数；定义初值为0的变量taken
+cond36245=>condition: taken大于0且计数数组中下标为x的元素等于0
+op1=>operation: x加一
+st36178=>start: start minIncrementForUnique
+op36238=>operation: 令taken加上该元素减一的差值
+op36185=>operation: x为数组a中的数
+op36195=>operation: 计数数组中下标为当前遍历数的元素加一
+op36251=>operation: 最少操作次数加上x
+op36201=>operation: 定义变量x，初值为0
+cond36234=>condition: 计数数组中下标为x的元素大于等于2
+
+op36183->op36185
+cond36245(yes)->op36249
+io36262->e36260
+cond36234(yes)->op36238
+op1->cond36204
+cond36188(no)->op36199
+op36249->op36251
+cond36204(yes)->cond36234
+cond36234(no)->cond36245
+cond36188(yes)->op36195
+op36251->op1
+op36195->cond36188
+op36238->op36240
+op36201->cond36204
+cond36245(no)->op1
+op36240->op1
+op36199->op36201
+io36180->op36183
+op36185->cond36188
+cond36204(no)->io36262
+st36178->io36180

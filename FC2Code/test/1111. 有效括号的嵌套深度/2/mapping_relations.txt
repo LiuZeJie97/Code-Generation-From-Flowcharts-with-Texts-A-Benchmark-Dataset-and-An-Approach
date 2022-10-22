@@ -1,0 +1,9 @@
+def maxDepthAfterSplit(self, seq: str) -> List[int]:    #io8484
+    res = list()    #op8487
+    for i in range(len(seq)):    #cond8492
+        d = i % 2    #op8511
+        if seq[i] == '(':    #cond8514
+            res.append(d)    #op8518
+        else:    #None
+            res.append(1 - d)    #op8522
+    return res    #io8530

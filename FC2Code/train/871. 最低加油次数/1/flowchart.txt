@@ -1,0 +1,47 @@
+op3=>operation: i等于i加一
+st33484=>start: start minRefuelStops
+io33486=>inputoutput: input: self, target, startFuel, stations
+op33569=>operation: 定义初值为0的变量i为数组下标
+op33535=>operation: t为数组下标，初值为i
+e33604=>end: end function return
+op33567=>operation: 定义变量ans，初值为-1，用于记录最低加油次数
+op33594=>operation: 将最低加油次数的值更新为i
+op33491=>operation: 加0次油能走的最远距离等于最初的燃料数startFuel
+cond33554=>condition: 加t次油能走的最远距离大于当前加油站的位置
+cond33496=>condition: 对该数组进行遍历
+op2=>operation: t等于t减一
+op33533=>operation: 定义变量location等于当前遍历子数组中第一项元素，表示当前加油站的位置；变量capacity当前遍历子数组中最后一项元素，表示当前加油站的燃料数
+op33489=>operation: 初始化数组dp，长度为数组stations的长度加一，数组元素初值均为0，dp[i]表示加i次油能走的最远距离
+cond33590=>condition: 加i次油能走的最远距离大于目的地target
+cond33572=>condition: i小于数组dp的长度
+op1=>operation: 当前数组下标加一，当前遍历子数组移动至数组中下一个子数组
+op33558=>operation: 计算加t次油能走的最远距离与当前加油站的燃料数的和，加t+1次油能走的最远距离等于它与上述计算结果之间的最大值
+op33493=>operation: 定义初值为0的变量i为数组下标，station为数组stations中下标为i的子数组
+cond33538=>condition: 当t大于-1
+io33606=>inputoutput: output:  返回最低加油次数
+
+io33486->op33489
+cond33496(no)->op33567
+cond33538(no)->op1
+io33606->e33604
+op33533->op33535
+op33493->cond33496
+cond33572(no)->io33606
+op1->cond33496
+op33567->op33569
+op33569->cond33572
+cond33590(no)->op3
+cond33554(yes)->op33558
+st33484->io33486
+cond33590(yes)->op33594
+op33491->op33493
+op33594->io33606
+cond33572(yes)->cond33590
+op33535->cond33538
+cond33538(yes)->cond33554
+op33558->op2
+cond33496(yes)->op33533
+op3->cond33572
+op33489->op33491
+cond33554(no)->op2
+op2->cond33538

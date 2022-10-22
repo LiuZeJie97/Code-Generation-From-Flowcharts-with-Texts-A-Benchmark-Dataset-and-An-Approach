@@ -1,0 +1,24 @@
+op18845=>operation: 上界更新为中间值减一
+cond18841=>condition: 数组中间值元素大于等于数组的长度与中间值的差值
+op18816=>operation: 定义变量lo初值为0，表示下界；定义变量hi初值为数组的长度减一，表示上界
+io18857=>inputoutput: output:  返回数组的长度与下界的差值
+cond18819=>condition: 当下界小于等于上界
+st18809=>start: start hIndex
+op18838=>operation: 定义中间值mi等于上界与下界的差值整除2再加上下界
+io18811=>inputoutput: input: self, citations
+op18814=>operation: 定义n为数组citations的长度
+e18855=>end: end function return
+op18849=>operation: 下界更新为中间值加一
+
+cond18841(no)->op18849
+op18814->op18816
+cond18841(yes)->op18845
+op18845->cond18819
+cond18819(no)->io18857
+io18857->e18855
+op18816->cond18819
+cond18819(yes)->op18838
+st18809->io18811
+op18849->cond18819
+op18838->cond18841
+io18811->op18814

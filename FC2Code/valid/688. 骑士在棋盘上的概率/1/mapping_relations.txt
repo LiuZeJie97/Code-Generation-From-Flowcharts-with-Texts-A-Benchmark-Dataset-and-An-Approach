@@ -1,0 +1,13 @@
+def knightProbability(self, n: int, k: int, row: int, column: int) -> float:    #io25479
+    dp = [[[0] * n for _ in range(n)] for _ in range(k + 1)]    #op25482
+    for step in range(k + 1):    #cond25487
+        for i in range(n):    #cond25701
+            for j in range(n):    #cond25807
+                if step == 0:    #cond25857
+                    dp[step][i][j] = 1    #op25861
+                else:    #None
+                    for di, dj in ((-2, -1), (-2, 1), (2, -1), (2, 1), (-1, -2), (-1, 2), (1, -2), (1, 2)):    #cond25868
+                        ni, nj = i + di, j + dj    #op25885
+                        if 0 <= ni < n and 0 <= nj < n:    #cond25888
+                            dp[step][i][j] += dp[step - 1][ni][nj] / 8    #op25892
+    return dp[k][row][column]    #io25909

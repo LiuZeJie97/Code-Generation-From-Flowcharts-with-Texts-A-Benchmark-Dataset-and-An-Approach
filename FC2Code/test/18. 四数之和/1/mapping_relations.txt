@@ -1,0 +1,36 @@
+def fourSum(self, LIST: List[int], target: int) -> List[List[int]]:    #io1781
+    quadruplets = list()    #op1784
+    if not LIST or len(LIST) < 4:    #cond1787
+        return quadruplets    #io1794
+    LIST.sort()    #op1800
+    length = len(LIST)    #op1802
+    for i in range(length - 3):    #cond1807
+        if i > 0 and LIST[i] == LIST[i - 1]:    #cond2141
+            continue    #None
+        if LIST[i] + LIST[i + 1] + LIST[i + 2] + LIST[i + 3] > target:    #cond2151
+            break    #None
+        if LIST[i] + LIST[length - 3] + LIST[length - 2] + LIST[length - 1] < target:    #cond2161
+            continue    #None
+        for j in range(i + 1, length - 2):    #cond2173
+            if j > i + 1 and LIST[j] == LIST[j - 1]:    #cond2323
+                continue    #None
+            if LIST[i] + LIST[j] + LIST[j + 1] + LIST[j + 2] > target:    #cond2333
+                break    #None
+            if LIST[i] + LIST[j] + LIST[length - 2] + LIST[length - 1] < target:    #cond2343
+                continue    #None
+            left, right = j + 1, length - 1    #op2352
+            while left < right:    #cond2355
+                total = LIST[i] + LIST[j] + LIST[left] + LIST[right]    #op2412
+                if total == target:    #cond2415
+                    quadruplets.append([LIST[i], LIST[j], LIST[left], LIST[right]])    #op2419
+                    while left < right and LIST[left] == LIST[left + 1]:    #cond2422
+                        left += 1    #op2429
+                    left += 1    #op2433
+                    while left < right and LIST[right] == LIST[right - 1]:    #cond2436
+                        right -= 1    #op2443
+                    right -= 1    #op2447
+                elif total < target:    #cond2452
+                    left += 1    #op2456
+                else:    #None
+                    right -= 1    #op2460
+    return quadruplets    #io2473

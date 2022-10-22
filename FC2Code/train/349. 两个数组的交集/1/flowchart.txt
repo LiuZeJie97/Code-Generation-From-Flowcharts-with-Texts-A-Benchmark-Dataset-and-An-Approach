@@ -1,0 +1,44 @@
+cond19572=>condition: num1小于num2
+cond19551=>condition: num1等于num2
+op19500=>operation: 定义变量index1，表示数组nums1的指针，定义变量index2，表示数组nums2的指针，其初值均为0
+e19587=>end: end function return
+cond19556=>condition: 数组intersection为空或该数组中最后一项元素等于num1
+io19489=>inputoutput: input: self, nums1, nums2
+op19548=>operation: 定义num2为数组nums2的指针处的元素
+op19546=>operation: 定义num1为数组nums1的指针处的元素
+op19496=>operation: length1为数组nums1的长度，length2为数组nums2的长度
+cond19503=>condition: 当数组nums1的指针小于数组nums1的长度且数组nums2的指针小于数组nums2的长度
+op19498=>operation: 定义数组intersection，表示两个数组的交集
+st19487=>start: start intersection
+op19494=>operation: 对数组nums2进行排序
+op19580=>operation: 数组nums2的指针加一
+op19567=>operation: 数组nums2的指针加一
+op19576=>operation: 数组nums1的指针加一
+op19560=>operation: 将num1添加进该数组
+op19565=>operation: 数组nums1的指针加一
+io19589=>inputoutput: output:  返回两个数组的交集
+op19492=>operation: 对数组nums1进行排序
+
+cond19503(yes)->op19546
+cond19503(no)->io19589
+op19576->cond19503
+op19494->op19496
+st19487->io19489
+cond19551(no)->cond19572
+op19498->op19500
+op19548->cond19551
+op19560->op19565
+cond19556(yes)->op19560
+op19500->cond19503
+io19589->e19587
+op19492->op19494
+op19580->cond19503
+cond19572(no)->op19580
+io19489->op19492
+cond19551(yes)->cond19556
+cond19556(no)->op19565
+op19565->op19567
+op19546->op19548
+cond19572(yes)->op19576
+op19496->op19498
+op19567->cond19503

@@ -1,0 +1,20 @@
+def findNumberOfLIS(self, a: List[int]) -> int:    #io25090
+    n, max_len, ans = len(a), 0, 0    #op25093
+    dp = [0] * n    #op25095
+    cnt = [0] * n    #op25097
+    for i, x in enumerate(a):    #cond25102
+        dp[i] = 1    #op25203
+        cnt[i] = 1    #op25205
+        for j in range(i):    #cond25210
+            if x > a[j]:    #cond25246
+                if dp[j] + 1 > dp[i]:    #cond25251
+                    dp[i] = dp[j] + 1    #op25255
+                    cnt[i] = cnt[j]    #op25257
+                elif dp[j] + 1 == dp[i]:    #cond25262
+                    cnt[i] += cnt[j]    #op25266
+        if dp[i] > max_len:    #cond25278
+            max_len = dp[i]    #op25282
+            ans = cnt[i]    #op25284
+        elif dp[i] == max_len:    #cond25289
+            ans += cnt[i]    #op25293
+    return ans    #io25304

@@ -1,0 +1,7 @@
+def minCostClimbingStairs(self, cost: List[int]) -> int:
+    n = len(cost)
+    prev = curr = 0
+    for x in range(2, n + 1):
+        nxt = min(curr + cost[x - 1], prev + cost[x - 2])
+        prev, curr = curr, nxt
+    return curr

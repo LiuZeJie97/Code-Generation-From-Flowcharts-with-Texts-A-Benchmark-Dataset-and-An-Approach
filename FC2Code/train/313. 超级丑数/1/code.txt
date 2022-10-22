@@ -1,0 +1,13 @@
+def nthSuperUglyNumber(self, n: int, primes: List[int]) -> int:
+    sun = [0] * (n + 1)
+    m = len(primes)
+    pointers = [0] * m
+    nums = [1] * m
+    for a in range(1, n + 1):
+        min_num = min(nums)
+        sun[a] = min_num
+        for b in range(m):
+            if nums[b] == min_num:
+                pointers[b] += 1
+                nums[b] = sun[pointers[b]] * primes[b]
+    return sun[n]

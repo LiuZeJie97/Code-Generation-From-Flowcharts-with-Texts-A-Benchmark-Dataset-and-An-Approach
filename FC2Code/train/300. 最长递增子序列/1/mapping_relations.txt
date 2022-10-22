@@ -1,0 +1,10 @@
+def lengthOfLIS(self, nums: List[int]) -> int:    #io4009
+    if(not nums):    #cond4013
+        return 0    #io4020
+    n=len(nums)    #op4026
+    dp=[1]*n    #op4028
+    for i in range(n):    #cond4033
+        for j in range(i):    #cond4071
+            if(nums[i]>nums[j]):    #cond4087
+                dp[i]=max(dp[i],dp[j]+1)    #op4091
+    return max(dp)    #io4103

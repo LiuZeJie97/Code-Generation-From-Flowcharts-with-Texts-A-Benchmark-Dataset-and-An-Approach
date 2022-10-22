@@ -1,0 +1,12 @@
+def convert(self, s: str, numRows: int) -> str:
+    n, r = len(s), numRows
+    if r == 1 or r >= n:
+        return s
+    t = r * 2 - 2
+    ans = []
+    for m in range(r):
+        for n in range(0, n - m, t):
+            ans.append(s[n + m])
+            if 0 < m < r - 1 and n + t - m < n:
+                ans.append(s[n + t - m])
+    return ''.join(ans)

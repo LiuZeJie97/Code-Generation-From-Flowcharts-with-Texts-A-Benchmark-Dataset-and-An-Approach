@@ -1,0 +1,16 @@
+def isInterleave(self, s1: str, s2: str, s3: str) -> bool:    #io6893
+    len1=len(s1)    #op6896
+    len2=len(s2)    #op6896
+    len3=len(s3)    #op6896
+    if(len1+len2!=len3):    #cond6899
+        return False    #io6906
+    dp=[[False]*(len2+1) for i in range(len1+1)]    #op6912
+    dp[0][0]=True    #op6914
+    for x in range(1,len1+1):    #cond6919
+        dp[x][0]=(dp[x-1][0] and s1[x-1]==s3[x-1])    #op6926
+    for y in range(1,len2 + 1):    #cond6933
+        dp[0][y]=(dp[0][y-1] and s2[y-1]==s3[y-1])    #op6940
+    for x in range(1,len1+1):    #cond6947
+        for y in range(1,len2+1):    #cond6969
+            dp[i][j]=(dp[i][j-1] and s2[j-1]==s3[i+j-1]) or (dp[i-1][j] and s1[i-1]==s3[i+j-1])    #op6976
+    return dp[-1][-1]    #io6985

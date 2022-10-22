@@ -1,0 +1,36 @@
+op11005=>operation: 定义标志变量sgn，初值为False
+cond11040=>condition: 字符0没有出现在上述运算结果中
+e11059=>end: end function return
+op11033=>operation: 令A等于i
+io11069=>inputoutput: output:  返回空列表
+io11061=>inputoutput: output:  返回A、B组成的列表
+op11044=>operation: 将标志变量置为True
+op11035=>operation: 令B等于n减i
+st10998=>start: start getNoZeroIntegers
+op11003=>operation: 定义变量A、B，其初值均为0
+op11007=>operation: 定义循环变量i，初值为1
+io11000=>inputoutput: input: self, n
+e11067=>end: end function return
+cond11010=>condition: 循环变量小于n
+op1=>operation: 令当前循环变量自增1
+cond11054=>condition: 标志变量为真
+op11037=>operation: 将A，B转化为字符串，定义字符串res等于它们相加的结果
+
+st10998->io11000
+op11007->cond11010
+op11035->op11037
+cond11054(no)->io11069
+op11003->op11005
+op11005->op11007
+cond11054(yes)->io11061
+cond11040(yes)->op11044
+cond11010(yes)->op11033
+io11061->e11059
+cond11040(no)->op1
+op11037->cond11040
+op1->cond11010
+io11069->e11067
+io11000->op11003
+op11044->cond11054
+op11033->op11035
+cond11010(no)->cond11054

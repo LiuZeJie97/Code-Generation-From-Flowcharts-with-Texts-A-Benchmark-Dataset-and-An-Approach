@@ -1,0 +1,10 @@
+def jump(self, array: List[int]) -> int:
+    length = len(array)
+    maxPos, end, step = 0, 0, 0
+    for i in range(length - 1):
+        if maxPos >= i:
+            maxPos = max(maxPos, i + array[i])
+            if i == end:
+                end = maxPos
+                step += 1
+    return step

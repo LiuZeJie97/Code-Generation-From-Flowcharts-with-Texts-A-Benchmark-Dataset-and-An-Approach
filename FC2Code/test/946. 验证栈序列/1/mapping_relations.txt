@@ -1,0 +1,9 @@
+def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:    #io36273
+    j = 0    #op36276
+    stack = []    #op36278
+    for x in pushed:    #cond36283
+        stack.append(x)    #op36306
+        while stack and j < len(popped) and stack[-1] == popped[j]:    #cond36309
+            stack.pop()    #op36318
+            j += 1    #op36320
+    return j == len(popped)    #io36329

@@ -1,0 +1,10 @@
+def distinctSubseqII(self, S):    #io35995
+    mod = 10**9 + 7    #op35998
+    dp = [1]    #op36000
+    last = {}    #op36002
+    for i, x in enumerate(S):    #cond36007
+        dp.append(dp[-1] * 2)    #op36026
+        if x in last:    #cond36029
+            dp[-1] -= dp[last[x]]    #op36033
+        last[x] = i    #op36038
+    return (dp[-1] - 1) % mod    #io36045

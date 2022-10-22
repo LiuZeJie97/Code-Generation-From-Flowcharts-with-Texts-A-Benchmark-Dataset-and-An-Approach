@@ -1,0 +1,12 @@
+def modifyString(self, s: str) -> str:    #io15232
+    res = list(s)    #op15235
+    length = len(res)    #op15237
+    for index in range(length):    #cond15242
+        if res[index] == '?':    #cond15294
+            for b in "abc":    #cond15301
+                if index > 0 and res[index - 1] == b or index < length - 1 and res[index + 1] == b:    #cond15321
+                    continue    #None
+                else:    #None
+                    res[index] = b    #op15329
+                    break    #None
+    return ''.join(res)    #io15344

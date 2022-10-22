@@ -1,0 +1,32 @@
+def threeSumMulti(self, arr: List[int], target: int) -> int:    #io35367
+    MOD = 10**9 + 7    #op35370
+    count = [0] * 101    #op35372
+    for x in arr:    #cond35377
+        count[x] += 1    #op35384
+    ans = 0    #op35388
+    for x in range(101):    #cond35393
+        for y in range(x+1, 101):    #cond35439
+            z = target - x - y    #op35458
+            if y < z <= 100:    #cond35461
+                ans += count[x] * count[y] * count[z]    #op35465
+                ans %= MOD    #op35467
+    for x in range(101):    #cond35479
+        z = target - 2*x    #op35500
+        if x < z <= 100:    #cond35503
+            ans += count[x] * (count[x] - 1) * count[z]    #op35507
+            ans /= 2    #op35509
+            ans %= MOD    #op35511
+    for x in range(101):    #cond35521
+        if (target - x) % 2 == 0:    #cond35551
+            y = (target - x) / 2    #op35555
+            if x < y <= 100:    #cond35558
+                ans += count[x] * count[y] * (count[y] - 1)    #op35562
+                ans /= 2    #op35564
+                ans %= MOD    #op35566
+    if target % 3 == 0:    #cond35577
+        x = target / 3    #op35581
+        if 0 <= x <= 100:    #cond35584
+            ans += count[x] * (count[x] - 1) * (count[x] - 2)    #op35588
+            ans /= 6    #op35590
+            ans %= MOD    #op35592
+    return ans    #io35603

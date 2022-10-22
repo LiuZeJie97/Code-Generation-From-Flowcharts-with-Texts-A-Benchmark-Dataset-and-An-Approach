@@ -1,0 +1,53 @@
+op27157=>operation: 将当前元素添加进堆叠高度列表
+op27030=>operation: 初始化数组qans，其长度等于数组positions的长度，初值均为0
+op27117=>operation: 数组qans中下标为j的元素等于它与下标为i的元素之间的最大值
+cond27149=>condition: 如果堆叠高度列表不为空
+e27163=>end: end function return
+op27108=>operation: 定义left2等于当前遍历数组下标为j的元素的第一项，size2等于当前遍历数组下标为j的元素的最后一项，
+cond27131=>condition: 对数组遍历
+op27082=>operation: 定义变量right等于当前遍历数对中两个数的和
+op27084=>operation: 数组qans中下标为i的元素等于size
+op27128=>operation: 遍历元素x用于遍历数组qans中的元素，初值为被遍历数组的第一项
+op1=>operation: 当前数组下标加一，并将当前遍历元素更新当前数组下标对应位置处的元素
+op27032=>operation: i为数组下标，当前遍历数对(left, size)为数组positions中当前数组下标处的元素
+op27110=>operation: 定义变量right2等于left2与size2的和
+op2=>operation: 该数组下标加一
+op27126=>operation: 定义数组ans，表示堆叠高度列表
+op3=>operation: 将当前元素更新为数组中的下一项
+cond27035=>condition: 对数组进行遍历
+cond27089=>condition: 该数组下标小于数组positions的长度
+io27027=>inputoutput: input: self, positions
+op27086=>operation: j为数组下标，其初值为i+1
+io27165=>inputoutput: output:  返回堆叠高度列表
+op27153=>operation: 计算堆叠高度列表中最后一项与当前元素之间的最大值，将该值添加进堆叠高度列表
+st27025=>start: start fallingSquares
+cond27113=>condition: 如果left2小于right且left小于right2
+
+cond27131(no)->io27165
+op27082->op27084
+op27128->cond27131
+op27126->op27128
+io27165->e27163
+op27084->op27086
+cond27035(yes)->op27082
+op2->cond27089
+op27157->op3
+op27153->op3
+op27086->cond27089
+cond27149(yes)->op27153
+cond27113(yes)->op27117
+io27027->op27030
+op1->cond27035
+op27032->cond27035
+op3->cond27131
+st27025->io27027
+cond27089(yes)->op27108
+cond27113(no)->op2
+op27030->op27032
+op27110->cond27113
+cond27035(no)->op27126
+op27117->op2
+cond27131(yes)->cond27149
+cond27149(no)->op27157
+cond27089(no)->op1
+op27108->op27110

@@ -1,0 +1,16 @@
+def reachingPoints(self, sx: int, sy: int, tx: int, ty: int) -> bool:
+    flag = False
+    while sx < tx != ty > sy:
+        if tx > ty:
+            tx = tx % ty
+        else:
+            ty = ty % tx
+    if tx == sx and ty == sy:
+        flag = True
+    elif tx == sx:
+        if ty > sy and (ty - sy) % tx == 0:
+            flag = True
+    elif ty == sy:
+        if tx > sx and (tx - sx) % ty == 0:
+            flag = True
+    return flag

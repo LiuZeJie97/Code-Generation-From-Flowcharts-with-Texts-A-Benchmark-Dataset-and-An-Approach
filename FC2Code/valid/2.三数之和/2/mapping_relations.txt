@@ -1,0 +1,27 @@
+def threeSum(self, nums:List[int])->List[List[int]]:    #io2914
+    n=len(nums)    #op2917
+    if(not nums or n<3):    #cond2920
+        return []    #io2927
+    nums.sort()    #op2933
+    res=[]    #op2935
+    for i in range(n):    #cond2940
+        if(nums[i]>0):    #cond3076
+            return res    #io3083
+        if(i>0 and nums[i]==nums[i-1]):    #cond3090
+            continue    #None
+        L=i+1    #op3099
+        R=n-1    #op3099
+        while(L<R):    #cond3102
+                if(nums[i]+nums[L]+nums[R]==0):    #cond3156
+                    res.append([nums[i],nums[L],nums[R]])    #op3160
+                    while(L<R and nums[L]==nums[L+1]):    #cond3163
+                        L=L+1    #op3170
+                    while(L<R and nums[R]==nums[R-1]):    #cond3175
+                        R=R-1    #op3182
+                    L=L+1    #op3186
+                    R=R-1    #op3186
+                elif(nums[i]+nums[L]+nums[R]>0):    #cond3191
+                    R=R-1    #op3195
+                else:    #None
+                    L=L+1    #op3199
+    return res    #io3210

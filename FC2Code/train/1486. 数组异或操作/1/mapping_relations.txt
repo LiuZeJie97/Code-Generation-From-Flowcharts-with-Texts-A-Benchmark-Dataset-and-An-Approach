@@ -1,0 +1,5 @@
+def xorOperation(self, n: int, start: int) -> int:    #io13141
+    op = 0    #op13144
+    for t in range(n):    #cond13149
+        op ^= (start + t * 2)    #op13156
+    return op    #io13163

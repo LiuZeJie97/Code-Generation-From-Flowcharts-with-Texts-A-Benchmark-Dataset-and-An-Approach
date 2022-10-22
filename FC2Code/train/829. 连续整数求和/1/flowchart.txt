@@ -1,0 +1,38 @@
+op31780=>operation: 定义初值为1的变量ans用于记录满足条件的组数
+op31824=>operation: n等于n整除d
+e31847=>end: end function return
+st31763=>start: start consecutiveNumbersSum
+op31830=>operation: 令满足条件的组数乘e加一的和
+io31849=>inputoutput: output:  返回满足条件的组数
+op31776=>operation: n等于n整除2
+op31812=>operation: 定义变量e等于0
+cond31785=>condition: 若d乘以d小于等于n
+cond31769=>condition: 若n可以整除2
+cond31837=>condition: 若n大于1
+cond31815=>condition: 若n可以整除d
+op31826=>operation: e加一
+op31782=>operation: 定义变量d等于3
+io31765=>inputoutput: input: self, n
+op31832=>operation: d加2
+op31841=>operation: 令满足条件的组数乘2
+
+op31776->cond31769
+cond31815(yes)->op31824
+op31832->cond31785
+io31765->cond31769
+op31824->op31826
+cond31785(no)->cond31837
+cond31769(yes)->op31776
+cond31837(no)->io31849
+cond31785(yes)->op31812
+cond31815(no)->op31830
+op31826->cond31815
+cond31769(no)->op31780
+op31830->op31832
+op31782->cond31785
+st31763->io31765
+io31849->e31847
+op31780->op31782
+op31841->io31849
+cond31837(yes)->op31841
+op31812->cond31815

@@ -1,0 +1,11 @@
+def subarraySum(self, nums: List[int], k: int) -> int:    #io5696
+    count = 0    #op5699
+    n = len(nums)    #op5701
+    preSums = collections.defaultdict(int)    #op5703
+    preSums[0] = 1    #op5705
+    presum = 0    #op5707
+    for i in range(n):    #cond5712
+        presum += nums[i]    #op5723
+        count += preSums[presum - k]    #op5725
+        preSums[presum] += 1    #op5727
+    return count    #io5734

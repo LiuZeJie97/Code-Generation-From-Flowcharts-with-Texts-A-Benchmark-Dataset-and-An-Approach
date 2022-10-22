@@ -1,0 +1,16 @@
+def shipWithinDays(self, weights: List[int], days: int) -> int:    #io7259
+    left, right = max(weights), sum(weights)    #op7262
+    while left < right:    #cond7265
+        mid = (left + right) // 2    #op7326
+        need = 1    #op7328
+        cur = 0    #op7330
+        for i in range(len(weights)):    #cond7335
+            if cur + weights[i] > mid:    #cond7355
+                cur = 0    #op7359
+                need += 1    #op7361
+            cur += weights[i]    #op7366
+        if need <= days:    #cond7371
+            right = mid    #op7375
+        else:    #None
+            left = mid + 1    #op7379
+    return left    #io7387

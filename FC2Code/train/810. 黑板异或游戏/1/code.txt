@@ -1,0 +1,11 @@
+def xorGame(self, numbers: List[int]) -> bool:
+    win = False
+    if len(numbers) % 2 == 0:
+        win = True
+    else:
+        xorsum = 0
+        for num in numbers:
+            xorsum = xorsum ^ num
+        if xorsum == 0:
+            win = True
+    return win

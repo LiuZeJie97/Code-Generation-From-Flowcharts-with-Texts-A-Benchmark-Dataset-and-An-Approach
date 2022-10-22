@@ -1,0 +1,33 @@
+op8462=>operation: d减一
+e8471=>end: end function return
+cond8445=>condition: 当前字符为'('
+st8403=>start: start maxDepthAfterSplit
+op8460=>operation: 将d除以2的余数添加进结果数组中
+op8410=>operation: 定义变量d等于0
+op8408=>operation: 定义结果数组res
+op8412=>operation: 定义字符ch用于遍历字符串seq，初值为该字符串中的首字符
+io8473=>inputoutput: output:  返回结果数组
+op8449=>operation: d加一
+cond8415=>condition: 遍历该字符串
+op8451=>operation: 将d除以2的余数添加进结果数组res中
+io8405=>inputoutput: input: self, seq
+cond8456=>condition: 当前字符为')'
+op1=>operation: 将当前字符更新为字符串中下一个字符
+
+st8403->io8405
+op8451->op1
+cond8415(yes)->cond8445
+op1->cond8415
+cond8456(yes)->op8460
+op8408->op8410
+cond8445(no)->cond8456
+op8410->op8412
+op8462->op1
+op8412->cond8415
+cond8456(no)->op1
+cond8415(no)->io8473
+io8473->e8471
+op8449->op8451
+io8405->op8408
+cond8445(yes)->op8449
+op8460->op8462

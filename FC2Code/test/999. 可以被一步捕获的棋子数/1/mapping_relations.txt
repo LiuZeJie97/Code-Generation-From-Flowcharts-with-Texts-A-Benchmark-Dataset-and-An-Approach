@@ -1,0 +1,19 @@
+def numRookCaptures(self, board: List[List[str]]) -> int:    #io37214
+    cnt, nx, ny = 0, 0, 0    #op37217
+    dx, dy = [0, 1, 0, -1], [1, 0, -1, 0]    #op37219
+    for i in range(8):    #cond37224
+        for j in range(8):    #cond37262
+            if board[i][j] == "R":    #cond37278
+                nx, ny = i, j    #op37282
+    for i in range(4):    #cond37294
+        step = 0    #op37365
+        while True:    #cond37368
+            tx = nx + step * dx[i]    #op37401
+            ty = ny + step * dy[i]    #op37403
+            if tx < 0 or tx >= 8 or ty < 0 or ty >= 8 or board[tx][ty] == "B":    #cond37406
+                break    #None
+            if board[tx][ty] == "p":    #cond37416
+                cnt += 1    #op37420
+                break    #None
+            step += 1    #op37427
+    return cnt    #io37436

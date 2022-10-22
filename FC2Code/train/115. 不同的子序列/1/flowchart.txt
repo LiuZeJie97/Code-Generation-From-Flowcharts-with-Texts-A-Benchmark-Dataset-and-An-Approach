@@ -1,0 +1,33 @@
+e811=>end: end function return
+op732=>operation: 定义元素i为dp第1维的下标
+st723=>start: start numDistinct
+cond735=>condition: dp第1维的下标小于t的长度加1
+op2=>operation: dp第2维的下标加1
+io813=>inputoutput: output:  返回s共有几种方式构成t
+op799=>operation: s的前j个字符构成t的前i个字符的方式的数量等于dp[i-1][j-1]和dp[i][j-1]的和
+cond777=>condition: dp第2维的下标小于s的长度加1
+op730=>operation: 初始化dp为(len2+1)(len1+1)的全零数组，将第一行所有元素置为1，其余元素置为0.使用dp[i][j]表示s的前j个字符有几种方式构成t的前i个字符
+io725=>inputoutput: input: self, s, t
+op728=>operation: 字符串s和字符串t的长度分别为len1,len2
+op1=>operation: dp第1维的下标加1
+op803=>operation: s的前j个字符构成t的前i个字符的方式的数量等于dp[i][j-1]
+op774=>operation: 定义元素j为dp第2维的下标
+cond795=>condition: t中下标为i减去1的字符等于s中下标为j减去1的字符
+
+op2->cond777
+io813->e811
+op774->cond777
+op730->op732
+cond735(no)->io813
+cond795(no)->op803
+cond735(yes)->op774
+cond777(yes)->cond795
+cond777(no)->op1
+op1->cond735
+op728->op730
+io725->op728
+cond795(yes)->op799
+st723->io725
+op799->op2
+op803->op2
+op732->cond735

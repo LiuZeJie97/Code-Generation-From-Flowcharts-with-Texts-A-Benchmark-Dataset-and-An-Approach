@@ -1,0 +1,28 @@
+op19445=>operation: 定义变量quotient等于n整除3，变量remainder等于n除以3的余数
+cond19448=>condition: n除以3的余数等于0
+io19476=>inputoutput: output:  返回3的quotient次方乘以2
+st19426=>start: start integerBreak
+io19439=>inputoutput: output:  返回n减1
+io19455=>inputoutput: output:  返回3的quotient次方
+e19466=>end: end function return
+cond19432=>condition: n小于等于3
+e19437=>end: end function return
+e19453=>end: end function return
+e19474=>end: end function return
+io19468=>inputoutput: output:  返回3的quotient-1次方乘以4
+cond19461=>condition: n除以3的余数等于1
+io19428=>inputoutput: input: self, n
+
+cond19432(yes)->io19439
+io19455->e19453
+io19439->e19437
+st19426->io19428
+io19476->e19474
+io19468->e19466
+cond19448(no)->cond19461
+cond19461(yes)->io19468
+io19428->cond19432
+cond19448(yes)->io19455
+op19445->cond19448
+cond19432(no)->op19445
+cond19461(no)->io19476

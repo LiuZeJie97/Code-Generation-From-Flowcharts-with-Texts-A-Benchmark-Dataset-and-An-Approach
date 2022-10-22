@@ -1,0 +1,50 @@
+op12563=>operation: 初始化队列queMax和queMin
+op12718=>operation: 令队列queMin队头元素出队
+op12683=>operation: 将该元素添加进队列queMin
+io12558=>inputoutput: input: self, a, limit
+cond12658=>condition: 队列queMax不为空且队列最后一项元素小于数组中下标为right的元素
+op12665=>operation: 令队列queMax队尾元素出队
+op12565=>operation: 定义变量left、right、ret，其初值均为0
+cond12670=>condition: 队列queMin不为空且队列最后一项元素大于数组中下标为right的元素
+cond12568=>condition: right小于数组a的长度
+e12744=>end: end function return
+op12728=>operation: 令队列queMax队头元素出队
+st12556=>start: start longestSubarray
+op12561=>operation: n为数组a的长度
+op12739=>operation: right加一
+cond12724=>condition: 该元素等于队列queMin中第一项元素
+cond12686=>condition: 队列queMax和queMin均不为空且它们的第一项元素之差大于limit
+io12746=>inputoutput: output:  返回ret
+cond12714=>condition: 数组中下标为left的元素等于队列queMin中第一项元素
+op12681=>operation: 将数组a中下标为right的元素添加进队列queMax
+op12677=>operation: 令队列queMax队尾元素出队
+op12733=>operation: left加一
+op12737=>operation: ret等于它与right-left+1之间的最大值
+
+cond12714(no)->cond12724
+st12556->io12558
+op12681->op12683
+op12665->cond12658
+op12728->op12733
+cond12568(yes)->cond12658
+op12683->cond12686
+io12746->e12744
+op12565->cond12568
+cond12724(no)->op12733
+op12563->op12565
+cond12568(no)->io12746
+op12718->cond12724
+cond12686(yes)->cond12714
+op12677->cond12670
+op12561->op12563
+io12558->op12561
+cond12686(no)->op12737
+cond12714(yes)->op12718
+op12739->cond12568
+op12733->cond12686
+cond12724(yes)->op12728
+cond12658(no)->cond12670
+cond12670(yes)->op12677
+op12737->op12739
+cond12658(yes)->op12665
+cond12670(no)->op12681

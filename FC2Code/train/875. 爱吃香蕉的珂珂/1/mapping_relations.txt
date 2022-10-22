@@ -1,0 +1,12 @@
+def minEatingSpeed(self, piles: List[int], h: int) -> int:    #io33756
+    low, high = 1, max(piles)    #op33759
+    while low < high:    #cond33762
+        mid = (low + high) // 2    #op33797
+        time = 0    #op33799
+        for i in range(len(piles)) :    #cond33804
+            time += (piles[i] - 1) // mid + 1    #op33811
+        if time > h:    #cond33816
+            low = mid + 1    #op33820
+        else:    #None
+            high = mid    #op33824
+    return low    #io33832

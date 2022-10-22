@@ -1,0 +1,34 @@
+e18461=>end: end function return
+cond18405=>condition: n小于等于0
+e18410=>end: end function return
+op1=>operation: 将数组下标的值更新为其自身加一
+op18454=>operation: 令n整除该因数
+op18418=>operation: 定义因数数组factors，用于保存因数
+io18463=>inputoutput: output:  若n等于1，返回True，否则返回False
+op18422=>operation: 向因数数组添加3
+cond18429=>condition: 数组下标小于因数数组的长度
+io18401=>inputoutput: input: self, n
+op18424=>operation: 向因数数组添加5
+op18420=>operation: 向因数数组添加2
+st18399=>start: start isUgly
+io18412=>inputoutput: output:  返回False
+cond18447=>condition: n可以整除第i个因数
+op18426=>operation: i为数组下标
+
+cond18447(no)->op1
+st18399->io18401
+op18426->cond18429
+cond18429(no)->io18463
+op18422->op18424
+op18424->op18426
+io18401->cond18405
+op1->cond18429
+cond18405(no)->op18418
+op18420->op18422
+cond18405(yes)->io18412
+io18412->e18410
+cond18447(yes)->op18454
+op18454->cond18447
+op18418->op18420
+cond18429(yes)->cond18447
+io18463->e18461

@@ -1,0 +1,59 @@
+cond9476=>condition: 字符串中当前下标字符为'('
+cond9546=>condition: 字符数组中当前下标字符为'('
+op9433=>operation: 字符串下标i等于0
+op9480=>operation: bal加一
+op9429=>operation: 定义变量bal等于0
+op9550=>operation: otk减一
+op9515=>operation: 定义数组下标i等于0
+op9511=>operation: 初始化字符数组res
+op1=>operation: 字符串下标自增1
+op9427=>operation: 初始化字符数组fpc
+op9565=>operation: 将数组fpc中下标为i的字符添加进res中
+op9431=>operation: 定义变量op等于0
+op9513=>operation: 定义变量otk等于op减bal
+io9572=>inputoutput: output:  返回合法字符串res
+io9424=>inputoutput: input: self, s
+cond9488=>condition: 该字符为')'
+op9482=>operation: op加一
+cond9493=>condition: bal等于0
+e9570=>end: end function return
+cond9553=>condition: otk小于0
+op9507=>operation: 将字符串s中下标为i的字符添加进fpc中
+cond9518=>condition: 数组下标小于字符数组fpc的长度
+op9502=>operation: bal减一
+cond9436=>condition: 字符串下标小于字符串s的长度
+op2=>operation: 数组下标自增1
+st9422=>start: start minRemoveToMakeValid
+
+io9424->op9427
+cond9518(no)->io9572
+op2->cond9518
+op9513->op9515
+cond9436(yes)->cond9476
+cond9476(no)->cond9488
+cond9553(no)->op9565
+cond9436(no)->op9511
+cond9488(yes)->cond9493
+cond9493(yes)->op1
+op9427->op9429
+cond9553(yes)->op2
+op9507->op1
+cond9546(no)->op9565
+op9565->op2
+cond9518(yes)->cond9546
+op9515->cond9518
+op9480->op9482
+op9433->cond9436
+st9422->io9424
+cond9546(yes)->op9550
+op9502->op9507
+cond9493(no)->op9502
+op9482->cond9488
+op9431->op9433
+op1->cond9436
+op9429->op9431
+op9511->op9513
+cond9476(yes)->op9480
+op9550->cond9553
+cond9488(no)->op9507
+io9572->e9570

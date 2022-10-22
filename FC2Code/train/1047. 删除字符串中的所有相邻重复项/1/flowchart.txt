@@ -1,0 +1,26 @@
+op7959=>operation: 将上述字符添加进栈中
+io7967=>inputoutput: output:  将栈中元素用""连接，返回连接所得的字符串结果
+op7926=>operation: 字符串下标i等于0
+op1=>operation: 令当前字符串下标加一
+op7948=>operation: 定义字符ch等于字符串中当前下标位置的字符
+op7955=>operation: 将栈顶元素出栈
+cond7951=>condition: 栈不为空而且栈中最后一项元素等于上述字符
+e7965=>end: end function return
+st7919=>start: start removeDuplicates
+op7924=>operation: 定义空栈stk
+io7921=>inputoutput: input: self, seq
+cond7929=>condition: 当前字符串下标小于字符串seq的长度
+
+op1->cond7929
+st7919->io7921
+op7959->op1
+cond7951(yes)->op7955
+op7926->cond7929
+cond7929(yes)->op7948
+io7921->op7924
+op7955->op1
+op7948->cond7951
+cond7929(no)->io7967
+op7924->op7926
+io7967->e7965
+cond7951(no)->op7959

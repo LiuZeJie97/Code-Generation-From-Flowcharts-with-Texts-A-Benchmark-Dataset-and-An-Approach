@@ -1,0 +1,37 @@
+op32307=>operation: length为数组rooms的长度，表示房间的总数
+st32302=>start: start canVisitAllRooms
+op32390=>operation: 将该元素加入队列
+op32313=>operation: 定义队列que，并将0加入队列que
+cond32384=>condition: 当前遍历元素不在字典中
+op32309=>operation: 定义变量nums，初值为0，用于记录已经进入的房间的个数
+e32400=>end: end function return
+op32388=>operation: 将该元素加入集合
+op32361=>operation: num加一
+cond32366=>condition: 对数组room[x]进行遍历
+io32402=>inputoutput: output:  如果已经进入的房间的个数等于房间的总数，则返回True，否则返回False
+op1=>operation: 更新当前遍历元素
+op32359=>operation: x为队列队头元素，并移除队头元素
+op32363=>operation: it为数组rooms[x]中的元素
+op32311=>operation: 初始化集合vis
+cond32316=>condition: 队列不为空
+io32304=>inputoutput: input: self, rooms
+
+op32309->op32311
+cond32316(no)->io32402
+st32302->io32304
+op32363->cond32366
+op32361->op32363
+io32304->op32307
+op32311->op32313
+cond32384(no)->op1
+cond32366(yes)->cond32384
+op1->cond32366
+op32359->op32361
+op32390->op1
+op32313->cond32316
+op32388->op32390
+cond32384(yes)->op32388
+op32307->op32309
+cond32316(yes)->op32359
+cond32366(no)->cond32316
+io32402->e32400

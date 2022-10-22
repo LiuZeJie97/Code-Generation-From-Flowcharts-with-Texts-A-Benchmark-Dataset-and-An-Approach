@@ -1,0 +1,16 @@
+def triangleNumber(self, array: List[int]) -> int:
+    length = len(array)
+    array.sort()
+    result = 0
+    for m in range(length):
+        for n in range(m + 1, length):
+            start, end, k = n + 1, length - 1, n
+            while start <= end:
+                middle = (start + end) // 2
+                if array[middle] < array[m] + array[n]:
+                    k = middle
+                    start = middle + 1
+                else:
+                    end = middle - 1
+            result += k - n
+    return result

@@ -1,0 +1,8 @@
+def coinChange(self, coins: List[int], amount: int) -> int:    #io4404
+    dp=[float("inf")]*(amount+1)    #op4407
+    dp[0]=0    #op4409
+    for i in range(1,amount+1):    #cond4414
+        for coin in coins:    #cond4452
+            if(i>=coin):    #cond4468
+                dp[i]=min(dp[i],dp[i-coin]+1)    #op4472
+    return dp[-1] if(dp[-1]!=float("inf")) else -1    #io4484

@@ -1,0 +1,5 @@
+def repeatedNTimes(self, nums: List[int]) -> int:    #io36431
+    for k in range(1, 4):    #cond36437
+        for i in range(len(nums) - k):    #cond36483
+            if nums[i] == nums[i+k]:    #cond36503
+                return nums[i]    #io36510

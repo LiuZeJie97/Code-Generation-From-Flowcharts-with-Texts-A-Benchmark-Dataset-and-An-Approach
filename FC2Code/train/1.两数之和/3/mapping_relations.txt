@@ -1,0 +1,14 @@
+def twoSum(self, nums, target):    #io171
+    lens = len(nums)    #op174
+    j=-1    #op176
+    for i in range(lens):    #cond181
+        if (target - nums[i]) in nums:    #cond209
+            if (nums.count(target - nums[i]) == 1)&(target - nums[i] == nums[i]):    #cond214
+                continue    #None
+            else:    #None
+                j = nums.index(target - nums[i],i+1)    #op222
+                break    #None
+    if j>0:    #cond233
+        return [i,j]    #io240
+    else:    #None
+        return []    #io248

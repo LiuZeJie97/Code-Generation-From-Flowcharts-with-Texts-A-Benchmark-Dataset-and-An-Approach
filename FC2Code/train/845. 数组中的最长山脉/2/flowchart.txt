@@ -1,0 +1,39 @@
+op32952=>operation: 右指针加一
+cond32923=>condition: 如果数组a左指针处的元素小于左指针加一处的元素
+op32935=>operation: 右指针加一
+io32859=>inputoutput: input: self, a
+op32920=>operation: 定义右指针等于左指针加一
+cond32945=>condition: 当右指针加一小于数组a的长度且数组a右指针处的元素大于右指针加一处的元素
+e32971=>end: end function return
+cond32867=>condition: 当左指针加二小于数组a的长度
+op32862=>operation: n为数组a的长度
+st32857=>start: start longestMountain
+io32973=>inputoutput: output:  返回答案
+op32864=>operation: 定义左指针lp，答案ans，其初值均为0
+op32956=>operation: 计算右指针减左指针再加一，若答案小于该计算结果，则将答案更新为该计算结果
+op32966=>operation: 左指针等于右指针
+cond32928=>condition: 当右指针加一小于数组a的长度且数组a右指针处的元素小于右指针加一处的元素
+op32960=>operation: 右指针加一
+cond32940=>condition: 如果右指针小于数组a的长度减一且数组a右指针处的元素大于右指针加一处的元素
+
+cond32867(no)->io32973
+op32960->op32966
+cond32928(yes)->op32935
+cond32923(no)->op32966
+io32973->e32971
+op32862->op32864
+op32920->cond32923
+op32966->cond32867
+op32935->cond32928
+cond32928(no)->cond32940
+io32859->op32862
+cond32945(no)->op32956
+op32864->cond32867
+op32956->op32966
+cond32945(yes)->op32952
+cond32923(yes)->cond32928
+cond32940(yes)->cond32945
+op32952->cond32945
+st32857->io32859
+cond32940(no)->op32960
+cond32867(yes)->op32920

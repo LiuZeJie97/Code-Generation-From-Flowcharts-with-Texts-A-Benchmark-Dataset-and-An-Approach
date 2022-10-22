@@ -1,0 +1,8 @@
+io18925=>inputoutput: output:  如果石头数量n可以整除4，则不可以赢，否则可以赢
+st18917=>start: start canWinNim
+io18919=>inputoutput: input: self, n
+e18923=>end: end function return
+
+io18925->e18923
+st18917->io18919
+io18919->io18925

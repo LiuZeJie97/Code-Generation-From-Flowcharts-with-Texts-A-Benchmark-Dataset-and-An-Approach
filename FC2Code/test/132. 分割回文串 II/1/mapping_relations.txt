@@ -1,0 +1,13 @@
+def minCut(self, s: str) -> int:    #io1182
+    min_cut = list(range(len(s)))    #op1185
+    n = len(s)    #op1187
+    dp = [[False] * n for _ in range(n)]    #op1189
+    for j in range(n):    #cond1194
+        for i in range(j+1):    #cond1256
+            if s[i] == s[j] and (j - i < 2 or dp[i + 1][j - 1]):    #cond1284
+                dp[i][j] = True    #op1288
+                if i == 0:    #cond1291
+                    min_cut[j] = 0    #op1295
+                else:    #None
+                    min_cut[j] = min(min_cut[j], min_cut[i - 1] + 1)    #op1299
+    return min_cut[-1]    #io1312

@@ -1,0 +1,29 @@
+def calculate(self, s: str) -> int:    #io17465
+    ops = list()    #op17468
+    ops.append(1)    #op17470
+    sign = 1    #op17472
+    ret = 0    #op17474
+    n = len(s)    #op17476
+    i = 0    #op17478
+    while i < n:    #cond17481
+        if s[i] == ' ':    #cond17565
+            i += 1    #op17569
+        elif s[i] == '+':    #cond17574
+            sign = ops[-1]    #op17578
+            i += 1    #op17580
+        elif s[i] == '-':    #cond17585
+            sign = -ops[-1]    #op17589
+            i += 1    #op17591
+        elif s[i] == '(':    #cond17596
+            ops.append(sign)    #op17600
+            i += 1    #op17602
+        elif s[i] == ')':    #cond17607
+            ops.pop()    #op17611
+            i += 1    #op17613
+        else:    #None
+            num = 0    #op17617
+            while i < n and s[i].isdigit():    #cond17620
+                num = num * 10 + ord(s[i]) - ord('0')    #op17629
+                i += 1    #op17631
+            ret += num * sign    #op17635
+    return ret    #io17647

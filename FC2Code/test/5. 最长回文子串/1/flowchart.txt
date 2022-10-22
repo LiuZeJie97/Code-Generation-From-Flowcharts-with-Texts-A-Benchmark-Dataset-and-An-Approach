@@ -1,0 +1,57 @@
+op4909=>operation: 初始化dp数组，长宽均等于字符串的长度，全部初始化为False。dp[i][j]表示s[i至j]是否为回文串。
+op5013=>operation: 令子串右边界r等于左边界加子串可能的长度减1
+op4913=>operation: i等于0，为字符串下标
+op4951=>operation: 定义1为最长子串可能的长度，初值为3，
+cond4996=>condition: 计算字符串长度加一减去可能的长度的结果，判断左边界是否小于该结果
+op2=>operation: 最长子串可能的长度增长1
+op4944=>operation: 最长回文子串左边界的索引等于i，最长长度等于2
+e4899=>end: end function return
+cond5016=>condition: 字符串s左边界上的元素等于右边界上的元素并且s[左边界加一至右边界减一]是回文串
+e5030=>end: end function return
+op4935=>operation: dp中所有单个字符组成的串都是回文串，更新dp
+op4993=>operation: i等于0，记录子串左边界
+cond4954=>condition: 最长子串可能的长度小于字符串长度加一
+op1=>operation: 下标向右移动
+io5032=>inputoutput: output:  计算从最长回文子串左边界开始max_len个长度的子串并返回
+io4901=>inputoutput: output:  返回字符串
+cond4916=>condition: 字符串下标没有越界
+op4907=>operation: n为字符串s的长度
+op4942=>operation: 字符串s[i至i+1]是回文串
+io4890=>inputoutput: input: self, s
+cond4894=>condition: 特判，当字符串s的长度为1或者0时
+op3=>operation: 左边界向左移动
+op4911=>operation: 初始化最长回文子串的左边界索引start等于0，初始化最长长度max_len等于1
+st4888=>start: start longestPalindrome
+op5020=>operation: 从左边界至右边界的子串也是回文串，并更新最长子串左边界等于i，和最长长度等于l
+cond4938=>condition: 若i小于字符串的长度减一且字符串下标为i的字符和其后一个字符相同
+
+cond4954(no)->io5032
+io4901->e4899
+op5013->cond5016
+op4911->op4913
+cond4996(no)->op2
+op4951->cond4954
+op5020->op3
+cond4954(yes)->op4993
+op4935->cond4938
+cond4894(yes)->io4901
+cond4916(yes)->op4935
+io5032->e5030
+cond4916(no)->op4951
+cond5016(yes)->op5020
+st4888->io4890
+op1->cond4916
+cond4938(yes)->op4942
+op4907->op4909
+op3->cond4996
+op4909->op4911
+cond4996(yes)->op5013
+io4890->cond4894
+cond5016(no)->op3
+cond4894(no)->op4907
+op4942->op4944
+op4993->cond4996
+op4913->cond4916
+op4944->op1
+op2->cond4954
+cond4938(no)->op1

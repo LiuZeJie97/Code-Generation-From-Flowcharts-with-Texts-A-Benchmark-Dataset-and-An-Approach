@@ -1,0 +1,7 @@
+def twoSum(self, nums: List[int], target: int):    #io5
+    n = len(nums)    #op8
+    for i in range(n):    #cond13
+        for j in range(i + 1, n):    #cond59
+            if nums[i] + nums[j] == target:    #cond79
+                return [i, j]    #io86
+    return []    #io99

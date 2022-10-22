@@ -1,0 +1,67 @@
+op17589=>operation: 符号变量等于负的栈中最后一项元素
+op17580=>operation: i加一
+op17478=>operation: 定义变量i等于0
+io17465=>inputoutput: input: self, s
+st17463=>start: start calculate
+e17645=>end: end function return
+cond17596=>condition: 该字符为'('
+op17578=>operation: 符号变量等于栈中最后一项元素
+op17631=>operation: i加一
+op17617=>operation: 定义计算值num等于0
+op17591=>operation: i加一
+cond17607=>condition: 该字符为')'
+op17474=>operation: 定义返回值ret等于0
+op17468=>operation: 定义栈ops
+cond17574=>condition: 该字符为'+'
+cond17585=>condition: 该字符为'-'
+cond17481=>condition: i小于字符串的长度
+io17647=>inputoutput: output:  将返回值返回
+cond17565=>condition: 字符串中下标为i的字符为' '
+op17472=>operation: 定义符号变量sign等于1
+op17476=>operation: 定义n为字符串s的长度
+op17600=>operation: 将符号变量添加进栈
+op17470=>operation: 将1添加进栈
+op17611=>operation: 将栈顶元素出栈
+op17613=>operation: i加一
+op17629=>operation: 令计算值等于计算值乘10加字符串中下标为i的字符的Unicode值减'0'的Unicode值
+op17635=>operation: 令返回值加上计算值与符号变量的乘积
+op17602=>operation: i加一
+op17569=>operation: i加一
+cond17620=>condition: i小于字符串s的长度且字符串中下标为i的字符为数字
+
+cond17481(yes)->cond17565
+op17474->op17476
+cond17585(yes)->op17589
+op17629->op17631
+op17600->op17602
+cond17620(yes)->op17629
+cond17607(yes)->op17611
+op17468->op17470
+io17647->e17645
+cond17481(no)->io17647
+op17578->op17580
+op17602->cond17481
+op17478->cond17481
+op17635->cond17481
+cond17565(no)->cond17574
+op17470->op17472
+cond17574(no)->cond17585
+op17580->cond17481
+op17613->cond17481
+op17569->cond17481
+cond17607(no)->op17617
+op17472->op17474
+op17611->op17613
+cond17596(yes)->op17600
+cond17574(yes)->op17578
+op17631->cond17620
+cond17596(no)->cond17607
+cond17620(no)->op17635
+cond17565(yes)->op17569
+cond17585(no)->cond17596
+op17591->cond17481
+op17476->op17478
+io17465->op17468
+op17617->cond17620
+op17589->op17591
+st17463->io17465

@@ -1,0 +1,12 @@
+def numRescueBoats(self, people: List[int], limit: int) -> int:    #io34475
+    number = 0    #op34478
+    people.sort()    #op34480
+    light, heavy = 0, len(people) - 1    #op34482
+    while light <= heavy:    #cond34485
+        if people[light] + people[heavy] > limit:    #cond34507
+            heavy -= 1    #op34511
+        else:    #None
+            light += 1    #op34515
+            heavy -= 1    #op34517
+        number += 1    #op34520
+    return number    #io34527

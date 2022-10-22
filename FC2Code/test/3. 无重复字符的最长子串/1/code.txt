@@ -1,0 +1,12 @@
+def lengthOfLongestSubstring(self, s: str) -> int:
+    occ = set()
+    size = len(s)
+    rk, ans = -1, 0
+    for lk in range(size):
+        if lk != 0:
+            occ.remove(s[lk - 1])
+        while rk + 1 < size and s[rk + 1] not in occ:
+            occ.add(s[rk + 1])
+            rk += 1
+        ans = max(ans, rk - lk + 1)
+    return ans

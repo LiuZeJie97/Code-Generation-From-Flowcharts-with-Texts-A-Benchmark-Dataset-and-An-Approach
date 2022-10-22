@@ -1,0 +1,7 @@
+def findMaxAverage(self, numbers: List[int], k: int) -> float:    #io24383
+    maxTotal = total = sum(numbers[:k])    #op24386
+    count = len(numbers)    #op24388
+    for i in range(k, count):    #cond24393
+        total =  total - numbers[i - k] + numbers[i]    #op24402
+        maxTotal = max(maxTotal, total)    #op24404
+    return maxTotal / k    #io24411

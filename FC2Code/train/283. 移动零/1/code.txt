@@ -1,0 +1,8 @@
+def moveZeroes(self, A: List[int]) -> None:
+    N = len(A)
+    L = R = 0
+    while R < n:
+        if A[R] != 0:
+            A[L], A[R] = A[R], A[L]
+            L += 1
+        R += 1

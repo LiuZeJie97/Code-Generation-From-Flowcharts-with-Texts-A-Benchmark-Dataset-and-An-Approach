@@ -1,0 +1,55 @@
+io7524=>inputoutput: output:  不可以将数组其划分为三个和相等的非空部分
+e7467=>end: end function return
+cond7426=>condition: i小于数组arr的长度
+op7401=>operation: 定义s为数组arr中元素的和
+cond7448=>condition: 它等于目标值
+op7419=>operation: 定义n为数组arr的长度
+st7396=>start: start canThreePartsEqualSum
+io7398=>inputoutput: input: self, arr
+op7423=>operation: 定义变量i等于0
+e7522=>end: end function return
+io7411=>inputoutput: output:  不可以将数组其划分为三个和相等的非空部分
+op7501=>operation: 令当前累加和加上数组arr中下标为j的数
+op7475=>operation: 定义j等于i加一
+op7445=>operation: 令当前累加和加上数组arr中下标为i的数
+op7457=>operation: 令i加一
+op7417=>operation: 定义目标值target等于数组arr中元素的和整除3
+e7509=>end: end function return
+op7421=>operation: 定义当前累加和cur等于0
+cond7462=>condition: 当前累加和不等于目标值
+io7469=>inputoutput: output:  不可以将数组其划分为三个和相等的非空部分
+io7511=>inputoutput: output:  可以将数组其划分为三个和相等的非空部分
+cond7404=>condition: 数组arr中元素的和不能整除3
+cond7478=>condition: j加一小于数组arr的长度
+op7517=>operation: 令j加一
+e7409=>end: end function return
+cond7504=>condition: 它等于目标值的2倍
+
+cond7426(no)->cond7462
+op7401->cond7404
+cond7448(yes)->cond7462
+cond7462(yes)->io7469
+cond7504(yes)->io7511
+op7421->op7423
+st7396->io7398
+cond7404(yes)->io7411
+op7423->cond7426
+cond7404(no)->op7417
+io7511->e7509
+op7417->op7419
+io7411->e7409
+op7501->cond7504
+io7524->e7522
+cond7448(no)->op7457
+op7419->op7421
+io7398->op7401
+op7475->cond7478
+cond7478(no)->io7524
+op7457->cond7426
+cond7504(no)->op7517
+cond7426(yes)->op7445
+cond7478(yes)->op7501
+op7517->cond7478
+cond7462(no)->op7475
+op7445->cond7448
+io7469->e7467

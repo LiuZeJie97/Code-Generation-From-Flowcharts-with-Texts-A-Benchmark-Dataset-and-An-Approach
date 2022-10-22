@@ -1,0 +1,28 @@
+io17454=>inputoutput: output:  返回第一个矩形面积加上第二个矩形面积再减去重叠面积
+op17434=>operation: 令它等于0
+e17452=>end: end function return
+op17449=>operation: 重叠面积overlapArea等于重叠长度与重叠高度的乘积
+io17418=>inputoutput: input: self, ax1, ay1, ax2, ay2, bx1, by1, bx2, by2
+op17421=>operation: 第一个矩形面积area1等于ax2与ax1的差值乘ay2与ay1的差值
+op17423=>operation: 第二个矩形面积area2等于bx2与bx1的差值乘by2与by1的差值
+cond17440=>condition: 重叠高度小于0
+st17416=>start: start computeArea
+cond17430=>condition: 重叠长度小于0
+op17444=>operation: 令它等于0
+op17425=>operation: 重叠长度overlapWidth等于ax2与bx2的最小值减去ax1与bx1的最大值
+op17427=>operation: 重叠高度overlapHeight等于ay2与by2的最小值减去ay1与by1的最大值
+
+st17416->io17418
+cond17430(yes)->op17434
+cond17430(no)->cond17440
+io17454->e17452
+op17425->op17427
+op17423->op17425
+cond17440(yes)->op17444
+cond17440(no)->op17449
+io17418->op17421
+op17444->op17449
+op17421->op17423
+op17434->cond17440
+op17449->io17454
+op17427->cond17430

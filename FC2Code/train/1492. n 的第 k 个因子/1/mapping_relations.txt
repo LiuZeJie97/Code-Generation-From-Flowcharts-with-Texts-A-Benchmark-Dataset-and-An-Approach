@@ -1,0 +1,19 @@
+def kthFactor(self, n: int, k: int) -> int:    #io13174
+    count = 0    #op13177
+    factor = 1    #op13179
+    while factor * factor <= n:    #cond13182
+        if n % factor == 0:    #cond13214
+            count += 1    #op13218
+            if count == k:    #cond13221
+                return factor    #io13228
+        factor += 1    #op13237
+    factor -= 1    #op13241
+    if factor * factor == n:    #cond13244
+        factor -= 1    #op13248
+    while factor > 0:    #cond13254
+        if n % factor == 0:    #cond13286
+            count += 1    #op13290
+            if count == k:    #cond13293
+                return n // factor    #io13300
+        factor -= 1    #op13309
+    return -1    #io13316

@@ -1,0 +1,7 @@
+def replaceElements(self, arr: List[int]) -> List[int]:
+    arr_size = len(arr)
+    answer = [0] * arr_size
+    answer[-1] = -1
+    for idx in range(arr_size - 2, -1, -1):
+        answer[idx] = max(answer[idx + 1], arr[idx + 1])
+    return answer

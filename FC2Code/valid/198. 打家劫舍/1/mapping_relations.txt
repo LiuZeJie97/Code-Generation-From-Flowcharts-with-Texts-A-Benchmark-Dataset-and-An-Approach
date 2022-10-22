@@ -1,0 +1,9 @@
+def rob(self, nums: List[int]) -> int:    #io2484
+    if(not nums):    #cond2488
+        return 0    #io2495
+    n=len(nums)    #op2501
+    dp=[0]*(n+1)    #op2503
+    dp[1]=nums[0]    #op2505
+    for i in range(2,n+1):    #cond2510
+        dp[i]=max(dp[i-2]+nums[i-1],dp[i-1])    #op2517
+    return dp[-1]    #io2524

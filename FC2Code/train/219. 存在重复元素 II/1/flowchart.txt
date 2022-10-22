@@ -1,0 +1,31 @@
+cond15724=>condition: 数组下标小于数组n的长度
+op1=>operation: 将当前下标更新为其自身加一
+op15758=>operation: 将数组中下标为i-k-1的元素从集合中删除
+e15780=>end: end function return
+op15721=>operation: 定义初值为0的变量i，表示数组下标
+op15775=>operation: 将上述元素添加进集合中
+op15719=>operation: 定义标志f，初值为False，标志f为True表示存在两个不同的索引，False表示不存在
+st15712=>start: start containsNearbyDuplicate
+io15782=>inputoutput: output:  返回标志
+cond15764=>condition: 数组中当前下标位置的元素在集合中
+op15768=>operation: 存在两个不同的索引
+cond15754=>condition: 当前下标大于k
+io15714=>inputoutput: input: self, n, k
+op15717=>operation: 初始化集合s
+
+op15758->cond15764
+op15719->op15721
+op15768->io15782
+cond15754(yes)->op15758
+cond15724(no)->io15782
+op1->cond15724
+st15712->io15714
+cond15724(yes)->cond15754
+cond15764(yes)->op15768
+op15717->op15719
+io15714->op15717
+cond15754(no)->cond15764
+op15775->op1
+cond15764(no)->op15775
+op15721->cond15724
+io15782->e15780

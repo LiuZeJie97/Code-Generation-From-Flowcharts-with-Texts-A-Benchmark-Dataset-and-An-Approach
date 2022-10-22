@@ -1,0 +1,18 @@
+e8130=>end: end function return
+op8122=>operation: 最长字符串candidate为字符串str1前candidate_len个字符组成的子串
+op8120=>operation: 计算字符串str1和str2的长度，candidate_len等于它们的最大公约数
+io8132=>inputoutput: output:  返回最长字符串
+e8139=>end: end function return
+io8141=>inputoutput: output:  返回空字符
+io8117=>inputoutput: input: self, str1, str2
+st8115=>start: start gcdOfStrings
+cond8125=>condition: 字符串str1加str2等于str2加str1
+
+io8117->op8120
+cond8125(yes)->io8132
+io8141->e8139
+op8120->op8122
+io8132->e8130
+st8115->io8117
+op8122->cond8125
+cond8125(no)->io8141

@@ -1,0 +1,39 @@
+e10207=>end: end function return
+cond10138=>condition: 数组下标小于数组arr的长度
+op10129=>operation: n为数组arr的长度
+e10199=>end: end function return
+cond10175=>condition: cnt的4倍大于数组的长度
+cond10194=>condition: 标志变量为真
+io10201=>inputoutput: output:  返回cur
+op10172=>operation: cnt加一
+cond10168=>condition: 数组中下标为i的数等于cur
+st10124=>start: start findSpecialInteger
+io10209=>inputoutput: output:  返回-1
+op10188=>operation: cur、cnt分别等于数组中下标为i的数、1
+op10131=>operation: cur等于数组中第一个数，cnt等于0
+op1=>operation: 令数组下标加一
+op10179=>operation: 标志变量置为True
+op10133=>operation: 标志变量f等于False
+op10135=>operation: 数组下标i等于0
+io10126=>inputoutput: input: self, arr
+
+cond10194(no)->io10209
+cond10194(yes)->io10201
+io10126->op10129
+cond10138(no)->cond10194
+op10131->op10133
+op10188->op1
+op10129->op10131
+st10124->io10126
+cond10138(yes)->cond10168
+op10172->cond10175
+op10179->cond10194
+cond10168(yes)->op10172
+op10135->cond10138
+op10133->op10135
+cond10175(yes)->op10179
+cond10175(no)->op1
+io10201->e10199
+io10209->e10207
+cond10168(no)->op10188
+op1->cond10138

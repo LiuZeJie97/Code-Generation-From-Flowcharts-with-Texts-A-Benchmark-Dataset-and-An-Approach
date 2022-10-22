@@ -1,0 +1,28 @@
+st25313=>start: start findLengthOfLCIS
+op25320=>operation: N为数组A的长度
+op25349=>operation: 将变量s的值更新为当前数组下标的值
+io25315=>inputoutput: input: self, A
+cond25327=>condition: 数组下标小于数组的长度
+e25359=>end: end function return
+io25361=>inputoutput: output:  返回最长连续递增子序列的长度
+op1=>operation: 数组下标加一
+op25324=>operation: k为数组下标
+cond25345=>condition: k大于0且数组中下标为k的数小于等于下标为k-1的数
+op25318=>operation: 定义变量L初值为0，用于记录最长连续递增子序列的长度
+op25354=>operation: 若最长连续递增子序列的长度小于k减去s再加一的值，则将最长连续递增子序列的长度更新为该值
+op25322=>operation: 定义变量s初值为0
+
+st25313->io25315
+op25324->cond25327
+cond25345(yes)->op25349
+op25349->op25354
+io25315->op25318
+op25320->op25322
+cond25345(no)->op25354
+op1->cond25327
+op25322->op25324
+io25361->e25359
+cond25327(yes)->cond25345
+op25318->op25320
+op25354->op1
+cond25327(no)->io25361

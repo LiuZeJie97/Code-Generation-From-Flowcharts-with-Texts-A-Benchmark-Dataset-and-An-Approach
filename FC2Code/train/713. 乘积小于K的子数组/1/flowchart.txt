@@ -1,0 +1,32 @@
+op27567=>operation: 定义变量prod等于1
+op27569=>operation: 定义变量ans用于记录连续的子数组的个数，定义变量left作为左指针，其初值均为0
+cond27602=>condition: prod大于等于k
+op27611=>operation: 变量prod除以数组左指针处的元素
+op27565=>operation: 如果k小于等于1，则返回0
+op27617=>operation: 计算右指针减去左指针再加一的值，将连续的子数组的个数加上该值
+op27613=>operation: 左指针加一
+e27622=>end: end function return
+op1=>operation: 右指针加一，且更新数组右指针处的元素
+cond27574=>condition: 对数组进行遍历
+io27562=>inputoutput: input: self, nums, k
+op27599=>operation: 变量prod乘以数组右指针处的元素
+io27624=>inputoutput: output:  返回连续的子数组的个数
+op27571=>operation: 初值为0的变量right为右指针，val为数组nums右指针处的元素
+st27560=>start: start numSubarrayProductLessThanK
+
+op27567->op27569
+op27611->op27613
+op27571->cond27574
+st27560->io27562
+op1->cond27574
+cond27602(no)->op27617
+cond27602(yes)->op27611
+op27613->cond27602
+io27562->op27565
+op27599->cond27602
+op27565->op27567
+cond27574(no)->io27624
+io27624->e27622
+cond27574(yes)->op27599
+op27617->op1
+op27569->op27571

@@ -1,0 +1,12 @@
+def productExceptSelf(self, nums: List[int]) -> List[int]:    #io3824
+    n=len(nums)    #op3827
+    answer=[0]*n    #op3829
+    k=1    #op3831
+    for i in range(n):    #cond3836
+        answer[i]=k    #op3845
+        k=k*nums[i]    #op3847
+    k=1    #op3851
+    for i in range(n-1,-1,-1):    #cond3856
+        answer[i]*=k    #op3865
+        k*=nums[i]    #op3867
+    return answer    #io3874

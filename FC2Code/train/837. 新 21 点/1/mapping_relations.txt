@@ -1,0 +1,10 @@
+def new21Game(self, n: int, k: int, maxPts: int) -> float:    #io32068
+    if k == 0:    #cond32072
+        return 1.0    #io32079
+    dp = [0] * (k + maxPts)    #op32085
+    for i in range(k, min(n, k + maxPts - 1) + 1):    #cond32090
+        dp[i] = 1.0    #op32097
+    dp[k - 1] = float(min(n - k + 1, maxPts)) / maxPts    #op32101
+    for i in range(k - 2, -1, -1):    #cond32106
+        dp[i] = dp[i + 1] - (dp[i + maxPts + 1] - dp[i + 1]) / maxPts    #op32113
+    return dp[0]    #io32120

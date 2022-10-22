@@ -1,0 +1,19 @@
+def threeSum(self, nums:List[int])->List[List[int]]:    #io2665
+    n = len(nums)    #op2668
+    nums.sort()    #op2670
+    ans = list()    #op2672
+    for first in range(n):    #cond2677
+        if first > 0 and nums[first] == nums[first - 1]:    #cond2791
+            continue    #None
+        third = n - 1    #op2800
+        target = -nums[first]    #op2802
+        for second in range(first + 1, n):    #cond2807
+            if second > first + 1 and nums[second] == nums[second - 1]:    #cond2855
+                continue    #None
+            while second < third and nums[second] + nums[third] > target:    #cond2865
+                third -= 1    #op2872
+            if second == third:    #cond2877
+                break    #None
+            if nums[second] + nums[third] == target:    #cond2887
+                ans.append([nums[first], nums[second], nums[third]])    #op2891
+    return ans    #io2903

@@ -1,0 +1,19 @@
+op29650=>operation: 移动次数加一
+io29633=>inputoutput: input: self, target
+op29638=>operation: 定义变量k等于0，用于记录移动次数
+io29659=>inputoutput: output:  如果终点位置可以整除2，则返回移动次数，否则返回移动次数除以2的余数与移动次数的和再加一
+op29652=>operation: 终点次数减去移动次数
+e29657=>end: end function return
+op29636=>operation: 终点位置target等于它自身的绝对值
+st29631=>start: start reachNumber
+cond29641=>condition: 终点位置大于0时
+
+io29659->e29657
+op29652->cond29641
+io29633->op29636
+op29650->op29652
+op29636->op29638
+op29638->cond29641
+cond29641(yes)->op29650
+st29631->io29633
+cond29641(no)->io29659

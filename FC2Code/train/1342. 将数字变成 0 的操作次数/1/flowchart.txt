@@ -1,0 +1,22 @@
+op11422=>operation: 令计数变量加一
+op11415=>operation: 令计数变量加上给定整数与运算1的结果
+cond11418=>condition: 给定整数大于1
+io11390=>inputoutput: input: self, num
+op11393=>operation: 计数变量cnt等于0，用于记录变成0所需要的步数
+io11434=>inputoutput: output:  返回变成0所需要的步数
+cond11396=>condition: 给定整数num不为0
+e11432=>end: end function return
+op11427=>operation: 令给定整数右移1位
+st11388=>start: start numberOfSteps
+
+cond11418(yes)->op11422
+cond11418(no)->op11427
+st11388->io11390
+op11427->cond11396
+op11422->op11427
+cond11396(no)->io11434
+io11434->e11432
+io11390->op11393
+op11393->cond11396
+cond11396(yes)->op11415
+op11415->cond11418

@@ -1,0 +1,40 @@
+io25468=>inputoutput: output:  返回得分总和
+op25454=>operation: pt等于int型的当前字符
+op1=>operation: 更新当前字符
+cond25382=>condition: 对于字符串列表中的每一个字符
+op25439=>operation: pt等于栈最后一项的两倍
+op25459=>operation: 得分总和加上pt
+st25370=>start: start calPoints
+op25375=>operation: 定义变量score等于0，用于记录得分总和
+cond25444=>condition: 当前字符为'C'
+e25466=>end: end function return
+cond25435=>condition: 当前字符为'D'
+cond25426=>condition: 当前字符为'+'
+io25372=>inputoutput: input: self, ops
+op25448=>operation: 移除栈顶元素，并让得分总和减去该元素
+op25430=>operation: pt等于栈中最后一项和倒数第二项的和
+op25461=>operation: 将pt添加进栈中
+op25379=>operation: op为字符串列表中的字符
+op25377=>operation: 定义栈points
+
+cond25444(yes)->op25448
+io25468->e25466
+cond25444(no)->op25454
+cond25435(yes)->op25439
+op25461->op1
+cond25435(no)->cond25444
+st25370->io25372
+op25377->op25379
+io25372->op25375
+op25439->op25459
+op1->cond25382
+cond25426(yes)->op25430
+cond25382(no)->io25468
+cond25426(no)->cond25435
+op25454->op25459
+op25459->op25461
+cond25382(yes)->cond25426
+op25379->cond25382
+op25448->op1
+op25375->op25377
+op25430->op25459

@@ -1,0 +1,13 @@
+def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:    #io18240
+    sgn = False    #op18243
+    m, n = len(matrix), len(matrix[0])    #op18245
+    x, y = 0, n - 1    #op18247
+    while x < m and y >= 0:    #cond18250
+        if matrix[x][y] == target:    #cond18280
+            sgn = True    #op18284
+            break    #None
+        if matrix[x][y] > target:    #cond18292
+            y -= 1    #op18296
+        else:    #None
+            x += 1    #op18300
+    return sgn    #io18308

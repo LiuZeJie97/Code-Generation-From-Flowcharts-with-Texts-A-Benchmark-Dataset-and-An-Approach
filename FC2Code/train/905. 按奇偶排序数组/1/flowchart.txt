@@ -1,0 +1,32 @@
+op34853=>operation: 定义变量i等于0
+op34888=>operation: 数组res右指针元素等于这个数
+e34896=>end: end function return
+op1=>operation: i加一
+st34842=>start: start sortArrayByParity
+op34849=>operation: 定义数组res，其长度等于数组numbers的长度，数组元素均为0
+io34844=>inputoutput: input: self, numbers
+op34882=>operation: 数组res左指针元素等于这个数
+op34847=>operation: 定义n为数组numbers的长度
+cond34878=>condition: 数组numbers中下标为i的数可以整除2
+op34851=>operation: 定义左指针left等于0，右指针right等于数组numbers的长度减一
+cond34856=>condition: i小于数组numbers的长度
+io34898=>inputoutput: output:  返回上述数组
+op34890=>operation: 右指针减一
+op34884=>operation: 左指针加一
+
+io34898->e34896
+io34844->op34847
+op1->cond34856
+cond34878(yes)->op34882
+st34842->io34844
+op34851->op34853
+op34847->op34849
+op34890->op1
+cond34878(no)->op34888
+cond34856(yes)->cond34878
+cond34856(no)->io34898
+op34882->op34884
+op34888->op34890
+op34884->op1
+op34849->op34851
+op34853->cond34856

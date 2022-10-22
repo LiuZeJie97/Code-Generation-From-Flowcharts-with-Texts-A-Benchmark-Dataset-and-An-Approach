@@ -1,0 +1,32 @@
+io20025=>inputoutput: input: self, height
+op20060=>operation: 若数组height左指针处的值大于左指针移动时出现的最大值，则将数组左指针处的值更新为该最大值
+op20030=>operation: left为左指针，初值为0；right为右指针，初值为数组height的长度减一
+io20085=>inputoutput: output:  返回答案
+op20062=>operation: 若数组右指针处的值大于右指针移动时出现的最大值，则将数组右指针处的值更新为该最大值
+cond20065=>condition: 数组左指针left处的值小于右指针right处的值
+op20069=>operation: 令答案ans加上左指针移动时出现的最大值和数组左指针处的值之间的差值
+op20075=>operation: 令答案ans加上右指针移动时出现的最大值和数组右指针处的值之间的差值
+op20071=>operation: 左指针加一
+op20077=>operation: 右指针减一
+op20028=>operation: 定义用于记录答案的变量ans，初值为0
+e20083=>end: end function return
+cond20035=>condition: 左指针left小于右指针right
+op20032=>operation: 定义变量leftMax用于记录左指针移动时出现的最大值，变量rightMax用于记录右指针移动时出现的最大值，其初值均为0
+st20023=>start: start trap
+
+op20062->cond20065
+op20069->op20071
+io20085->e20083
+op20030->op20032
+op20077->cond20035
+op20060->op20062
+cond20065(no)->op20075
+cond20035(yes)->op20060
+cond20035(no)->io20085
+op20071->cond20035
+st20023->io20025
+op20028->op20030
+io20025->op20028
+cond20065(yes)->op20069
+op20075->op20077
+op20032->cond20035

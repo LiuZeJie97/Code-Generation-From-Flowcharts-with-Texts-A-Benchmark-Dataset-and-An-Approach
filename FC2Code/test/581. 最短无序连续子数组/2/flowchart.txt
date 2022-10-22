@@ -1,0 +1,30 @@
+io23355=>inputoutput: input: self, nums
+op23393=>operation: 右边界等于自身和i的较大值
+cond23387=>condition: 排序后的数组的下标为i的元素不等于原数组下标为i的元素
+st23353=>start: start findUnsortedSubarray
+op23366=>operation: i等于0
+e23401=>end: end function return
+op23364=>operation: right为右边界，初值为0
+op23362=>operation: left为左边界，初值为无穷大
+cond23369=>condition: i小于数组长度
+op1=>operation: i自增1
+op23360=>operation: 对nums_copy从小到大排序
+op23358=>operation: 将原数组复制到nums_copy中
+io23403=>inputoutput: output:  如果左右界之差加1大于0，返回左右界之差加1，否则，返回0
+op23391=>operation: 左边界等于自身和i的较小值
+
+io23355->op23358
+io23403->e23401
+op23364->op23366
+op1->cond23369
+cond23369(yes)->cond23387
+cond23369(no)->io23403
+op23362->op23364
+op23393->op1
+op23358->op23360
+cond23387(yes)->op23391
+cond23387(no)->op1
+op23366->cond23369
+st23353->io23355
+op23391->op23393
+op23360->op23362

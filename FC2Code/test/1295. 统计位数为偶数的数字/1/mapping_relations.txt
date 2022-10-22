@@ -1,0 +1,7 @@
+def findNumbers(self, n: List[int]) -> int:    #io10332
+    ret = 0    #op10335
+    for i in range(len(n)):    #cond10340
+        length = len(str(n[i]))    #op10357
+        if length % 2 == 0:    #cond10360
+            ret += 1    #op10364
+    return ret    #io10374

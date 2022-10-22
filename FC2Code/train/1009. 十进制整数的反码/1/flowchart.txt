@@ -1,0 +1,28 @@
+op7232=>operation: 令最高位等于当前位数
+io7248=>inputoutput: output:  返回掩码异或n的结果
+st7196=>start: start bitwiseComplement
+io7198=>inputoutput: input: self, n
+op7201=>operation: 最高位hightbit等于0
+cond7228=>condition: tmp小于等于n
+e7246=>end: end function return
+op1=>operation: 位数自增1
+op7243=>operation: 令掩码减一
+op7241=>operation: 掩码mask等于1左移highbit+1位
+cond7206=>condition: 位数小于31
+op7203=>operation: 位数d等于1
+op7225=>operation: tmp等于1左移当前位数
+
+cond7206(yes)->op7225
+cond7228(no)->op7241
+op7201->op7203
+op7232->op1
+op7241->op7243
+cond7206(no)->op7241
+st7196->io7198
+cond7228(yes)->op7232
+io7198->op7201
+op7225->cond7228
+op7203->cond7206
+op7243->io7248
+op1->cond7206
+io7248->e7246

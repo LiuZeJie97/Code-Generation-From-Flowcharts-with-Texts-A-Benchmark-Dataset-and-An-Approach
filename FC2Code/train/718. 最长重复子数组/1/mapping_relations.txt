@@ -1,0 +1,9 @@
+def findLength(self, A: List[int], B: List[int]) -> int:    #io27743
+    n, m = len(A), len(B)    #op27746
+    dp = [[0] * (m + 1) for _ in range(n + 1)]    #op27748
+    ans = 0    #op27750
+    for a in range(n - 1, -1, -1):    #cond27755
+        for b in range(m - 1, -1, -1):    #cond27781
+            dp[a][b] = dp[a + 1][b + 1] + 1 if A[a] == B[b] else 0    #op27790
+            ans = max(ans, dp[a][b])    #op27792
+    return ans    #io27801

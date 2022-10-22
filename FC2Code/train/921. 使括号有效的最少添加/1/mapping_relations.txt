@@ -1,0 +1,11 @@
+def minAddToMakeValid(self, s: str) -> int:    #io35290
+    ans = bal = 0    #op35293
+    for i in range(len(s)):    #cond35298
+        if s[i] == '(':    #cond35328
+            bal += 1    #op35332
+        else:    #None
+            bal -= 1    #op35336
+        if bal == -1:    #cond35340
+            ans += 1    #op35344
+            bal += 1    #op35346
+    return ans + bal    #io35356

@@ -1,0 +1,69 @@
+op5082=>operation: 定义L为度最长子串可能的长，初值为2，
+io5043=>inputoutput: input: self, s
+op3=>operation: 左边界向右移动一个单位
+op5062=>operation: 初始化最长子串的长度max_len等于1
+op5068=>operation: 下标i等于0
+cond5085=>condition: 最长子串可能的长小于字符串长度加一
+op5078=>operation: dp中第一维下标和第二维下标均为i的元素是回文串
+e5054=>end: end function return
+op5192=>operation: i等于0，记录子串左边界
+cond5259=>condition: 字符串左边界上的元素不等于右边界上的元素
+cond5071=>condition: 下标没有越界
+op5272=>operation: 从左边界至右边界的子串是回文串
+op2=>operation: 最长子串可能的长自增1
+op5276=>operation: 左边界至右边界的子串是否是回文串取决于左边界加一至右边界减一的子串是否是回文串
+op1=>operation: 下标加1
+op5246=>operation: 令子串右边界j等于子串可能的长度加左边界减1
+op5287=>operation: 最长子串的左边界索引等于i
+op5263=>operation: 从左边界至右边界的子串不是回文串
+st5041=>start: start longestPalindrome
+cond5049=>condition: 长度小于2
+op5064=>operation: 初始化最长回文子串的左边界索引begin等于0
+e5297=>end: end function return
+io5056=>inputoutput: output:  返回字符串
+op5285=>operation: 最长子串的长度等于右边界减去左边界加一
+cond5195=>condition: 左边界是否小于字符串的长度
+io5299=>inputoutput: output:  计算从最长回文子串左边界开始max_len个长度的子串并返回
+cond5268=>condition: 右边界减去左边界小于3
+op5046=>operation: n为字符串s长度
+cond5249=>condition: 如果右边界越界
+op5066=>operation: 初始化dp数组，长宽均等于字符串的长度，全部初始化为False。dp[i][j]表示s[i..j] 是否是回文串
+cond5281=>condition: 左边界至右边界的子串是回文串，且右边界减去左边界加一的值大于最长子串的长度
+
+op5276->cond5281
+cond5268(yes)->op5272
+op5285->op5287
+op5062->op5064
+cond5195(no)->op2
+op5078->op1
+cond5281(yes)->op5285
+io5043->op5046
+cond5049(no)->op5062
+st5041->io5043
+op5272->cond5281
+cond5259(yes)->op5263
+cond5085(no)->io5299
+cond5049(yes)->io5056
+op1->cond5071
+op5246->cond5249
+op5066->op5068
+cond5259(no)->cond5268
+op2->cond5085
+cond5281(no)->op3
+cond5071(yes)->op5078
+io5299->e5297
+op5064->op5066
+cond5268(no)->op5276
+op5263->cond5281
+io5056->e5054
+op5046->cond5049
+op3->cond5195
+cond5085(yes)->op5192
+op5192->cond5195
+cond5195(yes)->op5246
+op5068->cond5071
+op5287->op3
+cond5071(no)->op5082
+cond5249(no)->cond5259
+cond5249(yes)->op2
+op5082->cond5085

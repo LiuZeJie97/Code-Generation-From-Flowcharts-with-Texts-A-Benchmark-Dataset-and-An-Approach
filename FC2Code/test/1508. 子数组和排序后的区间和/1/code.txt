@@ -1,0 +1,12 @@
+def rangeSum(self, nums: List[int], n: int, left: int, right: int) -> int:
+    MODULO = 10**9 + 7
+    sums = list()
+    for i in range(n):
+        total = 0
+        for j in range(i, n):
+            total += nums[j]
+            sums.append(total)
+    sums.sort()
+    answer = sum(sums[left-1:right])
+    answer %= MODULO
+    return answer

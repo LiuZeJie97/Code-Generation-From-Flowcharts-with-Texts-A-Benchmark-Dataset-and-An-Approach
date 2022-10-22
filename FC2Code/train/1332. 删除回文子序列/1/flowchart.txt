@@ -1,0 +1,24 @@
+cond11363=>condition: 字符串中下标为i的字符与下标为length-i-1的字符不相同
+op11340=>operation: ans初值为1，用于记录最小删除次数
+op1=>operation: 令字符串下标加一
+op11338=>operation: length为字符串l的长度
+cond11345=>condition: 字符串下标小于字符串l的长度
+op11342=>operation: 字符串下标i初值为0
+io11379=>inputoutput: output:  返回最小删除次数
+op11367=>operation: 最小删除次数等于2
+e11377=>end: end function return
+io11335=>inputoutput: input: self, l
+st11333=>start: start removePalindromeSub
+
+op11342->cond11345
+io11335->op11338
+op11367->io11379
+cond11363(yes)->op11367
+op11338->op11340
+io11379->e11377
+st11333->io11335
+cond11345(no)->io11379
+op11340->op11342
+cond11345(yes)->cond11363
+cond11363(no)->op1
+op1->cond11345

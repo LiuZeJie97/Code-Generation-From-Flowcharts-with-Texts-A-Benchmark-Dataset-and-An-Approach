@@ -1,0 +1,48 @@
+op17390=>operation: 以当前行、当前列为右下角的最大正方形的边长等于dp[i - 1][j]、dp[i][j - 1]、dp[i - 1][j - 1]中的较小值加一
+op17386=>operation: 以当前行、当前列为右下角的最大正方形的边长为1
+op17280=>operation: 定义rows, columns分别记录矩形行数和列数
+io17407=>inputoutput: output:  返回最大正方形面积
+op17278=>operation: 定义maxSide记录最大边长，初值为0
+io17272=>inputoutput: output:  返回最大面积为0
+op17402=>operation: 最大正方形面积等于最大边长的平方
+cond17382=>condition: 行数或列数等于0
+cond17349=>condition: j小于矩阵的列数
+e17270=>end: end function return
+cond17287=>condition: i小于矩阵的行数
+io17261=>inputoutput: input: self, matrix
+op17346=>operation: j等于1，记录当前元素的列数
+e17405=>end: end function return
+cond17377=>condition: 当前元素等于"1"
+cond17265=>condition: 矩阵matrix行数或列数为0
+op1=>operation: 行数加1
+op17284=>operation: i等于1，记录当前元素的行数
+op17282=>operation: 初始化dp为全0矩阵，大小和矩阵大小相同，dp[i][j]表示以第i行、第j列处为右下角的最大正方形的边长
+op2=>operation: 列数加1
+op17393=>operation: 如果最大边长小于dp[i][j]，则更新最大边长为dp[i][j]
+st17259=>start: start maximalSquare
+
+cond17349(no)->op1
+op2->cond17349
+op17282->op17284
+cond17265(yes)->io17272
+op17390->op17393
+op17280->op17282
+cond17377(yes)->cond17382
+op1->cond17287
+cond17382(yes)->op17386
+op17346->cond17349
+op17402->io17407
+io17407->e17405
+cond17265(no)->op17278
+op17284->cond17287
+op17393->op2
+op17278->op17280
+io17261->cond17265
+cond17382(no)->op17390
+st17259->io17261
+op17386->op17393
+cond17287(no)->op17402
+cond17349(yes)->cond17377
+cond17287(yes)->op17346
+cond17377(no)->op2
+io17272->e17270

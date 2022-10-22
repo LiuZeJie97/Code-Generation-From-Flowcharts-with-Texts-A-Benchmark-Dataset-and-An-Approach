@@ -1,0 +1,25 @@
+def search(self, a: List[int], t: int) -> bool:    #io31214
+    if not a:    #cond31218
+        return False    #io31225
+    n = len(a)    #op31231
+    if n == 1:    #cond31234
+        return a[0] == t    #io31241
+    l, r = 0, n - 1    #op31247
+    while l <= r:    #cond31250
+        m = (l + r) // 2    #op31315
+        if a[m] == t:    #cond31318
+            return True    #io31325
+        if a[l] == a[m] and a[m] == a[r]:    #cond31332
+            l += 1    #op31336
+            r -= 1    #op31338
+        elif a[l] <= a[m]:    #cond31343
+            if a[l] <= t and t < a[m]:    #cond31348
+                r = m - 1    #op31352
+            else:    #None
+                l = m + 1    #op31356
+        else:    #None
+            if a[m] < t and t <= a[-1]:    #cond31362
+                l = m + 1    #op31366
+            else:    #None
+                r = m - 1    #op31370
+    return False    #io31380

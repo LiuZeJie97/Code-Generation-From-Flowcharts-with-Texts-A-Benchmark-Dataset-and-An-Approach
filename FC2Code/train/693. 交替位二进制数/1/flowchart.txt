@@ -1,0 +1,26 @@
+op26086=>operation: 给定正整数的二进制01不是交替出现
+st26046=>start: start hasAlternatingBits
+cond26082=>condition: 若cur等于prev
+cond26056=>condition: 当给定正整数n不为0
+op26093=>operation: 将cur的值赋给prev
+op26095=>operation: 令给定正整数整除2
+e26100=>end: end function return
+io26048=>inputoutput: input: self, n
+op26051=>operation: 定义变量prev等于2
+op26053=>operation: 定义初值为True的标志变量f，用于表示给定正整数的二进制01是否交替出现，True表示是交替出现，False表示不是交替出现
+io26102=>inputoutput: output:  返回表示给定正整数的二进制01是否交替出现的标志变量
+op26079=>operation: 定义变量cur等于给定正整数n除以2的余数
+
+op26095->cond26056
+cond26056(yes)->op26079
+cond26082(yes)->op26086
+cond26082(no)->op26093
+op26086->io26102
+cond26056(no)->io26102
+io26048->op26051
+io26102->e26100
+op26051->op26053
+st26046->io26048
+op26093->op26095
+op26079->cond26082
+op26053->cond26056

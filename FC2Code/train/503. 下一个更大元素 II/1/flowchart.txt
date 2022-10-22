@@ -1,0 +1,32 @@
+cond20723=>condition: 当循环次数小于循环数组长度的两倍减一
+op1=>operation: 循环次数更新为上一个循环次数加一
+io20773=>inputoutput: output:  返回结果数组
+op20714=>operation: size为循环数组nums的长度
+op20720=>operation: i为循环次数
+op20762=>operation: 结果数组中下标为栈顶元素的项等于循环数组中下标为取余结果的项
+op20766=>operation: 将取余结果添加进单调栈
+op20716=>operation: 定义数组ret用于记录结果，其长度与循环数组长度相同，初值均为-1
+st20709=>start: start nextGreaterElements
+cond20751=>condition: 若单调栈不为空且循环数组中下标为单调栈最后一项的元素小于下标为取余结果的元素
+io20711=>inputoutput: input: self, nums
+op20718=>operation: 定义单调栈s
+op20760=>operation: top为单调栈栈顶的元素
+e20771=>end: end function return
+op20748=>operation: rem为i对循环数组长度取余的结果
+
+st20709->io20711
+op20716->op20718
+op20714->op20716
+cond20751(no)->op20766
+op20718->op20720
+op20766->op1
+cond20723(yes)->op20748
+cond20751(yes)->op20760
+op20762->cond20751
+op20748->cond20751
+io20711->op20714
+io20773->e20771
+op20760->op20762
+op20720->cond20723
+cond20723(no)->io20773
+op1->cond20723

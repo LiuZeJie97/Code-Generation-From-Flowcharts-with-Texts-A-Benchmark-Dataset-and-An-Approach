@@ -1,0 +1,25 @@
+def maxSum(self, nums1: List[int], nums2: List[int]) -> int:    #io14711
+    mod = 10**9 + 7    #op14714
+    m, n = len(nums1), len(nums2)    #op14716
+    best1 = best2 = 0    #op14718
+    i = j = 0    #op14720
+    while i < m or j < n:    #cond14723
+        if i < m and j < n:    #cond14793
+            if nums1[i] < nums2[j]:    #cond14798
+                best1 += nums1[i]    #op14802
+                i += 1    #op14804
+            elif nums1[i] > nums2[j]:    #cond14809
+                best2 += nums2[j]    #op14813
+                j += 1    #op14815
+            else:    #None
+                best = max(best1, best2) + nums1[i]    #op14819
+                best1 = best2 = best    #op14821
+                i += 1    #op14823
+                j += 1    #op14825
+        elif i < m:    #cond14832
+            best1 += nums1[i]    #op14836
+            i += 1    #op14838
+        elif j < n:    #cond14843
+            best2 += nums2[j]    #op14847
+            j += 1    #op14849
+    return max(best1, best2) % mod    #io14861

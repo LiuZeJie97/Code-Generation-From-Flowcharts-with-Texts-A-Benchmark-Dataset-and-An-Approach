@@ -1,0 +1,9 @@
+def stoneGame(self, piles: List[int]) -> bool:
+    length = len(piles)
+    dp = [0] * length
+    for i, pile in enumerate(piles):
+        dp[i] = pile
+    for i in range(length - 2, -1, -1):
+        for j in range(i + 1, length):
+            dp[j] = max(piles[i] - dp[j], piles[j] - dp[j - 1])
+    return dp[-1] > 0

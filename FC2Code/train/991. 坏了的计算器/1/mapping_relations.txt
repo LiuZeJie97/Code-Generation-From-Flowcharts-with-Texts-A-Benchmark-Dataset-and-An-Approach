@@ -1,0 +1,10 @@
+def brokenCalc(self, startValue: int, target: int) -> int:    #io37157
+    ans = 0    #op37160
+    while target > startValue:    #cond37163
+        ans += 1    #op37182
+        if target % 2 == 0:    #cond37185
+            target //= 2    #op37189
+        else:    #None
+            target += 1    #op37193
+    ans += startValue - target    #op37198
+    return ans    #io37203

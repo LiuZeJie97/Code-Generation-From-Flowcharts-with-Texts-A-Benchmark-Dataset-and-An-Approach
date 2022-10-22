@@ -1,0 +1,12 @@
+def maxSatisfaction(self, satisfaction: List[int]) -> int:    #io12103
+    satisfaction.sort()    #op12106
+    satisfaction.reverse()    #op12108
+    presum= 0    #op12110
+    res = 0    #op12112
+    for idx in range(len(satisfaction)):    #cond12117
+        if presum + satisfaction[idx] > 0:    #cond12137
+            res += presum + satisfaction[idx]    #op12141
+            presum += satisfaction[idx]    #op12143
+        else:    #None
+            break    #None
+    return res    #io12155

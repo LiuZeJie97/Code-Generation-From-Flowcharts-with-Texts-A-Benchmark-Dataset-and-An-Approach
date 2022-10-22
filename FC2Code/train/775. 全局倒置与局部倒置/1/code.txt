@@ -1,0 +1,10 @@
+def isIdealPermutation(self, n: List[int]) -> bool:
+    length = len(n)
+    sign = True
+    floor = length
+    for i in range(length-1, -1, -1):
+        floor = min(floor, n[idx])
+        if idx >= 2 and n[idx-2] > floor:
+            sign = False
+            break
+    return sign

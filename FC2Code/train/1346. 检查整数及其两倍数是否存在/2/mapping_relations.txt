@@ -1,0 +1,15 @@
+def checkIfExist(self, a: List[int]) -> bool:    #io11584
+    a.sort()    #op11587
+    q = 0    #op11589
+    for p in range(len(a)):    #cond11594
+        while q < len(a) and a[p] * 2 > a[q]:    #cond11626
+            q += 1    #op11633
+        if q != len(a) and p != q and a[p] * 2 == a[q]:    #cond11638
+            return True    #io11645
+    q = len(a) - 1    #op11653
+    for p in range(len(a) - 1, -1, -1):    #cond11658
+        while q > -1 and a[p] * 2 < a[q]:    #cond11690
+            q -= 1    #op11697
+        if q != -1 and p != q and a[p] * 2 == a[q]:    #cond11702
+            return True    #io11709
+    return False    #io11720

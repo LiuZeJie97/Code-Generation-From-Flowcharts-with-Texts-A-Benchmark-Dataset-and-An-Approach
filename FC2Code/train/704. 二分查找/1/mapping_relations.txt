@@ -1,0 +1,12 @@
+def search(self, nums: List[int], target: int) -> int:    #io27263
+    st, ed = 0, len(nums) - 1    #op27266
+    while st <= ed:    #cond27269
+        mi = (ed - st) // 2 + st    #op27304
+        num = nums[mi]    #op27306
+        if num == target:    #cond27309
+            return mi    #io27316
+        elif num > target:    #cond27322
+            ed = mi - 1    #op27326
+        else:    #None
+            st = mi + 1    #op27330
+    return -1    #io27339

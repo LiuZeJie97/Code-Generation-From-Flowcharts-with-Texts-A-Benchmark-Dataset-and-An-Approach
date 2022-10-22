@@ -1,0 +1,13 @@
+def nthMagicalNumber(self, n: int, a: int, b: int) -> int:    #io33989
+    MOD = 10**9 + 7    #op33992
+    l = a // gcd(a, b) * b    #op33994
+    low = 0    #op33996
+    high = 10**15    #op33998
+    while low < high:    #cond34001
+        mid = (low + high) // 2    #op34022
+        m = mid // a + mid // b - mid // l    #op34024
+        if m < n:    #cond34027
+            low = mid + 1    #op34031
+        else:    #None
+            high = mid    #op34035
+    return low % MOD    #io34043

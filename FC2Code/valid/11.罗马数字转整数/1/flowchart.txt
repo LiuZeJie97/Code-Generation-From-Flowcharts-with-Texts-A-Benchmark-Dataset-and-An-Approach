@@ -1,0 +1,30 @@
+io714=>inputoutput: output:  返回罗马数字对应的值
+op695=>operation: 使用value保存当前字符对应的值
+op671=>operation: 使用ans用于记录罗马数字对应的值，初值为0
+op702=>operation: 罗马数字对应的值需要减去当前字符对应的值
+e712=>end: end function return
+op669=>operation: n等于罗马数字s的长度
+st662=>start: start romanToInt
+op1=>operation: 更新罗马数字的下标和字符
+op673=>operation: i为罗马数字下标，ch为罗马数字中的每一个字符
+io664=>inputoutput: input: self, s
+op706=>operation: 罗马数字对应的值需要加上当前字符对应的值
+op667=>operation: 初始化字典VALUE_SYMBOLS={'I': 1,'V': 5,'X': 10,'L': 50,'C': 100,'D': 500,'M': 1000}，该向量由若干元组组成，每个元组是个(数值，字符)对，向量中的元组按数值大小由低到高排序，
+cond698=>condition: 若当前字符小于罗马数字的长度减去1且当前字符对应的值小于当前字符右侧的字符对应的值
+cond676=>condition: 对于每一个下标和每一个字符
+
+cond698(no)->op706
+io664->op667
+op671->op673
+cond676(no)->io714
+cond676(yes)->op695
+op1->cond676
+cond698(yes)->op702
+op706->op1
+op695->cond698
+op667->op669
+op669->op671
+op673->cond676
+io714->e712
+op702->op1
+st662->io664

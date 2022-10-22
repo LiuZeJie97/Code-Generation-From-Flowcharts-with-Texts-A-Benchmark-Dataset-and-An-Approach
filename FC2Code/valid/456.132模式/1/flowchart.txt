@@ -1,0 +1,39 @@
+e20459=>end: end function return
+op20362=>operation: n为数组array的长度
+op20364=>operation: 定义单调栈candidate_k，将数组中最后一项添加进单调栈
+op20368=>operation: i为数组下标，初值为数组array的长度减2
+cond20431=>condition: 单调栈candidate_k非空且数组下标为i的元素大于单调栈中最后一项元素
+io20461=>inputoutput: output:  不存在132模式的子序列
+op20440=>operation: 令max_k等于单调栈中最后一项元素
+io20359=>inputoutput: input: self, array
+cond20371=>condition: 当数组下标大于-1
+cond20417=>condition: 数组中下标为i的元素小于max_k
+op1=>operation: 数组下标减一
+op20451=>operation: 将该元素添加进单调栈
+st20357=>start: start find132pattern
+op20442=>operation: 移除单调栈栈顶元素
+cond20447=>condition: 数组下标为i的元素大于max_k
+e20422=>end: end function return
+op20366=>operation: 定义变量max_k等于负的float类型的inf
+io20424=>inputoutput: output:  存在132模式的子序列
+
+st20357->io20359
+cond20447(no)->op1
+cond20431(yes)->op20440
+io20424->e20422
+cond20417(no)->cond20431
+op20442->cond20431
+cond20371(yes)->cond20417
+op20451->op1
+op20364->op20366
+io20461->e20459
+cond20417(yes)->io20424
+op20440->op20442
+op20366->op20368
+cond20431(no)->cond20447
+op20368->cond20371
+cond20371(no)->io20461
+op1->cond20371
+op20362->op20364
+cond20447(yes)->op20451
+io20359->op20362

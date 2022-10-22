@@ -1,0 +1,15 @@
+def hIndex(self, citations: List[int]) -> int:
+    n = len(citations); tot = 0
+    counter = [0] * (n+1)
+    for c in citations:
+        if c >= n:
+            counter[n] += 1
+        else:
+            counter[c] += 1
+    h = 0
+    for i in range(n, -1, -1):
+        tot += counter[i]
+        if tot >= i:
+            h = i
+            break
+    return h

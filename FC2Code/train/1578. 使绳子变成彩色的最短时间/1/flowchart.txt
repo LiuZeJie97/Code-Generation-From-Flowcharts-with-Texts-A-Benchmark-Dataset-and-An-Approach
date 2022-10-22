@@ -1,0 +1,32 @@
+cond15365=>condition: i小于颜色数组的长度
+op15360=>operation: length为颜色数组colors的长度，其中colors[i]是第i个气球的颜色
+cond15401=>condition: i小于颜色数组的长度且第i个气球的颜色为ch
+io15427=>inputoutput: output:  返回最少时间
+e15425=>end: end function return
+op15412=>operation: 令最长时间等于它与数组neededTime中下标为i的元素之间的较大者
+st15353=>start: start minCost
+op15358=>operation: i等于0
+op15396=>operation: ch等于第i个气球的颜色
+op15362=>operation: ret等于0，用于记录最少时间
+op15414=>operation: 令总时间加上上述数组中下标为i的元素
+op15420=>operation: 令最少时间ret加上总时间与最长时间之间的差值
+io15355=>inputoutput: input: self, colors, neededTime
+op15398=>operation: 最长时间maxValue，总时间total均等于0
+op15416=>operation: 令i加一
+
+op15358->op15360
+op15398->cond15401
+st15353->io15355
+op15396->op15398
+cond15401(yes)->op15412
+op15362->cond15365
+op15416->cond15401
+io15355->op15358
+op15414->op15416
+cond15365(yes)->op15396
+io15427->e15425
+op15360->op15362
+op15412->op15414
+op15420->cond15365
+cond15401(no)->op15420
+cond15365(no)->io15427

@@ -1,0 +1,33 @@
+op36343=>operation: 对数组tokens进行排序
+io36420=>inputoutput: output:  返回答案
+op36395=>operation: 令初始能量减去队列中队头元素，并将队头元素出队
+op36347=>operation: 定义变量ans用于记录答案，定义变量bns用于记录得分，其初值均为0
+cond36350=>condition: 队列不为空且下列条件满足其一：初始能量power大于等于队列中第一项元素，得分不为0
+io36340=>inputoutput: input: self, tokens, power
+st36338=>start: start bagOfTokensScore
+e36418=>end: end function return
+op36397=>operation: 得分加一
+op36345=>operation: 定义队列deque，并使用数组tokens初始化队列
+op36410=>operation: 得分减一
+cond36404=>condition: 队列不为空且得分不为0
+op36401=>operation: 如果得分大于答案，则将答案更新为得分
+op36408=>operation: 令初始能量加上队列中队尾元素，并将队尾元素出队
+cond36386=>condition: 队列不为空且初始能量power大于等于队列中第一项元素
+
+op36345->op36347
+st36338->io36340
+op36397->cond36386
+op36401->cond36404
+cond36350(no)->io36420
+op36408->op36410
+op36347->cond36350
+cond36404(no)->cond36350
+cond36350(yes)->cond36386
+op36410->cond36350
+io36420->e36418
+op36343->op36345
+cond36404(yes)->op36408
+op36395->op36397
+cond36386(yes)->op36395
+cond36386(no)->op36401
+io36340->op36343

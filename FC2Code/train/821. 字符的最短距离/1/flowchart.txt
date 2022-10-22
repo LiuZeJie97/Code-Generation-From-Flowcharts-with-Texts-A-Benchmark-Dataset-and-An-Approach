@@ -1,0 +1,44 @@
+op31516=>operation: idx等于i
+op31489=>operation: 将idx更新为二倍字符串的长度
+cond31458=>condition: 对字符串进行遍历
+op31455=>operation: i等于0，表示为字符串索引；ch为字符串s中当前索引处的字符
+op1=>operation: 字符串索引加一，当前索引处的字符等于字符串中的下一个字符
+op31453=>operation: 定义变量idx，其初值等于负的字符串的长度
+cond31512=>condition: 若字符串中当前字符串索引对应的字符等于字符c
+cond31494=>condition: 字符串索引大于-1
+op31449=>operation: n为字符串s的长度
+st31444=>start: start shortestToChar
+op31451=>operation: 定义长度等于字符串的长度，数组元素初值均为0的答案数组ans
+io31446=>inputoutput: input: self, s, c
+op31521=>operation: 答案数组中当前字符串索引对应的元素等于它与idx减去当前字符串索引之间的最小值
+op31485=>operation: 答案数组中当前字符串索引对应的元素等于当前字符串索引减去idx
+op31491=>operation: i为字符串索引，初值为字符串s的长度减一
+op2=>operation: 字符串索引减1
+cond31476=>condition: 若当前索引处的字符等于字符c
+e31526=>end: end function return
+io31528=>inputoutput: output:  返回答案数组
+op31480=>operation: idx等于当前字符串索引
+
+st31444->io31446
+op1->cond31458
+op31491->cond31494
+cond31512(no)->op31521
+op31521->op2
+op31485->op1
+cond31476(no)->op31485
+cond31494(no)->io31528
+io31446->op31449
+cond31458(no)->op31489
+op31455->cond31458
+cond31512(yes)->op31516
+op31516->op31521
+op2->cond31494
+cond31494(yes)->cond31512
+op31449->op31451
+io31528->e31526
+op31453->op31455
+cond31458(yes)->cond31476
+op31489->op31491
+op31480->op31485
+cond31476(yes)->op31480
+op31451->op31453

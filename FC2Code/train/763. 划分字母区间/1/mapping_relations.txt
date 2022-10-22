@@ -1,0 +1,12 @@
+def partitionLabels(self, s: str) -> List[int]:    #io29670
+    last = [0] * 26    #op29673
+    for idx, ch in enumerate(s):    #cond29678
+        last[ord(ch) - ord("a")] = idx    #op29685
+    partition = list()    #op29689
+    start = end = 0    #op29691
+    for idx, ch in enumerate(s):    #cond29696
+        end = max(end, last[ord(ch) - ord("a")])    #op29715
+        if idx == end:    #cond29718
+            partition.append(end - start + 1)    #op29722
+            start = end + 1    #op29724
+    return partition    #io29734

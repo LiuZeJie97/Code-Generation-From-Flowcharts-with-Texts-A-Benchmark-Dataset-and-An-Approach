@@ -1,0 +1,44 @@
+op3=>operation: 令该数组下标加一
+op14371=>operation: 定义数组下标i，初值为0
+op14369=>operation: 定义变量cnt用于记录好三元组的数量，初值为0
+op14367=>operation: 定义变量an等于数组arr的长度
+op14619=>operation: 定义数组下标k，初值为j加一
+io14700=>inputoutput: output:  返回好三元组的数量
+op14537=>operation: 定义数组下标j，初值为i加一
+st14362=>start: start countGoodTriplets
+cond14374=>condition: 数组下标i小于数组arr的长度
+op2=>operation: 令该数组下标加一
+cond14622=>condition: 数字下标k小于数组arr的长度
+io14364=>inputoutput: input: self, arr, a, b, c
+cond14680=>condition: 第i个数与第k个数之差的绝对值大于c
+op1=>operation: 令该数组下标加一
+cond14670=>condition: 数组中第j个数与第k个数之差的绝对值大于b
+cond14540=>condition: 数组下标j小于数组arr的长度
+cond14660=>condition: 数组arr中第i个数与第j个数之差的绝对值大于a
+e14698=>end: end function return
+op14689=>operation: 好三元组的数量加一
+
+op14689->op3
+cond14374(yes)->op14537
+cond14540(no)->op1
+op14619->cond14622
+op14537->cond14540
+op14371->cond14374
+op14367->op14369
+io14700->e14698
+op2->cond14540
+cond14622(yes)->cond14660
+io14364->op14367
+op3->cond14622
+cond14660(no)->cond14670
+st14362->io14364
+op1->cond14374
+cond14622(no)->op2
+cond14540(yes)->op14619
+cond14660(yes)->op3
+op14369->op14371
+cond14670(no)->cond14680
+cond14374(no)->io14700
+cond14670(yes)->op3
+cond14680(no)->op14689
+cond14680(yes)->op3

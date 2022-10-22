@@ -1,0 +1,11 @@
+def hasAlternatingBits(self, n: int) -> bool:    #io26048
+    prev = 2    #op26051
+    f = True    #op26053
+    while n:    #cond26056
+        cur = n % 2    #op26079
+        if cur == prev:    #cond26082
+            f = False    #op26086
+            break    #None
+        prev = cur    #op26093
+        n //= 2    #op26095
+    return f    #io26102

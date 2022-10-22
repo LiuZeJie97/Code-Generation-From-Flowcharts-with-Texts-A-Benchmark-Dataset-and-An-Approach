@@ -1,0 +1,24 @@
+op10335=>operation: ret等于0，用于记录位数为偶数的数字的个数
+io10374=>inputoutput: output:  返回位数为偶数的数字的个数
+op10357=>operation: 将数组中下标为i的数转化为字符串，length等于该字符串的长度
+io10332=>inputoutput: input: self, n
+cond10360=>condition: 字符串的长度为偶数
+e10372=>end: end function return
+op10364=>operation: 位数为偶数的数字的个数加一
+op1=>operation: 数组下标自增1
+op10337=>operation: 数组下标i等于0
+cond10340=>condition: 数组下标小于数组n的长度
+st10330=>start: start findNumbers
+
+io10374->e10372
+cond10340(no)->io10374
+op10335->op10337
+io10332->op10335
+op10337->cond10340
+st10330->io10332
+op1->cond10340
+op10364->op1
+cond10360(yes)->op10364
+op10357->cond10360
+cond10340(yes)->op10357
+cond10360(no)->op1

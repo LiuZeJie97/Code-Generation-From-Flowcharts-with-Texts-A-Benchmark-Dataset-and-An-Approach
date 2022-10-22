@@ -1,0 +1,12 @@
+def sortArrayByParity(self, numbers: List[int]) -> List[int]:    #io34909
+    left, right = 0, len(numbers) - 1    #op34912
+    while left < right:    #cond34915
+        while left < right and numbers[left] % 2 == 0:    #cond34959
+            left += 1    #op34966
+        while left < right and numbers[right] % 2 != 0:    #cond34971
+            right -= 1    #op34978
+        if left < right:    #cond34983
+            numbers[left], numbers[right] = numbers[right], numbers[left]    #op34987
+            left += 1    #op34989
+            right -= 1    #op34991
+    return numbers    #io35001

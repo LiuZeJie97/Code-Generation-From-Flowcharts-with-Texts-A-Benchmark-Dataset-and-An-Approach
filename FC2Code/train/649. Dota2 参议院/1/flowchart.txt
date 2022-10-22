@@ -1,0 +1,42 @@
+op24522=>operation: i为数组下标，ch为字符串senate中当前数组下标对应的字符
+op1=>operation: 当前数组下标加一并将当前字符下标移动至当前数组下标位置
+op24516=>operation: n为字符串senate的长度
+cond24525=>condition: 对字符串进行遍历
+op24518=>operation: 定义队列radiant，用于记录天辉阵营的投票时间
+op24587=>operation: 计算夜魇阵营队列中的第一项元素与字符串senate的长度的和，将该计算结果添加进夜魇阵营队列
+cond24557=>condition: 天辉阵营和夜魇阵营的投票时间队列均不为空
+io24513=>inputoutput: input: self, senate
+e24597=>end: end function return
+op24551=>operation: 将当前下标添加进夜魇阵营的投票时间队列
+op24547=>operation: 将当前下标添加进天辉阵营的投票时间队列
+st24511=>start: start predictPartyVictory
+op24590=>operation: 令天辉阵营队列的队头元素出队
+cond24543=>condition: 当前字符为"R"
+op24520=>operation: 定义队列dire，用于记录夜魇阵营的投票时间
+op24592=>operation: 令夜魇阵营队列的队头元素出队
+op24583=>operation: 计算天辉阵营队列中的第一项元素与字符串senate的长度的和，将该计算结果添加进天辉阵营队列
+io24599=>inputoutput: output:  如果天辉阵营队列不为空，返回"Radiant"，否则返回"Dire"
+cond24579=>condition: 天辉阵营队列中的第一项元素小于夜魇阵营队列中的第一项元素
+
+st24511->io24513
+cond24525(yes)->cond24543
+op24592->cond24557
+cond24557(no)->io24599
+cond24579(no)->op24587
+cond24543(yes)->op24547
+op24583->op24590
+io24513->op24516
+op24590->op24592
+op24520->op24522
+op1->cond24525
+cond24543(no)->op24551
+op24587->op24590
+cond24579(yes)->op24583
+op24518->op24520
+cond24557(yes)->cond24579
+op24522->cond24525
+cond24525(no)->cond24557
+op24551->op1
+op24516->op24518
+op24547->op1
+io24599->e24597

@@ -1,0 +1,11 @@
+def isUgly(self, n: int) -> bool:    #io18401
+    if n <= 0:    #cond18405
+        return False    #io18412
+    factors = []    #op18418
+    factors.append(2)    #op18420
+    factors.append(3)    #op18422
+    factors.append(5)    #op18424
+    for i in range(len(factors)):    #cond18429
+        while n % factors[i] == 0:    #cond18447
+            n //= factors[i]    #op18454
+    return n == 1    #io18463

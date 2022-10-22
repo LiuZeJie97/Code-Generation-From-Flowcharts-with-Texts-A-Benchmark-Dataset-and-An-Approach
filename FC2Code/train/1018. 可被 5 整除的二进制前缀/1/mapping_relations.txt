@@ -1,0 +1,10 @@
+def prefixesDivBy5(self, numbers: List[int]) -> List[bool]:    #io7535
+    ans = list()    #op7538
+    prefix = 0    #op7540
+    for i in range(len(numbers)):    #cond7545
+        prefix = (prefix << 1) + numbers[index]    #op7564
+        if prefix % 5 == 0:    #cond7567
+            ans.append(True)    #op7571
+        else:    #None
+            ans.append(False)    #op7575
+    return ans    #io7583

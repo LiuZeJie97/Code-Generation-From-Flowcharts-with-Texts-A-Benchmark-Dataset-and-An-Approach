@@ -1,0 +1,19 @@
+def maxAreaOfIsland(self, grid: List[List[int]]) -> int:    #io26113
+    ans = 0    #op26116
+    for i, l in enumerate(grid):    #cond26121
+        for j, n in enumerate(l):    #cond26343
+            cur = 0    #op26450
+            q = collections.deque([(i, j)])    #op26452
+            while q:    #cond26455
+                cur_i, cur_j = q.popleft()    #op26504
+                if cur_i < 0 or cur_j < 0 or cur_i == len(grid) or cur_j == len(grid[0]):    #cond26507
+                    continue    #None
+                if grid[cur_i][cur_j] != 1:    #cond26517
+                    continue    #None
+                cur += 1    #op26526
+                grid[cur_i][cur_j] = 0    #op26528
+                for di, dj in [[0, 1], [0, -1], [1, 0], [-1, 0]]:    #cond26533
+                    next_i, next_j = cur_i + di, cur_j + dj    #op26542
+                    q.append((next_i, next_j))    #op26544
+            ans = max(ans, cur)    #op26550
+    return ans    #io26559

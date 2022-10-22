@@ -1,0 +1,28 @@
+def threeSum(self, nums: [int]) -> [[int]]:    #io3221
+    nums.sort()    #op3224
+    res, k = [], 0    #op3226
+    for k in range(len(nums) - 2):    #cond3231
+        if nums[k] > 0:    #cond3419
+            break    #None
+        if k > 0 and nums[k] == nums[k - 1]:    #cond3429
+            continue    #None
+        i, j = k + 1, len(nums) - 1    #op3438
+        while i < j:    #cond3441
+            s = nums[k] + nums[i] + nums[j]    #op3522
+            if s < 0:    #cond3525
+                i += 1    #op3529
+                while i < j and nums[i] == nums[i - 1]:    #cond3532
+                    i += 1    #op3539
+            elif s > 0:    #cond3546
+                j -= 1    #op3550
+                while i < j and nums[j] == nums[j + 1]:    #cond3553
+                    j -= 1    #op3560
+            else:    #None
+                res.append([nums[k], nums[i], nums[j]])    #op3566
+                i += 1    #op3568
+                j -= 1    #op3570
+                while i < j and nums[i] == nums[i - 1]:    #cond3573
+                    i += 1    #op3580
+                while i < j and nums[j] == nums[j + 1]:    #cond3585
+                    j -= 1    #op3592
+    return res    #io3605

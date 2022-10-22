@@ -1,0 +1,16 @@
+def reachingPoints(self, sx: int, sy: int, tx: int, ty: int) -> bool:    #io29956
+    flag = False    #op29959
+    while sx < tx != ty > sy:    #cond29962
+        if tx > ty:    #cond29980
+            tx = tx % ty    #op29984
+        else:    #None
+            ty = ty % tx    #op29988
+    if tx == sx and ty == sy:    #cond29994
+        flag = True    #op29998
+    elif tx == sx:    #cond30003
+        if ty > sy and (ty - sy) % tx == 0:    #cond30008
+            flag = True    #op30012
+    elif ty == sy:    #cond30020
+        if tx > sx and (tx - sx) % ty == 0:    #cond30025
+            flag = True    #op30029
+    return flag    #io30042

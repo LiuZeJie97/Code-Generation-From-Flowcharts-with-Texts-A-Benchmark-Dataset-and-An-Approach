@@ -1,0 +1,15 @@
+def findCircleNum(self, isConnected: List[List[int]]) -> int:    #io22085
+    cities = len(isConnected)    #op22088
+    visited = set()    #op22090
+    provinces = 0    #op22092
+    for i in range(cities):    #cond22097
+        if i not in visited:    #cond22191
+            Q = collections.deque([i])    #op22195
+            while Q:    #cond22198
+                j = Q.popleft()    #op22237
+                visited.add(j)    #op22239
+                for k in range(cities):    #cond22244
+                    if isConnected[j][k] == 1 and k not in visited:    #cond22260
+                        Q.append(k)    #op22264
+            provinces += 1    #op22273
+    return provinces    #io22283

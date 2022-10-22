@@ -1,0 +1,28 @@
+op1122=>operation: 初始化哈希表，key为数值，value为数值对应的字符，词典元素按数值大小由高到低排序。
+op1=>operation: 当前数值为哈希表的下一个元素
+st1117=>start: start intToRoman
+cond1129=>condition: 对于哈希表中的每一个当前数值key
+op1162=>operation: 转换后的罗马数字等于其自身拼接上 当前数值所对应的字符 乘上 需要使用该字符的次数
+io1119=>inputoutput: input: self, num
+cond1151=>condition: 如果给定的数值大于当前数值
+io1171=>inputoutput: output:  返回转换后的罗马数字
+op1164=>operation: 更新给定的数值等于其自身整除当前数值后留下的余数
+op1124=>operation: res记录转换后的罗马数字
+e1169=>end: end function return
+op1126=>operation: 定义当前数值key的初值为哈希表hashmap的第一个元素
+op1160=>operation: 定义count等于给定的数值num整除当前数值key，表示需要使用当前数值对应字符count次
+
+io1171->e1169
+cond1129(yes)->cond1151
+io1119->op1122
+st1117->io1119
+op1162->op1164
+cond1151(yes)->op1
+op1->cond1129
+op1164->op1
+op1124->op1126
+cond1151(no)->op1160
+op1122->op1124
+op1160->op1162
+op1126->cond1129
+cond1129(no)->io1171

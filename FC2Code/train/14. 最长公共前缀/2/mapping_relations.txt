@@ -1,0 +1,10 @@
+def longestCommonPrefix(self, strs: List[str]) -> str:    #io1515
+    if not strs:    #cond1519
+        return ""    #io1526
+    length = len(strs[0])    #op1532
+    count =  len(strs)    #op1532
+    for i in range(length):    #cond1537
+        c = strs[0][i]    #op1558
+        if any(i == len(strs[j]) or strs[j][i] != c for j in range(1, count)):    #cond1561
+            return strs[0][:i]    #io1568
+    return strs[0]    #io1579

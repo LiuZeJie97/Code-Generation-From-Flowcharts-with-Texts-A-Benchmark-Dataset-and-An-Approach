@@ -1,0 +1,19 @@
+def numSubmat(self, mat: List[List[int]]) -> int:    #io13382
+    n, m = len(mat), len(mat[0])    #op13385
+    row = [[0] * m for _ in range(n)]    #op13387
+    for i in range(n):    #cond13392
+        for j in range(m):    #cond13434
+            if j == 0:    #cond13452
+                row[i][j] = mat[i][j]    #op13456
+            else:    #None
+                row[i][j] = 0 if mat[i][j] == 0 else row[i][j - 1] + 1    #op13460
+    ans = 0    #op13467
+    for i in range(n):    #cond13472
+        for j in range(m):    #cond13570
+            col = row[i][j]    #op13615
+            for k in range(i, -1, -1):    #cond13620
+                col = min(col, row[k][j])    #op13639
+                if col == 0:    #cond13642
+                    break    #None
+                ans += col    #op13651
+    return ans    #io13662

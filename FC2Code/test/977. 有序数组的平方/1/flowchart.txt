@@ -1,0 +1,56 @@
+cond36898=>condition: 左指针小于0
+io36806=>inputoutput: input: self, number
+op36915=>operation: 左指针减一
+op36809=>operation: n为数组number的长度
+op36924=>operation: 计算数组左指针元素的2次方，将计算结果添加进答案数组
+st36804=>start: start sortedSquares
+cond36816=>condition: i小于数组number的长度
+cond36920=>condition: 数组左指针元素的2次方小于右指针元素的2次方
+op36847=>operation: 定义答案数组ans
+op1=>operation: i等于i加一
+io36942=>inputoutput: output:  返回答案数组
+op36902=>operation: 计算数组右指针元素的2次方，将计算结果添加进答案数组
+op36926=>operation: 左指针减一
+op36930=>operation: 计算数组右指针元素的2次方，将计算结果添加进答案数组
+cond36834=>condition: 数组中下标为i的元素小于0
+cond36852=>condition: i大于等于0或j小于数组number的长度
+op36913=>operation: 计算数组左指针元素的2次方，将计算结果添加进答案数组
+op36849=>operation: 定义左指针i，初值为分界位置，定义右指针j，初值为分界位置加一
+op36932=>operation: 右指针加一
+e36940=>end: end function return
+op36811=>operation: 定义变量negative用于记录负数与非负数的分界位置，初值为-1
+op36838=>operation: 负数与非负数的分界位置等于i
+op36904=>operation: 右指针加一
+op36813=>operation: 定义变量i，初值为0
+cond36909=>condition: 右指针等于数组的长度
+
+op36915->cond36852
+cond36834(no)->op36847
+cond36898(no)->cond36909
+op36930->op36932
+cond36909(yes)->op36913
+op36932->cond36852
+cond36898(yes)->op36902
+cond36909(no)->cond36920
+op36849->cond36852
+op36913->op36915
+cond36920(no)->op36930
+cond36920(yes)->op36924
+op36847->op36849
+cond36834(yes)->op36838
+op36813->cond36816
+cond36816(no)->op36847
+io36806->op36809
+op36838->op1
+op36926->cond36852
+cond36852(no)->io36942
+op36809->op36811
+io36942->e36940
+cond36816(yes)->cond36834
+op36902->op36904
+st36804->io36806
+cond36852(yes)->cond36898
+op36924->op36926
+op36811->op36813
+op1->cond36816
+op36904->cond36852

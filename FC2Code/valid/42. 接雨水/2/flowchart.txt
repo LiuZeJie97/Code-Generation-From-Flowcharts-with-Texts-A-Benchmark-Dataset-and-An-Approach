@@ -1,0 +1,39 @@
+cond20108=>condition: 数组下标小于高度数组的长度
+op20101=>operation: 初始化单调栈ms
+io20218=>inputoutput: output:  返回能接到雨水的量
+cond20164=>condition: 单调栈ms不为空且第i个柱子的高度大于单调栈栈底元素对应柱子的高度
+st20094=>start: start trap
+op20105=>operation: 数组下标i等于0
+io20096=>inputoutput: input: self, height
+op20103=>operation: hlen为高度数组height的长度，其中height[i]表示第i个柱子的高度
+op1=>operation: 令当前数组下标自增1
+op20189=>operation: top等于单调栈栈顶元素，并将栈顶元素出栈
+e20216=>end: end function return
+op20211=>operation: 将当前数组下标进栈
+op20099=>operation: 定义初值为0的变量ans，用于记录能接到雨水的量
+cond20192=>condition: 单调栈为空
+op20207=>operation: 令能接到雨水的量ans加上当前宽度与当前高度的乘积
+op20203=>operation: 当前宽度currWidth等于当前数组下标减去栈底元素再减1
+op20205=>operation: 取第left个柱子与第i个柱子高度之间的最小值，当前高度currHeight等于该最小值与第top个柱子的高度之间的差
+op20201=>operation: left等于单调栈ms栈底元素
+
+cond20108(yes)->cond20164
+op20101->op20103
+st20094->io20096
+op20207->cond20164
+op1->cond20108
+op20211->op1
+op20099->op20101
+cond20108(no)->io20218
+op20201->op20203
+cond20192(no)->op20201
+op20203->op20205
+op20205->op20207
+cond20164(no)->op20211
+io20096->op20099
+op20189->cond20192
+io20218->e20216
+op20105->cond20108
+op20103->op20105
+cond20192(yes)->op20211
+cond20164(yes)->op20189

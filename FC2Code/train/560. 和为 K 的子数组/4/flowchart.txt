@@ -1,0 +1,46 @@
+cond5669=>condition: 计算从第1个元素到下标为j的元素的前缀和减去到下标为i减1的元素的前缀和的结果，若该结果等于整数 k
+cond5653=>condition: 结束位置的下标小于整数数组长度加1
+op5590=>operation: 定义preSum为前缀和数组，第一个元素为0，preSum[i]表示从第一个元素到下标为i的元素的前缀和
+e5683=>end: end function return
+op2=>operation: 数组起始位置的下标加等于1
+op5588=>operation: n等于整数数组长度
+io5685=>inputoutput: output:  返回子数组的个数
+op5594=>operation: 下标i等于0
+st5581=>start: start subarraySum
+op5608=>operation: 在前缀和数组末尾添加上前缀和tmp
+io5583=>inputoutput: input: self, nums, k
+op5606=>operation: 前缀和等于其自身加上nums下标为i的元素
+op5592=>operation: 定义前缀和等于0
+op5586=>operation: 初始化子数组的个数count等于0
+cond5615=>condition: 数组起始位置的下标小于数组长度加1
+op5650=>operation: j等于起始位置下标，表示子数组结束位置的下标
+op5673=>operation: 子数组的个数自增1
+op5612=>operation: 数组起始位置的下标i等于1
+op3=>operation: 结束位置的下标加等于1
+op1=>operation: 下标加一
+cond5597=>condition: 下标未越界
+
+op5588->op5590
+op5590->op5592
+cond5615(yes)->op5650
+op5608->op1
+op5586->op5588
+cond5669(no)->op3
+cond5597(no)->op5612
+op5612->cond5615
+io5685->e5683
+op1->cond5597
+op5594->cond5597
+op5673->op3
+op5606->op5608
+cond5653(yes)->cond5669
+op2->cond5615
+cond5615(no)->io5685
+cond5597(yes)->op5606
+cond5669(yes)->op5673
+op3->cond5653
+op5650->cond5653
+io5583->op5586
+cond5653(no)->op2
+op5592->op5594
+st5581->io5583

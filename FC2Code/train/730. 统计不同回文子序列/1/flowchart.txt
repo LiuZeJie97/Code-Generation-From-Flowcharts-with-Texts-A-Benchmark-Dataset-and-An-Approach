@@ -1,0 +1,86 @@
+cond28806=>condition: j等于i
+cond28886=>condition: 当k小于4
+cond28811=>condition: 字符串S中下标为i的字符与字符c相等
+cond28238=>condition: i大于-1
+op5=>operation: k等于k加一
+op28231=>operation: 定义模数mod等于10的9次方加7
+cond28834=>condition: 字符串S中下标为j的字符与字符c不相等
+op28829=>operation: 字符串S[i:j]拥有不同的首尾均为'a'+k的回文串的数量等于字符串S[i+1:j]拥有不同的首尾均为'a'+k的回文串的数量
+op28883=>operation: k为数组下标
+op28561=>operation: j为数组下标，初值为i
+e28902=>end: end function return
+cond28726=>condition: 当k小于4
+io28904=>inputoutput: output:  返回答案
+op1=>operation: i等于i减一
+op28803=>operation: 计算'a'的ASCII码值加k，将上述计算结果转化字符并赋给c
+io28226=>inputoutput: input: self, S
+op28865=>operation: 字符串S[i:j]拥有不同的首尾均为'a'+k的回文串的数量加上字符串S[i+1:j-1]拥有不同的首尾均为'a'+m的回文串的数量
+op28819=>operation: 字符串S[i:j]拥有不同的首尾均为'a'+k的回文串的数量等于0
+cond28825=>condition: 字符串S中下标为i的字符与字符c不相等
+op3=>operation: k等于k加一
+st28224=>start: start countPalindromicSubsequences
+op2=>operation: j等于j加一
+op28229=>operation: n为字符串S的长度
+op28867=>operation: 令字符串S[i:j]拥有不同的首尾均为'a'+k的回文串的数量等于它除以模数mod的余数
+op28838=>operation: 字符串S[i:j]拥有不同的首尾均为'a'+k的回文串的数量等于字符串S[i:j-1]拥有不同的首尾均为'a'+k的回文串的数量
+cond28564=>condition: 当j小于字符串S的长度
+cond28845=>condition: j等于i加一
+op28842=>operation: 字符串S[i:j]拥有不同的首尾均为'a'+k的回文串的数量等于2
+op28233=>operation: 定义三维分别为4，n，n的三维数组dp，其初值均为0，其中dp[k][i][j]表示字符串S[i:j]拥有不同的首尾均为'a'+k的回文串的数量
+op28881=>operation: 定义答案变量ans等于0
+op28897=>operation: 令答案对模数取模
+cond28856=>condition: 当m小于4
+op28815=>operation: 字符串S[i:j]拥有不同的首尾均为'a'+k的回文串的数量等于1
+op28853=>operation: m为数组下标
+op28235=>operation: i为数组下标，初值为字符串S的长度减一
+op4=>operation: m等于m加一
+op28895=>operation: 令答案加上字符串S拥有不同的首尾均为'a'+k的回文串的数量
+op28723=>operation: k为数组下标
+
+cond28564(no)->op1
+op28881->op28883
+op28867->op4
+cond28726(yes)->op28803
+cond28811(no)->op28819
+op28838->op3
+cond28238(yes)->op28561
+cond28811(yes)->op28815
+cond28564(yes)->op28723
+cond28825(no)->cond28834
+cond28834(no)->op28842
+cond28726(no)->op2
+op28829->op3
+cond28845(no)->op28853
+op28723->cond28726
+st28224->io28226
+op28235->cond28238
+op5->cond28886
+cond28238(no)->op28881
+cond28825(yes)->op28829
+cond28806(yes)->cond28811
+op28853->cond28856
+cond28834(yes)->op28838
+cond28856(no)->op3
+io28904->e28902
+op28842->cond28845
+cond28806(no)->cond28825
+op3->cond28726
+cond28856(yes)->op28865
+op28819->op3
+cond28886(no)->io28904
+op28803->cond28806
+op2->cond28564
+op28883->cond28886
+op28233->op28235
+io28226->op28229
+op4->cond28856
+op28231->op28233
+cond28886(yes)->op28895
+op28865->op28867
+op28561->cond28564
+op28229->op28231
+op28895->op28897
+op28815->op3
+op1->cond28238
+cond28845(yes)->op3
+op28897->op5

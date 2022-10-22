@@ -1,0 +1,33 @@
+op1=>operation: 令上述数组下标加一
+cond8551=>condition: 上述数组下标小于text1的长度加一
+op8590=>operation: 数组下标t2等于1
+op8544=>operation: m为字符串text1的长度，n为字符串text2的长度
+cond8593=>condition: 上述数组下标小于text2的长度加一
+io8629=>inputoutput: output:  返回text1和text2的最长公共子序列的长度
+op8548=>operation: 数组下标t1等于1
+st8539=>start: start longestCommonSubsequence
+op8619=>operation: text1[0:t1]和text2[0:t2]的最长公共子序列的长度等于text1[0:t1-1]和text2[0:t2]的最长公共子序列的长度和text1[0:i]和text2[0:j-1]的最长公共子序列的长度之间的最大值
+op8546=>operation: 定义m+1行n+1列的数组dp，数组元素均为0，dp[i][j]表示text1[0:i]和text2[0:j]的最长公共子序列的长度
+io8541=>inputoutput: input: self, text1, text2
+cond8611=>condition: 字符串text1中下标为t1-1的字符和字符串text2中下标为t2-1的字符相同
+op2=>operation: 令上述数组下标加一
+op8615=>operation: text1[0:t1]和text2[0:t2]的最长公共子序列的长度等于text1[0:t1-1]和text2[0:t2-1]的最长公共子序列的长度加一
+e8627=>end: end function return
+
+cond8593(yes)->cond8611
+st8539->io8541
+io8541->op8544
+op8590->cond8593
+op8619->op2
+op8544->op8546
+op8546->op8548
+cond8611(no)->op8619
+op1->cond8551
+cond8611(yes)->op8615
+cond8551(no)->io8629
+op2->cond8593
+io8629->e8627
+op8548->cond8551
+op8615->op2
+cond8593(no)->op1
+cond8551(yes)->op8590

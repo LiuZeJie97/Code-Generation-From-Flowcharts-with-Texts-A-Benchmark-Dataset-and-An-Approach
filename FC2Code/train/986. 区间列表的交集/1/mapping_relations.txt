@@ -1,0 +1,13 @@
+def intervalIntersection(self, firstList: List[List[int]], secondList: List[List[int]]) -> List[List[int]]:    #io37076
+    inter = []    #op37079
+    i = j = 0    #op37081
+    while i < len(firstList) and j < len(secondList):    #cond37084
+        lo = max(firstList[i][0], secondList[j][0])    #op37115
+        hi = min(firstList[i][1], secondList[j][1])    #op37117
+        if lo <= hi:    #cond37120
+            inter.append([lo, hi])    #op37124
+        if firstList[i][1] < secondList[j][1]:    #cond37130
+            i += 1    #op37134
+        else:    #None
+            j += 1    #op37138
+    return inter    #io37146

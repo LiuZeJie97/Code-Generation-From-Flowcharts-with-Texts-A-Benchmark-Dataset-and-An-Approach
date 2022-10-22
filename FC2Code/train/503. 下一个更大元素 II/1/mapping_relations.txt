@@ -1,0 +1,11 @@
+def nextGreaterElements(self, nums: List[int]) -> List[int]:    #io20711
+    size = len(nums)    #op20714
+    ret = [-1] * size    #op20716
+    s = list()    #op20718
+    for i in range(size * 2 - 1):    #cond20723
+        rem = i % size    #op20748
+        while s and nums[s[-1]] < nums[rem]:    #cond20751
+            top = s.pop()    #op20760
+            ret[top] = nums[rem]    #op20762
+        s.append(rem)    #op20766
+    return ret    #io20773

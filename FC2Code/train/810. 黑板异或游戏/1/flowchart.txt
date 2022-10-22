@@ -1,0 +1,31 @@
+op31394=>operation: 定义标志变量win，初值为False，True表示Alice获胜，False表示Bob获胜
+op31405=>operation: 定义变量xorsum，初值为0
+cond31422=>condition: xorsum等于0
+op1=>operation: 更新当前遍历元素
+op31417=>operation: 将xorsum的值更新为xorsum异或当前遍历元素
+st31389=>start: start xorGame
+io31391=>inputoutput: input: self, numbers
+io31435=>inputoutput: output:  返回标志变量
+op31407=>operation: num为数组numbers中的元素
+op31401=>operation: Alice获胜
+cond31397=>condition: 数组numbers的长度可以整除2
+e31433=>end: end function return
+cond31410=>condition: 对数组进行遍历
+op31426=>operation: Alice获胜
+
+cond31422(yes)->op31426
+cond31397(yes)->op31401
+op31401->io31435
+cond31422(no)->io31435
+op31405->op31407
+op31426->io31435
+cond31410(no)->cond31422
+op1->cond31410
+cond31397(no)->op31405
+io31435->e31433
+io31391->op31394
+cond31410(yes)->op31417
+op31394->cond31397
+st31389->io31391
+op31407->cond31410
+op31417->op1

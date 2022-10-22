@@ -1,0 +1,32 @@
+cond34983=>condition: 左指针小于右指针
+st34907=>start: start sortArrayByParity
+cond34971=>condition: 左指针小于右指针且数组numbers中右指针处元素不可以整除2
+cond34959=>condition: 左指针小于右指针且数组numbers中左指针处元素可以整除2
+io35001=>inputoutput: output:  返回上述数组
+op34987=>operation: 交换数组numbers中左指针、右指针处元素
+io34909=>inputoutput: input: self, numbers
+op34991=>operation: 右指针减一
+e34999=>end: end function return
+op34912=>operation: 定义左指针left等于0，右指针right等于数组numbers的长度减一
+op34978=>operation: 右指针减一
+cond34915=>condition: 左指针小于右指针
+op34989=>operation: 左指针加一
+op34966=>operation: 左指针加一
+
+op34989->op34991
+cond34915(no)->io35001
+op34987->op34989
+cond34915(yes)->cond34959
+cond34959(yes)->op34966
+op34991->cond34915
+op34978->cond34971
+op34966->cond34959
+io35001->e34999
+op34912->cond34915
+cond34971(yes)->op34978
+cond34959(no)->cond34971
+cond34983(yes)->op34987
+st34907->io34909
+io34909->op34912
+cond34983(no)->cond34915
+cond34971(no)->cond34983

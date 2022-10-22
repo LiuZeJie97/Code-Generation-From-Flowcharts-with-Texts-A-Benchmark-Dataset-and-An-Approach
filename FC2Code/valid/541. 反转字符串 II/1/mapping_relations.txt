@@ -1,0 +1,5 @@
+def reverseStr(self, s: str, k: int) -> str:    #io21521
+    t = list(s)    #op21524
+    for i in range(0, len(t), 2 * k):    #cond21529
+        t[i: i + k] = reversed(t[i: i + k])    #op21536
+    return "".join(t)    #io21543

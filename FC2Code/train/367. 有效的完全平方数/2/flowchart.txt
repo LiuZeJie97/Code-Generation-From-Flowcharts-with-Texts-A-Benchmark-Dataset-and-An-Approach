@@ -1,0 +1,25 @@
+op19822=>operation: 定义变量x，初值为1
+op19864=>operation: 变量x加一
+st19817=>start: start isPerfectSquare
+op19866=>operation: 变量square等于变量x的平方
+e19856=>end: end function return
+op19824=>operation: 定义变量square，初值为1
+io19858=>inputoutput: output:  给定正整数是完全平方数
+e19871=>end: end function return
+io19873=>inputoutput: output:  给定正整数不是完全平方数
+cond19827=>condition: 判断square是否小于或等于给定正整数num
+cond19851=>condition: square等于给定正整数
+io19819=>inputoutput: input: self, num
+
+st19817->io19819
+cond19851(no)->op19864
+cond19827(yes)->cond19851
+cond19827(no)->io19873
+io19819->op19822
+io19873->e19871
+op19824->cond19827
+io19858->e19856
+op19822->op19824
+cond19851(yes)->io19858
+op19866->cond19827
+op19864->op19866

@@ -1,0 +1,11 @@
+def numberOfSubarrays(self, numbers: List[int], k: int) -> int:
+    n = len(numbers)
+    odd = [-1]
+    ans = 0
+    for index in range(n):
+        if numbers[index] % 2 == 1:
+            odd.append(index)
+    odd.append(n)
+    for index in range(1, len(odd) - k):
+        ans += (odd[index] - odd[index - 1]) * (odd[index + k] - odd[index + k - 1])
+    return ans

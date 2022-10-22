@@ -1,0 +1,24 @@
+cond21468=>condition: 左边界小于右边界时
+io21510=>inputoutput: output:  返回数组nums左边界位置的元素
+op21489=>operation: 定义中点pivot等于左边界与右边界的和整除2
+cond21494=>condition: 若数组nums中点位置元素的值等于中点加1位置元素的值
+op21465=>operation: 定义左边界low等于0，右边界high等于数组nums的长度减一
+op21491=>operation: 计算中点除以2的余数，令中点减去该余数
+op21498=>operation: 左边界等于中点加2
+st21460=>start: start singleNonDuplicate
+e21508=>end: end function return
+op21502=>operation: 右边界等于中点
+io21462=>inputoutput: input: self, nums
+
+cond21494(yes)->op21498
+cond21494(no)->op21502
+op21489->op21491
+op21502->cond21468
+op21465->cond21468
+op21498->cond21468
+io21510->e21508
+op21491->cond21494
+cond21468(yes)->op21489
+st21460->io21462
+cond21468(no)->io21510
+io21462->op21465

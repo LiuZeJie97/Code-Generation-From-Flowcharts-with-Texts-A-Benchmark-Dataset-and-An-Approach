@@ -1,0 +1,10 @@
+def hIndex(self, citations: List[int]) -> int:    #io18811
+    n = len(citations)    #op18814
+    lo = 0; hi = n - 1    #op18816
+    while lo <= hi:    #cond18819
+        mi = lo + (hi - lo) // 2    #op18838
+        if citations[mi] >= n - mi:    #cond18841
+            hi = mi - 1    #op18845
+        else:    #None
+            lo = mi + 1    #op18849
+    return n - lo    #io18857

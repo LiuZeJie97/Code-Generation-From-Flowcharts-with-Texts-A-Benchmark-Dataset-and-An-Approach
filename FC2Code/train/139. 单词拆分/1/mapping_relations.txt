@@ -1,0 +1,9 @@
+def wordBreak(self, s: str, wordDict: List[str]) -> bool:    #io1323
+    n=len(s)    #op1326
+    dp=[False]*(n+1)    #op1328
+    dp[0]=True    #op1330
+    for i in range(n):    #cond1335
+        for j in range(i+1,n+1):    #cond1373
+            if(dp[i] and (s[i:j] in wordDict)):    #cond1389
+                dp[j]=True    #op1393
+    return dp[-1]    #io1405

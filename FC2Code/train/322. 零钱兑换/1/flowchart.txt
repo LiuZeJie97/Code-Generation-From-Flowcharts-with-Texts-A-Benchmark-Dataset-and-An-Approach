@@ -1,0 +1,31 @@
+e4482=>end: end function return
+cond4452=>condition: 使用coin遍历每种硬币的面值
+op1=>operation: 当前金额加1
+op4409=>operation: dp[0]=0，表示0元的组成种类为 0。
+cond4414=>condition: 当前金额小于总金额加1
+op4407=>operation: 定义dp，dp[i]用于保存金额i的最小组成数，初值为float型的inf，长度为amount+1。
+io4484=>inputoutput: output:  如果金额amount的最小组成数不为float型的inf，则返回该最小组成数，否则返回1
+op4411=>operation: 定义i为当前金额，初值为1
+io4404=>inputoutput: input: self, coins, amount
+cond4468=>condition: 如果满足当前金额大于等于硬币的面值
+op4449=>operation: coin为硬币的面值
+op2=>operation: coin等于下一个面值
+op4472=>operation: 如果金额i-coin的最小组成数减一的结果小于金额i的最小组成数，则更新dp[i]
+st4402=>start: start coinChange
+
+io4484->e4482
+cond4452(yes)->cond4468
+op4409->op4411
+cond4452(no)->op1
+io4404->op4407
+cond4468(no)->op2
+cond4414(no)->io4484
+op4411->cond4414
+cond4468(yes)->op4472
+op4407->op4409
+st4402->io4404
+op1->cond4414
+op4449->cond4452
+op4472->op2
+cond4414(yes)->op4449
+op2->cond4452

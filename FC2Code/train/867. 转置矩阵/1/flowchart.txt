@@ -1,0 +1,28 @@
+io33404=>inputoutput: output:  返回转置矩阵
+op33385=>operation: j为数组下标
+op33359=>operation: m为矩阵matrix的行数，n为矩阵的列数
+io33356=>inputoutput: input: self, matrix
+cond33366=>condition: 当i小于矩阵的行数
+cond33388=>condition: 当j小于矩阵的列数
+op33361=>operation: 定义n行m列的转置矩阵transposed，数组元素初值均为0
+st33354=>start: start transpose
+e33402=>end: end function return
+op33395=>operation: 转置矩阵中j行i列的元素等于矩阵在i行j列的元素
+op33363=>operation: i为数组下标
+op2=>operation: 数组下标j右移1个单位
+op1=>operation: 数组下标i右移1个单位
+
+op33385->cond33388
+op33361->op33363
+cond33366(yes)->op33385
+cond33388(yes)->op33395
+op33359->op33361
+cond33388(no)->op1
+op2->cond33388
+op33395->op2
+op1->cond33366
+op33363->cond33366
+cond33366(no)->io33404
+st33354->io33356
+io33404->e33402
+io33356->op33359

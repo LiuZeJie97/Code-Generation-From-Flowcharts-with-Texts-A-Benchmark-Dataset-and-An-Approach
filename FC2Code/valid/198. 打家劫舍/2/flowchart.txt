@@ -1,0 +1,37 @@
+io2562=>inputoutput: output:  返回数组第1个数
+op2584=>operation: 计算dp[i2]加nums[i]的结果，比较该结果和dp[i1]的大小，并取较大值作为当前房屋能偷窃到的最高总金额
+op2572=>operation: 第2间房屋能偷窃到的最高总金额等于数组第1个数和第2个数中的较大值
+io2535=>inputoutput: input: self, nums
+e2560=>end: end function return
+op2570=>operation: 第1间房屋能偷窃到的最高总金额等于数组第1个数
+e2544=>end: end function return
+cond2555=>condition: 数组的长度等于1
+st2533=>start: start rob
+op1=>operation: 当前房屋的下标加1
+e2589=>end: end function return
+op2568=>operation: 初始化dp为全0向量，长度等于数组的长度，dp[i]表示前i间房屋能偷窃到的最高总金额
+cond2577=>condition: 当前房屋的下标没有越界
+op2574=>operation: i为当前房屋的下标，初值为2
+cond2539=>condition: 数组nums为空：
+op2552=>operation: size为数组的长度，其中nums[i]表示第i个房屋中存放的金额
+io2546=>inputoutput: output:  返回0
+io2591=>inputoutput: output:  返回前size 减 1间房屋偷窃的最高金额
+
+cond2539(no)->op2552
+op1->cond2577
+cond2577(yes)->op2584
+cond2555(yes)->io2562
+op2552->cond2555
+op2584->op1
+io2562->e2560
+cond2555(no)->op2568
+cond2539(yes)->io2546
+io2546->e2544
+op2572->op2574
+op2574->cond2577
+op2568->op2570
+io2535->cond2539
+io2591->e2589
+op2570->op2572
+st2533->io2535
+cond2577(no)->io2591

@@ -1,0 +1,30 @@
+cond12117=>condition: 数组下标小于满意程度数组satisfaction的长度
+io12103=>inputoutput: input: self, satisfaction
+op12112=>operation: 定义变量res等于0，用于记录喜爱时间总和的最大值
+cond12137=>condition: presum加上满意程度数组中下标为idx的元素大于0
+op12108=>operation: 再将上述数组倒置
+op12106=>operation: 对满意程度数组satisfaction排序
+op12143=>operation: 令presum加上满意程度数组中下标为idx的元素
+e12153=>end: end function return
+op12114=>operation: 定义数组下标idx等于0
+op12141=>operation: 令res加上它们的和
+io12155=>inputoutput: output:  返回喜爱时间总和的最大值
+st12101=>start: start maxSatisfaction
+op1=>operation: 将当前数组下标的值更新为当前数组下标加一
+op12110=>operation: 定义变量presum等于0
+
+op12110->op12112
+cond12137(no)->io12155
+cond12117(no)->io12155
+op1->cond12117
+io12155->e12153
+cond12137(yes)->op12141
+st12101->io12103
+io12103->op12106
+op12141->op12143
+op12143->op1
+op12112->op12114
+op12106->op12108
+op12108->op12110
+op12114->cond12117
+cond12117(yes)->cond12137

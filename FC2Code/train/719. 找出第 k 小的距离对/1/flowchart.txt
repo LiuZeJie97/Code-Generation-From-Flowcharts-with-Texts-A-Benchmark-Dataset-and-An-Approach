@@ -1,0 +1,42 @@
+op27915=>operation: 左指针右移1个单位
+st27810=>start: start smallestDistancePair
+op27819=>operation: 定义右边界high等于数组中最后一项元素减去第一项元素
+cond27888=>condition: 当右指针小于数组d的长度时
+op27919=>operation: 距离对的数量加上右指针与左指针的差值
+op27885=>operation: right为右指针
+cond27822=>condition: 当左边界小于右边界时
+op27815=>operation: 对数组d排序
+op27817=>operation: 定义左边界low等于0
+io27940=>inputoutput: output:  返回左边界
+op27932=>operation: 将左边界更新为中值加一
+op27881=>operation: 定义中值mid等于左边界与右边界的和整除2
+cond27908=>condition: 数组右指针元素减去左指针元素大于中值时
+op1=>operation: 右指针右移1个单位
+e27938=>end: end function return
+op27928=>operation: 将右边界更新为中值
+cond27924=>condition: 如果距离对的数量大于k
+op27883=>operation: count用于记录距离对的数量，left为左指针，初值均为0
+io27812=>inputoutput: input: self, d, k
+
+io27812->op27815
+op27881->op27883
+op27819->cond27822
+op27932->cond27822
+op27915->cond27908
+op27885->cond27888
+cond27822(yes)->op27881
+cond27908(no)->op27919
+cond27924(no)->op27932
+op27883->op27885
+cond27888(no)->cond27924
+op27815->op27817
+cond27822(no)->io27940
+op1->cond27888
+io27940->e27938
+op27817->op27819
+cond27924(yes)->op27928
+cond27888(yes)->cond27908
+op27919->op1
+cond27908(yes)->op27915
+st27810->io27812
+op27928->cond27822

@@ -1,0 +1,23 @@
+def toGoatLatin(self, sentence: str) -> str:    #io31539
+    vowels = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"}    #op31542
+    n = len(sentence)    #op31544
+    i, cnt = 0, 1    #op31546
+    words = list()    #op31548
+    while i < n:    #cond31551
+        j = i    #op31600
+        while j < n and sentence[j] != " ":    #cond31603
+            j += 1    #op31610
+        cnt += 1    #op31614
+        if sentence[i] in vowels:    #cond31617
+            s = sentence[i:j]    #op31621
+            s += "m"    #op31623
+            s += "a" * cnt    #op31625
+            words.append(s)    #op31627
+        else:    #None
+            s = sentence[i+1:j]    #op31631
+            s += sentence[i]    #op31633
+            s += "m"    #op31635
+            s += "a" * cnt    #op31637
+            words.append(s)    #op31639
+        i = j + 1    #op31642
+    return " ".join(words)    #io31649

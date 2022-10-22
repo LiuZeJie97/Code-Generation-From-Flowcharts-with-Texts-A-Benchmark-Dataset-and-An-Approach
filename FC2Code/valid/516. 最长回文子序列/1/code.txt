@@ -1,0 +1,11 @@
+def longestPalindromeSubseq(self, sequence: str) -> int:
+    length = len(sequence)
+    dp = [[0] * length for _ in range(length)]
+    for m in range(length - 1, -1, -1):
+        dp[m][m] = 1
+        for n in range(m + 1, length):
+            if sequence[m] == sequence[n]:
+                dp[m][n] = dp[m + 1][n - 1] + 2
+            else:
+                dp[m][n] = max(dp[m + 1][n], dp[m][n - 1])
+    return dp[0][length - 1]

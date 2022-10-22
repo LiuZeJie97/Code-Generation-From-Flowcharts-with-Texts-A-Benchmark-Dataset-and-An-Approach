@@ -1,0 +1,31 @@
+io37146=>inputoutput: output:  返回两个区间列表的交集
+cond37120=>condition: lo小于等于hi
+e37144=>end: end function return
+op37081=>operation: 定义变量i和j，其初值均为0
+cond37130=>condition: 数组firstList中i行1列的元素大于数组secondList中j行1列的元素
+op37124=>operation: 将lo和hi组成的数组添加进数组inter中
+st37074=>start: start intervalIntersection
+op37117=>operation: 定义变量hi等于数组firstList中i行1列的元素与数组secondList中j行1列的元素之间的最小值
+io37076=>inputoutput: input: self, firstList, secondList
+op37134=>operation: i加一
+op37138=>operation: j加一
+op37115=>operation: 定义变量lo等于数组firstList中i行0列的元素与数组secondList中j行0列的元素之间的最大值
+op37079=>operation: 初始化数组inter，用于记录两个区间列表的交集
+cond37084=>condition: i小于数组firstList的长度且j小于数组secondList的长度
+
+op37124->cond37130
+cond37130(yes)->op37134
+op37079->op37081
+cond37130(no)->op37138
+io37146->e37144
+op37134->cond37084
+cond37120(no)->cond37130
+st37074->io37076
+cond37120(yes)->op37124
+cond37084(no)->io37146
+io37076->op37079
+op37138->cond37084
+op37117->cond37120
+cond37084(yes)->op37115
+op37081->cond37084
+op37115->op37117

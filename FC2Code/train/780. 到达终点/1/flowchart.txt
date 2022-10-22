@@ -1,0 +1,41 @@
+st29954=>start: start reachingPoints
+cond29962=>condition: 计算sx是否小于tx，ty是否小于sy，当上述计算结果不相等时
+io30042=>inputoutput: output:  返回标志变量
+op30012=>operation: 可以转换
+io29956=>inputoutput: input: self, sx, sy, tx, ty
+cond29994=>condition: tx和sx相等并且ty和sy相等
+e30040=>end: end function return
+op29988=>operation: 将ty的值更新为它除以tx得到的余数
+op29959=>operation: 定义标志变量flag，初值为False，True表示可以转换，False表示不能转换
+op29998=>operation: 可以转换
+cond30020=>condition: ty和sy相等
+cond30025=>condition: tx大于sx且它们的差值可以整除ty
+op29984=>operation: 将tx的值更新为它除以ty得到的余数
+cond29980=>condition: tx大于ty
+cond30003=>condition: tx和sx相等
+op30029=>operation: 可以转换
+cond30008=>condition: ty大于sy且它们的差值可以整除tx
+
+op30029->io30042
+cond30020(no)->io30042
+cond30003(no)->cond30020
+cond30008(yes)->op30012
+cond30020(yes)->cond30025
+cond30025(no)->io30042
+cond29994(yes)->op29998
+cond30008(no)->io30042
+cond29980(yes)->op29984
+cond29962(yes)->cond29980
+st29954->io29956
+cond29994(no)->cond30003
+op29998->io30042
+cond30003(yes)->cond30008
+cond30025(yes)->op30029
+cond29962(no)->cond29994
+op29988->cond29962
+cond29980(no)->op29988
+io30042->e30040
+io29956->op29959
+op29959->cond29962
+op29984->cond29962
+op30012->io30042

@@ -1,0 +1,36 @@
+op2=>operation: 当前遍历数等于数组中下一个数
+op30907=>operation: 定义变量cntL用于记录所有元素都小于等于left的子数组数量，变量cntR用于记录所有元素都小于等于right的子数组数量，其初值均为0
+cond30914=>condition: 数组中还有数未被访问
+op30925=>operation: 所有元素都小于等于left的子数组数量加上cur
+cond30934=>condition: 数组中还有数未被访问
+op30943=>operation: 如果当前数小于等于right，则将cur的值更新为cur加一，否则cur等于0
+op30909=>operation: 定义变量cur等于0
+op1=>operation: 当前遍历数等于数组中下一个数
+op30911=>operation: num为数组nums中的数
+io30904=>inputoutput: input: self, nums, left, right
+op30945=>operation: 所有元素都小于等于right的子数组数量加上cur
+op30929=>operation: 变量cur等于0
+io30952=>inputoutput: output:  返回所有元素都小于等于right的子数组数量与所有元素都小于等于left的子数组数量之差
+op30923=>operation: 如果当前数小于等于left减一，则将cur的值更新为cur加一，否则cur等于0
+op30931=>operation: num为数组nums中的数
+st30902=>start: start numSubarrayBoundedMax
+e30950=>end: end function return
+
+op1->cond30914
+op2->cond30934
+cond30914(yes)->op30923
+op30945->op2
+cond30934(yes)->op30943
+cond30914(no)->op30929
+op30929->op30931
+op30911->cond30914
+io30952->e30950
+op30925->op1
+op30931->cond30934
+op30907->op30909
+op30943->op30945
+st30902->io30904
+op30923->op30925
+io30904->op30907
+op30909->op30911
+cond30934(no)->io30952

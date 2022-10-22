@@ -1,0 +1,52 @@
+op32813=>operation: 定义变量ans等于0，用于记录答案
+io32773=>inputoutput: output:  返回0
+op32799=>operation: i为数组下标，初值为数组a的长度减2
+st32760=>start: start longestMountain
+op32793=>operation: 如果数组a中下标为i-1的元素小于下标为i的元素，则数组left中下标为i的元素等于下标为i-1的元素加一，否则该元素等于0
+op2=>operation: i自减1
+cond32834=>condition: 数组left中下标为i的元素大于0且果数组right中下标为i的元素大于0
+io32762=>inputoutput: input: self, a
+e32846=>end: end function return
+op32815=>operation: i为数组下标
+op32838=>operation: 如果它们的和加一大于答案，则将答案更新为它们的和加一
+io32848=>inputoutput: output:  返回答案
+cond32818=>condition: 当i小于n
+e32771=>end: end function return
+op3=>operation: i自增1
+cond32766=>condition: 数组a为空
+op32781=>operation: 定义数组left，其长度等于数组a的长度，初值均为0
+cond32786=>condition: 当i小于n
+op1=>operation: i自增1
+op32779=>operation: n为数组a的长度
+cond32802=>condition: 当i大于-1
+op32809=>operation: 如果数组a中下标为i+1的元素小于下标为i的元素，则数组right中下标为i的元素等于下标为i+1的元素加一，否则该元素等于0
+op32797=>operation: 定义长度为n的数组right，其初值均为0
+op32783=>operation: i为数组下标，初值为1
+
+op32783->cond32786
+cond32802(yes)->op32809
+cond32834(no)->op3
+cond32766(yes)->io32773
+op3->cond32818
+op32781->op32783
+st32760->io32762
+op32815->cond32818
+cond32834(yes)->op32838
+cond32802(no)->op32813
+op32809->op2
+op32799->cond32802
+op32838->op3
+cond32766(no)->op32779
+op32779->op32781
+op1->cond32786
+op2->cond32802
+io32762->cond32766
+cond32786(no)->op32797
+cond32818(no)->io32848
+cond32786(yes)->op32793
+io32773->e32771
+op32797->op32799
+cond32818(yes)->cond32834
+op32813->op32815
+io32848->e32846
+op32793->op1

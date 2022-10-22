@@ -1,0 +1,25 @@
+op1=>operation: 字符串下标加一，当前遍历字符等于字符串中的下一个字符
+io32984=>inputoutput: input: self, seq, shifts
+op32989=>operation: 定义变量X等于对数组shifts的求和结果除以26的余数
+op32987=>operation: 初始化答案数组ans
+e33014=>end: end function return
+op33005=>operation: 定义变量index等于当前遍历字符的ASCII值减去字符'a'的ASCII值
+op33007=>operation: 计算index加上X除以26的余数再加上字符'a'的ASCII值，将计算结果添加进数组ans中
+cond32994=>condition: 对字符串进行遍历
+io33016=>inputoutput: output:  返回数组ans的字符串形式
+op33009=>operation: 将X的值更新为X与数组shifts中当前下标位置的元素的差值除以26的余数
+op32991=>operation: i为字符串下标，初值为0；当前遍历字符c为字符串s中当前下标处的字符
+st32982=>start: start shiftingLetters
+
+op32989->op32991
+op33005->op33007
+io33016->e33014
+op32991->cond32994
+op32987->op32989
+cond32994(yes)->op33005
+io32984->op32987
+op1->cond32994
+op33009->op1
+cond32994(no)->io33016
+st32982->io32984
+op33007->op33009

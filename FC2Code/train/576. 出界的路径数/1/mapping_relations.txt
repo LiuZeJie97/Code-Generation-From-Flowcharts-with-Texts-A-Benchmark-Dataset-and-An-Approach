@@ -1,0 +1,15 @@
+def findPaths(self, m: int, n: int, maxMove: int, startRow: int, startColumn: int) -> int:    #io22829
+    MOD = 10**9 + 7    #op22832
+    outCounts = 0    #op22834
+    dp = [[[0] * n for _ in range(m)] for _ in range(maxMove + 1)]    #op22836
+    dp[0][startRow][startColumn] = 1    #op22838
+    for i in range(maxMove):    #cond22843
+        for j in range(m):    #cond23049
+            for k in range(n):    #cond23151
+                if dp[i][j][k] > 0:    #cond23199
+                    for j1, k1 in [(j - 1, k), (j + 1, k), (j, k - 1), (j, k + 1)]:    #cond23206
+                        if 0 <= j1 < m and 0 <= k1 < n:    #cond23224
+                            dp[i + 1][j1][k1] = (dp[i + 1][j1][k1] + dp[i][j][k]) % MOD    #op23228
+                        else:    #None
+                            outCounts = (outCounts + dp[i][j][k]) % MOD    #op23232
+    return outCounts    #io23249

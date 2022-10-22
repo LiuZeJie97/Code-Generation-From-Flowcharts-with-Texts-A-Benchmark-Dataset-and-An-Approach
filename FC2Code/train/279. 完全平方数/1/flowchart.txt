@@ -1,0 +1,26 @@
+op3955=>operation: 初始化dp=[0,1,2, ,n]，长度为n+1，dp[i]用于记录和为i的完全平方数的最少数量。
+io3952=>inputoutput: input: self, n
+op1=>operation: dp下标i右移一个单位
+op3957=>operation: 定义i为dp下标，初始值为2
+e3996=>end: end function return
+op3979=>operation: 定义j为dp下标，初始值为1
+op2=>operation: dp下标j右移一个单位
+op3989=>operation: 若dp[i-j*j]加1的结果小于dp[i]，则更新dp[i]
+io3998=>inputoutput: output:  返回和为n的完全平方数的最少数量
+cond3982=>condition: 计算i的0.5次方取整后加1的结果，判断j是否小于该结果
+cond3960=>condition: 下标i小于 n+1
+st3950=>start: start numSquares
+
+io3998->e3996
+op3955->op3957
+io3952->op3955
+op3957->cond3960
+op1->cond3960
+cond3982(no)->op1
+cond3960(no)->io3998
+op2->cond3982
+st3950->io3952
+op3979->cond3982
+cond3960(yes)->op3979
+op3989->op2
+cond3982(yes)->op3989

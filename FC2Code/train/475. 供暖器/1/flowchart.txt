@@ -1,0 +1,37 @@
+op20481=>operation: 定义初值为0的数组下标j
+op20475=>operation: 定义ans等于0，用于记录最小加热半径
+op20531=>operation: 当前距离curDistance等于第i个房屋与第j个供暖器位置之差的绝对值
+cond20486=>condition: 数组下标小于房屋位置数组的长度
+cond20554=>condition: 当前距离小于第i个房屋与第j+1个供暖器位置之差的绝对值
+e20574=>end: end function return
+op20563=>operation: j加一
+op20483=>operation: 定义初值为0的数组下标i
+io20472=>inputoutput: input: self, houses, heaters
+op20479=>operation: 对供暖器位置数组heaters排序，其中heaters[i]表示第i个供暖器的位置
+op20565=>operation: 计算第i个房屋与第j个供暖器位置之差的绝对值，若该绝对值小于当前距离，则将当前距离更新为该绝对值
+op1=>operation: 当前数组下标加一
+op20477=>operation: 对房屋位置数组houses排序，其中houses[i]表示第i个房屋的位置
+st20470=>start: start findRadius
+cond20534=>condition: j加一小于供暖器位置数组的长度
+io20576=>inputoutput: output:  返回最小加热半径
+op20569=>operation: 最小加热半径等于它与当前距离之间的最大值
+
+op20475->op20477
+cond20534(no)->op20569
+op20569->op1
+cond20554(yes)->op20569
+op20477->op20479
+op20481->op20483
+op1->cond20486
+op20479->op20481
+op20563->op20565
+cond20554(no)->op20563
+io20576->e20574
+op20531->cond20534
+cond20534(yes)->cond20554
+st20470->io20472
+cond20486(no)->io20576
+cond20486(yes)->op20531
+op20565->cond20534
+io20472->op20475
+op20483->cond20486

@@ -1,0 +1,8 @@
+def subtractProductAndSum(self, n: int) -> int:    #io9982
+    add, mul = 0, 1    #op9985
+    while n > 0:    #cond9988
+        digit = n % 10    #op10001
+        n //= 10    #op10003
+        add += digit    #op10005
+        mul *= digit    #op10007
+    return mul - add    #io10014

@@ -1,0 +1,28 @@
+op29904=>operation: idx为数组下标，初值为数组n的长度
+cond29929=>condition: idx大于等于2并且数组n中下标为idx-2的元素大于floor
+op1=>operation: 当前数组下标减一
+op29902=>operation: 定义变量floor等于数组n的长度
+e29943=>end: end function return
+io29895=>inputoutput: input: self, n
+op29926=>operation: floor等于它与数组n中下标为idx的元素之间的最小值
+st29893=>start: start isIdealPermutation
+cond29907=>condition: 数组下标大于-1
+io29945=>inputoutput: output:  返回标志变量
+op29933=>operation: 全局倒置的数量不等于局部倒置的数量
+op29898=>operation: length为数组n的长度
+op29900=>operation: 定义初值为True的标志变量sign，sign等于True表示全局倒置的数量等于局部倒置的数量，False表示全局倒置的数量不等于局部倒置的数量
+
+cond29907(yes)->op29926
+op29902->op29904
+op29904->cond29907
+io29895->op29898
+op1->cond29907
+io29945->e29943
+cond29929(yes)->op29933
+op29933->io29945
+cond29907(no)->io29945
+st29893->io29895
+cond29929(no)->op1
+op29898->op29900
+op29900->op29902
+op29926->cond29929

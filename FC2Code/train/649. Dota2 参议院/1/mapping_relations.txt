@@ -1,0 +1,17 @@
+def predictPartyVictory(self, senate: str) -> str:    #io24513
+    n = len(senate)    #op24516
+    radiant = collections.deque()    #op24518
+    dire = collections.deque()    #op24520
+    for i, ch in enumerate(senate):    #cond24525
+        if ch == "R":    #cond24543
+            radiant.append(i)    #op24547
+        else:    #None
+            dire.append(i)    #op24551
+    while radiant and dire:    #cond24557
+        if radiant[0] < dire[0]:    #cond24579
+            radiant.append(radiant[0] + n)    #op24583
+        else:    #None
+            dire.append(dire[0] + n)    #op24587
+        radiant.popleft()    #op24590
+        dire.popleft()    #op24592
+    return "Radiant" if radiant else "Dire"    #io24599

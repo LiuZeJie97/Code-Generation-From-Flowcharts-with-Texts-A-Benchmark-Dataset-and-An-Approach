@@ -1,0 +1,11 @@
+def maxProfit(self, prices: List[int], fee: int) -> int:    #io27635
+    n = len(prices)    #op27638
+    buy = prices[0] + fee    #op27640
+    profit = 0    #op27642
+    for i in range(1, n):    #cond27647
+        if prices[i] + fee < buy:    #cond27675
+            buy = prices[i] + fee    #op27679
+        elif prices[i] > buy:    #cond27684
+            profit += prices[i] - buy    #op27688
+            buy = prices[i]    #op27690
+    return profit    #io27701

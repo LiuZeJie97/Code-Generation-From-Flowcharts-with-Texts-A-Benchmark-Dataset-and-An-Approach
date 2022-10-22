@@ -1,0 +1,10 @@
+def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+    sgn = False
+    row, column = len(matrix), len(matrix[0])
+    for i in range(row):
+        for j in range(column):
+            element = matrix[i][j]
+            if element == target:
+                sgn = True
+                break
+    return sgn

@@ -1,0 +1,32 @@
+io6996=>inputoutput: input: self, n, k
+op7003=>operation: 定义变量ans，用于记录数组中连续1的最大个数
+io7058=>inputoutput: output:  返回数组中连续1的最大个数
+op7033=>operation: 令右指针加上1与数组右指针元素的差值
+op7045=>operation: 令左指针前缀和加上1与数组左指针left位置元素的差值
+op7001=>operation: 定义左指针left，左指针前缀和lsum，右指针前缀和rsum，其初值均为0
+cond7008=>condition: 右指针小于数组n的长度
+st6994=>start: start longestOnes
+cond7036=>condition: 左指针前缀和lsum小于右指针前缀和rsum减去k的差值
+op7047=>operation: 左指针加一
+e7056=>end: end function return
+op7005=>operation: 定义右指针right
+op1=>operation: 右指针加一
+op7051=>operation: 计算右指针减左指针再加一，令变量ans等于它与该计算结果之间的最大值
+op6999=>operation: 定义l为数组n的长度
+
+op7003->op7005
+cond7036(no)->op7051
+io7058->e7056
+op7001->op7003
+st6994->io6996
+op7005->cond7008
+op7045->op7047
+cond7008(no)->io7058
+op7047->cond7036
+op7033->cond7036
+op1->cond7008
+cond7008(yes)->op7033
+op7051->op1
+cond7036(yes)->op7045
+io6996->op6999
+op6999->op7001

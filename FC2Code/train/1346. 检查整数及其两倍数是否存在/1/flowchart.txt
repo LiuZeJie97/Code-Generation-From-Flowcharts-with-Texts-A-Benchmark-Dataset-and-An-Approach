@@ -1,0 +1,34 @@
+cond11555=>condition: 数组中下标为x的数的2倍和下标为y的数相等
+cond11455=>condition: 上述数组下标小于数组array的长度
+op11559=>operation: 将标志变量置为真
+op2=>operation: 上述数组下标自增1
+op11514=>operation: 定义数组下标y
+op11448=>operation: 定义n为数组array的长度
+io11573=>inputoutput: output:  返回标志变量
+st11443=>start: start checkIfExist
+op1=>operation: 上述数组下标自增1
+cond11545=>condition: 两个数组下标相等
+op11450=>operation: 定义标志变量flag，初值为False
+e11571=>end: end function return
+op11452=>operation: 定义数组下标x
+io11445=>inputoutput: input: self, array
+cond11517=>condition: 上述数组下标小于数组array的长度
+
+cond11555(yes)->op11559
+op2->cond11517
+op11448->op11450
+op11559->op1
+op11514->cond11517
+cond11517(yes)->cond11545
+op1->cond11455
+op11450->op11452
+cond11455(yes)->op11514
+cond11555(no)->op2
+cond11517(no)->op1
+io11445->op11448
+io11573->e11571
+st11443->io11445
+cond11545(yes)->op2
+cond11545(no)->cond11555
+op11452->cond11455
+cond11455(no)->io11573

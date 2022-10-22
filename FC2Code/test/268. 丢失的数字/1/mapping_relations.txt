@@ -1,0 +1,8 @@
+def missingNumber(self, a: List[int]) -> int:    #io18575
+    a.sort()    #op18578
+    s = False    #op18580
+    for k in range(len(a)):    #cond18585
+        if k != a[k]:    #cond18603
+            s = True    #op18607
+            break    #None
+    return i if s else len(a)    #io18619

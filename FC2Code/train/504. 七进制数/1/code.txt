@@ -1,0 +1,12 @@
+def convertToBase7(self, a: int) -> str:
+    if a == 0:
+        return "0"
+    negative = a < 0
+    a = abs(a)
+    digits = []
+    while a:
+        digits.append(str(a % 7))
+        a //= 7
+    if negative:
+        digits.append('-')
+    return ''.join(reversed(digits))

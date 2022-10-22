@@ -1,0 +1,15 @@
+def reverseOnlyLetters(self, seq: str) -> str:
+    ans = list(seq)
+    lp = 0
+    rp = len(ans) - 1
+    while True:
+        while lp < rp and not ans[lp].isalpha():
+            lp += 1
+        while rp > lp and not ans[rp].isalpha():
+            rp -= 1
+        if lp >= rp:
+            break
+        ans[lp], ans[rp] = ans[rp], ans[lp]
+        lp += 1
+        rp -= 1
+    return ''.join(ans)

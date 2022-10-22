@@ -1,0 +1,18 @@
+def numberOfArrays(self, s: str, k: int) -> int:    #io12166
+    mod = 10**9 + 7    #op12169
+    n = len(s)    #op12171
+    f = [0] * (n + 1)    #op12173
+    f[0] = 1    #op12175
+    for i in range(1, n + 1):    #cond12180
+        num, base = 0, 1    #op12253
+        j = i - 1    #op12255
+        while j >= 0 and i - j <= 10:    #cond12258
+            digit = ord(s[j]) - 48    #op12291
+            num += digit * base    #op12293
+            if num > k:    #cond12296
+                break    #None
+            if s[j] != '0':    #cond12306
+                f[i] += f[j]    #op12310
+            base *= 10    #op12315
+            j -= 1    #op12317
+    return f[n] % mod    #io12326

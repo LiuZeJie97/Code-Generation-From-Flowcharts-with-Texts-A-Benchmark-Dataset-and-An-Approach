@@ -1,0 +1,16 @@
+def calPoints(self, ops: List[str]) -> int:
+    score = 0
+    points = []
+    for op in ops:
+        if op == '+':
+            pt = points[-1] + points[-2]
+        elif op == 'D':
+            pt = points[-1] * 2
+        elif op == 'C':
+            score -= points.pop()
+            continue
+        else:
+            pt = int(op)
+        score += pt
+        points.append(pt)
+    return score

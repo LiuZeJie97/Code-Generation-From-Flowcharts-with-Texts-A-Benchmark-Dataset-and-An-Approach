@@ -1,0 +1,51 @@
+e31647=>end: end function return
+op31542=>operation: 定义字典vowels，初值为"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"
+op31642=>operation: 将i的值更新为j+1
+op31635=>operation: 向字符串s添加字符"m"
+st31537=>start: start toGoatLatin
+cond31617=>condition: 当字符串sentence中下标为i的字符在字典vowels中时
+op31600=>operation: 定义变量j等于i
+op31637=>operation: 向字符串s添加cnt个字符"a"
+cond31551=>condition: 若i小于字符串sentence的长度
+op31633=>operation: 向字符串s字符串sentence中下标i的字符
+op31627=>operation: 将字符串s添加进数组words中
+cond31603=>condition: 若j小于字符串sentence的长度并且字符串sentence中下标为j的字符不是" "
+op31625=>operation: 向字符串s添加cnt个字符"a"
+op31546=>operation: 定义变量i等于0，cnt等于1
+op31548=>operation: 初始化数组words
+op31614=>operation: cnt加一
+io31539=>inputoutput: input: self, sentence
+io31649=>inputoutput: output:  返回数组words用" "连接的结果
+op31610=>operation: j加一
+op31631=>operation: 定义字符串s等于字符串sentence中下标i+1到下标j的子串
+op31621=>operation: 定义字符串s等于字符串sentence中下标i到下标j的子串
+op31639=>operation: 将字符串s添加进数组words中
+op31623=>operation: 向字符串s添加字符"m"
+op31544=>operation: n为字符串sentence的长度
+
+op31542->op31544
+op31610->cond31603
+op31544->op31546
+op31639->op31642
+cond31603(yes)->op31610
+op31548->cond31551
+op31600->cond31603
+op31614->cond31617
+io31539->op31542
+st31537->io31539
+op31627->op31642
+op31635->op31637
+cond31617(yes)->op31621
+cond31551(yes)->op31600
+op31631->op31633
+op31625->op31627
+op31621->op31623
+op31642->cond31551
+cond31617(no)->op31631
+op31637->op31639
+cond31551(no)->io31649
+op31623->op31625
+io31649->e31647
+op31546->op31548
+cond31603(no)->op31614
+op31633->op31635

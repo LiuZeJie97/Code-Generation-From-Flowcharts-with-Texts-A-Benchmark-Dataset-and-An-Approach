@@ -1,0 +1,83 @@
+op15680=>operation: 定义最小和值sumMax等于0，最大和值sumMin等于0
+op15572=>operation: 移除最小单调栈栈顶元素
+cond15565=>condition: 最小值单调栈minStack不为空且数组nums中下标为最小值单调栈最后一项的元素大于当前被遍历元素
+op2=>operation: 令数组下标减1
+op15576=>operation: 若最小值单调栈不为空，则将数组minLeft中下标为i的元素更新为最小值单调栈最后一项，否则将其更新为-1
+op15588=>operation: 移除最大单调栈栈顶元素
+io15515=>inputoutput: input: self, nums
+op15660=>operation: 将数组下标添加进最小值单调栈
+op15674=>operation: 若最大值单调栈不为空，则将数组maxRight中下标为i得到元素更新为最大值单调栈最后一项，否则将其更新为数组nums的长度
+cond15663=>condition: 当最大值单调栈maxStack不为空且数组nums中下标为最大值单调栈最后一项的元素的值小于num
+op15592=>operation: 若最大值单调栈不为空，则将数组maxLeft中下标为i的元素更新为最大值单调栈最后一项，否则将其更新为-1
+op15694=>operation: 计算maxRight[i]减i乘以i减maxLeft[i]乘以当前被遍历元素的结果，并让最大和值加上该结果
+cond15685=>condition: 对数组进行遍历
+op15598=>operation: 定义长度为n的数组minRight，长度为n的数组maxRight，它们的初值均为0
+op15658=>operation: 若最小值单调栈不为空，则将数组minRight中下标为i得到元素更新为最小值单调栈最后一项，否则将其更新为数组nums的长度
+e15701=>end: end function return
+op15602=>operation: i为数组下标，初值为数组nums的长度减一
+io15703=>inputoutput: output:  返回最大和值与最小和值之差
+op15670=>operation: 移除最大单调栈栈顶元素
+op1=>operation: 遍历次数加一，并更新对应的当前被遍历元素
+op15524=>operation: i表示数组nums的遍历次数，初值为0；num为当前数组中被遍历的元素，初值为当前数组第一个元素
+op15654=>operation: 移除最小单调栈栈顶元素
+cond15581=>condition: 当最大值单调栈maxStack不为空且数组nums中下标为最大值单调栈最后一项的值小于等于当前被遍历元素
+cond15605=>condition: 数组下标大于-1
+op15522=>operation: 定义最小值单调栈minStack和最大值单调栈maxStack
+op15520=>operation: 定义数组minLeft和数组maxLeft，它们的长度与数组nums相同且数组元素的初值均为0
+op15578=>operation: 将当前遍历次数添加进最小值单调栈
+cond15527=>condition: 对数组进行遍历
+op15696=>operation: 计算minRight[i]减i乘以i减minLeft[i]乘以当前被遍历元素的结果，并让最小和值加上该结果
+cond15647=>condition: 当最小值单调栈minStack不为空且当前被遍历数组中下标为最小值单调栈最后一项的元素的值大于等于num
+op15518=>operation: n为数组nums的长度
+op15676=>operation: 将数组下标添加进最大值单调栈
+op15682=>operation: i表示数组nums的遍历次数，初值为0；num为当前数组中被遍历的元素，初值为当前数组第一个元素
+op15594=>operation: 将当前遍历次数添加进最大值单调栈
+st15513=>start: start subArrayRanges
+op3=>operation: 遍历次数加一，并更新对应的当前被遍历元素
+op15600=>operation: 将最小值单调栈和最大值单调栈置为空
+op15644=>operation: 定义遍历num为当前被遍历数组nums中下标为i的元素
+
+op15680->op15682
+op15660->cond15663
+op15598->op15600
+op15674->op15676
+op15576->op15578
+cond15581(yes)->op15588
+op3->cond15685
+op1->cond15527
+cond15605(no)->op15680
+op15518->op15520
+op15670->cond15663
+op15588->cond15581
+cond15685(no)->io15703
+cond15565(no)->op15576
+op15602->cond15605
+io15515->op15518
+cond15605(yes)->op15644
+op15594->op1
+op15524->cond15527
+op15600->op15602
+cond15663(no)->op15674
+op15520->op15522
+op2->cond15605
+op15676->op2
+op15644->cond15647
+op15578->cond15581
+cond15527(yes)->cond15565
+cond15647(no)->op15658
+cond15581(no)->op15592
+cond15647(yes)->op15654
+op15522->op15524
+cond15663(yes)->op15670
+cond15527(no)->op15598
+op15658->op15660
+op15572->cond15565
+op15592->op15594
+op15654->cond15647
+cond15565(yes)->op15572
+io15703->e15701
+st15513->io15515
+cond15685(yes)->op15694
+op15682->cond15685
+op15696->op3
+op15694->op15696

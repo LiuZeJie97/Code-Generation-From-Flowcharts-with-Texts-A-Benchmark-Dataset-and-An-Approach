@@ -1,0 +1,48 @@
+op25892=>operation: 骑士从棋盘上的点(i,j)出发走了step步时仍然留在棋盘上的概率等于从棋盘上的点(ni,nj)出发走了step-1步仍然留在棋盘上的概率除以8
+op25484=>operation: step表示步数
+cond25701=>condition: 如果i小于n
+io25909=>inputoutput: output:  返回骑士从棋盘上的点(row,column)出发走了step步时仍然留在棋盘上的概率
+op25861=>operation: 骑士从棋盘上的点(i,j)出发走了step步时仍然留在棋盘上的概率为1
+op25482=>operation: 定义三维分别为k+1，n，n的三维数组dp，其中dp[k][i][j]表示骑士从棋盘上的点(i,j)出发走了k步时仍然留在棋盘上的概率
+cond25888=>condition: 如果当前横坐标和纵坐标均大于等于0小于n
+op2=>operation: i加一
+op25698=>operation: i为横坐标
+op3=>operation: j加一
+op25804=>operation: j为纵坐标
+io25479=>inputoutput: input: self, n, k, row, column
+cond25807=>condition: 如果j小于n
+op1=>operation: 步数加一
+st25477=>start: start knightProbability
+op25885=>operation: 当前横坐标ni等于横坐标i加横坐标方向向量di，当前纵坐标nj等于纵坐标j加纵坐标方向向量dj，
+e25907=>end: end function return
+cond25868=>condition: 方向向量(di,dj)的取值为(-2,-1),(2,-1),(2,1),(-1,-2),(-1,2),(1,-2),(1,2)
+cond25857=>condition: 如果步数为0
+op25865=>operation: di为横坐标方向向量，dj为纵坐标方向向量，(di,dj)为方向向量
+cond25487=>condition: 如果步数小于k+1
+
+cond25868(no)->op3
+cond25701(yes)->op25804
+cond25888(yes)->op25892
+cond25857(yes)->op25861
+op25861->op3
+io25909->e25907
+cond25868(yes)->op25885
+cond25701(no)->op1
+op3->cond25807
+op1->cond25487
+cond25807(yes)->cond25857
+cond25888(no)->cond25868
+op2->cond25701
+op25804->cond25807
+op25484->cond25487
+io25479->op25482
+st25477->io25479
+op25885->cond25888
+cond25857(no)->op25865
+op25698->cond25701
+op25482->op25484
+cond25487(no)->io25909
+cond25807(no)->op2
+op25892->cond25868
+op25865->cond25868
+cond25487(yes)->op25698

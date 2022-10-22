@@ -1,0 +1,15 @@
+def isValid(self, s: str) -> bool:    #io3616
+    dict={")":"(","}":"{","]":"["}    #op3619
+    left_stack=[]    #op3621
+    for i in range(len(s)):    #cond3626
+        if(s[i] in dict):    #cond3672
+            if(left_stack):    #cond3677
+                if(left_stack[-1]==dict[s[i]]):    #cond3682
+                    left_stack.pop()    #op3686
+                else:    #None
+                    return False    #io3693
+            else:    #None
+                return False    #io3702
+        else:    #None
+            left_stack.append(s[i])    #op3708
+    return not left_stack    #io3716

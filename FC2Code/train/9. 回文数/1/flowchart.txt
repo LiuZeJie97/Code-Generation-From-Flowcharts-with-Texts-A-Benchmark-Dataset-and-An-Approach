@@ -1,0 +1,23 @@
+op6441=>operation: 相反数等于其自身乘10加上给定的整数整除10的余数
+io6450=>inputoutput: output:  检查给定的整数是否等于相反数，或是相反数的十分之一，若满足上述条件则给定的整数是回文数，否则给定的整数不是回文数
+io6412=>inputoutput: input: self, x
+op6429=>operation: revertedNumber用于记录给定的整数x的相反数，初值为0
+cond6432=>condition: 给定的整数大于相反数
+op6443=>operation: 给定的整数除以10
+io6423=>inputoutput: output:  给定的整数不是回文数。
+e6448=>end: end function return
+cond6416=>condition: 给定的整数x小于0，或x除以10等于0但是x不等于0
+e6421=>end: end function return
+st6410=>start: start isPalindrome
+
+st6410->io6412
+io6450->e6448
+cond6432(yes)->op6441
+op6441->op6443
+cond6416(yes)->io6423
+cond6416(no)->op6429
+cond6432(no)->io6450
+io6412->cond6416
+io6423->e6421
+op6429->cond6432
+op6443->cond6432

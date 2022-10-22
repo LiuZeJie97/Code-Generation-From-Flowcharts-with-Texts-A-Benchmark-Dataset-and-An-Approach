@@ -1,0 +1,19 @@
+io13163=>inputoutput: output:  返回操作结果
+op13146=>operation: 定义循环变量t等于0
+op13156=>operation: 计算2倍的t与start的和，令操作结果异或该计算结果
+e13161=>end: end function return
+st13139=>start: start xorOperation
+op1=>operation: 令循环变量加一
+op13144=>operation: 定义操作结果op等于0
+io13141=>inputoutput: input: self, n, start
+cond13149=>condition: 循环变量小于n
+
+op13146->cond13149
+io13141->op13144
+op1->cond13149
+io13163->e13161
+cond13149(no)->io13163
+cond13149(yes)->op13156
+op13156->op1
+st13139->io13141
+op13144->op13146

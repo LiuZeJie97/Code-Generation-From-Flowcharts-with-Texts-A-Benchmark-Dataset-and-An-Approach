@@ -1,0 +1,34 @@
+op30713=>operation: 数组f中下标为出发城市src的元素等于0
+e30768=>end: end function return
+op30761=>operation: 数组f等于数组g
+st30706=>start: start findCheapestPrice
+cond30750=>condition: 对数组flights进行遍历
+io30770=>inputoutput: output:  如果最便宜的价格和float型的inf相等，则返回-1，否则返回最便宜的价格
+op30757=>operation: 计算数组f中下标为j的元素与cost的和，数组g中下标为i的元素等于它与上述计算结果之间的最小值
+op30715=>operation: 定义变量ans，初值为float型的inf，用于记录最便宜的价格
+op30745=>operation: 定义长度为n的数组g，其初值均为float型的inf
+cond30720=>condition: 当t小于k+2
+op30711=>operation: 定义长度为n的数组f，其初值均为float型的inf
+io30708=>inputoutput: input: self, n, flights, src, dst, k
+op30747=>operation: j为数组flights中元素的第一项，i为数组flights中元素的第二项，cost为数组flights中元素的第三项
+op1=>operation: t自增1
+op30763=>operation: 最便宜的价格等于它与数组f中下标为目的地dst的元素之间的最小值
+op30717=>operation: t为数组下标，初值为1
+
+op30715->op30717
+op30745->op30747
+st30706->io30708
+op30763->op1
+op30747->cond30750
+io30770->e30768
+op30711->op30713
+cond30750(yes)->op30757
+op30761->op30763
+op30713->op30715
+cond30750(no)->op30761
+cond30720(no)->io30770
+op30717->cond30720
+cond30720(yes)->op30745
+op30757->cond30750
+op1->cond30720
+io30708->op30711

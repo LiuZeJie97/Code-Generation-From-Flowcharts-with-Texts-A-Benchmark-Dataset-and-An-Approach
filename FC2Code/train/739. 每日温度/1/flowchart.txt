@@ -1,0 +1,30 @@
+e29279=>end: end function return
+op29270=>operation: 将答案数组中下标为prev_index的值更新为当前天数与栈顶元素的差值
+op29232=>operation: 当前天数i等于0
+cond29235=>condition: 当前天数小于数组temperatures的长度
+op29268=>operation: 定义prev_index为单调栈栈顶元素，并在单调栈中移除该元素
+op29228=>operation: 定义数组ret用于记录答案，其长度与数组temperatures的长度相同，初值均为0
+io29223=>inputoutput: input: self, temperatures
+io29281=>inputoutput: output:  返回答案数组
+cond29259=>condition: 当单调栈不为空且当前天的温度大于第sk[-1]天的温度
+op29274=>operation: 将当前天数添加进单调栈
+op29230=>operation: 定义单调栈sk
+op29226=>operation: length为数组temperatures的长度，其中temperature[i]表示第i天的温度
+op1=>operation: 当前天数加一
+st29221=>start: start dailyTemperatures
+
+op29228->op29230
+op29232->cond29235
+st29221->io29223
+op1->cond29235
+op29274->op1
+io29281->e29279
+cond29235(no)->io29281
+cond29235(yes)->cond29259
+op29268->op29270
+op29270->cond29259
+io29223->op29226
+cond29259(no)->op29274
+op29230->op29232
+op29226->op29228
+cond29259(yes)->op29268

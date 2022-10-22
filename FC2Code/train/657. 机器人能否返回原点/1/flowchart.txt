@@ -1,0 +1,25 @@
+op24817=>operation: 当前字符为'D'，则坐标y加一
+io24828=>inputoutput: output:  若坐标x和y均为0，则机器人可以在完成所有动作后返回原点，否则机器人不能完成所有动作后返回原点
+st24792=>start: start judgeCircle
+op24815=>operation: 当前字符为'U'，则坐标y减一
+io24794=>inputoutput: input: self, moves
+op24797=>operation: 定义初值为0的坐标变量x和y
+op1=>operation: 更新当前遍历字符
+op24819=>operation: 当前字符为'L'，则坐标x减一
+e24826=>end: end function return
+op24821=>operation: 当前字符为'R'，则坐标x加一
+op24799=>operation: move为字符串moves中的字符
+cond24802=>condition: 对字符串进行遍历
+
+op24799->cond24802
+io24828->e24826
+op24797->op24799
+op24815->op24817
+op24821->op1
+cond24802(no)->io24828
+op24819->op24821
+io24794->op24797
+st24792->io24794
+cond24802(yes)->op24815
+op1->cond24802
+op24817->op24819

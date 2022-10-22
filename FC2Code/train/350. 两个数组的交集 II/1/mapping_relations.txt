@@ -1,0 +1,16 @@
+def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:    #io19600
+    nums1.sort()    #op19603
+    nums2.sort()    #op19605
+    length1, length2 = len(nums1), len(nums2)    #op19607
+    intersection = list()    #op19609
+    index1 = index2 = 0    #op19611
+    while index1 < length1 and index2 < length2:    #cond19614
+        if nums1[index1] < nums2[index2]:    #cond19646
+            index1 += 1    #op19650
+        elif nums1[index1] > nums2[index2]:    #cond19655
+            index2 += 1    #op19659
+        else:    #None
+            intersection.append(nums1[index1])    #op19663
+            index1 += 1    #op19665
+            index2 += 1    #op19667
+    return intersection    #io19676

@@ -1,0 +1,19 @@
+def longestValidParentheses(self, s: str) -> int:    #io4281
+    res=[]    #op4284
+    stack=[]    #op4284
+    for index in range(len(s)):    #cond4289
+        if(stack and s[index]==")"):    #cond4317
+            res.append(stack.pop())    #op4321
+            res.append(index)    #op4323
+        if(s[index]=="("):    #cond4329
+            stack.append(index)    #op4333
+    res.sort()    #op4340
+    max_len=0    #op4342
+    index=0    #op4344
+    while(index<len(res)-1):    #cond4347
+        tmp=index    #op4370
+        while(index<len(res)-1 and res[index+1]-res[index]==1):    #cond4373
+            index+=1    #op4380
+        max_len=max(max_len,index-tmp+1)    #op4384
+        index+=1    #op4386
+    return max_len    #io4393

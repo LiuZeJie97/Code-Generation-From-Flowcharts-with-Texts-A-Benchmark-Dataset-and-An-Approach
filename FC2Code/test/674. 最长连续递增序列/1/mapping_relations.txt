@@ -1,0 +1,9 @@
+def findLengthOfLCIS(self, A: List[int]) -> int:    #io25315
+    L = 0    #op25318
+    N = len(A)    #op25320
+    s = 0    #op25322
+    for k in range(N):    #cond25327
+        if k > 0 and A[k] <= A[k - 1]:    #cond25345
+            s = k    #op25349
+        L = max(L, k - s + 1)    #op25354
+    return L    #io25361

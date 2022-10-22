@@ -1,0 +1,47 @@
+op34785=>operation: nr为横坐标，nc为纵坐标，(nr, nc)表示位置
+cond34725=>condition: 纵坐标小于数组grid的长度
+cond34808=>condition: 当前横坐标、纵坐标均大于等于0小于等于数组grid的长度
+e34831=>end: end function return
+op34819=>operation: 计算数组grid中r行c列的元素减去nval，令总表面积加上该计算结果与0之间的最大值
+op2=>operation: 令纵坐标自增1
+op34606=>operation: ans用于记录总表面积，初值为0
+op34722=>operation: c为纵坐标，初值为0
+op1=>operation: 令横坐标自增1
+op34783=>operation: 总表面积加2
+op34608=>operation: r为横坐标，初值为0
+io34833=>inputoutput: output:  返回总表面积
+io34601=>inputoutput: input: self, grid
+op3=>operation: 更新当前位置
+st34599=>start: start surfaceArea
+op34816=>operation: nval等于0
+cond34788=>condition: 位置(nr, nc)分别在位置(r, c)的左边一格、右边一格、下边一格、上边一格
+op34604=>operation: N为数组grid的长度
+op34812=>operation: nval等于数组grid中nr行nc列的元素
+cond34779=>condition: 数组grid中r行c列的元素不为0
+cond34611=>condition: 横坐标小于数组grid的长度
+
+cond34788(no)->op2
+op34608->cond34611
+op2->cond34725
+cond34779(yes)->op34783
+cond34808(no)->op34816
+cond34725(yes)->cond34779
+cond34779(no)->op2
+op34606->op34608
+op34604->op34606
+st34599->io34601
+op34819->op3
+cond34808(yes)->op34812
+op1->cond34611
+op34722->cond34725
+op34816->op34819
+op34812->op34819
+op34785->cond34788
+io34833->e34831
+cond34788(yes)->cond34808
+op3->cond34788
+cond34611(yes)->op34722
+io34601->op34604
+cond34611(no)->io34833
+op34783->op34785
+cond34725(no)->op1

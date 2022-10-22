@@ -1,0 +1,16 @@
+def sortString(self, s: str) -> str:    #io11922
+    num = [0] * 26    #op11925
+    oa = ord('a')    #op11927
+    for i in range(len(s)):    #cond11932
+        num[ord(s[i]) - oa] += 1    #op11939
+    ret = list()    #op11943
+    while len(ret) < len(s):    #cond11946
+        for i in range(26):    #cond12022
+            if num[i]:    #cond12040
+                num[i] -= 1    #op12044
+                ret.append(chr(i + oa))    #op12046
+        for i in range(25, -1, -1):    #cond12056
+            if num[i]:    #cond12074
+                num[i] -= 1    #op12078
+                ret.append(chr(i + oa))    #op12080
+    return "".join(ret)    #io12092

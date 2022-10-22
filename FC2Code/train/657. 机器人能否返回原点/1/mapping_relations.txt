@@ -1,0 +1,8 @@
+def judgeCircle(self, moves):    #io24794
+    x = y = 0    #op24797
+    for move in moves:    #cond24802
+        if move == 'U': y -= 1    #op24815
+        elif move == 'D': y += 1    #op24817
+        elif move == 'L': x -= 1    #op24819
+        elif move == 'R': x += 1    #op24821
+    return x == y == 0    #io24828

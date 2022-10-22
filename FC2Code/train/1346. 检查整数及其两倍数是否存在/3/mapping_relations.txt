@@ -1,0 +1,8 @@
+def checkIfExist(self, arr: List[int]) -> bool:    #io11731
+    counter = Counter(arr)    #op11734
+    for n in arr:    #cond11739
+        if n != 0 and counter[2 * n] >= 1:    #cond11773
+            return True    #io11780
+        if n == 0 and counter[2 * n] >= 2:    #cond11787
+            return True    #io11794
+    return False    #io11805

@@ -1,0 +1,20 @@
+def minTaps(self, n: int, ranges: List[int]) -> int:
+    prev = []
+    for i in range(n + 1):
+        prev.append(i)
+    for i in range(n + 1):
+        l = max(i - ranges[i], 0)
+        r = min(i + ranges[i], n)
+        prev[r] = min(prev[r], l)
+    bp, fur = n, 2**30
+    f = True
+    ans = 0
+    for i in range(n, 0, -1):
+        fur = min(fur, prev[i])
+        if i == bp:
+            if fur >= i:
+                f = False
+                break
+            bp = fur
+            ans += 1
+    return ans if f else -1

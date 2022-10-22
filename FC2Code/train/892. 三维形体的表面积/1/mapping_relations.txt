@@ -1,0 +1,14 @@
+def surfaceArea(self, grid: List[List[int]]) -> int:    #io34601
+    N = len(grid)    #op34604
+    ans = 0    #op34606
+    for r in range(N):    #cond34611
+        for c in range(N):    #cond34725
+            if grid[r][c]:    #cond34779
+                ans += 2    #op34783
+                for nr, nc in ((r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)):    #cond34788
+                    if 0 <= nr < N and 0 <= nc < N:    #cond34808
+                        nval = grid[nr][nc]    #op34812
+                    else:    #None
+                        nval = 0    #op34816
+                    ans += max(grid[r][c] - nval, 0)    #op34819
+    return ans    #io34833

@@ -1,0 +1,11 @@
+def largeGroupPositions(self, seq: str) -> List[List[int]]:
+    ret = list()
+    n, num = len(seq), 1
+    for i in range(n):
+        if i == n - 1 or seq[i] != seq[i + 1]:
+            if num >= 3:
+                ret.append([i - num + 1, i])
+            num = 1
+        else:
+            num += 1
+    return ret

@@ -1,0 +1,50 @@
+io11584=>inputoutput: input: self, a
+op11587=>operation: 对数组a排序
+op11589=>operation: 右指针q等于0
+io11645=>inputoutput: output:  整数及其两倍数存在
+op11633=>operation: 将右指针右移1
+cond11638=>condition: 右指针不等于数组的长度且左指针不等于右指针且数组左指针元素的2倍等于右指针元素
+op2=>operation: 将左指针左移1
+cond11626=>condition: 右指针q小于数组的长度且数组左指针元素的2倍大于右指针元素
+op1=>operation: 将左指针右移1
+op11591=>operation: 左指针p等于0
+op11655=>operation: 左指针p等于数组的长度减一
+e11718=>end: end function return
+op11697=>operation: 将右指针左移1
+cond11690=>condition: 右指针q大于-1且数组左指针元素的2倍小于右指针元素
+e11707=>end: end function return
+cond11658=>condition: 左指针大于-1
+io11709=>inputoutput: output:  整数及其两倍数存在
+e11643=>end: end function return
+cond11594=>condition: 左指针小于数组a的长度
+st11582=>start: start checkIfExist
+cond11702=>condition: 右指针不等于-1且左指针不等于右指针且数组左指针元素的2倍等于右指针元素
+op11653=>operation: 右指针等于数组a的长度减一
+io11720=>inputoutput: output:  整数及其两倍数不存在
+
+cond11690(yes)->op11697
+cond11702(no)->op2
+cond11702(yes)->io11709
+op2->cond11658
+io11720->e11718
+op11587->op11589
+cond11638(no)->op1
+cond11690(no)->cond11702
+op11591->cond11594
+op11633->cond11626
+op11653->op11655
+op11589->op11591
+op11655->cond11658
+io11645->e11643
+cond11658(yes)->cond11690
+io11584->op11587
+io11709->e11707
+cond11594(yes)->cond11626
+op1->cond11594
+st11582->io11584
+op11697->cond11690
+cond11658(no)->io11720
+cond11626(no)->cond11638
+cond11594(no)->op11653
+cond11626(yes)->op11633
+cond11638(yes)->io11645

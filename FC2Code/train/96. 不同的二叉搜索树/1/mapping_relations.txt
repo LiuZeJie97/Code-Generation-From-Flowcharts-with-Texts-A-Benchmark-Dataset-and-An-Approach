@@ -1,0 +1,10 @@
+def numTrees(self, n: int) -> int:    #io6728
+    if(n==0):    #cond6732
+        return 0    #io6739
+    dp=[0]*(n+1)    #op6745
+    dp[0]=1    #op6747
+    dp[1]=1    #op6747
+    for i in range(2,n+1):    #cond6752
+        for j in range(i):    #cond6774
+            dp[i]+=dp[j]*dp[i-j-1]    #op6781
+    return dp[-1]    #io6790

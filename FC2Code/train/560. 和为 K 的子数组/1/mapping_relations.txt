@@ -1,0 +1,13 @@
+def subarraySum(self, nums: List[int], k: int) -> int:    #io5310
+    hash={0:1}    #op5313
+    sum=0    #op5315
+    count=0    #op5315
+    for i in range(len(nums)):    #cond5320
+        sum+=nums[i]    #op5349
+        if((sum-k) in hash):    #cond5352
+            count+=hash[sum-k]    #op5356
+        if(sum in hash):    #cond5362
+            hash[sum]+=1    #op5366
+        else:    #None
+            hash[sum]=1    #op5370
+    return count    #io5378

@@ -1,0 +1,33 @@
+io30976=>inputoutput: output:  源字符串不能变成目标字符串
+op30982=>operation: p为数组下标
+op31020=>operation: q为数组下标
+io30963=>inputoutput: input: self, s, goal
+cond31039=>condition: 计算p与q的和除以n的余数，若源字符串中下标为计算结果的字符不等于目标字符串中下标为q的字符
+op1=>operation: 令该数组下标加1
+cond31023=>condition: 该数组下标小于源字符串的长度
+op30966=>operation: m为源字符串s的长度，n为目标字符串goal的长度
+op2=>operation: 令该数组下标加1
+e31053=>end: end function return
+cond30969=>condition: 若源字符串的长度与目标字符串的长度不相等
+st30961=>start: start rotateString
+e30974=>end: end function return
+cond30985=>condition: 该数组下标小于源字符串goal的长度
+io31055=>inputoutput: output:  源字符串不能变成目标字符串
+
+op30966->cond30969
+cond31039(no)->op2
+op30982->cond30985
+cond31039(yes)->op1
+io30963->op30966
+cond30985(yes)->op31020
+cond30969(no)->op30982
+cond31023(no)->op1
+cond31023(yes)->cond31039
+io30976->e30974
+cond30969(yes)->io30976
+st30961->io30963
+op2->cond31023
+op1->cond30985
+cond30985(no)->io31055
+io31055->e31053
+op31020->cond31023

@@ -1,0 +1,16 @@
+def decodeAtIndex(self, s: str, k: int) -> str:    #io34360
+    size = 0    #op34363
+    for c in s:    #cond34368
+        if c.isdigit():    #cond34386
+            size = size * int(c)    #op34390
+        else:    #None
+            size += 1    #op34394
+    s = reversed(s)    #op34399
+    for c in s:    #cond34404
+        k = k % size    #op34437
+        if k == 0 and c.isalpha():    #cond34440
+            return c    #io34447
+        if c.isdigit():    #cond34454
+            size = size // int(c)    #op34458
+        else:    #None
+            size -= 1    #op34462

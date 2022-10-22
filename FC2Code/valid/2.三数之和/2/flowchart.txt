@@ -1,0 +1,65 @@
+op1=>operation: i自增1
+op3186=>operation: 将左指针右移一个单位，右指针左移一个单位
+e2925=>end: end function return
+cond3156=>condition: 当前元素nums[i]和左指针L和右指针R指向的元素的加和等于0时
+op3099=>operation: 令左指针L等于前元素在数组中的下标i加1，右指针R等于数组长度减去1
+cond3102=>condition: 左指针小于右指针
+op3199=>operation: 左指针右移一个单位
+cond3175=>condition: 左指针位于右指针左侧，且右指针指向的元素和其左侧的元素相等
+op2935=>operation: 使用数组res保存解
+op3195=>operation: 右指针左移一个单位
+e3208=>end: end function return
+op2933=>operation: 对数组从小到大排序
+cond3090=>condition: i大于0且当前元素等于当前元素的前一个元素
+io3210=>inputoutput: output:  返回所有解
+cond3191=>condition: 当前元素，左指针L和右指针R指向的元素的加和大于0
+cond2940=>condition: i小于数组长度
+cond3076=>condition: 当前元素大于0
+cond2920=>condition: 数组为空或者数组长度小于3
+op3170=>operation: 左指针右移1个单位
+op2917=>operation: n为数组nums的长度
+op3160=>operation: 找到一个解，保存当前元素和左指针和右指针
+cond3163=>condition: 左指针位于右指针左侧，且左指针指向的元素和其右侧的元素相等
+e3081=>end: end function return
+op3182=>operation: 右指针左移1个单位
+io2914=>inputoutput: input: self, nums
+io3083=>inputoutput: output:  返回所有解
+op2937=>operation: i为当前元素在数组中的下标，i等于0
+io2927=>inputoutput: output:  返回空数组
+st2912=>start: start threeSum
+
+cond3175(yes)->op3182
+io3210->e3208
+cond3102(no)->op1
+op2917->cond2920
+cond3191(yes)->op3195
+cond3090(no)->op3099
+cond3102(yes)->cond3156
+io3083->e3081
+op2937->cond2940
+cond2920(yes)->io2927
+st2912->io2914
+op3186->cond3102
+cond3076(yes)->io3083
+op2935->op2937
+cond2920(no)->op2933
+op3170->cond3163
+cond2940(yes)->cond3076
+cond3090(yes)->op1
+op2933->op2935
+op3199->cond3102
+op3099->cond3102
+cond3191(no)->op3199
+op3160->cond3163
+io2914->op2917
+cond3175(no)->op3186
+cond3076(no)->cond3090
+cond3163(no)->cond3175
+cond3156(no)->cond3191
+cond3156(yes)->op3160
+cond2940(no)->io3210
+op1->cond2940
+op3182->cond3175
+cond3163(yes)->op3170
+op3195->cond3102
+io2927->e2925

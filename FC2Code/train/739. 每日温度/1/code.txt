@@ -1,0 +1,10 @@
+def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
+    length = len(temperatures)
+    ret = [0] * length
+    sk = []
+    for i in range(length):
+        while sk and temperature[i] > temperatures[sk[-1]]:
+            prev_index = sk.pop()
+            ret[prev_index] = i - prev_index
+        sk.append(i)
+    return ret

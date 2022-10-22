@@ -1,0 +1,17 @@
+def canReach(self, arr: List[int], start: int) -> bool:    #io10606
+    if arr[start] == 0:    #cond10610
+        return True    #io10617
+    n = len(arr)    #op10623
+    used = {start}    #op10625
+    q = collections.deque([start])    #op10627
+    while len(q) > 0:    #cond10630
+        u = q.popleft()    #op10719
+        for v in [u + arr[u], u - arr[u]]:    #cond10724
+            if v in used:    #cond10766
+                continue    #None
+            if 0 <= v < n:    #cond10776
+                if arr[v] == 0:    #cond10781
+                    return True    #io10788
+                q.append(v)    #op10794
+                used.add(v)    #op10796
+    return False    #io10808

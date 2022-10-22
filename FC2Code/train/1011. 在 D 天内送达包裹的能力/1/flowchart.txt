@@ -1,0 +1,42 @@
+e7385=>end: end function return
+op7328=>operation: need为需要运送的天数，初值为1
+st7257=>start: start shipWithinDays
+cond7371=>condition: 需要运送的天数小于等于目标天数days
+io7259=>inputoutput: input: self, weights, days
+op7359=>operation: 令已经运送的包裹重量之和等于0
+op7361=>operation: 令需要运送的天数need加一
+op7332=>operation: i为数组下标，初值为0
+op7330=>operation: cur为已经运送的包裹重量之和，初值为0
+io7387=>inputoutput: output:  返回左边界
+op7379=>operation: 左边界等于中值加一
+op1=>operation: 数组下标自增一个单位
+cond7355=>condition: 已经运送的包裹重量之和cur加上第i个包裹的重量大于中值
+op7366=>operation: 令已经运送的包裹重量之和加上第i个包裹的重量
+op7262=>operation: 左边界left等于重量数组weights中的最大值，右边界right重量数组中全部元素的和，其中weights[i]表示第i个包裹的重量
+cond7335=>condition: 数组下标小于重量数组weights的长度
+cond7265=>condition: 左边界小于右边界
+op7375=>operation: 右边界等于中值mid
+op7326=>operation: 中值mid等于左边界与右边界的和整除2
+
+cond7265(yes)->op7326
+st7257->io7259
+cond7355(no)->op7366
+op7359->op7361
+io7259->op7262
+cond7265(no)->io7387
+op7332->cond7335
+cond7371(no)->op7379
+op7366->op1
+op7330->op7332
+op7262->cond7265
+cond7355(yes)->op7359
+op7328->op7330
+op7361->op7366
+cond7371(yes)->op7375
+op1->cond7335
+op7379->cond7265
+op7375->cond7265
+op7326->op7328
+io7387->e7385
+cond7335(no)->cond7371
+cond7335(yes)->cond7355

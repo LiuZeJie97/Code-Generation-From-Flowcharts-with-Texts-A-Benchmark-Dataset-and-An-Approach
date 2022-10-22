@@ -1,0 +1,23 @@
+op24388=>operation: count为同样数组的长度
+io24383=>inputoutput: input: self, numbers, k
+op24402=>operation: 计算数组中下标为i-k的元素与下标为i的元素的差值，并令total减去该差值
+io24411=>inputoutput: output:  返回maxTotal除以k的结果
+op24386=>operation: 定义变量maxTotal和变量total，其初值均为数组numbers前k个元素的和
+op1=>operation: 数组下标加一
+op24404=>operation: maxTotal等于其自身与total之间的最大值
+op24390=>operation: 定义初值为k的数组下标i
+st24381=>start: start findMaxAverage
+e24409=>end: end function return
+cond24393=>condition: 当数组下标小于数组numbers的长度
+
+io24383->op24386
+cond24393(yes)->op24402
+op24404->op1
+cond24393(no)->io24411
+op24388->op24390
+st24381->io24383
+op1->cond24393
+op24390->cond24393
+io24411->e24409
+op24402->op24404
+op24386->op24388

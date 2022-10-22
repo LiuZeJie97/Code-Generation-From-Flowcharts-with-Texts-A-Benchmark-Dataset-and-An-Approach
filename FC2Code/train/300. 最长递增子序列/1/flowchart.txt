@@ -1,0 +1,37 @@
+e4101=>end: end function return
+op2=>operation: dp下标j右移一个单位
+st4007=>start: start lengthOfLIS
+cond4071=>condition: j小于i
+op4030=>operation: 定义i为dp下标，初值为0
+e4018=>end: end function return
+op1=>operation: dp下标i右移一个单位
+io4009=>inputoutput: input: self, nums
+cond4013=>condition: 特判，若数组nums为空：
+io4020=>inputoutput: output:  返回0
+op4028=>operation: 初始化dp=[1,1, ,1]，长度为n，dp[i]等于1表示每一位都可以为长度为1的最长上升子序列。
+cond4033=>condition: i小于n
+op4091=>operation: 如果第j个位置的最长上升子序列的长度加1的结果大于第i个位置的最长上升子序列的长度，则更新dp[i]
+io4103=>inputoutput: output:  返回dp中的最大值
+op4026=>operation: n为数组的长度
+op4068=>operation: 定义j为dp下标，初值为0
+cond4087=>condition: 数组下标为i的数大于下标为j的数
+
+cond4013(no)->op4026
+op4091->op2
+cond4071(no)->op1
+cond4071(yes)->cond4087
+cond4033(no)->io4103
+io4020->e4018
+op2->cond4071
+op4028->op4030
+cond4087(yes)->op4091
+op4026->op4028
+op1->cond4033
+st4007->io4009
+op4030->cond4033
+cond4087(no)->op2
+io4009->cond4013
+cond4033(yes)->op4068
+cond4013(yes)->io4020
+io4103->e4101
+op4068->cond4071

@@ -1,0 +1,10 @@
+def convert(self, s: str, numRows: int) -> str:    #io5901
+    r = numRows    #op5904
+    if r == 1 or r >= len(s):    #cond5907
+        return s    #io5914
+    mat = [[] for _ in range(r)]    #op5920
+    t, x = r * 2 - 2, 0    #op5922
+    for i, ch in enumerate(s):    #cond5927
+        mat[x].append(ch)    #op5936
+        x += 1 if i % t < r - 1 else -1    #op5938
+    return ''.join(chain(*mat))    #io5945

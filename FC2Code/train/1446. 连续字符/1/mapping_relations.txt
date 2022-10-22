@@ -1,0 +1,9 @@
+def maxPower(self, st: str) -> int:    #io13051
+    ans, cnt = 1, 1    #op13054
+    for k in range(1, len(st)):    #cond13059
+        if st[k] == st[k - 1]:    #cond13079
+            cnt += 1    #op13083
+            ans = max(ans, cnt)    #op13085
+        else:    #None
+            cnt = 1    #op13089
+    return ans    #io13097

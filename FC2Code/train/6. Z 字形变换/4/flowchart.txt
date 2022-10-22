@@ -1,0 +1,41 @@
+op5977=>operation: 使用列表ans保存新的字符串
+cond6044=>condition: 0小于当前行小于给定的行数，且起始下标加上周期减去当前行的下标小于字符串长度
+io5956=>inputoutput: input: self, s, numRows
+cond5982=>condition: 行的下标小于给定的行数
+e5967=>end: end function return
+io6060=>inputoutput: output:  返回新的字符串
+st5954=>start: start convert
+e6058=>end: end function return
+cond6024=>condition: 周期的起始下标小于字符串的长度减去给定的函数
+io5969=>inputoutput: output:  直接返回字符串本身
+op1=>operation: 矩阵的行的下标加1
+op6021=>operation: j等于0，为每个周期的起始下标
+cond5962=>condition: 给定一行或给定的行数大于字符串s的长度
+op6041=>operation: 当前周期的第一个字符的下标等于起始下标加上当前行的下标，将第一个字符拼接在列表末尾
+op5959=>operation: 定义n和r，其中，n等于字符串s的长度，r等于给定的行数numRows
+op5975=>operation: 定义Z字形变换的周期t等于行数乘2再减2
+op2=>operation: 周期的起始下标j等于其自身减去Z字形变换的周期
+op5979=>operation: 定义矩阵的行的下标为i，初值等于0
+op6048=>operation: 当前周期的第二个字符的下标等于起始下标加上周期减去当前行的下标，将第二个字符拼接在列表末尾
+
+cond5962(no)->op5975
+io5969->e5967
+op5977->op5979
+op5979->cond5982
+cond5982(yes)->op6021
+op1->cond5982
+io5956->op5959
+op6041->cond6044
+cond6044(no)->op2
+op5975->op5977
+op6048->op2
+io6060->e6058
+op6021->cond6024
+st5954->io5956
+cond6024(yes)->op6041
+cond6024(no)->op1
+cond5962(yes)->io5969
+op5959->cond5962
+cond5982(no)->io6060
+cond6044(yes)->op6048
+op2->cond6024

@@ -1,0 +1,11 @@
+def containsPattern(self, array: List[int], m: int, k: int) -> bool:
+    n = len(array)
+    for l in range(n - m * k + 1):
+        offset = 0
+        while offset < m * k:
+            if array[l + offset] != array[l + offset % m]:
+                break
+            offset += 1
+        if offset == m * k:
+            return True
+    return False

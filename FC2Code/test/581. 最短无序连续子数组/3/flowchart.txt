@@ -1,0 +1,35 @@
+cond23456=>condition: 当前最大元素大于数组中下标为i的元素
+op23419=>operation: 初始化当前最大元素maxn等于无穷小，初始化右界right等于-1
+op23472=>operation: 左边界等于n减i减1
+op23417=>operation: n为数组nums的长度。
+op23464=>operation: 当前最大元素等于数组中下标为i的元素
+op23423=>operation: i等于0
+io23414=>inputoutput: input: self, nums
+op23476=>operation: 当前最小元素等于数组中下标为n减i减1的元素
+st23412=>start: start findUnsortedSubarray
+e23482=>end: end function return
+op23421=>operation: 初始化当前最小元素maxn等于无穷大，初始化左界right等于-1
+io23484=>inputoutput: output:  如果右界等于-1则返回0，否则，返回左右界之差加1
+op23460=>operation: 右边界等于i
+op1=>operation: i自增1
+cond23426=>condition: i小于数组长度
+cond23468=>condition: 当前最小元素小于数组中下标为n减i减1的元素
+
+cond23456(no)->op23464
+cond23456(yes)->op23460
+op23423->cond23426
+cond23426(yes)->cond23456
+op23476->op1
+op1->cond23426
+op23460->cond23468
+op23472->op1
+cond23426(no)->io23484
+io23414->op23417
+cond23468(no)->op23476
+op23419->op23421
+cond23468(yes)->op23472
+io23484->e23482
+op23464->cond23468
+st23412->io23414
+op23421->op23423
+op23417->op23419

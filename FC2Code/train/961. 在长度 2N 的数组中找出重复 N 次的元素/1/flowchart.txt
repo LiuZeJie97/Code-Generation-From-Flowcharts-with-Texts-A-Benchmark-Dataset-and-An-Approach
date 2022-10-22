@@ -1,0 +1,26 @@
+cond36437=>condition: 该变量小于4
+cond36483=>condition: 该下标小于数组nums的长度减去k
+io36431=>inputoutput: input: self, nums
+io36510=>inputoutput: output:  返回下标为i的元素
+st36429=>start: start repeatedNTimes
+op2=>operation: 将该下标的值更新为其自身加一
+op36480=>operation: 定义下标i，初值为0
+cond36503=>condition: 数组中下标为i的元素和下标为i+k的元素相等
+e36508=>end: end function return
+e36520=>end: end repeatedNTimes
+op1=>operation: 将该变量的值更新为其自身加一
+op36434=>operation: 定义变量k，初值为1
+
+cond36483(no)->op1
+op36480->cond36483
+op1->cond36437
+io36431->op36434
+io36510->e36508
+cond36437(yes)->op36480
+st36429->io36431
+op36434->cond36437
+cond36503(yes)->io36510
+cond36503(no)->op2
+cond36483(yes)->cond36503
+cond36437(no)->e36520
+op2->cond36483

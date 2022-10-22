@@ -1,0 +1,9 @@
+def findPoisonedDuration(self, timeSeries: List[int], duration: int) -> int:
+    ans, expired = 0, 0
+    for i in range(len(timeSeries)):
+        if timeSeries[i] >= expired:
+            ans += duration
+        else:
+            ans += timeSeries[i] + duration - expired
+        expired = timeSeries[i] + duration
+    return ans

@@ -1,0 +1,42 @@
+cond18762=>condition: 当数组下标大于-1
+cond18784=>condition: 总引用数大于当前数组下标
+op18748=>operation: 数量数组中下标为n的元素加一
+op2=>operation: 数组下标减一
+io18800=>inputoutput: output:  返回h指数
+op18757=>operation: h等于0，用于保存h指数
+op18781=>operation: 总引用数加上数量数组中下标为i的元素
+op18723=>operation: 定义c为数组citations中的元素，表示当前论文被引用的次数
+op1=>operation: 更新当前论文被引用的次数
+op18788=>operation: h指数等于当前数组下标
+op18759=>operation: 定义i为数组下标，初值为数组citations的长度
+st18714=>start: start hIndex
+cond18744=>condition: 当前论文被引用的次数大于遍历数组的长度
+op18719=>operation: n为数组citations的长度，tot用于记录总引用数，初值为0
+cond18726=>condition: 对数组进行遍历
+op18721=>operation: 定义数量数组counter用于记录当前引用次数论文的数量，其长度为数组citations的长度加一，数组元素初值均为0
+io18716=>inputoutput: input: self, citations
+op18752=>operation: 数量数组中下标为c的元素加一
+e18798=>end: end function return
+
+cond18726(no)->op18757
+cond18744(yes)->op18748
+op18757->op18759
+op18721->op18723
+op18752->op1
+st18714->io18716
+op18759->cond18762
+io18800->e18798
+cond18726(yes)->cond18744
+cond18744(no)->op18752
+cond18762(no)->io18800
+op18719->op18721
+io18716->op18719
+cond18762(yes)->op18781
+op18781->cond18784
+cond18784(no)->op2
+op18748->op1
+op18723->cond18726
+op18788->io18800
+op2->cond18762
+cond18784(yes)->op18788
+op1->cond18726

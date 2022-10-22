@@ -1,0 +1,10 @@
+def canJump(self, array: List[int]) -> bool:
+    length, rightmost = len(array), 0
+    arrive = False
+    for i in range(length):
+        if i <= rightmost:
+            rightmost = max(rightmost, i + array[i])
+            if rightmost >= length - 1:
+                arrive = True
+                break
+    return arrive

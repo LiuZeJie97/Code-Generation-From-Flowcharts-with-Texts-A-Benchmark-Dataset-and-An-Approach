@@ -1,0 +1,33 @@
+cond2640=>condition: 当前房屋的下标没有越界
+op2619=>operation: size为数组的长度，其中nums[i]表示第i个房屋中存放的金额
+e2652=>end: end function return
+io2629=>inputoutput: output:  返回数组第1个数
+e2611=>end: end function return
+op1=>operation: 当前房屋等于下一个房屋
+io2654=>inputoutput: output:  返回second
+io2613=>inputoutput: output:  返回0
+st2600=>start: start rob
+cond2606=>condition: 数组nums为空：
+e2627=>end: end function return
+op2637=>operation: i为当前房屋的下标，初值为2
+op2635=>operation: 初始化first和second，first等于第一个数，second等于数组第一和第二个数的较大值。first和second用于存储前两间房屋的最高总金额。
+cond2622=>condition: 数组的长度等于1
+io2602=>inputoutput: input: self, nums
+op2647=>operation: 更新前两间房屋的最高总金额，其中，first等于second，对于second，若first 加nums[i]的结果大于second，则更新second
+
+cond2640(no)->io2654
+op2635->op2637
+cond2606(yes)->io2613
+op2637->cond2640
+io2629->e2627
+st2600->io2602
+cond2622(no)->op2635
+cond2622(yes)->io2629
+cond2606(no)->op2619
+op2647->op1
+io2602->cond2606
+io2654->e2652
+cond2640(yes)->op2647
+io2613->e2611
+op2619->cond2622
+op1->cond2640

@@ -1,0 +1,10 @@
+def simplifyPath(self, path: str) -> str:    #io27350
+    names = path.split("/")    #op27353
+    stack = list()    #op27355
+    for idx in range(len(names)):    #cond27360
+        if names[idx] == "..":    #cond27394
+            if stack:    #cond27399
+                stack.pop()    #op27403
+        elif names[idx] and names[idx] != ".":    #cond27411
+            stack.append(names[idx])    #op27415
+    return "/" + "/".join(stack)    #io27426

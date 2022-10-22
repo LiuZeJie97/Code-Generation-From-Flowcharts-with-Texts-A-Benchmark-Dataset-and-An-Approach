@@ -1,0 +1,12 @@
+def numberOfSubarrays(self, numbers: List[int], k: int) -> int:
+    cnt = [0] * (len(numbers) + 1)
+    cnt[0] = 1
+    odd = 0
+    ans = 0
+    for index in range(len(numbers)):
+        if numbers[index] % 2 == 1:
+            odd += 1
+        if odd >= k:
+            ans += cnt[odd - k]
+        cnt[odd] += 1
+    return ans

@@ -1,0 +1,34 @@
+cond6752=>condition: 下标i小于节点总数n加1
+io6728=>inputoutput: input: self, n
+op6747=>operation: 没有节点和只有一个节点的二叉搜索树的种类均为1
+e6788=>end: end function return
+op6745=>operation: 初始化dp等于[0, ,0]，长度为节点总数加1，dp用于保存0, ,n个节点的二叉搜索树的种数
+op1=>operation: 下标右移一个单位
+st6726=>start: start numTrees
+cond6732=>condition: 如果节点总数n等于0：
+e6737=>end: end function return
+op6781=>operation: 0, ,i个节点的二叉搜索树的种数等于其自身加上0, ,j个节点的二叉搜索树的种数乘上0, ,i-j-1个节点的二叉搜索树的种数
+io6739=>inputoutput: output:  返回0。
+op6771=>operation: 定义j初值为1
+op2=>operation: 下标右移一个单位
+io6790=>inputoutput: output:  返回0, ,n个节点的二叉搜索树的总数
+op6749=>operation: i为数组下标，初值为2
+cond6774=>condition: 下标j小于下标i
+
+cond6732(no)->op6745
+op6745->op6747
+cond6752(no)->io6790
+op6747->op6749
+io6790->e6788
+op6771->cond6774
+cond6774(yes)->op6781
+op6781->op2
+cond6774(no)->op1
+op1->cond6752
+cond6732(yes)->io6739
+op6749->cond6752
+op2->cond6774
+cond6752(yes)->op6771
+io6739->e6737
+st6726->io6728
+io6728->cond6732

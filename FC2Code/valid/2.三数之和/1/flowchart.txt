@@ -1,0 +1,51 @@
+io2665=>inputoutput: input: self, nums
+cond2807=>condition: 第二个数的下标小于数组长度
+op2668=>operation: 使用n保存数组num的长度
+cond2677=>condition: 第一个数的下标小于数组长度
+io2903=>inputoutput: output:  返回所有解
+op2804=>operation: second为第二个数的下标，初值为第一个数的下标first加1
+cond2855=>condition: 第二个数的下标大于第一个数的下标加1，且第二个数和上一次枚举的数不相同
+e2901=>end: end function return
+st2663=>start: start threeSum
+cond2877=>condition: 如果第二个数的下标和第三个数的重合
+op2=>operation: 第二个数的下标加1
+cond2791=>condition: 第一个数的下标没有越界且第一个数的下标和上一次枚举的数不相同
+cond2887=>condition: 当第二个数 加 第三个数等于目标值时：
+op2670=>operation: 将数组中的元素从小到大进行排序
+op2891=>operation: 找到一个解，将三个数添加入可行解数组中
+op2802=>operation: 令目标值target等于第一个数的相反数
+op2674=>operation: first为第一个数的下标，初值为0，记录a可能的取值
+op2872=>operation: 第三个数减一
+op2672=>operation: ans用于保存可行解
+op2800=>operation: 定义第三个数的下标为third，初始值为数组长度减一，
+cond2865=>condition: 第二个数的下标小于第三个数的下标，且第二个数加第三个数大于目标值
+op1=>operation: 第一个数的下标加1
+
+cond2807(yes)->cond2855
+cond2677(yes)->cond2791
+cond2855(yes)->op2
+cond2677(no)->io2903
+io2903->e2901
+cond2791(yes)->op1
+cond2887(yes)->op2891
+cond2865(yes)->op2872
+cond2855(no)->cond2865
+op2->cond2807
+cond2877(no)->cond2887
+op2800->op2802
+cond2807(no)->op1
+op2872->cond2865
+op2891->op2
+op2804->cond2807
+cond2877(yes)->op1
+io2665->op2668
+op2674->cond2677
+op2668->op2670
+cond2791(no)->op2800
+st2663->io2665
+op2672->op2674
+cond2865(no)->cond2877
+op1->cond2677
+cond2887(no)->op2
+op2670->op2672
+op2802->op2804

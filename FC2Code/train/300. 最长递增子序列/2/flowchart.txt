@@ -1,0 +1,54 @@
+io4141=>inputoutput: output:  返回数组长度。
+io4125=>inputoutput: output:  返回0。
+io4270=>inputoutput: output:  返回tail的长度
+op4216=>operation: 将其加入tail
+op4223=>operation: 定义左边界l，初值为0，
+op4258=>operation: 左界的值等于mid加1。
+op4254=>operation: 右界的值等于mid减去1。
+op4131=>operation: n为数组的长度
+cond4152=>condition: 数组下标小于数组的长度
+op1=>operation: 数组下标自增1
+e4139=>end: end function return
+cond4118=>condition: 若数组nums为空
+e4268=>end: end function return
+cond4212=>condition: 数组下标为i的元素比tail的最后一个元素大
+op4263=>operation: 长度为l的最长上升子序列的最小尾元素的值等于nums[i]
+e4123=>end: end function return
+cond4134=>condition: 特判，若数组长度小于2：
+op4247=>operation: 定义mid为左右边界和的一半
+op4149=>operation: 定义i为数组下标，初值为1
+io4114=>inputoutput: input: self, nums
+op4225=>operation: 右边界r，初值为len(tail)1。
+op4147=>operation: 初始化tail为数组第1个元素的值，tail[i]表示目前为止长度为i的最长上升子序列的最小尾元素为tail[i]
+cond4228=>condition: 左边界小于等于右边界：
+st4112=>start: start lengthOfLIS
+cond4250=>condition: tail[mid]大于等于数组下标为i的元素：
+
+op1->cond4152
+op4247->cond4250
+op4147->op4149
+io4114->cond4118
+cond4212(yes)->op4216
+io4141->e4139
+io4125->e4123
+cond4118(yes)->io4125
+st4112->io4114
+cond4152(yes)->cond4212
+op4149->cond4152
+cond4152(no)->io4270
+cond4118(no)->op4131
+cond4228(yes)->op4247
+cond4228(no)->op4263
+op4131->cond4134
+op4223->op4225
+cond4134(yes)->io4141
+cond4250(yes)->op4254
+op4258->cond4228
+io4270->e4268
+op4225->cond4228
+op4263->op1
+op4254->cond4228
+op4216->op1
+cond4250(no)->op4258
+cond4212(no)->op4223
+cond4134(no)->op4147

@@ -1,0 +1,22 @@
+io18319=>inputoutput: input: self, num
+op18348=>operation: 定义各数位和sum等于0
+op18360=>operation: 令各数位和加上给定整数除以10的余数
+cond18351=>condition: 给定整数不为0时
+io18373=>inputoutput: output:  返回给定整数
+op18366=>operation: 令给定整数等于各数位和
+cond18323=>condition: 给定整数num大于等于10
+st18317=>start: start addDigits
+op18362=>operation: 令该整数整除10
+e18371=>end: end function return
+
+cond18323(no)->io18373
+op18360->op18362
+op18362->cond18351
+st18317->io18319
+io18319->cond18323
+cond18351(yes)->op18360
+cond18323(yes)->op18348
+op18366->cond18323
+op18348->cond18351
+io18373->e18371
+cond18351(no)->op18366

@@ -1,0 +1,17 @@
+def pancakeSort(self, arr: List[int]) -> List[int]:    #io36528
+    ans = []    #op36531
+    for n in range(len(arr), 1, -1):    #cond36536
+        index = 0    #op36617
+        for i in range(n):    #cond36622
+            if arr[i] > arr[index]:    #cond36638
+                index = i    #op36642
+        if index == n - 1:    #cond36650
+            continue    #None
+        m = index    #op36659
+        for i in range((m + 1) // 2):    #cond36664
+            arr[i], arr[m - i] = arr[m - i], arr[i]    #op36671
+        for i in range(n // 2):    #cond36678
+            arr[i], arr[n - 1 - i] = arr[n - 1 - i], arr[i]    #op36685
+        ans.append(index + 1)    #op36689
+        ans.append(n)    #op36691
+    return ans    #io36698

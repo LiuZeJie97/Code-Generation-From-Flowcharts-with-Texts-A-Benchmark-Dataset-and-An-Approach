@@ -1,0 +1,29 @@
+e24781=>end: end function return
+op24762=>operation: 将答案加上i
+io24783=>inputoutput: output:  返回答案
+op24760=>operation: n整除i
+cond24727=>condition: 当i的平方小于等于n
+op24775=>operation: 将答案加上n
+op24724=>operation: 定义变量i等于2
+cond24771=>condition: 如果n大于1
+io24719=>inputoutput: input: self, n
+op24766=>operation: 变量i加一
+op24722=>operation: 定义答案变量a等于0
+st24717=>start: start minSteps
+cond24751=>condition: n能整除i时
+
+op24766->cond24727
+op24775->io24783
+st24717->io24719
+op24722->op24724
+op24724->cond24727
+io24719->op24722
+cond24727(no)->cond24771
+op24762->cond24751
+cond24771(no)->io24783
+cond24751(no)->op24766
+cond24751(yes)->op24760
+cond24727(yes)->cond24751
+op24760->op24762
+io24783->e24781
+cond24771(yes)->op24775
