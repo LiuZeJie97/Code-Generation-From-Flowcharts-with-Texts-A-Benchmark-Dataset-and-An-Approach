@@ -1,0 +1,135 @@
+NSpace
+0
+1
+1
+2
+1
+2
+2
+2
+3
+2
+3
+3
+4
+3
+4
+4
+4
+5
+5
+4
+4
+4
+5
+5
+5
+6
+7
+6
+7
+6
+5
+4
+
+GUID
+None
+op4635
+cond4638
+io4645
+None
+op4651
+op4653
+cond4656
+io4663
+None
+op4669
+cond4672
+io4679
+None
+op4685
+op4687
+cond4690
+op4697
+op1
+op4701
+op4703
+cond4706
+op4747
+op4749
+cond4752
+cond4770
+op4774
+None
+op4778
+op3
+op2
+io4788
+
+Str
+def canPartition(self, nums):@
+定义n为数组nums的长度@
+if (判断nums长度是否小于2：)@
+output:  不可能将数组分割成元素和相等的两个子集@
+else:@
+计算nums的元素和total@
+计算nums的最大元素maxNum@
+if (判断元素和是否是奇数)@
+output:  不可能将数组分割成元素和相等的两个子集@
+else:@
+令目标值target为整个数组元素和的一半@
+if (判断数组中最大的元素是否大于目标值)@
+output:  不可能将数组分割成元素和相等的两个子集@
+else:@
+创建二维数组 dp，包含 n 行 target+1 列，dp 中的全部元素全部初始化为 false。其中 dp[i][j] 表示从数组的 [0,i] 下标范围内选取若干个正整数（可以是 0 个），是否存在一种选取方案使得被选取的正整数的和等于j。@
+定义i为db的第一维的下标@
+while(db的第一维的下标小于数组nums的长度)@
+对于正整数的和等于0的情况，一定存在方案，更新对应位置为true。@
+db的第一维的下标向右移一个单位@
+对于下标范围为[0,0]且正整数的和等于nums[0]的情况，一定存在方案，更新dp对应位置为true。@
+定义i为db的第一维的下标，初值为1@
+while(db的第一维的下标小于数组nums的长度)@
+定义当前数字num为nums第i个元素的值。@
+定义j为db第二维的下标，初值为1@
+while(判断第二维的下标是否小于目标值加1)@
+if (判断正整数的和j是否大于当前数字)@
+dp[i][j]的值等于dp[i - 1][j] 或 dp[i - 1][j - num]。@
+else:@
+dp[i][j] 的值等于dp[i - 1][j]@
+db第二维的下标向右移一个单位@
+db的第一维的下标向右移一个单位@
+output:  返回dp第n1行第target列的值@
+
+Type
+Function
+Effect
+If
+Effect
+Else
+Effect
+Effect
+If
+Effect
+Else
+Effect
+If
+Effect
+Else
+Effect
+Effect
+While
+Effect
+Effect
+Effect
+Effect
+While
+Effect
+Effect
+While
+If
+Effect
+Else
+Effect
+Effect
+Effect
+Effect

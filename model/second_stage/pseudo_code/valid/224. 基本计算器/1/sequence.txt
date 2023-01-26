@@ -1,0 +1,39 @@
+def calculate(self, s):
+    定义栈ops
+    将1添加进栈
+    定义符号变量sign等于1
+    定义返回值ret等于0
+    定义n为字符串s的长度
+    定义变量i等于0
+    while(i小于字符串的长度)
+        if (字符串中下标为i的字符为' ')
+            i加一
+            continue
+        else:
+            if (该字符为'+')
+                符号变量等于栈中最后一项元素
+                i加一
+                continue
+            else:
+                if (该字符为'-')
+                    符号变量等于负的栈中最后一项元素
+                    i加一
+                    continue
+                else:
+                    if (该字符为'(')
+                        将符号变量添加进栈
+                        i加一
+                        continue
+                    else:
+                        if (该字符为')')
+                            将栈顶元素出栈
+                            i加一
+                            continue
+                        else:
+                            定义计算值num等于0
+                            while(i小于字符串s的长度且字符串中下标为i的字符为数字)
+                                令计算值等于计算值乘10加字符串中下标为i的字符的Unicode值减'0'的Unicode值
+                                i加一
+                            令返回值加上计算值与符号变量的乘积
+                            continue
+    output:  将返回值返回

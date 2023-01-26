@@ -1,0 +1,55 @@
+NSpace
+0
+1
+2
+1
+2
+2
+3
+2
+3
+4
+3
+4
+
+GUID
+None
+cond19432
+io19439
+None
+op19445
+cond19448
+io19455
+None
+cond19461
+io19468
+None
+io19476
+
+Str
+def integerBreak(self, n):@
+if (n小于等于3)@
+output:  返回n减1@
+else:@
+定义变量quotient等于n整除3，变量remainder等于n除以3的余数@
+if (n除以3的余数等于0)@
+output:  返回3的quotient次方@
+else:@
+if (n除以3的余数等于1)@
+output:  返回3的quotient-1次方乘以4@
+else:@
+output:  返回3的quotient次方乘以2@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+If
+Effect
+Else
+If
+Effect
+Else
+Effect

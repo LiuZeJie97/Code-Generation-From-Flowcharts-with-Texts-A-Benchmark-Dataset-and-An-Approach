@@ -1,0 +1,14 @@
+def xorGame(self, numbers):
+    定义标志变量win，初值为False，True表示Alice获胜，False表示Bob获胜
+    if (数组numbers的长度可以整除2)
+        Alice获胜
+    else:
+        定义变量xorsum，初值为0
+        num为数组numbers中的元素
+        while(对数组进行遍历)
+            将xorsum的值更新为xorsum异或当前遍历元素
+            更新当前遍历元素
+        if (xorsum等于0)
+            Alice获胜
+        else:
+    output:  返回标志变量

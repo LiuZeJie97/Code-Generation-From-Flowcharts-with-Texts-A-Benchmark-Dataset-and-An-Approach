@@ -1,0 +1,23 @@
+NSpace
+0
+1
+2
+1
+
+GUID
+None
+cond4499
+op4506
+io4513
+
+Str
+def isPowerOfThree(self, n):@
+while(整数n不等于0且n是3的倍数)@
+不断地将该整数除以 3@
+output:  返回n是否等于1@
+
+Type
+Function
+While
+Effect
+Effect

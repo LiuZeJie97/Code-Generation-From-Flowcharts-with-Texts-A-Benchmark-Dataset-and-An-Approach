@@ -1,0 +1,51 @@
+NSpace
+0
+1
+2
+1
+2
+2
+2
+3
+3
+3
+2
+
+GUID
+None
+cond11875
+io11882
+None
+op11888
+op11890
+cond11893
+op11902
+op11904
+op1
+io11911
+
+Str
+def countOrders(self, n):@
+if (订单数n等于1)@
+output:  返回1@
+else:@
+定义结果变量ans等于1，模数mod等于10的9次方加7@
+定义变量t等于2@
+while(上述变量小于订单数加一)@
+将结果变量ans的值更新为它自身、2倍的当前循环变量减一、当前循环变量这三者的乘积@
+令结果变量等于它除以mod的余数@
+令上述变量加一@
+output:  返回结果变量@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+Effect
+While
+Effect
+Effect
+Effect
+Effect

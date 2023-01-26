@@ -1,0 +1,18 @@
+def findSpecialInteger(self, arr):
+    n为数组arr的长度
+    cur等于数组中第一个数，cnt等于0
+    标志变量f等于False
+    数组下标i等于0
+    while(数组下标小于数组arr的长度)
+        if (数组中下标为i的数等于cur)
+            cnt加一
+            if (cnt的4倍大于数组的长度)
+                标志变量置为True
+                break
+        else:
+            cur、cnt分别等于数组中下标为i的数、1
+        令数组下标加一
+    if (标志变量为真)
+        output:  返回cur
+    else:
+        output:  返回-1

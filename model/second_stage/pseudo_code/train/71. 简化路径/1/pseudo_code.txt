@@ -1,0 +1,67 @@
+NSpace
+0
+1
+1
+1
+1
+2
+3
+4
+3
+2
+3
+4
+3
+2
+1
+
+GUID
+None
+op27353
+op27355
+op27357
+cond27360
+cond27394
+cond27399
+op27403
+None
+None
+cond27411
+op27415
+None
+op1
+io27426
+
+Str
+def simplifyPath(self, path):@
+将绝对路径用"/"分割，定义绝对路径名称数组names等于分割后的值@
+初始化空栈stack@
+定义数组下标idx@
+while(数组下标小于绝对路径名称数组的长度)@
+if (绝对路径名称数组中第idx个名称为"..")@
+if (如果栈不为空)@
+移除栈顶元素@
+else:@
+else:@
+if (该名称不为空且不为".")@
+令该名称进栈@
+else:@
+令数组下标自增1@
+output:  将栈中的元素用"/"连接，返回"/"与它的和@
+
+Type
+Function
+Effect
+Effect
+Effect
+While
+If
+If
+Effect
+Else
+Else
+If
+Effect
+Else
+Effect
+Effect

@@ -1,0 +1,16 @@
+def canVisitAllRooms(self, rooms):
+    length为数组rooms的长度，表示房间的总数
+    定义变量nums，初值为0，用于记录已经进入的房间的个数
+    初始化集合vis
+    定义队列que，并将0加入队列que
+    while(队列不为空)
+        x为队列队头元素，并移除队头元素
+        num加一
+        it为数组rooms[x]中的元素
+        while(对数组room[x]进行遍历)
+            if (当前遍历元素不在字典中)
+                将该元素加入集合
+                将该元素加入队列
+            else:
+            更新当前遍历元素
+    output:  如果已经进入的房间的个数等于房间的总数，则返回True，否则返回False

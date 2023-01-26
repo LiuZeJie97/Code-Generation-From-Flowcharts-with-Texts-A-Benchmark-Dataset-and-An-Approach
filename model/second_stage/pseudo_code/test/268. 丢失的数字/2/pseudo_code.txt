@@ -1,0 +1,43 @@
+NSpace
+0
+1
+1
+1
+2
+2
+3
+2
+1
+
+GUID
+None
+op18633
+op18635
+cond18638
+cond18638
+cond18658
+None
+op1
+io18665
+
+Str
+def missingNumber(self, a):@
+定义集合s，并使用数组a初始化集合@
+定义变量k等于0，用于遍历数组@
+while true:@
+if (!(上述变量小于数组的长度加一))@
+if (当前变量不在集合中)@
+break@
+令当前变量等于k加一@
+output:  返回当前变量@
+
+Type
+Function
+Effect
+Effect
+WHILE_TRUE
+Effect
+Effect
+Break
+Effect
+Effect

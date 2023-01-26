@@ -1,0 +1,18 @@
+def preimageSizeFZF(self, k):
+    定义左边界low等于k，右边界high等于10倍的k加一
+    while(左边界小于右边界时)
+        定义中值center等于左边界与右边界的和整除2
+        定义变量num等于中值
+        定义变量count用于记录末尾零的个数，初值为0
+        while(num不为0)
+            末尾零的个数等于num整除5
+            将num的值更新为num整除5
+        if (末尾零的个数等于k)
+            output:  非负整数的数量为5
+        if (末尾零的个数小于k)
+            将左边界的值更新为中值加一
+            continue
+        else:
+            将右边界的值更新为中值
+            continue
+    output:  非负整数的数量为0

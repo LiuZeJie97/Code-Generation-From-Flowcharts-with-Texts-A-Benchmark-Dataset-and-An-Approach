@@ -1,0 +1,29 @@
+def minRemoveToMakeValid(self, s):
+    初始化字符数组fpc
+    定义变量bal等于0
+    定义变量op等于0
+    字符串下标i等于0
+    while(字符串下标小于字符串s的长度)
+        if (字符串中当前下标字符为'(')
+            bal加一
+            op加一
+        else:
+        if (该字符为')')
+            if (bal等于0)
+            else:
+                bal减一
+        else:
+        将字符串s中下标为i的字符添加进fpc中
+        字符串下标自增1
+    初始化字符数组res
+    定义变量otk等于op减bal
+    定义数组下标i等于0
+    while(数组下标小于字符数组fpc的长度)
+        if (字符数组中当前下标字符为'(')
+            otk减一
+            if (otk小于0)
+            else:
+        else:
+        将数组fpc中下标为i的字符添加进res中
+        数组下标自增1
+    output:  返回合法字符串res

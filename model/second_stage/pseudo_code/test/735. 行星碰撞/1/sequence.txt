@@ -1,0 +1,12 @@
+def asteroidCollision(self, asteroids):
+    定义数组ans
+    idx为数组下标，初值为0
+    while(数组下标小于数组asteroids的长度)
+        while(下列条件均满足：数组ans不为空、数组asteroids中下标为idx的元素小于0、数组ans中最后一项元素大于0)
+            if (!(数组ans中最后一项元素与数组asteroids中下标为idx的元素之和小于0))
+                if (!(这两个元素之和等于0))
+                    break
+                移除数组ans中最后一项元素
+                数组下标自增1
+            移除数组ans中最后一项元素
+    output:  返回数组ans

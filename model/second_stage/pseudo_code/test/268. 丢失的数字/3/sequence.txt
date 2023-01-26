@@ -1,0 +1,8 @@
+def missingNumber(self, a):
+    l为数组a的长度
+    定义变量xor等于0
+    定义数组下标k等于0
+    while(数组下标小于数组的长度)
+        令xor等于xor异或当前数组下标再异或当前数组下标位置的数
+        令数组下标自增1
+    output:  计算xor异或数组的长度，返回计算结果

@@ -1,0 +1,14 @@
+def rob(self, nums):
+    if (数组nums为空：)
+        output:  返回0
+    else:
+        size为数组的长度，其中nums[i]表示第i个房屋中存放的金额
+        if (数组的长度等于1)
+            output:  返回数组第1个数
+        else:
+            初始化first和second，first等于第一个数，second等于数组第一和第二个数的较大值。first和second用于存储前两间房屋的最高总金额。
+            i为当前房屋的下标，初值为2
+            while(当前房屋的下标没有越界)
+                更新前两间房屋的最高总金额，其中，first等于second，对于second，若first 加nums[i]的结果大于second，则更新second
+                当前房屋等于下一个房屋
+            output:  返回second

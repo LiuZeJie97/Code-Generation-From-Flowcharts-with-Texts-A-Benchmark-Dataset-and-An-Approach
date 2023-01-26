@@ -1,0 +1,8 @@
+def maxCount(self, m, n, ops):
+    定义变量mina初值为m，minb初值为n
+    a为二维数组ops的第一维下标，b为二维数组ops的第二维下标
+    while(当第一维、第二维下标均为越界)
+        mina等于它与当前ops第一维下标之间的最小值
+        minb等于它与当前ops第二维下标之间的最小值
+        更新第一维、第二维下标
+    output:  返回它们之间的乘积

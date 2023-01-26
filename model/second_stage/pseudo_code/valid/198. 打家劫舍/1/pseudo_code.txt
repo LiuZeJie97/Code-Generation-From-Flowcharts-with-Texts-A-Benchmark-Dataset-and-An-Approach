@@ -1,0 +1,55 @@
+NSpace
+0
+1
+2
+1
+2
+2
+2
+2
+2
+3
+3
+2
+
+GUID
+None
+cond2488
+io2495
+None
+op2501
+op2503
+op2505
+op2507
+cond2510
+op2517
+op1
+io2524
+
+Str
+def rob(self, nums):@
+if (数组nums为空：)@
+output:  返回0@
+else:@
+n为数组的长度，其中nums[i]表示第i个房屋中存放的金额@
+初始化dp=[0, ,0]为n+1的全零数组。dp[i]表示到第i个房屋的偷窃最高金额。@
+初始化第1个房屋的最高偷窃金额等于第1个房屋存放金额@
+定义数组nums的下标i等于2@
+while(数组下标小于n+1)@
+计算dp[i2]加nums[i1]的结果，比较该结果和dp[i1]的大小，并取较大值作为第i个房屋的偷窃最高金额@
+数组下标自增1@
+output:  返回第n个房屋偷窃的最高金额@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+Effect
+Effect
+Effect
+While
+Effect
+Effect
+Effect

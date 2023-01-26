@@ -1,0 +1,15 @@
+NSpace
+0
+1
+
+GUID
+None
+io18390
+
+Str
+def addDigits(self, num):@
+output:  如果给定整数num不为0，则返回它减去一的差值除以9的余数加一，否则返回0@
+
+Type
+Function
+Effect

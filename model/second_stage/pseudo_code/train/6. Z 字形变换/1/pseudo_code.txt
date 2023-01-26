@@ -1,0 +1,75 @@
+NSpace
+0
+1
+2
+1
+2
+2
+2
+2
+2
+2
+3
+3
+4
+3
+3
+3
+2
+
+GUID
+None
+cond5749
+io5756
+None
+op5762
+op5764
+op5766
+op5768
+op5770
+cond5773
+op5792
+cond5795
+op5799
+None
+op5804
+op1
+io5811
+
+Str
+def convert(self, s, numRows):@
+if (给定行数numRows小于2)@
+output:  直接返回字符串s@
+else:@
+初始化res=["", ,""]，长度等于给定的行数，res[i]表示第i行存放的字符。@
+n等于字符串的长度@
+初始化标志flag，flag等于-1表示向下移动，等于1表示向上移动，初值为-1@
+初始行数i等于0@
+c为当前字符，初值等于字符串的第一个字符@
+while(字符串内还有字符没有被遍历)@
+第i行存放的字符等于其自身拼接上c@
+if (若行数i等于0或者行数等于最后一行)@
+如果之前是向下移动，则调整为向上移动。否则，调整为向下移动@
+else:@
+行数向上或向下移动一个单位，即行数等于其自身加上flag@
+更新当前字符为字符串中的下一个字符@
+output:  将各行存放的字符连接起来并返回。@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+Effect
+Effect
+Effect
+Effect
+While
+Effect
+If
+Effect
+Else
+Effect
+Effect
+Effect

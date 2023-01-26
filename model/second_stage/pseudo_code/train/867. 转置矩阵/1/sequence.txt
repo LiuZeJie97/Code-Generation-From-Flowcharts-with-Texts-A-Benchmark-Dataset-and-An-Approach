@@ -1,0 +1,11 @@
+def transpose(self, matrix):
+    m为矩阵matrix的行数，n为矩阵的列数
+    定义n行m列的转置矩阵transposed，数组元素初值均为0
+    i为数组下标
+    while(当i小于矩阵的行数)
+        j为数组下标
+        while(当j小于矩阵的列数)
+            转置矩阵中j行i列的元素等于矩阵在i行j列的元素
+            数组下标j右移1个单位
+        数组下标i右移1个单位
+    output:  返回转置矩阵

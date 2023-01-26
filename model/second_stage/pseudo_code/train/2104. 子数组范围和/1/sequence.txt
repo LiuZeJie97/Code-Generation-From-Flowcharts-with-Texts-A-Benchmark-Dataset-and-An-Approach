@@ -1,0 +1,13 @@
+def subArrayRanges(self, numbers):
+    定义用于记录答案的变量answer，初值为0；定义length等于数组numbers的长度
+    i为数组下标
+    while(数组下标i小于数组numbers的长度)
+        定义最小值minVal等于inf，定义最大值maxVal等于负的inf
+        j为数组下标，其初值为i
+        while(数组下标j小于数组numbers的长度)
+            若最小值大于数组中下标为i的元素的值，则最小值等于该值
+            若最大值小于数组中下标为j的元素的值，则最大值等于该值
+            将答案更新为最大值和最小值之间的差值
+            令该数组下标自增1
+        令该数组下标自增1
+    output:  返回答案

@@ -1,0 +1,13 @@
+def subarraySum(self, nums, k):
+    初始化子数组的个数count等于0
+    n等于整数数组长度
+    定义preSums等于collections.defaultdict(int)，preSums[i]表示前缀和为i的子数组出现的次数
+    和为0的子数组出现的次数为1
+    当前前缀和等于0
+    数组下标i等于0
+    while(数组下标i小于nums长度)
+        更新当前前缀和等于其自身加上数组第i个元素
+        查询累加和等于presum减去k出现的次数，presum减去k出现几次，就存在几种子序列使得和为k，据此更新count
+        和为presum的子数组出现的次数加1
+        数组下标右移1个单位
+    output:  返回子数组的个数

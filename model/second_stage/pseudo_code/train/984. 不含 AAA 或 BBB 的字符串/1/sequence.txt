@@ -1,0 +1,22 @@
+def strWithout3a3b(self, a, b):
+    定义答案数组ans
+    while(a不为0或b不为0)
+        if (答案数组的长度大于等于2且答案数组中最后一项元素等于倒数第二项元素)
+            if (答案数组中最后一项元素等于'b')
+                writeA等于1
+            else:
+                writeA等于0
+        else:
+            if (a大于等于b)
+                writeA等于1
+            else:
+                writeA等于0
+        if (writeA不为0)
+            a减一
+            将'a'添加进答案数组中
+            continue
+        else:
+            b减一
+            将'b'添加进答案数组中
+            continue
+    output:  返回答案数组用""连接的结果

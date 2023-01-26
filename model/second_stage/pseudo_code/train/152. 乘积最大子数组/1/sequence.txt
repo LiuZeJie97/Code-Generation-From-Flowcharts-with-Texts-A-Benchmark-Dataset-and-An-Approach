@@ -1,0 +1,13 @@
+def maxProduct(self, nums):
+    n为数组nums的长度。
+    初始化结果max_res等于MIN，初始化当前最大乘积max_num等于1，初始化当前最小乘积min_num等于1
+    i为数组n的下标
+    while(i小于数组长度)
+        if (当前位置为负数)
+            交换最大乘积和最小乘积的值
+        else:
+        更新当前位置的最大乘积等于max_num乘nums[i]和nums[i]的较大值
+        更新当前位置的最小乘积等于min_num乘nums[i]和nums[i]的较小值
+        如果当前最大乘积大于max_res，则更新max_res
+        数组下标右移1位
+    output:  返回结果

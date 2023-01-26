@@ -1,0 +1,13 @@
+def videoStitching(self, clips, time):
+    定义长度为time+1的数组dp，数组元素初值均为float型的inf
+    数组dp第一项元素等于0
+    定义数组下标a等于1
+    while(该数组下标小于time+1)
+        定义数组下标b等于0
+        while(该数组下标小于二维数组clips的行数)
+            if (二维数组第b行第0列元素小于a且第b行第1列元素大于等于a)
+                数组dp下标为a的元素等于它与数组dp中下标为clips[b][0]的元素加一之间的最小值
+            else:
+            令该数组下标加一
+        令该数组下标加一
+    output:  如果数组dp中下标为time的元素等于float型的inf，则返回-1，否则返回该数组元素

@@ -1,0 +1,63 @@
+NSpace
+0
+1
+2
+1
+2
+2
+2
+2
+3
+3
+2
+3
+2
+2
+
+GUID
+None
+cond20788
+io20795
+None
+op20801
+op20803
+op20805
+cond20808
+op20817
+op20819
+cond20824
+op20828
+None
+io20836
+
+Str
+def convertToBase7(self, a):@
+if (给定整数a等于0)@
+output:  输出"0"@
+else:@
+定义变量negative表示给定整数是否为负数，如果给定整数小于0，则negative等于True，否则negative等于False@
+将给定整数的值更新为它的绝对值@
+初始化数组digits@
+while(给定整数a不为0)@
+计算给定整数除以7的余数，将其转化为字符串并添加进数组digits@
+将给定整数整除7@
+if (给定整数为负数)@
+向数组digits中添加'-'@
+else:@
+output:  将数组digits反转并将''连接，输出计算结果@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+Effect
+Effect
+While
+Effect
+Effect
+If
+Effect
+Else
+Effect

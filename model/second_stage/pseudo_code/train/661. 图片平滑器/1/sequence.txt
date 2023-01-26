@@ -1,0 +1,20 @@
+def imageSmoother(self, img):
+    m为二维数组img的行数，n为二维数组img的列数
+    定义m行n列初值均为0的二维数组ans，表示平滑处理后的图像
+    i为数组下标
+    while(i小于数组img的行数)
+        j为数组下标
+        while(j小于数组img的列数)
+            定义初值为0的变量tot和nm
+            x为横坐标，初值为i-1与0之间的最大值
+            while(计算i+2与数组img的行数之间最大值，当横坐标小于该值时)
+                y为纵坐标，初值为j-1与0之间的最大值
+                while(计算j+2与数组img的列数之间最大值，当纵坐标小于该值时)
+                    tot加上数组img中位于x行y列的元素
+                    num加一
+                    令纵坐标加一
+                令横坐标加一
+            数组ans中位于i行j列的元素等于tot整除num
+            j等于j加一
+        i等于i加一
+    output:  返回平滑处理后的图像

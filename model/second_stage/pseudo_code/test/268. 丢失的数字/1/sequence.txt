@@ -1,0 +1,10 @@
+def missingNumber(self, a):
+    对数组a排序
+    标志变量s等于False
+    数组下标k等于0
+    while(数组下标小于数组a的长度)
+        if (当前数组下标和数组中该下标对应的数不相同)
+            标志变量等于True
+            break
+        数组下标自增1
+    output:  如果标志变量为True，返回数组下标，否则返回数组的长度

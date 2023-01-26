@@ -1,0 +1,43 @@
+NSpace
+0
+1
+1
+1
+2
+3
+2
+2
+1
+
+GUID
+None
+op19822
+op19824
+cond19827
+cond19851
+io19858
+op19864
+op19866
+io19873
+
+Str
+def isPerfectSquare(self, num):@
+定义变量x，初值为1@
+定义变量square，初值为1@
+while(判断square是否小于或等于给定正整数num)@
+if (square等于给定正整数)@
+output:  给定正整数是完全平方数@
+变量x加一@
+变量square等于变量x的平方@
+output:  给定正整数不是完全平方数@
+
+Type
+Function
+Effect
+Effect
+While
+Effect
+Effect
+Effect
+Effect
+Effect

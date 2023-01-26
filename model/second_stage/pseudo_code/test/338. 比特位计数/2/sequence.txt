@@ -1,0 +1,11 @@
+def countBits(self, n):
+    定义列表bits，初值为[0]，bits[i] 表示i的「一比特数」
+    使用highBit表示当前的最高有效位
+    i等于1
+    while(i小于n加1)
+        if (如果i与i减去1等于0)
+            更新当前的最高有效位为i
+        else:
+        i的「一比特数」等于i-highBit的「一比特数」加1
+        i自增1
+    output:  返回列表bits

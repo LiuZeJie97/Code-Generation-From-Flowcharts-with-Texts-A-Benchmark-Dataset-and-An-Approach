@@ -1,0 +1,24 @@
+def sortString(self, s):
+    定义长度为26，初值均为0的数组num
+    定义变量oa等于字符a的ASCII码
+    定义变量i等于0
+    while(i小于字符串s的长度)
+        计算字符串中下标为i的字符的ASCII码与oa之间的差值，令数组num中下标为该差值的元素加一
+        i等于i+1
+    定义数组ret
+    while(ret的长度小于s的长度)
+        定义变量i等于0
+        while(i小于字符串的长度)
+            if (数组num中下标为i的元素不为0)
+                令该元素减一
+                将ASCII码为i+oa的字符添加进数组ret中
+            else:
+            i等于i+1
+        定义变量i等于25
+        while(i大于-1)
+            if (数组num中下标为i的元素不为0)
+                令该元素减一
+                将ASCII码为i+oa的字符添加进数组ret中
+            else:
+            i等于i-1
+    output:  返回合法字符串ret

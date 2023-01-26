@@ -1,0 +1,59 @@
+NSpace
+0
+1
+1
+1
+2
+2
+3
+4
+3
+2
+3
+2
+1
+
+GUID
+None
+op15110
+op15112
+cond15115
+op15168
+cond15171
+cond15189
+None
+op15198
+cond15203
+io15210
+op1
+io15221
+
+Str
+def containsPattern(self, array, m, k):@
+n为数组array的长度@
+数组下标l等于0@
+while(数组下标小于n-m*k+1)@
+偏移量offset等于0@
+while(偏移量小于m乘以k)@
+if (数组array中下标为l+offset的元素不等于下标为l+offset%m的元素)@
+break@
+偏移量加一@
+if (若偏移量等于m乘以k)@
+output:  存在指定模式@
+数组下标加一@
+output:  不存在指定模式@
+
+Type
+Function
+Effect
+Effect
+While
+Effect
+While
+Effect
+Break
+Effect
+Effect
+Effect
+Effect
+Effect

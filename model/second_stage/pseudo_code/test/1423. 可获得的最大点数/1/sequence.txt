@@ -1,0 +1,12 @@
+def maxScore(self, cardPoints, k):
+    n为数组cardPoints的长度，cardPoints[i]表示第i张卡牌的点数
+    滑动窗口大小windowSize等于数组的长度减去k
+    s等于对数组中第一个滑动窗口内元素求和的结果
+    minSum等于s
+    数组下标i等于滑动窗口大小windowSize
+    while(数组下标小于数组cardPoints的长度)
+        令s加上第i张卡牌的点数与第i-windowSize张卡牌的点数之差
+        将minSum的值更新为它与s之间的最小值
+        令数组下标加一
+    最大点数ret等于全部卡牌点数之和与minSum之间的差值
+    output:  返回最大点数

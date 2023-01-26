@@ -1,0 +1,41 @@
+def majorityElement(self, numbers):
+    初始化答案数组
+    n为数组numbers的长度
+    定义第一个元素element1等于0，第二个元素element2等于0
+    定义变量vote1等于0，vote2等于0
+    定义数组下标i等于0
+    while(当前数组下标小于数组numbers的长度)
+        if (vote1大于0且数组中下标为i的元素为第一个元素)
+            vote1加一
+        else:
+            if (vote2大于0且该元素为第二个元素)
+                vote2加一
+            else:
+                if (vote1等于0)
+                    令第一个元素等于该元素
+                    vote1加一
+                else:
+                    if (vote2等于0)
+                        令第二个元素等于该元素
+                        vote2加一
+                    else:
+                        vote1减一
+                        vote2减一
+        令当前数组下标自增1
+    定义变量cnt1等于0，cnt2等于0
+    定义数组下标i等于0
+    while(当前数组下标小于数组numbers的长度)
+        if (vote1大于0且数组=中下标为i的元素为第一个元素)
+            cnt1加一
+        else:
+        if (vote2大于0且该元素为第一个元素)
+            cnt2加一
+        else:
+        令当前数组下标自增1
+    if (vote1大于0且cnt1大于数组的长度除以3)
+        将第一个元素添加进答案数组
+    else:
+    if (vote2大于0且cnt2大于数组的长度除以3)
+        将第二个元素添加进答案数组
+    else:
+    output:  返回答案数组

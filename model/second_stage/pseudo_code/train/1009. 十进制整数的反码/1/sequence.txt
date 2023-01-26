@@ -1,0 +1,12 @@
+def bitwiseComplement(self, n):
+    最高位hightbit等于0
+    位数d等于1
+    while(位数小于31)
+        tmp等于1左移当前位数
+        if (!(tmp小于等于n))
+            break
+        令最高位等于当前位数
+        位数自增1
+    掩码mask等于1左移highbit+1位
+    令掩码减一
+    output:  返回掩码异或n的结果

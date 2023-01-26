@@ -1,0 +1,13 @@
+def computeArea(self, ax1, ay1, ax2, ay2, bx1, by1, bx2, by2):
+    第一个矩形面积area1等于ax2与ax1的差值乘ay2与ay1的差值
+    第二个矩形面积area2等于bx2与bx1的差值乘by2与by1的差值
+    重叠长度overlapWidth等于ax2与bx2的最小值减去ax1与bx1的最大值
+    重叠高度overlapHeight等于ay2与by2的最小值减去ay1与by1的最大值
+    if (重叠长度小于0)
+        令它等于0
+    else:
+    if (重叠高度小于0)
+        令它等于0
+    else:
+    重叠面积overlapArea等于重叠长度与重叠高度的乘积
+    output:  返回第一个矩形面积加上第二个矩形面积再减去重叠面积

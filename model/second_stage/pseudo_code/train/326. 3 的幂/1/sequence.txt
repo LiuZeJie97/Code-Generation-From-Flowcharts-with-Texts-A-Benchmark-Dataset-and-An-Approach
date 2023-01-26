@@ -1,0 +1,4 @@
+def isPowerOfThree(self, n):
+    while(整数n不等于0且n是3的倍数)
+        不断地将该整数除以 3
+    output:  返回n是否等于1

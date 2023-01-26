@@ -1,0 +1,15 @@
+def findCheapestPrice(self, n, flights, src, dst, k):
+    定义k+2行n列的二维数组f，其初值均为float型的inf，f[i][j]表示通过i次航班到达城市j的最小花费
+    通过0次航班到达出发城市src的最小花费为0
+    t为数组下标，初值为1
+    while(当t小于k+2)
+        j为数组flights中元素的第一项，i为数组flights中元素的第二项，cost为数组flights中元素的第三项
+        while(对数组flights进行遍历)
+            计算通过t-1次航班到达城市j的最小花费与cost的和，通过t次航班到达城市i的最小花费等于它与上述计算结果之间的最小值
+        t自增1
+    定义变量ans，初值为float型的inf，用于记录最便宜的价格
+    t为数组下标，初值为1
+    while(当t小于k+2)
+        将最便宜的价格更新为它与通过t次航班到达目的地dst的最小花费之间的最小值
+        t自增1
+    output:  如果最便宜的价格和float型的inf相等，则返回-1，否则返回最便宜的价格

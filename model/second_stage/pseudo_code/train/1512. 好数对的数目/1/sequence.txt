@@ -1,0 +1,12 @@
+def numIdenticalPairs(self, nums):
+    定义变量result等于0，用以保存好数对的数目
+    数组下标x等于0
+    while(数组下标x小于数组nums的长度)
+        数组下标y等于x加1
+        while(数组下标y小于数组nums的长度)
+            if (数组中下标为x的数和下标为y的数相等)
+                好数对的数目加一
+            else:
+            该数组下标右移1
+        该数组下标右移1
+    output:  返回好数对的数目

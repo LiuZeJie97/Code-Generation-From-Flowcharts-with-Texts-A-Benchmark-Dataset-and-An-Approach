@@ -1,0 +1,47 @@
+NSpace
+0
+1
+1
+2
+2
+2
+3
+4
+3
+2
+
+GUID
+None
+op36434
+cond36437
+cond36437
+op36480
+cond36483
+cond36503
+io36510
+op2
+op1
+
+Str
+def repeatedNTimes(self, nums):@
+定义变量k，初值为1@
+while true:@
+if (!(该变量小于4))@
+定义下标i，初值为0@
+while(该下标小于数组nums的长度减去k)@
+if (数组中下标为i的元素和下标为i+k的元素相等)@
+output:  返回下标为i的元素@
+将该下标的值更新为其自身加一@
+将该变量的值更新为其自身加一@
+
+Type
+Function
+Effect
+WHILE_TRUE
+Effect
+Effect
+While
+Effect
+Effect
+Effect
+Effect

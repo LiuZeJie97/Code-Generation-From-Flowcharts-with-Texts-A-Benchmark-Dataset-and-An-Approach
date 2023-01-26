@@ -1,0 +1,47 @@
+NSpace
+0
+1
+1
+1
+1
+2
+3
+3
+2
+1
+
+GUID
+None
+op13330
+op13332
+op13334
+cond13337
+cond13355
+op13359
+None
+op1
+io13371
+
+Str
+def canMakeArithmeticProgression(self, arr):@
+对数组arr排序@
+标志变量sgn等于True,用于记录是否可以重新排列数组形成等差数列@
+数组下标index等于1@
+while(数组下标小于数组arr的长度减一)@
+if (数组arr中第index个数的2倍不等于第index-1个数与第index+1个数之和)@
+不可以重新排列数组形成等差数列@
+break@
+数组下标加一@
+output:  返回标志变量sgn@
+
+Type
+Function
+Effect
+Effect
+Effect
+While
+Effect
+Effect
+Break
+Effect
+Effect

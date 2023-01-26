@@ -1,0 +1,14 @@
+def containsNearbyDuplicate(self, n, k):
+    初始化集合s
+    定义标志f，初值为False，标志f为True表示存在两个不同的索引，False表示不存在
+    定义初值为0的变量i，表示数组下标
+    while(数组下标小于数组n的长度)
+        if (当前下标大于k)
+            将数组中下标为i-k-1的元素从集合中删除
+        else:
+        if (数组中当前下标位置的元素在集合中)
+            存在两个不同的索引
+            break
+        将上述元素添加进集合中
+        将当前下标更新为其自身加一
+    output:  返回标志

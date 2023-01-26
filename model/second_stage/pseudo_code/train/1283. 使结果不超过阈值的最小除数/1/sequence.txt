@@ -1,0 +1,19 @@
+def smallestDivisor(self, numbers, threshold):
+    左边界low等于1，右边界high等于数组numbers中的最大值加一
+    答案ans等于-1
+    while(左边界小于等于右边界)
+        中值middle等于左边界low与右边界right的和整除2
+        total等于0
+        数组下标k等于0
+        while(数组下标小于数组numbers的长度)
+            计算数组中当前下标位置的数减去1，tmp等于该计算结果整除中值
+            令total加上tmp再加一
+            数组下标加一
+        if (total小于等于threshold)
+            右边界等于中值middle减一
+            答案ans等于中值
+            continue
+        else:
+            左边界等于中值加一
+            continue
+    output:  返回答案

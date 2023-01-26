@@ -1,0 +1,23 @@
+def lastStoneWeightII(self, stones):
+    total等于对石头数组stones的求和结果，其中stone[i]表示第i块石头的重量
+    n为石头数组的长度，m等于石头数组的求和结果整除2
+    定义n+1行m+1列的二维数组dp，数组元素初值均为False
+    数组dp第0行0列的元素等于True
+    数组下标a等于0
+    while(该数组下标小于石头数组stones的长度)
+        数组下标b等于0
+        while(该数组下标小于m+1)
+            if (b小于第a块石头的重量)
+                数组dp第a+1行b列的元素等于第a行b列的元素
+            else:
+                数组dp第a+1行b列的元素等于第a行b列的元素与第a行b-stones[a]列的元素进行或运算的结果
+            将当前数组下标自增1
+        将当前数组下标自增1
+    ans等于0，表示石头最小的可能重量
+    数组下标c等于m
+    while(该数组下标大于-1)
+        if (数组dp第n行c列的元素为True)
+            石头最小的可能重量ans等于total减去2倍的c
+            break
+        将当前数组下标自减1
+    output:  返回石头最小的可能重量

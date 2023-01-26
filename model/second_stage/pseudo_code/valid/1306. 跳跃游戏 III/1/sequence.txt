@@ -1,0 +1,21 @@
+def canReach(self, arr, start):
+    if (判断数组起始下标start处的值是否为0)
+        output:  返回True
+    else:
+        n为数组arr的长度
+        定义字典used，并将起始下标start加入字典used
+        定义双边队列q，并将起始下标加入队列q
+        while(当队列长度大于0时)
+            u为队列队头元素，并移除队头元素
+            v为数组下标
+            while(数组下标的取值范围为u加上数组arr中u处的值或u减去数组中u处的值)
+                if (当前数组下标在字典中)
+                else:
+                    if (当前数组下标大于等于0小于n)
+                        if (判断数组中当前下标处的值是否为0)
+                            output:  返回true
+                        将数组下标v加入队列
+                        将数组下标加入字典
+                    else:
+                更新数组下标
+        output:  返回False

@@ -1,0 +1,35 @@
+def maxLength(self, array):
+    mlen等于0，用于记录可行解最长长度
+    初始化数组masks，用于记录可行解集合
+    将0添加进可行解集合中
+    s为字符串数组array中的字符串
+    while(对字符串数组进行遍历)
+        mask等于0
+        字符串索引i等于0
+        while(字符串索引小于当前遍历字符串的长度)
+            idx等于s[i]的ASCII值减去字符a的ASCII值
+            if (mask右移idx的计算结果是奇数)
+                令mask等于0
+                break
+            令mask等于它与1左移idx的计算结果进行或运算的结果
+            字符串索引自增1
+        if (mask等于0)
+        else:
+            n为可行解集合的长度
+            数组下标i等于0
+            while(数组下标小于可行解集合的长度)
+                m等于可行解集合中第i项
+                if (m与mask进行与运算的结果等于0)
+                    将它们进行或运算的结果添加进masks中
+                    k等于它们进行或运算的结果
+                    cnt等于0
+                    while(k不等于0)
+                        if (k是奇数)
+                            cnt加一
+                        else:
+                        令k整除2
+                    可行解最长长度mlen等于它与cnt之间的最大值
+                else:
+                数组下标自增1
+        更新当前遍历字符串
+    output:  返回可行解最长长度

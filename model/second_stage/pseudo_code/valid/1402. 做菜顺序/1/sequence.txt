@@ -1,0 +1,13 @@
+def maxSatisfaction(self, satisfaction):
+    对满意程度数组satisfaction排序
+    再将上述数组倒置
+    定义变量presum等于0
+    定义变量res等于0，用于记录喜爱时间总和的最大值
+    定义数组下标idx等于0
+    while(数组下标小于满意程度数组satisfaction的长度)
+        if (!(presum加上满意程度数组中下标为idx的元素大于0))
+            break
+        令res加上它们的和
+        令presum加上满意程度数组中下标为idx的元素
+        将当前数组下标的值更新为当前数组下标加一
+    output:  返回喜爱时间总和的最大值

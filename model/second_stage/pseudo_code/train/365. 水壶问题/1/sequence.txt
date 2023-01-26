@@ -1,0 +1,8 @@
+def canMeasureWater(self, x, y, z):
+    if (x与y的和小于目标z值)
+        output:  返回False
+    else:
+        if (x或y等于0)
+            output:  若z等于0或x与y的和等于目标值，则返回True，否则返回False
+        else:
+            output:  计算x与y的最大公约数，若目标值可以整除该最大公约数，则返回True，否则返回False

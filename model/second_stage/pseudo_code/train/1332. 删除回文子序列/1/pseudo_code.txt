@@ -1,0 +1,47 @@
+NSpace
+0
+1
+1
+1
+1
+2
+3
+3
+2
+1
+
+GUID
+None
+op11338
+op11340
+op11342
+cond11345
+cond11363
+op11367
+None
+op1
+io11379
+
+Str
+def removePalindromeSub(self, l):@
+length为字符串l的长度@
+ans初值为1，用于记录最小删除次数@
+字符串下标i初值为0@
+while(字符串下标小于字符串l的长度)@
+if (字符串中下标为i的字符与下标为length-i-1的字符不相同)@
+最小删除次数等于2@
+break@
+令字符串下标加一@
+output:  返回最小删除次数@
+
+Type
+Function
+Effect
+Effect
+Effect
+While
+Effect
+Effect
+Break
+Effect
+Effect

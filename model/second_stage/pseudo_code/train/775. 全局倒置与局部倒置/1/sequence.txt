@@ -1,0 +1,12 @@
+def isIdealPermutation(self, n):
+    length为数组n的长度
+    定义初值为True的标志变量sign，sign等于True表示全局倒置的数量等于局部倒置的数量，False表示全局倒置的数量不等于局部倒置的数量
+    定义变量floor等于数组n的长度
+    idx为数组下标，初值为数组n的长度
+    while(数组下标大于-1)
+        floor等于它与数组n中下标为idx的元素之间的最小值
+        if (idx大于等于2并且数组n中下标为idx-2的元素大于floor)
+            全局倒置的数量不等于局部倒置的数量
+            break
+        当前数组下标减一
+    output:  返回标志变量

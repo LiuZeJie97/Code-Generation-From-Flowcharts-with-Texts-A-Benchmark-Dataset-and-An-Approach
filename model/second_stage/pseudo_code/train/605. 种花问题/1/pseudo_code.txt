@@ -1,0 +1,83 @@
+NSpace
+0
+1
+1
+1
+2
+3
+4
+3
+4
+3
+4
+3
+2
+2
+1
+2
+1
+2
+1
+
+GUID
+None
+op23931
+op23933
+cond23936
+cond23978
+cond23983
+op23987
+None
+op23991
+cond23995
+io24002
+op24008
+None
+op1
+cond24016
+op24020
+None
+op24024
+io24030
+
+Str
+def canPlaceFlowers(self, flowerbed, n):@
+定义初值为0的变量count用于记录种花数量，m为数组flowerbed的长度，初值为-1的变量prev用于记录上一朵花的位置@
+i为当前位置@
+while(当前位置小于m时)@
+if (数组flowerbed中下标为i的元素等于1)@
+if (上一朵花的位置小于0)@
+将种花数量加上i整除2的计算结果@
+else:@
+将种花数量加上i-prev-2整除2的计算结果@
+if (种花数量大于等于n)@
+output:  可以种入n朵花@
+将上一朵花的位置更新为i@
+else:@
+当前位置更新为上一个位置加一@
+if (上一朵花的位置小于0)@
+将种花数量加上m+1整除2的计算结果@
+else:@
+将种花数量加上m-prev-1整除2的计算结果@
+output:  若种花数量大于等于n，则可以种入n朵花，否则不可以种入n朵花@
+
+Type
+Function
+Effect
+Effect
+While
+If
+If
+Effect
+Else
+Effect
+Effect
+Effect
+Effect
+Else
+Effect
+If
+Effect
+Else
+Effect
+Effect

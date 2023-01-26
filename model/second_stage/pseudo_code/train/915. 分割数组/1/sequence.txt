@@ -1,0 +1,24 @@
+def partitionDisjoint(self, nums):
+    定义n为数组nums的长度
+    定义长度为n的数组maxleft，数组元素初值均为0
+    定义长度为n的数组minright，数组元素初值均为0
+    定义变量m等于数组nums中第一项元素
+    定义变量i等于0
+    while(i小于数组nums的长度)
+        令m等于它与数组nums中下标为i的元素之间的最大值
+        令数组maxleft中下标为i的元素等于m
+        令i等于i加一
+    令m等于数组nums中最后一项元素
+    定义变量i等于数组nums的长度减一
+    while(i大于-1)
+        令m等于它与数组nums中下标为i的元素之间的最小值
+        令数组minright中下标为i的元素等于m
+        令i等于i减一
+    定义变量index等于-1
+    定义变量i等于0
+    while(i小于数组nums的长度)
+        if (如果数组maxleft中下标为i-1的元素小于等于数组minright中下标为i的元素)
+            令index等于i
+            break
+        令i等于i加一
+    output:  返回index

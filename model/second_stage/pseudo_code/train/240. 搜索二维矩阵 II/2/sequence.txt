@@ -1,0 +1,15 @@
+def searchMatrix(self, matrix, target):
+    定义标志变量sgn，初值为False
+    m为矩阵matrix的行数，n为矩阵matrix的列数
+    x等于0，y等于矩阵的列数减一
+    while(x小于矩阵的行数且y大于等于0)
+        if (矩阵中x行y列的元素等于目标值target)
+            标志变量等于True
+            break
+        if (该元素大于目标值)
+            y减一
+            continue
+        else:
+            x加一
+            continue
+    output:  返回标志变量

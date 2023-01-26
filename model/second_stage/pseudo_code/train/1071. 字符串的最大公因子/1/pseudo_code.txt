@@ -1,0 +1,35 @@
+NSpace
+0
+1
+1
+1
+2
+1
+2
+
+GUID
+None
+op8120
+op8122
+cond8125
+io8132
+None
+io8141
+
+Str
+def gcdOfStrings(self, str1, str2):@
+计算字符串str1和str2的长度，candidate_len等于它们的最大公约数@
+最长字符串candidate为字符串str1前candidate_len个字符组成的子串@
+if (字符串str1加str2等于str2加str1)@
+output:  返回最长字符串@
+else:@
+output:  返回空字符@
+
+Type
+Function
+Effect
+Effect
+If
+Effect
+Else
+Effect

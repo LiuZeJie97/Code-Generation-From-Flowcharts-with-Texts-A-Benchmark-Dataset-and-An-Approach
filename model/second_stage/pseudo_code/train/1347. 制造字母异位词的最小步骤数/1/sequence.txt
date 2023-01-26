@@ -1,0 +1,11 @@
+def minSteps(self, source, target):
+    s_cnt为字符串source的计数结果
+    ans等于0，用于记录最小步骤数
+    数组下标idx等于0
+    while(数组下标小于字符串target的长度)
+        if (计数结果中下标为target[idx]的元素大于0)
+            令该元素减一
+        else:
+            令最小步骤数加一
+        数组下标加一
+    output:  返回最小步骤数

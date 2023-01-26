@@ -1,0 +1,13 @@
+def sortArrayByParity(self, numbers):
+    定义左指针left等于0，右指针right等于数组numbers的长度减一
+    while(左指针小于右指针)
+        while(左指针小于右指针且数组numbers中左指针处元素可以整除2)
+            左指针加一
+        while(左指针小于右指针且数组numbers中右指针处元素不可以整除2)
+            右指针减一
+        if (!(左指针小于右指针))
+            continue
+        交换数组numbers中左指针、右指针处元素
+        左指针加一
+        右指针减一
+    output:  返回上述数组

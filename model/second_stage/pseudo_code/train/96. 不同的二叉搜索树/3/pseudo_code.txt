@@ -1,0 +1,35 @@
+NSpace
+0
+1
+1
+1
+2
+2
+1
+
+GUID
+None
+op6863
+op6865
+cond6868
+op6875
+op1
+io6882
+
+Str
+def numTrees(self, N):@
+卡塔兰数C初值为1@
+Nnode为当前节点数，初值为0@
+while(当前节点数小于总结点数N)@
+卡塔兰数C等于其自身乘2乘(2乘当前节点数加1)除以(当前节点数加2)@
+当前节点数自增1@
+output:  对卡塔兰数取整并返回@
+
+Type
+Function
+Effect
+Effect
+While
+Effect
+Effect
+Effect

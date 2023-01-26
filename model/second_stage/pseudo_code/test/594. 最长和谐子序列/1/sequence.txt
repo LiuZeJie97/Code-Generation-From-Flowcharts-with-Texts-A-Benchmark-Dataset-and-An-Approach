@@ -1,0 +1,12 @@
+def findLHS(self, array):
+    对数组array进行排序
+    定义变量res和变量begin，其初值均为0
+    end为数组下标
+    while(数组下标小于数组arr的长度时)
+        while(如果数组中下标为end的数与下标为begin的数的差值大于1)
+            变量begin加一
+        if (如果数组中下标为end的数与下标为begin的数的差值等于1)
+            如果end与begin的差加一大于res，则res等于该值
+        else:
+        数组下标加一
+    output:  返回res

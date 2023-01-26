@@ -1,0 +1,22 @@
+def kthFactor(self, n, k):
+    计数值count等于0
+    当前因数factor等于1
+    while(当前因数的平方小于等于n)
+        if (n可以整除当前因数)
+            计数值加一
+            if (计数值等于k)
+                output:  返回当前因数
+        else:
+        当前因数加一
+    当前因数减一
+    if (当前因数的平方小于等于n)
+        当前因数减一
+        while(当前因数大于0)
+            if (n可以整除当前因数)
+                计数值加一
+                if (计数值等于k)
+                    output:  返回n整除当前因数的结果
+            else:
+            当前因数减一
+        output:  返回-1
+    else:

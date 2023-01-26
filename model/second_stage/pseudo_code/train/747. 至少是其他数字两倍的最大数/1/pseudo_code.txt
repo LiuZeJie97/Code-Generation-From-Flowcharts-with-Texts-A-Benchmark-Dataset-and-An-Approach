@@ -1,0 +1,55 @@
+NSpace
+0
+1
+1
+1
+2
+3
+2
+3
+4
+3
+2
+1
+
+GUID
+None
+op29567
+op29569
+cond29572
+cond29598
+op29602
+None
+cond29607
+op29611
+None
+op1
+io29622
+
+Str
+def dominantIndex(self, nums):@
+定义变量m1等于-1，m2等于-1，idx等于0@
+idx为数组下标，初值为0@
+while(数组下标小于数组nums的长度)@
+if (数组中当前下标位置的数大于m1)@
+令m1，m2，idx分别等于这个数，m1，当前下标@
+else:@
+if (数组中当前下标位置的数大于m2)@
+令m2等于这个数@
+else:@
+数组下标加一@
+output:  如果m1大于等于m2的二倍，则返回idx，否则返回-1@
+
+Type
+Function
+Effect
+Effect
+While
+If
+Effect
+Else
+If
+Effect
+Else
+Effect
+Effect

@@ -1,0 +1,51 @@
+NSpace
+0
+1
+1
+1
+2
+2
+3
+4
+3
+2
+1
+
+GUID
+None
+op8
+op10
+cond13
+op56
+cond59
+cond79
+io86
+op2
+op1
+io99
+
+Str
+def twoSum(self, nums, target):@
+定义n为数组nums的长度@
+定义i为数组第一个数的下标，初值为0@
+while(第一个数的下标小于数组的长度)@
+定义j为数组第二个数的下标，初始值为第一个数的下标加1@
+while(第二个数的下标小于数组的长度)@
+if (数组的第一个数的下标指向的元素和第二个数的下标指向的元素的和为target)@
+output:  返回数组的两个下标@
+第二个数的下标右移一个单位@
+第一个数的下标右移一个单位@
+output:  循环结束，返回空集合。@
+
+Type
+Function
+Effect
+Effect
+While
+Effect
+While
+Effect
+Effect
+Effect
+Effect
+Effect

@@ -1,0 +1,12 @@
+def minSteps(self, n):
+    定义答案变量a等于0
+    定义变量i等于2
+    while(当i的平方小于等于n)
+        while(n能整除i时)
+            n整除i
+            将答案加上i
+        变量i加一
+    if (如果n大于1)
+        将答案加上n
+    else:
+    output:  返回答案

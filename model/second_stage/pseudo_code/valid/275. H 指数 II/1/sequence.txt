@@ -1,0 +1,12 @@
+def hIndex(self, citations):
+    定义n为数组citations的长度
+    定义变量lo初值为0，表示下界；定义变量hi初值为数组的长度减一，表示上界
+    while(当下界小于等于上界)
+        定义中间值mi等于上界与下界的差值整除2再加上下界
+        if (数组中间值元素大于等于数组的长度与中间值的差值)
+            上界更新为中间值减一
+            continue
+        else:
+            下界更新为中间值加一
+            continue
+    output:  返回数组的长度与下界的差值

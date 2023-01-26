@@ -1,0 +1,12 @@
+def numRescueBoats(self, people, limit):
+    定义变量number等于0，用于记录承载所有人所需的最小船数
+    对数组people排序
+    定义变量light记录最轻体重，初值为0；变量heavy记录最重体重，初值为数组people的长度减一
+    while(当最轻体重小于等于最重体重)
+        if (如果数组people中下标为最轻体重的元素加上下标为最重体重的元素大于limit)
+            最重体重减一
+        else:
+            最轻体重加一
+            最重体重减一
+        承载所有人所需的最小船数加一
+    output:  返回承载所有人所需的最小船数

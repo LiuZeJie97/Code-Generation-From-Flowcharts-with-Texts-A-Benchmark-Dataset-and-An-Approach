@@ -1,0 +1,63 @@
+NSpace
+0
+1
+1
+2
+2
+2
+3
+3
+2
+3
+4
+3
+3
+1
+
+GUID
+None
+op19735
+cond19738
+op19773
+op19775
+cond19778
+op19782
+None
+None
+cond19787
+io19798
+op19791
+None
+io19808
+
+Str
+def isPerfectSquare(self, num):@
+定义左边界start，初值为0；定义右边界end，初值为给定正整数num@
+while(左边界小于等于右边界)@
+定义中值center等于左边界与右边界的和整除2@
+定义变量square等于中值的平方@
+if (square小于给定正整数)@
+左边界等于中值加一@
+continue@
+else:@
+if (!(square大于给定正整数))@
+output:  给定正整数是完全平方数@
+右边界等于中值减一@
+continue@
+output:  给定正整数不是完全平方数@
+
+Type
+Function
+Effect
+While
+Effect
+Effect
+If
+Effect
+Continue
+Else
+Effect
+Effect
+Effect
+Continue
+Effect

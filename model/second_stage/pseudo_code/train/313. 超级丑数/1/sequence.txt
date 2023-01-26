@@ -1,0 +1,18 @@
+def nthSuperUglyNumber(self, n, primes):
+    定义长度为n+1的数组sun，其初值均为0，sun[i]表示第i个超级丑数
+    m为质数数组primes的长度，primes[i]表示第i个质数
+    定义长度为m数组pointers,其初值均为0
+    定义长度为m数组nums,其初值均为1
+    a为数组下标，其初值为1
+    while(该数组下标小于n+1)
+        定义变量min_num等于数组nums中的最小值
+        将第a个超级丑数的值更新为min_num
+        b为数组下标
+        while(当该数组下标小于m)
+            if (数组nums中下标为b的元素等于min_num)
+                数组pointers中下标为b的元素加一
+                数组nums中下标为b的元素等于第pointers[b]个超级丑数乘以第b个质数
+            else:
+            该数组下标加一
+        该数组下标加一
+    output:  返回第n个超级丑数

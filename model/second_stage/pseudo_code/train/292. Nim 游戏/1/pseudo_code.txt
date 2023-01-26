@@ -1,0 +1,15 @@
+NSpace
+0
+1
+
+GUID
+None
+io18925
+
+Str
+def canWinNim(self, n):@
+output:  如果石头数量n可以整除4，则不可以赢，否则可以赢@
+
+Type
+Function
+Effect

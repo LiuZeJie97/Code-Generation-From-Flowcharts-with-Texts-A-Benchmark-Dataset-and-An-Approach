@@ -1,0 +1,35 @@
+NSpace
+0
+1
+1
+1
+2
+2
+1
+
+GUID
+None
+op10576
+op10578
+cond10581
+op10588
+op1
+io10595
+
+Str
+def sumZero(self, n):@
+初始化答案数组a@
+遍历数x等于1减n@
+while(当前遍历数小于n)@
+将当前遍历数添加进答案数组中@
+令当前遍历数加2@
+output:  返回答案数组@
+
+Type
+Function
+Effect
+Effect
+While
+Effect
+Effect
+Effect

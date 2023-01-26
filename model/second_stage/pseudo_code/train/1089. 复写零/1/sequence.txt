@@ -1,0 +1,25 @@
+def duplicateZeros(self, a):
+    复写零的数量dups等于0
+    length等于数组a的长度
+    left等于0
+    while(left小于length)
+        if (left大于length减去复写零的数量dup再减一的结果)
+            break
+        if (数组a中下标为left的元素等于0)
+            if (left等于length减去复写零的数量再减一的结果)
+                数组中最后一项元素等于0
+                length减一
+                break
+            复写零的数量加一
+        else:
+        left自增1
+    last等于length减去复写零的数量dup再减一的结果
+    数组下标l等于last
+    while(当前数组下标大于-1)
+        if (数组a中当前下标对应的元素等于0)
+            数组中下标为i+dups的元素等于0
+            复写零的数量减一
+            数组中下标为i+dups的元素等于0
+        else:
+            数组中下标为i+dups的元素等于下标为i的元素
+        当前数组下标自减1

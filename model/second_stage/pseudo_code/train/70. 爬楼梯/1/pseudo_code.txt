@@ -1,0 +1,51 @@
+NSpace
+0
+1
+1
+2
+1
+2
+2
+2
+3
+3
+2
+
+GUID
+None
+op6074
+cond6077
+io6084
+None
+op6090
+op6092
+cond6095
+op6102
+op1
+io6109
+
+Str
+def climbStairs(self, n):@
+初始化dp等于[0,...,0]，长度为台阶总数n加1，第i层台阶的方法数为dp[i]@
+if (台阶总数小于2，)@
+output:  返回1，方法数为1@
+else:@
+dp[1]等于1，既第1层台阶的方法数为1,同理，第2层台阶的方法数为2@
+定义 i 初值为 3，用于记录当前台阶的层数@
+while(当前台阶的层数 小于台阶总数加 1)@
+当前层的方法数等于前一层台阶的方法数加上前两层台阶的方法数@
+当前台阶的层数加1@
+output:  返回第n层台阶的方法数@
+
+Type
+Function
+Effect
+If
+Effect
+Else
+Effect
+Effect
+While
+Effect
+Effect
+Effect

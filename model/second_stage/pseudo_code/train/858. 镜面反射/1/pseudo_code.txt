@@ -1,0 +1,51 @@
+NSpace
+0
+1
+1
+1
+1
+2
+1
+2
+3
+2
+3
+
+GUID
+None
+op33205
+op33207
+op33209
+cond33212
+io33219
+None
+cond33225
+io33232
+None
+io33240
+
+Str
+def mirrorReflection(self, p, q):@
+g为p和q的最大公约数@
+计算p除以g再对2取余，将p的值更新为上述计算结果@
+计算q除以g再对2取余，将q的值更新为上述计算结果@
+if (p和q均不为0)@
+output:  返回1，即光线最先遇到的接收器的编号为1@
+else:@
+if (p不为0)@
+output:  光线最先遇到的接收器的编号为0@
+else:@
+output:  光线最先遇到的接收器的编号为2@
+
+Type
+Function
+Effect
+Effect
+Effect
+If
+Effect
+Else
+If
+Effect
+Else
+Effect

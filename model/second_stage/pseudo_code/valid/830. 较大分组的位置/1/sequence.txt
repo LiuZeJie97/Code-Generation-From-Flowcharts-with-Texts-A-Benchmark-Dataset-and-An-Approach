@@ -1,0 +1,14 @@
+def largeGroupPositions(self, seq):
+    初始化结果数组ret
+    n为字符串seq的长度，定义变量num等于1
+    i为字符串下标
+    while(当字符串下标小于字符串的长度)
+        if (当i等于字符串的长度减一或字符串中下标为i的字符与下标为i+1的字符不同)
+            if (当num大于等于3)
+                将i-num+1和i组成的数组加入结果数组中
+            else:
+            num等于1
+        else:
+            num加一
+        字符串下标右移1个单位
+    output:  返回结果数组

@@ -1,0 +1,13 @@
+def coinChange(self, coins, amount):
+    定义dp，dp[i]用于保存金额i的最小组成数，初值为float型的inf，长度为amount+1。
+    dp[0]=0，表示0元的组成种类为 0。
+    定义i为当前金额，初值为1
+    while(当前金额小于总金额加1)
+        coin为硬币的面值
+        while(使用coin遍历每种硬币的面值)
+            if (如果满足当前金额大于等于硬币的面值)
+                如果金额i-coin的最小组成数减一的结果小于金额i的最小组成数，则更新dp[i]
+            else:
+            coin等于下一个面值
+        当前金额加1
+    output:  如果金额amount的最小组成数不为float型的inf，则返回该最小组成数，否则返回1

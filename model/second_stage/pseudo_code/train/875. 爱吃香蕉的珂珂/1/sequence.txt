@@ -1,0 +1,16 @@
+def minEatingSpeed(self, piles, h):
+    定义下边界low等于1，上边界high等于数组piles中的最大值，其中piles[i]表示第i堆香蕉的个数
+    while(下边界小于上边界)
+        定义中值mid等于下边界与右边界的和整除2
+        定义变量time等于0，用于记录吃香蕉的时间
+        i为数组下标
+        while(数组下标i小于数组piles的长度)
+            计算第i堆香蕉的个数减1整除中值再加一的结果，令吃香蕉的时间加上该计算结果
+            令数组下标i加一
+        if (吃香蕉的时间大于警卫回来的时间h)
+            下边界等于中值加一
+            continue
+        else:
+            上边界等于中值
+            continue
+    output:  返回下边界

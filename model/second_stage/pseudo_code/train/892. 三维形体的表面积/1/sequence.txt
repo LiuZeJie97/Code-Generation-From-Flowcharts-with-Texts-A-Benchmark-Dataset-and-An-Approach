@@ -1,0 +1,21 @@
+def surfaceArea(self, grid):
+    N为数组grid的长度
+    ans用于记录总表面积，初值为0
+    r为横坐标，初值为0
+    while(横坐标小于数组grid的长度)
+        c为纵坐标，初值为0
+        while(纵坐标小于数组grid的长度)
+            if (数组grid中r行c列的元素不为0)
+                总表面积加2
+                nr为横坐标，nc为纵坐标，(nr, nc)表示位置
+                while(位置(nr, nc)分别在位置(r, c)的左边一格、右边一格、下边一格、上边一格)
+                    if (当前横坐标、纵坐标均大于等于0小于等于数组grid的长度)
+                        nval等于数组grid中nr行nc列的元素
+                    else:
+                        nval等于0
+                    计算数组grid中r行c列的元素减去nval，令总表面积加上该计算结果与0之间的最大值
+                    更新当前位置
+            else:
+            令纵坐标自增1
+        令横坐标自增1
+    output:  返回总表面积

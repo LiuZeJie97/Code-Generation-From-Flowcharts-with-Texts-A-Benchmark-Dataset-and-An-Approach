@@ -1,0 +1,29 @@
+def numSubmat(self, mat):
+    n为矩阵mat的行数，m为矩阵mat的列数
+    定义n行m列初值均为0的二维数组row
+    数组下标i等于0
+    while(i小于矩阵mat的行数)
+        数组下标j等于0
+        while(j小于矩阵的列数)
+            if (j等于0)
+                数组row第i行第j列的元素等于矩阵第i行第j列的元素
+            else:
+                若矩阵第i行第j列的元素等于0，则数组row第i行第j列的元素等于0，否则等于数组row第i行第j-1列的元素加一
+            j等于j加一
+        i等于i加一
+    答案ans等于0
+    数组下标i等于0
+    while(i小于矩阵mat的行数)
+        数组下标j等于0
+        while(j小于矩阵的列数)
+            当前行最小值col等于数组row第i行第j列的元素
+            k等于i
+            while(k大于-1)
+                若数组row第k行第j列的元素小于当前行最小值，则更新当前行最小值
+                if (当前行最小值等于0)
+                    break
+                令答案加上当前行最小值
+                k等于k减一
+            j等于j加一
+        i等于i加一
+    output:  返回答案

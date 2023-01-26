@@ -1,0 +1,103 @@
+NSpace
+0
+1
+2
+1
+2
+2
+3
+3
+4
+3
+4
+5
+5
+4
+5
+5
+3
+4
+5
+5
+4
+5
+5
+2
+
+GUID
+None
+cond19295
+io19302
+None
+op19308
+cond19311
+op19364
+cond19367
+io19374
+cond19381
+cond19386
+op19390
+None
+None
+op19394
+None
+None
+cond19400
+op19404
+None
+None
+op19408
+None
+io19417
+
+Str
+def search(self, n, target):@
+if (数组n为空)@
+output:  返回-1@
+else:@
+定义左边界l等于0，右边界r等于数组的长度减一@
+while(左边界小于等于右边界)@
+定义中点m等于左边界与右边界的和整除2@
+if (数组n中点元素等于目标值target)@
+output:  返回中点@
+if (数组中第一项元素小于等于数组中点元素)@
+if (目标值大于等于数组第一项元素且小于数组中点元素)@
+右边界r等于中点m减一@
+continue@
+else:@
+左边界l等于中点加一@
+continue@
+else:@
+if (目标值大于数组中点元素且小于等于数组最后一项元素)@
+左边界l等于中点m加一@
+continue@
+else:@
+右边界r等于中点减一@
+continue@
+output:  返回-1@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+While
+Effect
+Effect
+Effect
+If
+If
+Effect
+Continue
+Else
+Effect
+Continue
+Else
+If
+Effect
+Continue
+Else
+Effect
+Continue
+Effect

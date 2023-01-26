@@ -1,0 +1,63 @@
+NSpace
+0
+1
+2
+1
+2
+2
+2
+2
+3
+3
+4
+4
+3
+2
+
+GUID
+None
+cond6732
+io6739
+None
+op6745
+op6747
+op6749
+cond6752
+op6771
+cond6774
+op6781
+op2
+op1
+io6790
+
+Str
+def numTrees(self, n):@
+if (如果节点总数n等于0：)@
+output:  返回0。@
+else:@
+初始化dp等于[0, ,0]，长度为节点总数加1，dp用于保存0, ,n个节点的二叉搜索树的种数@
+没有节点和只有一个节点的二叉搜索树的种类均为1@
+i为数组下标，初值为2@
+while(下标i小于节点总数n加1)@
+定义j初值为1@
+while(下标j小于下标i)@
+0, ,i个节点的二叉搜索树的种数等于其自身加上0, ,j个节点的二叉搜索树的种数乘上0, ,i-j-1个节点的二叉搜索树的种数@
+下标右移一个单位@
+下标右移一个单位@
+output:  返回0, ,n个节点的二叉搜索树的总数@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+Effect
+Effect
+While
+Effect
+While
+Effect
+Effect
+Effect
+Effect

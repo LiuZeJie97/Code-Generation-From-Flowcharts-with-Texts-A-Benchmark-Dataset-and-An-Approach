@@ -1,0 +1,27 @@
+def lengthOfLIS(self, nums):
+    if (若数组nums为空)
+        output:  返回0。
+    else:
+        n为数组的长度
+        if (特判，若数组长度小于2：)
+            output:  返回数组长度。
+        else:
+            初始化tail为数组第1个元素的值，tail[i]表示目前为止长度为i的最长上升子序列的最小尾元素为tail[i]
+            定义i为数组下标，初值为1
+            while(数组下标小于数组的长度)
+                if (数组下标为i的元素比tail的最后一个元素大)
+                    将其加入tail
+                else:
+                    定义左边界l，初值为0，
+                    右边界r，初值为len(tail)1。
+                    while(左边界小于等于右边界：)
+                        定义mid为左右边界和的一半
+                        if (tail[mid]大于等于数组下标为i的元素：)
+                            右界的值等于mid减去1。
+                            continue
+                        else:
+                            左界的值等于mid加1。
+                            continue
+                    长度为l的最长上升子序列的最小尾元素的值等于nums[i]
+                数组下标自增1
+            output:  返回tail的长度

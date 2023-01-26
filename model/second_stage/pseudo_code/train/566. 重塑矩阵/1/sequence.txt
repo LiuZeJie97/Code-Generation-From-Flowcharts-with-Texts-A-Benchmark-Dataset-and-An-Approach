@@ -1,0 +1,11 @@
+def matrixReshape(self, nums, r, c):
+    row为二维数组nums的行数，col为二维数组nums的列数
+    if (数组nums的行数与列数的乘积不等于重构矩阵行数r与列数c的乘积)
+        output:  返回数组nums
+    else:
+        定义二维数组ans，其行数为重构矩阵列数，列数为重构矩阵行数，初值均为0，用于记录重塑矩阵结果
+        x为数组下标
+        while(数组下标小于数组nums的行数与列数的乘积)
+            数组ans中x//c行x%c列处的元素等于数组nums中x//col行x%col列处的元素
+            数组下标增加1
+        output:  返回重塑矩阵结果

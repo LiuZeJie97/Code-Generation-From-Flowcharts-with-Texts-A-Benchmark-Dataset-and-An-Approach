@@ -1,0 +1,43 @@
+NSpace
+0
+1
+1
+2
+2
+3
+2
+2
+1
+
+GUID
+None
+op11393
+cond11396
+op11415
+cond11418
+op11422
+None
+op11427
+io11434
+
+Str
+def numberOfSteps(self, num):@
+计数变量cnt等于0，用于记录变成0所需要的步数@
+while(给定整数num不为0)@
+令计数变量加上给定整数与运算1的结果@
+if (给定整数大于1)@
+令计数变量加一@
+else:@
+令给定整数右移1位@
+output:  返回变成0所需要的步数@
+
+Type
+Function
+Effect
+While
+Effect
+If
+Effect
+Else
+Effect
+Effect

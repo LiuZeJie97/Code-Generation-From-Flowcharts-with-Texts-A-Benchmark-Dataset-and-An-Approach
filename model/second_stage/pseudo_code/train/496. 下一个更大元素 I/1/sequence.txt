@@ -1,0 +1,12 @@
+def nextGreaterElement(self, nums1, nums2):
+    m为数组nums1的长度，n为数组nums2的长度
+    初始化数组res作为答案，其长度等于数组nums1的长度，数组元素初值均为0
+    定义数组nums1的下标i等于0
+    while(上述下标小于数组的长度)
+        j为数组nums1中下标为i的元素在数组nums2中的下标
+        定义变量k等于j加一
+        while(k小于数组nums2的长度且数组nums2中下标为k的元素小于下标为j的元素)
+            k加一
+        若k小于数组nums2的长度，答案数组中下标为i的元素等于数组nums2中下标为k的元素，否则它等于-1
+        上述下标加一
+    output:  返回答案数组

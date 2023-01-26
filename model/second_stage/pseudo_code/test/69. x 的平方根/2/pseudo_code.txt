@@ -1,0 +1,51 @@
+NSpace
+0
+1
+2
+1
+2
+2
+3
+3
+4
+3
+2
+
+GUID
+None
+cond25983
+io25990
+None
+op25996
+cond25999
+op26018
+cond26021
+None
+op26030
+io26037
+
+Str
+def mySqrt(self, x):@
+if (非负整数x等于0)@
+output:  返回0@
+else:@
+定义变量C和x0，其初值均为float类型的x@
+while(进入循环)@
+计算C除以x0再加上x0的结果，xi等于该结果乘以0.5@
+if (x0减xi的绝对值小于1e-7)@
+break@
+将x0的值更新为xi@
+output:  返回int类型的x0@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+While
+Effect
+Effect
+Break
+Effect
+Effect

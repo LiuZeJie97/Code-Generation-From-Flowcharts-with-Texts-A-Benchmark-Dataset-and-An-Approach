@@ -1,0 +1,15 @@
+def checkIfExist(self, array):
+    定义n为数组array的长度
+    定义标志变量flag，初值为False
+    定义数组下标x
+    while(上述数组下标小于数组array的长度)
+        定义数组下标y
+        while(上述数组下标小于数组array的长度)
+            if (两个数组下标相等)
+            else:
+                if (数组中下标为x的数的2倍和下标为y的数相等)
+                    将标志变量置为真
+                    break
+            上述数组下标自增1
+        上述数组下标自增1
+    output:  返回标志变量

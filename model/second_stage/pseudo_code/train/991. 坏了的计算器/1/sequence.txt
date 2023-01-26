@@ -1,0 +1,12 @@
+def brokenCalc(self, startValue, target):
+    定义变量ans等于0，用于记录最小操作数
+    while(目标值target大于初始值startValue)
+        令最小操作数加一
+        if (目标值可以整除2)
+            令目标值除以2
+            continue
+        else:
+            令目标值加一
+            continue
+    最小操作数加上初始值与目标值的差值
+    output:  返回最小操作数

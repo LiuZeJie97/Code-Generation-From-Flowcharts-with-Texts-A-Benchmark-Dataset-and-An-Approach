@@ -1,0 +1,5 @@
+def isOneBitCharacter(self, bits):
+    定义变量i初值为0，bsize为数组bits的长度
+    while(变量i小于数组的长度减一)
+        计算数组中下标为i的字符加一，将计算结果赋给i
+    output:  如果i等于数组的长度减一，返回True，否则返回False

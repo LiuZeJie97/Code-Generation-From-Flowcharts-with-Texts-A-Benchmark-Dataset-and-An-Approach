@@ -1,0 +1,13 @@
+def deleteAndEarn(self, nums):
+    定义变量maxVal等于数组nums中的最大值
+    初始化数组total，长度等于数组nums中的最大值加一，初值均为0
+    val为数组nums中的元素，初值为数组中第一个数
+    while(数组中还有元素尚未被遍历)
+        数组total下标为val的元素等于val
+        更新当前遍历元素
+    定义变量first等于数组total的第一项元素，second等于数组total中下标为0的元素与下标为1的元素之间的最大值
+    i为数组下标，初值为2
+    while(数组下标小于数组total的长度时)
+        令first等于second，second等于它与first加上数组total下标为i的元素之间的最大值
+        数组下标自增1
+    output:  返回变量second

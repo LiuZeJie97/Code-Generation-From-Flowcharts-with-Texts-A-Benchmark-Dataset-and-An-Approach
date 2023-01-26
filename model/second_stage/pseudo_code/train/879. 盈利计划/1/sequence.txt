@@ -1,0 +1,27 @@
+def profitableSchemes(self, n, minProfit, group, profit):
+    定义模数MOD等于10的9次方加一
+    length为数组group的长度
+    定义三维分别为length + 1，n + 1，minProfit + 1的三维数组dp，数组元素初值均为0，dp[i][j][k]表示在前i个工作中选择了j个员工且工作利润至少为k的计划数目
+    dp[0][0][0]等于1
+    i为数组下标，初值为1
+    while(当i小于数组group的长度加1)
+        定义变量members，earn分别等于数组group下标为i-1的元素，数组profit下标为i-1的元素
+        j为数组下标
+        while(当j小于n+1)
+            k为数组下标
+            while(当k小于minProfit+1)
+                if (如果j小于members)
+                    在前i个工作中选择了j个员工且工作利润至少为k的计划数目等于在前i-1个工作中选择了j个员工且工作利润至少为k的计划数目
+                else:
+                    在前i个工作中选择了j个员工且工作利润至少为k的计划数目等于在前i-1个工作中选择了j个员工且工作利润至少为k的计划数目加上在前i-1个工作中选择了j-members个员工且工作利润至少为k-earn与0之间的最大值的计划数目
+                    将在前i个工作中选择了j个员工且工作利润至少为k的计划数目更新为它对模数取模的结果
+                k加一
+            j加一
+        i加一
+    定义变量total等于0，用于记录计划数量
+    j为数组下标
+    while(当j小于n+1)
+        计划数量加上在前length个工作中选择了j个员工且工作利润至少为minProfit的计划数目
+        将计划数量的值更新为它对模数取模的结果
+        j加一
+    output:  返回计划数量

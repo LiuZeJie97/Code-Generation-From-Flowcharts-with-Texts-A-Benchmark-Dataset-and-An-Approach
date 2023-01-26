@@ -1,0 +1,16 @@
+def numberOfSubarrays(self, numbers, k):
+    定义数组cnt，其长度等于数组numbers的长度加一，数组元素初值均为0
+    数组cnt中第一项元素等于1
+    定义奇数数量odd等于0
+    定义变量ans等于0，用于记录优美子数组的数目
+    定义数组下标index，初值为0
+    while(数组下标小于数组numbers的长度)
+        if (数组numbers中当前下标对应的数是奇数)
+            奇数数量odd加一
+        else:
+        if (奇数数量大于k)
+            令ans加上数组cnt中下标为odd-k的元素
+        else:
+        数组cnt中下标为odd的元素加一
+        令数组下标等于数组下标加一
+    output:  返回优美子数组的数目

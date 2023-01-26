@@ -1,0 +1,12 @@
+def numJewelsInStones(self, jewels, stones):
+    定义初值为0的变量count，用于记录宝石的数量
+    stone为石头字符串stones中的字符，表示当前石头
+    while(石头字符串中还有石头未被遍历)
+        jewel为宝石字符串jewels中的字符，表示当前宝石
+        while(宝石字符串中还有宝石未被遍历)
+            if (当前石头和当前宝石完全一致)
+                宝石的数量加一
+                break
+            更新当前宝石
+        更新当前石头
+    output:  返回宝石的数量

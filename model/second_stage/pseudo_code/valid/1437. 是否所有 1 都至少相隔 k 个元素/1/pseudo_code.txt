@@ -1,0 +1,63 @@
+NSpace
+0
+1
+1
+1
+1
+1
+2
+3
+4
+4
+3
+2
+2
+1
+
+GUID
+None
+op12484
+op12486
+op12488
+op12490
+cond12493
+cond12521
+cond12526
+op12530
+None
+op12537
+None
+op1
+io12547
+
+Str
+def kLengthApart(self, n, k):@
+定义l为数组n的长度@
+定义初值为-1的变量p@
+定义初值为真的标志变量s@
+定义初值为0的变量i，表示循环次数@
+while(循环次数小于数组n的长度)@
+if (数组中第i个数等于1)@
+if (p不等于-1且i-p-1小于k)@
+将标志变量置为假@
+break@
+p 等于 i@
+else:@
+循环次数加一@
+output:  返回标志变量@
+
+Type
+Function
+Effect
+Effect
+Effect
+Effect
+While
+If
+Effect
+Effect
+Break
+Effect
+Else
+Effect
+Effect

@@ -1,0 +1,103 @@
+NSpace
+0
+1
+1
+2
+1
+2
+2
+2
+2
+2
+3
+3
+4
+3
+2
+3
+2
+3
+3
+4
+4
+5
+4
+3
+
+GUID
+None
+op7401
+cond7404
+io7411
+None
+op7417
+op7419
+op7421
+op7423
+cond7426
+op7445
+cond7448
+None
+op7457
+cond7462
+io7469
+None
+op7475
+cond7478
+op7501
+cond7504
+io7511
+op7517
+io7524
+
+Str
+def canThreePartsEqualSum(self, arr):@
+定义s为数组arr中元素的和@
+if (数组arr中元素的和不能整除3)@
+output:  不可以将数组其划分为三个和相等的非空部分@
+else:@
+定义目标值target等于数组arr中元素的和整除3@
+定义n为数组arr的长度@
+定义当前累加和cur等于0@
+定义变量i等于0@
+while(i小于数组arr的长度)@
+令当前累加和加上数组arr中下标为i的数@
+if (它等于目标值)@
+break@
+令i加一@
+if (当前累加和不等于目标值)@
+output:  不可以将数组其划分为三个和相等的非空部分@
+else:@
+定义j等于i加一@
+while(j加一小于数组arr的长度)@
+令当前累加和加上数组arr中下标为j的数@
+if (它等于目标值的2倍)@
+output:  可以将数组其划分为三个和相等的非空部分@
+令j加一@
+output:  不可以将数组其划分为三个和相等的非空部分@
+
+Type
+Function
+Effect
+If
+Effect
+Else
+Effect
+Effect
+Effect
+Effect
+While
+Effect
+Effect
+Break
+Effect
+If
+Effect
+Else
+Effect
+While
+Effect
+Effect
+Effect
+Effect
+Effect

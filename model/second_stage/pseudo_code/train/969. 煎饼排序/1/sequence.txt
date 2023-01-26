@@ -1,0 +1,26 @@
+def pancakeSort(self, arr):
+    初始化答案数组
+    定义变量n等于数组arr的长度
+    while(n大于1)
+        定义变量index等于0
+        定义变量i等于0
+        while(i大于n)
+            if (数组中下标为i的元素大于下标为index的元素)
+                令index等于i
+            else:
+            变量i自增1
+        if (index等于n减一)
+        else:
+            定义变量m等于index
+            定义变量i等于0
+            while(i小于m加一的和整除2)
+                交换数组中下标为i的元素和下标为m-i的元素
+                变量i自增1
+            定义变量i等于0
+            while(i小于n整除2)
+                交换数组中下标为i的元素和下标为n-1-i的元素
+                变量i自增1
+            将index加一的和添加进答案数组
+            将n添加进答案数组
+        变量n自减1
+    output:  返回答案数组

@@ -1,0 +1,71 @@
+NSpace
+0
+1
+2
+1
+2
+2
+2
+2
+3
+4
+5
+4
+3
+4
+3
+2
+
+GUID
+None
+cond3731
+io3738
+None
+op3744
+op3746
+op3748
+cond3751
+cond3783
+cond3788
+io3795
+op3801
+None
+op3805
+op1
+io3813
+
+Str
+def isValid(self, s):@
+if (字符串s的长度是奇数)@
+output:  字符串无效@
+else:@
+初始化括号对应关系字典pairs等于{")":"(","}":"{","]":"["}，其中，key是右括号，value是左括号@
+定义“栈”stack，初始值为空的列表，用于记录待匹配的左括号。@
+ch为字符串内的括号@
+while(字符串内还有待处理的括号)@
+if (当前括号是右括号)@
+if (如果没有待匹配的左括号，或者位于栈顶的左括号和和当前右括号不匹配)@
+output:  字符串无效@
+弹出栈顶元素@
+else:@
+将左括号进栈@
+ch等于下一个括号@
+output:  如果栈为空，则字符串有效，否则无效@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+Effect
+Effect
+While
+If
+Effect
+Effect
+Effect
+Else
+Effect
+Effect
+Effect

@@ -1,0 +1,26 @@
+def kthSmallestPrimeFraction(self, arr, k):
+    n为数组arr的长度
+    定义左边界left等于0.0，右边界right等于1.0
+    while true:
+        if (!(进入循环))
+        定义中值mid等于左边界与右边界的和整除2
+        i为左指针，初值为-1，count用于记录数量，初值为0
+        变量x初值为0，变量y初值为1
+        j为右指针，初值为1
+        while(当右指针小于数组arr的长度)
+            while(计算数组arr左指针加一处的数除以右指针处的数，当计算结果小于中值时)
+                左指针加一
+                if (!(数组arr左指针处的数乘以y大于右指针处的数乘以x))
+                    continue
+                x等于左指针处的数，y等于右指针处的数
+            数量等于左指针加一
+            右指针加一
+        if (数量count等于k)
+            break
+        if (该数量小于k)
+            左边界等于中值mid
+            continue
+        else:
+            右边界等于中值
+            continue
+    output:  返回由x，y组成的数组

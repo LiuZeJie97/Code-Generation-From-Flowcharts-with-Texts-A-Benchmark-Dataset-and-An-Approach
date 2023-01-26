@@ -1,0 +1,12 @@
+def mySqrt(self, x):
+    定义左边界l等于0，右边界r等于非负整数x，答案d等于-1
+    while(左边界小于等于右边界)
+        定义中值m等于左边界l与右边界r的和整除2
+        if (中值的平方小于非负整数x)
+            右边界等于中值减一
+            continue
+        else:
+            将答案d更新为中值m
+            左边界等于中值加一
+            continue
+    output:  返回答案

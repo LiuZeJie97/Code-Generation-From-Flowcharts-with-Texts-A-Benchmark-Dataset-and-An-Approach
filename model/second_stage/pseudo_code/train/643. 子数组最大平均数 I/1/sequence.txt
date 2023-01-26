@@ -1,0 +1,9 @@
+def findMaxAverage(self, numbers, k):
+    定义变量maxTotal和变量total，其初值均为数组numbers前k个元素的和
+    count为同样数组的长度
+    定义初值为k的数组下标i
+    while(当数组下标小于数组numbers的长度)
+        计算数组中下标为i-k的元素与下标为i的元素的差值，并令total减去该差值
+        maxTotal等于其自身与total之间的最大值
+        数组下标加一
+    output:  返回maxTotal除以k的结果

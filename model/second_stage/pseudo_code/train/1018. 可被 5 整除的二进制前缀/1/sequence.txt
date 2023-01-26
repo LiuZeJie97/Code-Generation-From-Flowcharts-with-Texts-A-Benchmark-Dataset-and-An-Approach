@@ -1,0 +1,12 @@
+def prefixesDivBy5(self, numbers):
+    定义答案数组ans
+    定义前缀prefix等于0
+    定义数组下标index等于0
+    while(数组下标小于数组numbers的长度)
+        令前缀prefix等于前缀左移1位的运算结果与数组中当前下标位置的数之和
+        if (前缀可以整除5)
+            向答案数组ans中添加True
+        else:
+            向答案数组中添加False
+        令数组下标自增一
+    output:  返回答案数组

@@ -1,0 +1,83 @@
+NSpace
+0
+1
+1
+2
+1
+2
+2
+2
+3
+4
+5
+4
+3
+4
+5
+4
+5
+3
+2
+
+GUID
+None
+op6464
+cond6467
+io6474
+None
+op6480
+op6482
+cond6485
+cond6527
+cond6532
+io6543
+op6536
+None
+cond6550
+op6554
+None
+op6558
+op1
+io6567
+
+Str
+def numDecodings(self, s):@
+n为字符串s的长度@
+if (字符串为空或者字符串的第一个元素等于"0")@
+output:  返回0@
+else:@
+初始化dp=[0,...,0]，长度为字符串长度加1，dp[0]等于1,dp[1]等于1，dp[1]等于1表示第一位的解码方法@
+i等于1，为字符串下标@
+while(字符串下标小于字符串长度)@
+if (若字符串下标为i的字符等于"0")@
+if (!(前一个字符等于"1"或等于"2"))@
+output:  返回0@
+此时，到i+1位置的解码方法和i-1位置的相同@
+else:@
+if (若字符串的i-1位等于"1"，或者上一位s[i]=="2"。则此时，若"1"<=s[i]<="6"也是可以的。)@
+则当前位既可以单独解码也可以和上一位结合，当前位置的解码方法等于上一位和上上位方法之和@
+else:@
+当前位置的解码方法等于上一位的解码方法@
+字符串下标右移@
+output:  返回第n位的解码方法@
+
+Type
+Function
+Effect
+If
+Effect
+Else
+Effect
+Effect
+While
+If
+Effect
+Effect
+Effect
+Else
+If
+Effect
+Else
+Effect
+Effect
+Effect

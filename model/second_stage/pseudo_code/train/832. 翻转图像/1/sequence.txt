@@ -1,0 +1,17 @@
+def flipAndInvertImage(self, image):
+    row为二维数组image的行数
+    i为数组下标
+    while(如果数组下标小于数组的行数)
+        左指针p等于0，右指针q等于数组的行数减一
+        while(如果左指针小于右指针)
+            if (如果数组image中i行p列的元素等于i行q列的元素)
+                数组中i行p列的元素等于它异或1
+                数组中i行q列的元素等于它异或1
+            else:
+            左指针加一
+            右指针加一
+        if (如果左指针与右指针相等)
+            数组中i行p列的元素等于它异或1
+        else:
+        数组下标加一
+    output:  返回二维数组

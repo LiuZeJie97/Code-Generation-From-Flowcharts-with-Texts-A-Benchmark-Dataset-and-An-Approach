@@ -1,0 +1,16 @@
+def getNoZeroIntegers(self, n):
+    定义变量A、B，其初值均为0
+    定义标志变量sgn，初值为False
+    定义循环变量i，初值为1
+    while(循环变量小于n)
+        令A等于i
+        令B等于n减i
+        将A，B转化为字符串，定义字符串res等于它们相加的结果
+        if (字符0没有出现在上述运算结果中)
+            将标志变量置为True
+            break
+        令当前循环变量自增1
+    if (标志变量为真)
+        output:  返回A、B组成的列表
+    else:
+        output:  返回空列表

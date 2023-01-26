@@ -1,0 +1,83 @@
+NSpace
+0
+1
+1
+2
+1
+2
+2
+3
+2
+3
+3
+3
+3
+4
+4
+5
+5
+4
+3
+
+GUID
+None
+op4802
+cond4805
+io4812
+None
+op4818
+cond4821
+io4828
+None
+op4834
+op4836
+op4838
+cond4841
+op4860
+cond4863
+op4870
+op2
+op1
+io4879
+
+Str
+def canPartition(self, nums):@
+n等于数组nums的长度@
+if (n小于2)@
+output:  不可以将数组分割成两个子集，使得两个子集的元素和相等@
+else:@
+total等于数组各个元素之和@
+if (数组各个元素之和不为偶数)@
+output:  不可以将数组分割成两个子集，使得两个子集的元素和相等@
+else:@
+目标值等于数组各个元素之和的一半@
+定义dp，第一个元素为True，其他元素为False，长度为目标值加一， dp[i] 表示是否存在一种选取方案使得被选取的正整数的和等于i@
+定义i和num，i初值为0，num初值等于数组第一个元素@
+while(使用i, num遍历数组nums，i为遍历序号，num为数组中的数)@
+定义j等于目标值@
+while(j大于num减一)@
+如果存在一种选取方案使得被选取的正整数的和等于j减去nums，则必然存在一种选取方案使得被选取的正整数的和等于j，更新dp[j]@
+j减去1@
+遍历序号加一，num为数组中的下一个数@
+output:  返回dp最后一个元素@
+
+Type
+Function
+Effect
+If
+Effect
+Else
+Effect
+If
+Effect
+Else
+Effect
+Effect
+Effect
+While
+Effect
+While
+Effect
+Effect
+Effect
+Effect

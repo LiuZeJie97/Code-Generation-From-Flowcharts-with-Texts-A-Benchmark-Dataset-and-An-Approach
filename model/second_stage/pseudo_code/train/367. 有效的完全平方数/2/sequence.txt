@@ -1,0 +1,9 @@
+def isPerfectSquare(self, num):
+    定义变量x，初值为1
+    定义变量square，初值为1
+    while(判断square是否小于或等于给定正整数num)
+        if (square等于给定正整数)
+            output:  给定正整数是完全平方数
+        变量x加一
+        变量square等于变量x的平方
+    output:  给定正整数不是完全平方数

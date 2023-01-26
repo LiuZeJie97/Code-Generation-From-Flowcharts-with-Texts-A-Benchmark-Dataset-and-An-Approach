@@ -1,0 +1,67 @@
+NSpace
+0
+1
+1
+1
+1
+2
+3
+4
+4
+2
+2
+1
+2
+1
+2
+
+GUID
+None
+op174
+op176
+op178
+cond181
+cond209
+cond214
+op222
+None
+None
+op1
+cond233
+io240
+None
+io248
+
+Str
+def twoSum(self, nums, target):@
+定义lens为整数数组的长度@
+j初值等于-1@
+i等于0，为数组中当前元素的下标@
+while(前元素的下标小于整数数组长度)@
+if (目标值target减去当前元素在整数数组中)@
+if (!(如果当前元素在数组中只出现了一次，且目标值减去该元素还等于该元素))@
+从下标i+1开始搜索整数数组，找到数组中等于目标值减去当前元素的数，将下标保存在j中@
+break@
+else:@
+前元素的下标右移一个单位@
+if (j有效)@
+output:  返回由i和j构成的向量@
+else:@
+output:  返回空向量@
+
+Type
+Function
+Effect
+Effect
+Effect
+While
+If
+Effect
+Effect
+Break
+Else
+Effect
+If
+Effect
+Else
+Effect

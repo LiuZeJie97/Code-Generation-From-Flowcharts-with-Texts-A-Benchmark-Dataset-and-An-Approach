@@ -1,0 +1,55 @@
+NSpace
+0
+1
+1
+1
+1
+2
+3
+3
+2
+3
+2
+1
+
+GUID
+None
+op1039
+op1041
+op1043
+cond1046
+cond1078
+op1087
+op1089
+cond1094
+None
+op1
+io1108
+
+Str
+def intToRoman(self, num):@
+初始化向量VALUE_SYMBOLS，该向量由若干元组组成，每个元组是个(数值,罗马数字)对，向量中的元组按数值大小由高到低排序。@
+roman是一个列表，用于记录转换后的各个罗马数字@
+value, symbol是VALUE_SYMBOLS中的一个元组@
+while(对于向量中的每一个元组)@
+while(给定数值num大于元组中的数值)@
+给定数值减去该数值@
+记录元组中的罗马数字@
+if (给定数值等于0)@
+break@
+处理下一个元组@
+output:  对罗马数字拼接并返回@
+
+Type
+Function
+Effect
+Effect
+Effect
+While
+While
+Effect
+Effect
+Effect
+Break
+Effect
+Effect

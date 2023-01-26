@@ -1,0 +1,19 @@
+def nthUglyNumber(self, n):
+    定义长度为n+1的数组dp，其初值均为0，dp[i]表示第i个丑数
+    第1个丑数等于1
+    定义变量p2,p3,p5,其初值均为1
+    i为数组下标，初值为2
+    while(数组下标小于n+1)
+        num2等于第p2个丑数的值乘以2，num3等于第p3个丑数的值乘以3，num5等于第p5个丑数的值乘以5，
+        将第i个丑数更新为num2，num3与num5之间的最小值
+        if (第i个丑数等于num2)
+            变量p2加一
+        else:
+        if (第i个丑数等于num3)
+            变量p3加一
+        else:
+        if (第i个丑数等于num5)
+            变量p5加一
+        else:
+        数组下标加一
+    output:  返回第n个丑数

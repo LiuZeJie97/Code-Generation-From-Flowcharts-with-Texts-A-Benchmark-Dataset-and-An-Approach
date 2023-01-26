@@ -1,0 +1,35 @@
+NSpace
+0
+1
+1
+1
+2
+2
+1
+
+GUID
+None
+op13144
+op13146
+cond13149
+op13156
+op1
+io13163
+
+Str
+def xorOperation(self, n, start):@
+定义操作结果op等于0@
+定义循环变量t等于0@
+while(循环变量小于n)@
+计算2倍的t与start的和，令操作结果异或该计算结果@
+令循环变量加一@
+output:  返回操作结果@
+
+Type
+Function
+Effect
+Effect
+While
+Effect
+Effect
+Effect

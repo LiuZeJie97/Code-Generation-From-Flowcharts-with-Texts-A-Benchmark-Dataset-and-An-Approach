@@ -1,0 +1,11 @@
+def arrangeCoins(self, n):
+    定义左边界left等于1，右边界right等于n
+    while(当左边界小于右边界)
+        定义中值mid等于左边界与右边界的和加一再整除2
+        if (中值与中值加一的和小于等于n的2倍)
+            左边界等于中值
+            continue
+        else:
+            右边界等于中值减一
+            continue
+    output:  返回左边界

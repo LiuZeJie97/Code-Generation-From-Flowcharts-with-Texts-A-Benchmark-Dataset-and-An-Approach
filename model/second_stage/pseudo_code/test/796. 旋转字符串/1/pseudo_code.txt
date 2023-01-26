@@ -1,0 +1,63 @@
+NSpace
+0
+1
+1
+2
+1
+2
+2
+3
+3
+4
+5
+4
+3
+2
+
+GUID
+None
+op30966
+cond30969
+io30976
+None
+op30982
+cond30985
+op31020
+cond31023
+cond31039
+None
+op2
+op1
+io31055
+
+Str
+def rotateString(self, s, goal):@
+m为源字符串s的长度，n为目标字符串goal的长度@
+if (若源字符串的长度与目标字符串的长度不相等)@
+output:  源字符串不能变成目标字符串@
+else:@
+p为数组下标@
+while(该数组下标小于源字符串goal的长度)@
+q为数组下标@
+while(该数组下标小于源字符串的长度)@
+if (计算p与q的和除以n的余数，若源字符串中下标为计算结果的字符不等于目标字符串中下标为q的字符)@
+break@
+令该数组下标加1@
+令该数组下标加1@
+output:  源字符串不能变成目标字符串@
+
+Type
+Function
+Effect
+If
+Effect
+Else
+Effect
+While
+Effect
+While
+Effect
+Break
+Effect
+Effect
+Effect

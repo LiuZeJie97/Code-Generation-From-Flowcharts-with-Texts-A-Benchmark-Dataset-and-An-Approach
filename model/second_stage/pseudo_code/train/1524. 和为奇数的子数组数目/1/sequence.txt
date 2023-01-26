@@ -1,0 +1,16 @@
+def numOfsub(self, array):
+    模数MODULO等于10的9次方加7
+    奇数数量odd等于0，偶数数量even等于1
+    子数组数量sub等于0
+    总和total等于0
+    数组下标index等于0
+    while(数组下标小于数组array的长度)
+        令总和total加上数组arr中当前数组下标处的数
+        if (总和可以整除2)
+            令子数组数量sub加上奇数数量odd
+            偶数数量even加一
+        else:
+            令子数组数量加上偶数数量
+            奇数数量加一
+        数组下标加一
+    output:  返回子数组数量对模数取模的结果

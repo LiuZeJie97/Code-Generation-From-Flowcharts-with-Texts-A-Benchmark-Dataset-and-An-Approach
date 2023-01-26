@@ -1,0 +1,34 @@
+def maxSum(self, nums1, nums2):
+    mod等于10的9次方加7
+    m为数组nums1的长度，n为数组nums2的长度
+    定义变量best1，best2，其初值均为0
+    i为数组nums1的指针，j为数组nums2的指针，其初值均为0
+    while(数组nums1的指针小于数组nums1的长度或数组nums2的指针小于数组nums2的长度)
+        if (数组nums1的指针小于数组nums1的长度且数组nums2的指针小于数组nums2的长度)
+            if (数组nums1指针处的元素小于数组nums2指针处的元素)
+                令best1加上数组nums1指针处的元素
+                数组nums1的指针加一
+                continue
+            else:
+                if (数组nums1指针处的元素大于数组nums2指针处的元素)
+                    令best2加上数组nums2指针处的元素
+                    数组nums2的指针加一
+                    continue
+                else:
+                    定义变量best等于变量best1与best2之间的最大值与数组nums1指针处的元素的和
+                    令best1，best2均等于变量best
+                    数组nums1的指针加一
+                    数组nums2的指针加一
+                    continue
+        else:
+            if (数组nums1的指针小于数组nums1的长度)
+                令best1加上数组nums1指针处的元素
+                数组nums1的指针加一
+                continue
+            else:
+                if (!(数组nums2的指针小于数组nums2的长度))
+                    continue
+                令best2加上数组nums2指针处的元素
+                数组nums2的指针加一
+                continue
+    output:  计算变量best1与best2之间的最大值除以mod的余数，返回该计算结果

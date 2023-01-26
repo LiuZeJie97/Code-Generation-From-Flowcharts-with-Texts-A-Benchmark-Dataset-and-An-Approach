@@ -1,0 +1,15 @@
+def numSubarrayBoundedMax(self, nums, left, right):
+    定义变量cntL用于记录所有元素都小于等于left的子数组数量，变量cntR用于记录所有元素都小于等于right的子数组数量，其初值均为0
+    定义变量cur等于0
+    num为数组nums中的数
+    while(数组中还有数未被访问)
+        如果当前数小于等于left减一，则将cur的值更新为cur加一，否则cur等于0
+        所有元素都小于等于left的子数组数量加上cur
+        当前遍历数等于数组中下一个数
+    变量cur等于0
+    num为数组nums中的数
+    while(数组中还有数未被访问)
+        如果当前数小于等于right，则将cur的值更新为cur加一，否则cur等于0
+        所有元素都小于等于right的子数组数量加上cur
+        当前遍历数等于数组中下一个数
+    output:  返回所有元素都小于等于right的子数组数量与所有元素都小于等于left的子数组数量之差

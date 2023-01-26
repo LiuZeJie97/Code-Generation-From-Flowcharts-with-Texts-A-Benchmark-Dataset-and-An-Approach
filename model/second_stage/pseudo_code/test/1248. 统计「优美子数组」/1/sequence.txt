@@ -1,0 +1,16 @@
+def numberOfSubarrays(self, numbers, k):
+    n为数组numbers的长度
+    定义数组odd，初值为-1
+    定义变量ans，初值为0，用于记录优美子数组的数目
+    定义数组下标index，初值为0
+    while(数组下标小于数组numbers的长度)
+        if (被遍历数组中当前遍历下标的数是奇数)
+            将i添加进数组odd中
+        else:
+        令数组下标等于数组下标加一
+    将数组numbers的长度添加进数组odd中
+    定义数组下标index，初值为1
+    while(数组下标小于数组odd的长度减k)
+        计算数组中下标为index的数与下标为index-1的数之间的差值，下标为index+k的数与下标为index+k-1的数之间的差值，令优美子数组的数目ans加上它们的乘积
+        令数组下标等于数组下标加一
+    output:  返回优美子数组的数目

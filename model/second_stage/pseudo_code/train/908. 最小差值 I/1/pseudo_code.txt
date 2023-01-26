@@ -1,0 +1,27 @@
+NSpace
+0
+1
+1
+1
+1
+
+GUID
+None
+op35015
+op35017
+op35019
+io35024
+
+Str
+def smallestRangeI(self, n, k):@
+定义最低分数ms等于数组n中的最大值减去最小值@
+令最低分数减去2倍的k@
+令最低分数等于它与0之间的最大值@
+output:  返回最低分数@
+
+Type
+Function
+Effect
+Effect
+Effect
+Effect

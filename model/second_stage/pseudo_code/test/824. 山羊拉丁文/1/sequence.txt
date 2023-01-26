@@ -1,0 +1,23 @@
+def toGoatLatin(self, sentence):
+    定义字典vowels，初值为"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"
+    n为字符串sentence的长度
+    定义变量i等于0，cnt等于1
+    初始化数组words
+    while(若i小于字符串sentence的长度)
+        定义变量j等于i
+        while(若j小于字符串sentence的长度并且字符串sentence中下标为j的字符不是" ")
+            j加一
+        cnt加一
+        if (当字符串sentence中下标为i的字符在字典vowels中时)
+            定义字符串s等于字符串sentence中下标i到下标j的子串
+            向字符串s添加字符"m"
+            向字符串s添加cnt个字符"a"
+            将字符串s添加进数组words中
+        else:
+            定义字符串s等于字符串sentence中下标i+1到下标j的子串
+            向字符串s字符串sentence中下标i的字符
+            向字符串s添加字符"m"
+            向字符串s添加cnt个字符"a"
+            将字符串s添加进数组words中
+        将i的值更新为j+1
+    output:  返回数组words用" "连接的结果

@@ -1,0 +1,9 @@
+def replaceElements(self, arr):
+    定义arr_size为数组arr的长度
+    定义长度和数组arr的长度相同，数组元素均为0的答案数组answer
+    答案数组最后一项元素等于-1
+    定义数组下标idx等于数组的长度减2
+    while(数组下标大于-1)
+        答案数组中下标为idx的元素等于答案数组中下标为idx+1的元素与数组中下标为idx+1的元素之间的最大值
+        数组下标减一
+    output:  返回答案数组

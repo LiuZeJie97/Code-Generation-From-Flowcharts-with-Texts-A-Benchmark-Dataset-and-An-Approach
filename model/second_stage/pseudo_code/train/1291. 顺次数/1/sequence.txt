@@ -1,0 +1,15 @@
+def sequentialDigits(self, low, high):
+    初始化最终结果ans
+    变量i初值为1
+    while(上述变量小于10)
+        num初值为1
+        变量j初值为i加一
+        while(上述变量小于10)
+            令num等于num乘10再加j
+            if (num小于low或大于high)
+            else:
+                将num添加进最终结果数组中
+            令该变量加一
+        令该变量加一
+    对最终结果排序
+    output:  返回最终结果

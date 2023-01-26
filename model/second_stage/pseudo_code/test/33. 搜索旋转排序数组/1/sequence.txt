@@ -1,0 +1,24 @@
+def search(self, n, target):
+    if (数组n为空)
+        output:  返回-1
+    else:
+        定义左边界l等于0，右边界r等于数组的长度减一
+        while(左边界小于等于右边界)
+            定义中点m等于左边界与右边界的和整除2
+            if (数组n中点元素等于目标值target)
+                output:  返回中点
+            if (数组中第一项元素小于等于数组中点元素)
+                if (目标值大于等于数组第一项元素且小于数组中点元素)
+                    右边界r等于中点m减一
+                    continue
+                else:
+                    左边界l等于中点加一
+                    continue
+            else:
+                if (目标值大于数组中点元素且小于等于数组最后一项元素)
+                    左边界l等于中点m加一
+                    continue
+                else:
+                    右边界r等于中点减一
+                    continue
+        output:  返回-1

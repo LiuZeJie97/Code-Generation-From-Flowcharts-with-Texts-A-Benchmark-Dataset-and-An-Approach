@@ -1,0 +1,55 @@
+NSpace
+0
+1
+1
+2
+3
+2
+2
+3
+2
+2
+2
+1
+
+GUID
+None
+op27179
+cond27182
+cond27218
+io27225
+op27231
+cond27234
+op27238
+None
+op27243
+op27245
+io27252
+
+Str
+def reverse(self, x):@
+定义INT_MIN为下界，值为-2的31次方；定义INT_MAX为上界，值为2的31次方减一; rev用于记录数字反转后的结果，初值为0@
+while(给定整数x不为0)@
+if (反转后的结果小于下界整除10后再加一或大于上界整除10)@
+output:  返回0@
+定义digit等于整数对10取模，用于记录给定整数的末尾数字@
+if (给定整数小于0且其末尾数字大于0)@
+将末尾数字减去10@
+else:@
+先让给定整数x减去其末尾数字，再对该结果整除10，并将最终运算结果赋给给定整数@
+将反转结果rev更新为反转结果的10倍与给定整数末尾数字的和@
+output:  返回反转后的结果@
+
+Type
+Function
+Effect
+While
+Effect
+Effect
+Effect
+If
+Effect
+Else
+Effect
+Effect
+Effect

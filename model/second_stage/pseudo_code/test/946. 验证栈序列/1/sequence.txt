@@ -1,0 +1,11 @@
+def validateStackSequences(self, pushed, popped):
+    定义初值为0的变量j
+    定义栈stack
+    x为数组pushed中的元素
+    while(对于数组中每一个元素)
+        令当前元素进栈
+        while(下列条件均满足：栈不为空、j小于数组popped的长度、栈中最后一项小于数组popped中下标为j的项)
+            移除栈顶元素
+            j加一
+        当前元素下标加一
+    output:  如果j等于数组popped的长度,返回True;否则返回False

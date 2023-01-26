@@ -1,0 +1,39 @@
+NSpace
+0
+1
+1
+1
+2
+2
+2
+1
+
+GUID
+None
+op1656
+op1658
+cond1661
+op1670
+op1672
+op1
+io1679
+
+Str
+def maxProduct(self, nums):@
+颠倒数组nums的元素顺序并赋值给reverse_nums@
+i等于1@
+while(i小于数组长度)@
+若i减1越界，则将nums[i]自乘上nums[i - 1]，否则nums[i]保持不变@
+若i减1越界，则将reverse_nums[i]自乘上reverse_nums[i - 1]，否则reverse_nums[i]保持不变@
+i自增1@
+output:  返回reverse_nums和nums中最大的值@
+
+Type
+Function
+Effect
+Effect
+While
+Effect
+Effect
+Effect
+Effect

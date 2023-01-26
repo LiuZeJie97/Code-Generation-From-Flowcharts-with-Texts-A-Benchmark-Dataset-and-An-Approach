@@ -1,0 +1,95 @@
+NSpace
+0
+1
+1
+1
+2
+3
+3
+4
+2
+2
+1
+1
+2
+2
+3
+4
+4
+5
+3
+3
+2
+1
+
+GUID
+None
+op13177
+op13179
+cond13182
+cond13214
+op13218
+cond13221
+io13228
+None
+op13237
+op13241
+cond13244
+op13248
+cond13254
+cond13286
+op13290
+cond13293
+io13300
+None
+op13309
+io13316
+None
+
+Str
+def kthFactor(self, n, k):@
+计数值count等于0@
+当前因数factor等于1@
+while(当前因数的平方小于等于n)@
+if (n可以整除当前因数)@
+计数值加一@
+if (计数值等于k)@
+output:  返回当前因数@
+else:@
+当前因数加一@
+当前因数减一@
+if (当前因数的平方小于等于n)@
+当前因数减一@
+while(当前因数大于0)@
+if (n可以整除当前因数)@
+计数值加一@
+if (计数值等于k)@
+output:  返回n整除当前因数的结果@
+else:@
+当前因数减一@
+output:  返回-1@
+else:@
+
+Type
+Function
+Effect
+Effect
+While
+If
+Effect
+Effect
+Effect
+Else
+Effect
+Effect
+If
+Effect
+While
+If
+Effect
+Effect
+Effect
+Else
+Effect
+Effect
+Else

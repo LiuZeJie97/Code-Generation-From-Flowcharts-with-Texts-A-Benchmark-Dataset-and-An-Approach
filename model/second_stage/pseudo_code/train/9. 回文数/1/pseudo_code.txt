@@ -1,0 +1,43 @@
+NSpace
+0
+1
+2
+1
+2
+2
+3
+3
+2
+
+GUID
+None
+cond6416
+io6423
+None
+op6429
+cond6432
+op6441
+op6443
+io6450
+
+Str
+def isPalindrome(self, x):@
+if (给定的整数x小于0，或x除以10等于0但是x不等于0)@
+output:  给定的整数不是回文数。@
+else:@
+revertedNumber用于记录给定的整数x的相反数，初值为0@
+while(给定的整数大于相反数)@
+相反数等于其自身乘10加上给定的整数整除10的余数@
+给定的整数除以10@
+output:  检查给定的整数是否等于相反数，或是相反数的十分之一，若满足上述条件则给定的整数是回文数，否则给定的整数不是回文数@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+While
+Effect
+Effect
+Effect

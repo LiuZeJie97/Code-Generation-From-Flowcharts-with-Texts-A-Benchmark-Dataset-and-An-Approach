@@ -1,0 +1,71 @@
+NSpace
+0
+1
+2
+1
+2
+2
+2
+2
+3
+3
+4
+5
+4
+4
+3
+2
+
+GUID
+None
+cond4013
+io4020
+None
+op4026
+op4028
+op4030
+cond4033
+op4068
+cond4071
+cond4087
+op4091
+None
+op2
+op1
+io4103
+
+Str
+def lengthOfLIS(self, nums):@
+if (特判，若数组nums为空：)@
+output:  返回0@
+else:@
+n为数组的长度@
+初始化dp=[1,1, ,1]，长度为n，dp[i]等于1表示每一位都可以为长度为1的最长上升子序列。@
+定义i为dp下标，初值为0@
+while(i小于n)@
+定义j为dp下标，初值为0@
+while(j小于i)@
+if (数组下标为i的数大于下标为j的数)@
+如果第j个位置的最长上升子序列的长度加1的结果大于第i个位置的最长上升子序列的长度，则更新dp[i]@
+else:@
+dp下标j右移一个单位@
+dp下标i右移一个单位@
+output:  返回dp中的最大值@
+
+Type
+Function
+If
+Effect
+Else
+Effect
+Effect
+Effect
+While
+Effect
+While
+If
+Effect
+Else
+Effect
+Effect
+Effect

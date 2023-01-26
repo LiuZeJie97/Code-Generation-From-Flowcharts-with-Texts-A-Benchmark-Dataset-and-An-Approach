@@ -1,0 +1,14 @@
+def maxUncrossedLines(self, nums1, nums2):
+    m为数组nums1的长度，n为数组nums2的长度
+    定义m+1行n+1列的二维数组dp，数组元素初值均为0，dp[i][j]表示nums1[0:i]与nums2[0:j]的最长公共子序列的长度
+    数组下标i等于0
+    while(该数组下标小于数组nums1的长度)
+        数组下标j等于0
+        while(该数组下标小于数组nums2的长度)
+            if (数组nums1中下标为i的元素等于数组nums2中下标为j的元素)
+                nums1[0:i+1]与nums2[0:j+1]的最长公共子序列的长度等于nums1[0:i]与nums2[0:j]的最长公共子序列的长度加一
+            else:
+                nums1[0:i+1]与nums2[0:j+1]的最长公共子序列的长度等于nums1[0:i]与nums2[0:j+1]的最长公共子序列的长度与nums1[0:i+1]与nums2[0:j]的最长公共子序列的长度之间的最大值
+            令该数组下标加一
+        令该数组下标加一
+    output:  返回nums1与nums2的最长公共子序列的长度

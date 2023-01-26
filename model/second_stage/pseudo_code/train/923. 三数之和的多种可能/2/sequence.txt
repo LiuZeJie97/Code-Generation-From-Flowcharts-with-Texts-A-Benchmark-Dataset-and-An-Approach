@@ -1,0 +1,38 @@
+def threeSumMulti(self, arr, target):
+    模数MOD等于10的9次方加7
+    结果ans等于0
+    对数组arr排序
+    定义数组下标i等于0
+    while(数组下标小于数组的长度)
+        剩余目标T等于目标值target减去数组中下标为i的元素
+        j等于i加一
+        k等于数组的长度减一
+        while(j小于k时)
+            if (数组arr中下标为j的数与下标为k的数的和小于剩余目标)
+                j加一
+                continue
+            else:
+                if (它们的和大于剩余目标)
+                    k减去1
+                    continue
+                else:
+                    if (!(它们的和大于剩余目标且它们不相等))
+                        定义tmp等于k-j+1乘以k-j再除以2
+                        令结果加上tmp
+                        令结果对模数取余
+                        break
+                    left等于1
+                    right等于1
+                    while(j加一小于k且数组arr中下标为j的数等于下标为j+1的数)
+                        left加一
+                        j加一
+                    while(k减一大于j且数组中下标为k的数等于下标为k-1的数)
+                        right加一
+                        k减一
+                    令结果加上left乘right
+                    令结果对模数取余
+                    j加一
+                    k减一
+                    continue
+        数组下标等于i加一
+    output:  返回结果

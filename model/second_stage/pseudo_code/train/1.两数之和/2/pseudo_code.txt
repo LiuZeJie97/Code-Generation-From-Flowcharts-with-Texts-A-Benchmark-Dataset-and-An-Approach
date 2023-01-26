@@ -1,0 +1,43 @@
+NSpace
+0
+1
+1
+1
+2
+3
+2
+2
+1
+
+GUID
+None
+op113
+op115
+cond118
+cond140
+io147
+op153
+op1
+io160
+
+Str
+def twoSum(self, nums, target):@
+使用哈希表记录整数数组nums中是否存在某个元素，初值为空字典@
+i用于记录遍历次数，num为当前元素，初值为数组中的第一个数@
+while(遍历整数数组)@
+if (目标值target减去当前元素在哈希表中)@
+output:  返回一个包含两个元素的向量，其中：第一个元素为哈希表中，关键字为目标值减去当前元素num的元素，第二个元素为数组下标@
+将当前元素对应的下标记录在哈希表中@
+遍历次数加一，更新当前元素num为其在数组中的下一个元素@
+output:  返回空列表@
+
+Type
+Function
+Effect
+Effect
+While
+Effect
+Effect
+Effect
+Effect
+Effect

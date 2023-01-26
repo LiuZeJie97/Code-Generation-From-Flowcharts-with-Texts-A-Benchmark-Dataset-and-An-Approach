@@ -1,0 +1,23 @@
+def reachingPoints(self, sx, sy, tx, ty):
+    定义标志变量flag，初值为False，True表示可以转换，False表示不能转换
+    while(计算sx是否小于tx，ty是否小于sy，当上述计算结果不相等时)
+        if (tx大于ty)
+            将tx的值更新为它除以ty得到的余数
+            continue
+        else:
+            将ty的值更新为它除以tx得到的余数
+            continue
+    if (tx和sx相等并且ty和sy相等)
+        可以转换
+    else:
+        if (tx和sx相等)
+            if (ty大于sy且它们的差值可以整除tx)
+                可以转换
+            else:
+        else:
+            if (ty和sy相等)
+                if (tx大于sx且它们的差值可以整除ty)
+                    可以转换
+                else:
+            else:
+    output:  返回标志变量

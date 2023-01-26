@@ -1,0 +1,17 @@
+def thousandSeparator(self, n):
+    定义变量count等于0，用于统计分隔数量
+    定义结果数组ans
+    while(进入循环)
+        末位数cur等于给定整数n除以10的余数
+        令给定整数整除10
+        将末位数转化为字符串并添加进结果数组ans中
+        令分隔数量count加一
+        if (分割数量可以整除3且给定整数大于0)
+            将"."添加进结果数组中
+        else:
+        if (给定整数等于0)
+            break
+        else:
+            continue
+    将结果数组ans倒置
+    output:  将结果数组转化为字符串并返回

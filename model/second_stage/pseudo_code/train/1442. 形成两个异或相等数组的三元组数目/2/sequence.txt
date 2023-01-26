@@ -1,0 +1,18 @@
+def countTriplets(self, arr):
+    定义n为数组arr的长度
+    定义数组s，初值为0
+    数组下标i等于0
+    while(i小于数组arr的长度)
+        计算数组s中最后一项元素异或数组arr中下标为i的数的结果，并将结果添加进数组s中
+        令i自增1
+    ans用于记录三元组的数目，初值为0
+    i等于0
+    while(i小于数组arr的长度)
+        k等于i+1
+        while(k小于数组arr的长度)
+            if (数组s中下标为i的数等于下标为k加一的数)
+                三元组的数目加上k与i的差值
+            else:
+            令k自增1
+        令i自增1
+    output:  返回三元组的数目

@@ -1,0 +1,35 @@
+NSpace
+0
+1
+1
+1
+2
+2
+1
+
+GUID
+None
+op13111
+op13113
+cond13116
+op13123
+op1
+io13130
+
+Str
+def runningSum(self, number):@
+定义length等于数组number的长度@
+定义数组下标index，初值为1@
+while(数组下标小于数组的长度)@
+令数组number中下标为index的数加上下标为index-1的数@
+数组下标右移1个单位长度@
+output:  返回数组@
+
+Type
+Function
+Effect
+Effect
+While
+Effect
+Effect
+Effect

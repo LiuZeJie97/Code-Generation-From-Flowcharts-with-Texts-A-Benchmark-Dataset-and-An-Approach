@@ -1,0 +1,19 @@
+def isPossibleDivide(self, number, k):
+    n为数组number的长度
+    if (数组number的长度不能整除k)
+        output:  返回False
+    else:
+        对数组number排序
+        cnt为对数组number的计数结果
+        i等于0
+        while(i小于n)
+            if (cnt中下标为number[i]的元素等于0)
+            else:
+                x等于数组number中下标为i的元素
+                while(x小于该元素加k)
+                    if (cnt中下标为x的元素等于0)
+                        output:  返回False
+                    cnt中下标为x的元素减一
+                    x自增1
+            i自增1
+        output:  返回True

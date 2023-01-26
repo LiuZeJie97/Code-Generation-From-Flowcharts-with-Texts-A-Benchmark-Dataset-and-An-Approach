@@ -1,0 +1,47 @@
+NSpace
+0
+1
+1
+1
+1
+2
+3
+3
+2
+1
+
+GUID
+None
+op33091
+op33093
+op33095
+cond33098
+cond33116
+op33120
+None
+op1
+io33132
+
+Str
+def peakIndexInMountainArray(self, arr):@
+n为数组arr的长度@
+定义变量ans，初值为-1，用于记录答案@
+idx为数组下标，初值为1@
+while(数组下标小于数组arr的长度减一)@
+if (数组arr中下标为idx的元素大于下标为idx+1的元素)@
+令答案等于idx@
+break@
+数组下标加一@
+output:  返回答案@
+
+Type
+Function
+Effect
+Effect
+Effect
+While
+Effect
+Effect
+Break
+Effect
+Effect

@@ -1,0 +1,20 @@
+def findUnsortedSubarray(self, nums):
+    n为数组nums的长度。
+    定义isSorted，记录数组是否有序，初值为True
+    i等于1
+    while(i小于n)
+        if (数组下标为i减去1的元素大于该元素的后一个元素)
+            数组无序
+            break
+        i自增1
+    if (数组有序)
+        output:  最短子数组长度为0
+    else:
+        对数组从小到大排序，并将排序结果保存在numsSorted中
+        left为最短子数组左边界，初值为0
+        while(原数组下标为left的元素不等于排序后数组下标为left的元素)
+            left自增1
+        right为最短子数组右边界，初值为数组长度减一
+        while(原数组下标为right的元素不等于排序后数组下标为right的元素)
+            right自增1
+        output:  返回左右边界之差加1，

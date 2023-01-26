@@ -1,0 +1,11 @@
+def hasAlternatingBits(self, n):
+    定义变量prev等于2
+    定义初值为True的标志变量f，用于表示给定正整数的二进制01是否交替出现，True表示是交替出现，False表示不是交替出现
+    while(当给定正整数n不为0)
+        定义变量cur等于给定正整数n除以2的余数
+        if (若cur等于prev)
+            给定正整数的二进制01不是交替出现
+            break
+        将cur的值赋给prev
+        令给定正整数整除2
+    output:  返回表示给定正整数的二进制01是否交替出现的标志变量
