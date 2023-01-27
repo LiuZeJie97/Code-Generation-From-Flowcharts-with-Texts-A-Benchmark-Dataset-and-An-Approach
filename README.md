@@ -2,12 +2,12 @@
 Code for the paper ["Code Generation From Flowcharts with Texts: A Benchmark Dataset and An Approach"](https://preview.aclanthology.org/emnlp-22-ingestion/2022.findings-emnlp.449/). 
 The presentation is [here](https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2022-11-17/ps13uor/presentation2124.mp4).
 
-Our model is developed based on [TRANX](https://github.com/pcyin/tranX), please cite their [paper](https://aclanthology.org/D18-2002/) if you used our model.
+Our model is developed based on [TRANX](https://github.com/pcyin/tranX), please cite their [paper](https://aclanthology.org/D18-2002/) if using our model.
 
 ## Dataset Format
 The folder "FC2Code" contains the following files: 
 ### code.txt
-&emsp; We obtained the code from [__LeetCode__](https://leetcode.com/problemset/all/)
+&emsp; We obtained 320 code from [__LeetCode__](https://leetcode.com/problemset/all/)
 
 ### flowchart.txt
 &emsp;We manually drew the flowchart for each code. The first part are the basic information of each node:
