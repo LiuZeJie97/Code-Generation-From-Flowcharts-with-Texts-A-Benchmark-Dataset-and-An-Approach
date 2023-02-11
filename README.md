@@ -1,5 +1,5 @@
 # FC2Code
-Code for the paper ["Code Generation From Flowcharts with Texts: A Benchmark Dataset and An Approach"](https://preview.aclanthology.org/emnlp-22-ingestion/2022.findings-emnlp.449/). 
+Code for the paper ["Code Generation From Flowcharts with Texts: A Benchmark Dataset and An Approach"](https://aclanthology.org/2022.findings-emnlp.449/). 
 The presentation is [here](https://s3.amazonaws.com/pf-user-files-01/u-59356/uploads/2022-11-17/ps13uor/presentation2124.mp4).
 
 Our model is developed based on [TRANX](https://github.com/pcyin/tranX), please cite their [paper](https://aclanthology.org/D18-2002/) if using our model.
