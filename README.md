@@ -18,6 +18,8 @@ The folder "FC2Code" contains the following files:
         
     [node id] ( [yes\no\None] ) -> [node id]
 
+&emsp;You can visit http://flowchart.js.org and translate the flowchart.txt into pictures.
+
 ### mapping_relations.txt : 
 
 &emsp; The relationships between the nodes and the code snippets, can only be used in the training phase.
@@ -34,7 +36,7 @@ Our model can be divided into 2 stages:
 
 1. convert flowchart into pseudo_code
 
-    (the code will be available in 1 week)
+    https://github.com/LiuZeJie97/flowchart-to-code
 
 ### The Second Stage
 
